@@ -1,0 +1,37 @@
+{
+  "eslint.alwaysShowStatus": false,
+  "eslint.enable": true,
+  "eslint.options": {
+    "experimentalDecorators": true
+  },
+  "eslint.packageManager": "yarn",
+  "editor.autoClosingQuotes": "always",
+  "editor.codeLens": true,
+  "editor.colorDecorators": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.cursorBlinking": "smooth",
+  "editor.matchBrackets": "always",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.showUnused": true,
+  "editor.tabCompletion": "onlySnippets",
+  "git.allowForcePush": false,
+  "git.fetchOnPull": true,
+  "git.showProgress": true,
+  "git.branchValidationRegex": "^(lk-\\d+{1,6})\\/(.+)$",
+  "git.branchWhitespaceChar": "-",
+  "javascript.autoClosingTags": true,
+  "javascript.format.enable": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.renameShorthandProperties": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.suggest.enabled": true,
+  "javascript.suggest.names": true,
+  "javascript.suggest.paths": true,
+  "javascript.validate.enable": true,
+  "cSpell.words": ["kogaio"]
+}

@@ -1,0 +1,9 @@
+.vscode
+node_modules/
+**/*/node_modules/
+build
+stylebuild
+**/*/build
+segment.js
+serviceWorker.js
+styleguide.config.js

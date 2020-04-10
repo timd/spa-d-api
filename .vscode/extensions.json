@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "mgmcdermott.vscode-language-babel",
+    "msjsdiag.debugger-for-chrome",
+    "prisma.vscode-graphql"
+  ]
+}
