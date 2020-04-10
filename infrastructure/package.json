@@ -6,8 +6,9 @@
     "watch": "tsc -w",
     "build": "rm -rf ./build && tsc",
     "nuke": "cdk destroy --app 'node build/app.js' ${npm_package_name} --output 'build/cdk.out' --profile finleap",
-    "cdk:diff": "yarn cdk:synth && cdk diff --app 'node build/app.js' --profile finleap",
-    "deploy": "yarn build && cdk deploy --app 'node build/app.js' ${npm_package_name} --output 'build/cdk.out' --strict --profile finleap",
+    "deploy": "yarn build && yarn cdk:deploy",
+    "cdk:diff": "yarn cdk:synth && cdk diff --app 'node build/app.js' --output 'build/cdk.out' --profile finleap",
+    "cdk:deploy": "cdk deploy --app 'node build/app.js' ${npm_package_name} --output 'build/cdk.out' --strict --profile finleap",
     "cdk:synth": "yarn build && cdk synth --app 'node build/app.js' --output 'build/cdk.out' --strict --profile finleap"
   },
   "devDependencies": {
