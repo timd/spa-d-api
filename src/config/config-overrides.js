@@ -9,7 +9,7 @@ module.exports = {
       ...config.resolve.alias,
       ...absolutePaths,
       assets: path.resolve(paths.appPath, `${paths.appSrc}/app/assets`),
-      '@kogaio': path.resolve(paths.appPath, 'node_modules/@ivoryio/kogaio')
+      '@kogaio': path.resolve(paths.appPath, 'node_modules/@ivoryio/kogaio'),
     }
     return config
   },
@@ -19,10 +19,10 @@ module.exports = {
       ...config.moduleNameMapper,
       ...mappedAliases,
       '^@kogaio$': '<rootDir>/node_modules/@ivoryio/kogaio',
-      '^@kogaio/(.*)$': '<rootDir>/node_modules/@ivoryio/kogaio/$1'
+      '^@kogaio/(.*)$': '<rootDir>/node_modules/@ivoryio/kogaio/$1',
     }
     return config
-  }
+  },
 }
 
 function generateWebpackAliases () {
@@ -30,10 +30,7 @@ function generateWebpackAliases () {
   const aliases = fs.readdirSync(modulesRoot).reduce(
     (acc, folder) => ({
       ...acc,
-      [`${folder}`]: path.resolve(
-        paths.appPath,
-        `${paths.appSrc}/packages/${folder}`
-      )
+      [`${folder}`]: path.resolve(paths.appPath, `${paths.appSrc}/packages/${folder}`),
     }),
     {}
   )
@@ -47,7 +44,7 @@ function generateJestMappedDirs () {
     (acc, folder) => ({
       ...acc,
       [`^${folder}$`]: `${paths.appSrc}/packages/${folder}`,
-      [`^${folder}/(.*)$`]: `${paths.appSrc}/packages/${folder}/$1`
+      [`^${folder}/(.*)$`]: `${paths.appSrc}/packages/${folder}/$1`,
     }),
     {}
   )

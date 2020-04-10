@@ -34,7 +34,7 @@ export class AmplifyStack extends Stack {
     })
     app.addBranch('master')
     app.addCustomRule({
-      source: '</^[^.]+$|.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>',
+      source: '</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>',
       target: '/index.html',
       status: RedirectStatus.REWRITE,
     })

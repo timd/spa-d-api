@@ -2,11 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import loadingMessages from '../constants/loadingMessages'
 
-const SplashScreen = () => (
-  <Container>
-    {loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}
-  </Container>
-)
+const SplashScreen = () => <Container>{loadingMessages[Math.floor(Math.random() * loadingMessages.length)]}</Container>
 
 const Container = styled.div`
   position: absolute;

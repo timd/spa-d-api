@@ -11,20 +11,8 @@ const ValidatedInput = ({ isInitializing, CustomLoading, ...props }) => {
   if (isInitializing) return CustomLoading ?? <InputSkeleton />
 
   // Placeholder value to show on read only state
-  if (
-    !(props.value || field.value) &&
-    props.emptyReadOnlyPlaceholder &&
-    props.readOnly
-  ) {
-    return (
-      <Input
-        error={touched && error}
-        {...field}
-        {...meta}
-        {...props}
-        value={props.emptyReadOnlyPlaceholder}
-      />
-    )
+  if (!(props.value || field.value) && props.emptyReadOnlyPlaceholder && props.readOnly) {
+    return <Input error={touched && error} {...field} {...meta} {...props} value={props.emptyReadOnlyPlaceholder} />
   }
 
   return <Input error={touched && error} {...field} {...meta} {...props} />
@@ -43,11 +31,11 @@ ValidatedInput.propTypes = {
   type: PropTypes.string,
   emptyReadOnlyPlaceholder: PropTypes.string,
   value: PropTypes.any,
-  validate: PropTypes.arrayOf(PropTypes.func)
+  validate: PropTypes.arrayOf(PropTypes.func),
 }
 
 ValidatedInput.defaultProps = {
-  type: 'text'
+  type: 'text',
 }
 
 export default withFieldValidation(ValidatedInput)

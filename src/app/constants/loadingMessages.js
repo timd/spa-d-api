@@ -13,5 +13,5 @@ export default Object.freeze([
   "Don't worry - a few bits tried to escape, but we caught them",
   "We're testing your patience",
   'The bits are flowing slowly today',
-  "It's still faster than you could draw it"
+  "It's still faster than you could draw it",
 ])

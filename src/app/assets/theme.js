@@ -1,15 +1,6 @@
 import { hexToRgbA } from '@kogaio/assets/helpers'
 import { kogaioTheme } from '@kogaio/assets/theme'
-const {
-  borders,
-  colors,
-  fontSizes,
-  fontWeights,
-  radii,
-  shadows,
-  space,
-  textStyles
-} = kogaioTheme
+const { borders, colors, fontSizes, fontWeights, radii, shadows, space, textStyles } = kogaioTheme
 
 const PRIMARY_COLORS = {
   active: '#79B738',
@@ -38,7 +29,7 @@ const PRIMARY_COLORS = {
   brand3: '#EFECEF',
   textTertiary: '#A1A4B1',
   brandPrimary: '#3B2552',
-  uiWhite: '#FFFFFF'
+  uiWhite: '#FFFFFF',
 }
 
 const COLOR_DERIVATIONS = {
@@ -55,7 +46,7 @@ const COLOR_DERIVATIONS = {
   'modal-white70': hexToRgbA(PRIMARY_COLORS.white, 0.7),
   'modal-white90': hexToRgbA(PRIMARY_COLORS.white, 0.9),
 
-  'brand07-opaque': '#f1f0f3' // '#f0eff2'
+  'brand07-opaque': '#f1f0f3', // '#f0eff2'
 }
 
 const COLORS = {
@@ -71,18 +62,16 @@ const COLORS = {
   'policy-chip': '#61bfce',
   'progress-bar-bg': '#664FB7',
   'shadow-gray': '#e3eaef',
-  'xls-bg': '#33AB77'
+  'xls-bg': '#33AB77',
 }
 
 const FONTS = {
-  primary:
-    'Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif',
-  complementary:
-    'Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif'
+  primary: 'Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif',
+  complementary: 'Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif',
 }
 
 const FONT_WEIGHTS = {
-  medium: 500
+  medium: 500,
 }
 
 const ANCHOR = {
@@ -92,15 +81,15 @@ const ANCHOR = {
     'font-family': FONTS.complementary,
     'font-weight': `${fontWeights.bold}`,
     ':hover': {
-      'font-weight': `${fontWeights.bold}`
-    }
+      'font-weight': `${fontWeights.bold}`,
+    },
   },
   ':hover': {
-    color: COLORS['brand-secondary-hover']
+    color: COLORS['brand-secondary-hover'],
   },
   ':active': {
-    color: COLORS['brand-secondary-hover']
-  }
+    color: COLORS['brand-secondary-hover'],
+  },
 }
 
 const BUTTON_VARIANTS = {
@@ -113,9 +102,9 @@ const BUTTON_VARIANTS = {
     width: 'fit-content',
     ':disabled': {
       ':hover': {
-        'background-color': colors['brand-disabled']
-      }
-    }
+        'background-color': colors['brand-disabled'],
+      },
+    },
   },
   outline: {
     'border-radius': `${radii[2]}px`,
@@ -129,17 +118,17 @@ const BUTTON_VARIANTS = {
       border: `${borders[1]} ${COLORS.brand50}`,
       color: COLORS.brand50,
       img: {
-        opacity: 0.5
-      }
+        opacity: 0.5,
+      },
     },
     ':disabled': {
       border: `${borders[1]} ${COLORS.brand15}`,
       color: COLORS.brand50,
       ':hover': {
-        'border-color': COLORS.brand15
-      }
-    }
-  }
+        'border-color': COLORS.brand15,
+      },
+    },
+  },
 }
 
 const CARD_VARIANTS = {
@@ -147,15 +136,15 @@ const CARD_VARIANTS = {
     'background-color': COLORS.white,
     border: `${borders[1]} ${COLORS.brand07}`,
     'border-radius': `${radii[2]}px`,
-    'box-shadow': '0px 2px 2px #D5DEE4'
+    'box-shadow': '0px 2px 2px #D5DEE4',
   },
   light: {
     'background-color': 'rgba(216, 243, 255, 0.1)',
-    'border-radius': '0px 2px 2px 0px'
+    'border-radius': '0px 2px 2px 0px',
   },
   white: {
-    'border-radius': `${radii[2]}px`
-  }
+    'border-radius': `${radii[2]}px`,
+  },
 }
 
 const DROPDOWN_VARIANTS = {
@@ -165,16 +154,16 @@ const DROPDOWN_VARIANTS = {
     '.dropdown-item': {
       'min-height': '40px',
       ':hover': {
-        'background-color': COLORS['input-bg']
+        'background-color': COLORS['input-bg'],
       },
       '&.selected': {
-        'background-color': COLORS.brand07
-      }
+        'background-color': COLORS.brand07,
+      },
     },
     '.dropdown-placeholder': {
       color: COLORS.white,
       'font-weight': `${fontWeights.bold}`,
-      'text-transform': 'uppercase'
+      'text-transform': 'uppercase',
     },
     '&.dropdown-selected': {
       'background-color': COLORS.brand,
@@ -184,71 +173,71 @@ const DROPDOWN_VARIANTS = {
         'font-family': FONTS.complementary,
         'font-size': fontSizes[0],
         'font-weight': `${fontWeights.bold}`,
-        'text-transform': 'uppercase'
+        'text-transform': 'uppercase',
       },
       '.dropdown-text, .dropdown-chevron': {
-        color: COLORS.white
+        color: COLORS.white,
       },
       ':hover': {
-        'background-color': COLORS['brand-hover']
-      }
+        'background-color': COLORS['brand-hover'],
+      },
     },
     '&.dropdown-active': {
-      'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`
-    }
+      'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`,
+    },
   },
   default: {
     'background-color': COLORS['input-bg'],
     'min-width': '168px',
     '&.dropdown-placeholder': {
-      color: COLORS.placeholder
+      color: COLORS.placeholder,
     },
     '&.dropdown-active': {
-      'border-color': COLORS['brand-secondary']
+      'border-color': COLORS['brand-secondary'],
     },
     '&.dropdown-selected': {
       border: `${borders[1]} transparent`,
       ':active, :hover': {
-        border: `${borders[1]} ${COLORS['brand-secondary']}`
-      }
+        border: `${borders[1]} ${COLORS['brand-secondary']}`,
+      },
     },
     '.dropdown-text': {
-      color: COLORS.gunmetal
+      color: COLORS.gunmetal,
     },
     '.dropdown-item': {
       'min-height': '40px',
       ':hover': {
-        'background-color': COLORS.brand07
+        'background-color': COLORS.brand07,
       },
       ':nth-of-type(n + 2)': {
-        'border-top': 'none'
+        'border-top': 'none',
       },
       '&.selected': {
-        'background-color': COLORS.brand07
-      }
-    }
+        'background-color': COLORS.brand07,
+      },
+    },
   },
   disabled: {
     'min-width': '168px',
     '&.dropdown-selected': {
       border: `${borders[1]} transparent`,
       ':hover': {
-        border: `${borders[1]} transparent`
-      }
+        border: `${borders[1]} transparent`,
+      },
     },
     '&.dropdown-text': {
-      color: COLORS.placeholder
-    }
+      color: COLORS.placeholder,
+    },
   },
   error: {
     'background-color': COLORS['input-bg'],
     'min-width': '168px',
     '&.dropdown-placeholder': {
-      color: COLORS.placeholder
+      color: COLORS.placeholder,
     },
     '&.dropdown-selected': {
-      'background-color': COLORS.error03
-    }
+      'background-color': COLORS.error03,
+    },
   },
   white: {
     'background-color': COLORS.white,
@@ -256,25 +245,25 @@ const DROPDOWN_VARIANTS = {
     '.dropdown-item': {
       'min-height': '40px',
       ':hover': {
-        background: COLORS['input-bg']
-      }
+        background: COLORS['input-bg'],
+      },
     },
     '&.dropdown-placeholder': {
-      color: COLORS.placeholder
+      color: COLORS.placeholder,
     },
     '&.dropdown-selected': {
       'background-color': COLORS.white,
       'border-radius': `${radii[4]}px`,
       border: `${borders[1]} ${COLORS.brand15}`,
       ':hover': {
-        border: `${borders[1]} ${COLORS['brand-secondary']}`
-      }
+        border: `${borders[1]} ${COLORS['brand-secondary']}`,
+      },
     },
     '&.dropdown-active': {
       'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`,
-      border: `${borders[1]} ${COLORS['brand-secondary']}`
-    }
-  }
+      border: `${borders[1]} ${COLORS['brand-secondary']}`,
+    },
+  },
 }
 
 const INPUT_VARIANTS = {
@@ -282,19 +271,19 @@ const INPUT_VARIANTS = {
     'background-color': COLORS['input-bg'],
     border: `${borders[1]} transparent`,
     '::placeholder': {
-      color: COLORS.placeholder
+      color: COLORS.placeholder,
     },
     'border-radius': `${radii[2]}px`,
     ':focus, :hover': {
-      border: `${borders[1]} ${COLORS['brand-secondary']}`
+      border: `${borders[1]} ${COLORS['brand-secondary']}`,
     },
     '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
       '-webkit-appearance': 'none',
-      margin: 0
+      margin: 0,
     },
     '&[type=number]': {
-      '-moz-appearance': 'textfield'
-    }
+      '-moz-appearance': 'textfield',
+    },
   },
   error: {
     'background-color': COLORS.error03,
@@ -302,19 +291,19 @@ const INPUT_VARIANTS = {
     'box-shadow': shadows['input-basic'],
     color: COLORS.error,
     '::placeholder': {
-      color: COLORS.placeholder
+      color: COLORS.placeholder,
     },
     ':-webkit-autofill': {
       'background-color': COLORS.error03,
-      color: COLORS.error
+      color: COLORS.error,
     },
     '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
       '-webkit-appearance': 'none',
-      margin: 0
+      margin: 0,
     },
     '&[type=number]': {
-      '-moz-appearance': 'textfield'
-    }
+      '-moz-appearance': 'textfield',
+    },
   },
   disabled: {
     'background-color': COLORS['input-bg'],
@@ -323,15 +312,15 @@ const INPUT_VARIANTS = {
     color: COLORS.brand25,
     cursor: 'not-allowed',
     '::placeholder': {
-      color: COLORS.placeholder
+      color: COLORS.placeholder,
     },
     '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
       '-webkit-appearance': 'none',
-      margin: 0
+      margin: 0,
     },
     '&[type=number]': {
-      '-moz-appearance': 'textfield'
-    }
+      '-moz-appearance': 'textfield',
+    },
   },
   tagInput: {
     'background-color': COLORS['input-bg'],
@@ -339,14 +328,14 @@ const INPUT_VARIANTS = {
     color: COLORS.gunmetal,
     'min-height': 'fit-content',
     '::placeholder': {
-      colors: COLORS.placeholder
-    }
+      colors: COLORS.placeholder,
+    },
   },
   white: {
     'background-color': COLORS.white,
     border: `${borders[1]} ${COLORS.brand15}`,
-    'border-radius': `${radii[4]}px`
-  }
+    'border-radius': `${radii[4]}px`,
+  },
 }
 
 const GRID_CONTAINER = {
@@ -354,15 +343,15 @@ const GRID_CONTAINER = {
     ':nth-of-type(3)': {
       'margin-top': `${space[6]}px`,
       'border-bottom': 'none',
-      'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`
+      'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`,
     },
     ':last-of-type': {
-      'border-radius': `${radii.none}px ${radii.none}px ${radii[4]}px ${radii[4]}px`
+      'border-radius': `${radii.none}px ${radii.none}px ${radii[4]}px ${radii[4]}px`,
     },
     ':nth-of-type(n + 4):not(:last-of-type)': {
-      'border-bottom': 'none'
-    }
-  }
+      'border-bottom': 'none',
+    },
+  },
 }
 
 const TAG_INPUT = {
@@ -372,12 +361,12 @@ const TAG_INPUT = {
   'min-height': '40px',
   padding: `0 ${space[1]}px`,
   ':hover, :focus-within': {
-    border: `${borders[1]} ${COLORS['brand-secondary']}`
+    border: `${borders[1]} ${COLORS['brand-secondary']}`,
   },
   tag: {
     'margin-top': `${space[2]}px`,
-    'margin-right': `${space[1]}px`
-  }
+    'margin-right': `${space[1]}px`,
+  },
 }
 
 const TEXTAREA = {
@@ -391,11 +380,11 @@ const TEXTAREA = {
   resize: 'none',
   '::placeholder': {
     color: COLORS.placeholder,
-    'font-family': FONTS.primary
+    'font-family': FONTS.primary,
   },
   ':focus, :hover': {
-    border: `${borders[1]} ${COLORS['brand-secondary']}`
-  }
+    border: `${borders[1]} ${COLORS['brand-secondary']}`,
+  },
 }
 
 const TEXTAREA_VARIANTS = {
@@ -405,9 +394,9 @@ const TEXTAREA_VARIANTS = {
     'background-color': COLORS.error03,
     border: `${borders[1]} ${COLORS.error}`,
     ':focus, :hover': {
-      border: `${borders[1]} ${COLORS.error}`
-    }
-  }
+      border: `${borders[1]} ${COLORS.error}`,
+    },
+  },
 }
 
 const TOPBAR = {
@@ -416,12 +405,12 @@ const TOPBAR = {
   height: '64px',
   position: 'sticky',
   top: 0,
-  'z-index': '10'
+  'z-index': '10',
 }
 
 const SKELETON = {
   background: COLORS['skeleton-bg'],
-  highlight: COLORS['input-bg']
+  highlight: COLORS['input-bg'],
 }
 
 const TYPOGRAPHY_VARIANTS = {
@@ -429,13 +418,13 @@ const TYPOGRAPHY_VARIANTS = {
     ...textStyles.caps,
     'font-family': FONTS.complementary,
     'font-size': fontSizes[0],
-    'font-weight': `${fontWeights.bold}`
+    'font-weight': `${fontWeights.bold}`,
   },
   description: {
     color: COLORS.description,
     'font-family': FONTS.primary,
     'font-size': fontSizes[1],
-    'line-height': '24px'
+    'line-height': '24px',
   },
   titleLight: {
     color: COLORS.placeholder,
@@ -443,36 +432,36 @@ const TYPOGRAPHY_VARIANTS = {
     'font-size': fontSizes[2],
     'font-weight': `${fontWeights.lighter}`,
     '&.title-light-brand': {
-      color: COLORS['progress-bar-bg']
-    }
+      color: COLORS['progress-bar-bg'],
+    },
   },
   inputLabel: {
     color: COLORS.gunmetal,
     'font-family': FONTS.primary,
     fontWeight: FONT_WEIGHTS.medium,
-    'padding-bottom': `${space[2]}px`
+    'padding-bottom': `${space[2]}px`,
   },
   link: {
     color: COLORS['brand-secondary'],
-    'font-weight': `${FONT_WEIGHTS.medium}`
+    'font-weight': `${FONT_WEIGHTS.medium}`,
   },
   screenTitle: {
     color: COLORS.brand,
     'font-family': FONTS.complementary,
     'font-size': '18px',
-    'font-weight': `${fontWeights.lighter}`
+    'font-weight': `${fontWeights.lighter}`,
   },
   status: {
     ...textStyles.caps,
     color: COLORS.placeholder,
-    'font-size': fontSizes[0]
+    'font-size': fontSizes[0],
   },
   subscriptionTitle: {
     color: COLORS.brand,
     'font-family': FONTS.complementary,
     'font-size': fontSizes[1],
     'font-weight': `${fontWeights.bold}`,
-    ...textStyles.caps
+    ...textStyles.caps,
   },
   searchResult: {
     description: {
@@ -480,41 +469,41 @@ const TYPOGRAPHY_VARIANTS = {
       'font-family': FONTS.primary,
       'font-size': fontSizes[1],
       'font-weight': `${fontWeights.regular}`,
-      'line-height': '24px'
+      'line-height': '24px',
     },
     title: {
       color: COLORS.black,
       'font-family': FONTS.primary,
       'font-size': fontSizes[1],
-      'font-weight': `${FONT_WEIGHTS.medium}`
-    }
+      'font-weight': `${FONT_WEIGHTS.medium}`,
+    },
   },
   modalTitle: {
     color: COLORS.black,
     'font-family': FONTS.complementary,
     'font-size': fontSizes[3],
-    'font-weight': `${FONT_WEIGHTS.lighter}`
+    'font-weight': `${FONT_WEIGHTS.lighter}`,
   },
   avatar: {
     small: {
       'font-size': fontSizes[0],
-      'font-weight': `${FONT_WEIGHTS.bold}`
+      'font-weight': `${FONT_WEIGHTS.bold}`,
     },
     large: {
       'font-size': fontSizes[2],
-      'font-weight': `${FONT_WEIGHTS.bold}`
+      'font-weight': `${FONT_WEIGHTS.bold}`,
     },
     xLarge: {
       'font-size': fontSizes[5],
-      'font-weight': `${FONT_WEIGHTS.bold}`
-    }
+      'font-weight': `${FONT_WEIGHTS.bold}`,
+    },
   },
   subtitle: {
     color: COLORS['confirmation-message'],
     'font-family': FONTS.primary,
     'font-size': fontSizes[1],
-    'line-height': '24px'
-  }
+    'line-height': '24px',
+  },
 }
 
 const TABS = {
@@ -536,20 +525,20 @@ const TABS = {
     position: 'relative',
     'text-transform': 'uppercase',
     ':first-of-type': {
-      'margin-left': `${space[6]}px`
+      'margin-left': `${space[6]}px`,
     },
     '&[aria-selected="true"]': {
       border: `${borders[1]} ${COLORS.brand15}`,
       'border-bottom': `${borders[1]} ${COLORS.white}`,
-      color: COLORS.brand
+      color: COLORS.brand,
     },
     ':hover:not(:disabled)': {
-      color: COLORS.brand
-    }
+      color: COLORS.brand,
+    },
   },
   Panel: {
-    'border-top': `${borders[1]} ${COLORS.brand15}`
-  }
+    'border-top': `${borders[1]} ${COLORS.brand15}`,
+  },
 }
 
 const theme = Object.seal({
@@ -572,24 +561,24 @@ const theme = Object.seal({
 
   letterSpacings: {
     tight: '-0.02rem',
-    tracked: '0.05rem'
+    tracked: '0.05rem',
   },
   shadows: {
     'card-simple': `0px 1px 4px ${COLORS.black25}`,
     'card-highlight': `0px 3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
-    'text-editor': `0px -3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`
+    'text-editor': `0px -3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
   },
   textStyles: {
     nowrap: {
-      'white-space': 'nowrap'
+      'white-space': 'nowrap',
     },
     underline: {
-      'text-decoration': 'underline'
+      'text-decoration': 'underline',
     },
     capitalize: {
-      'text-transform': 'capitalize'
-    }
-  }
+      'text-transform': 'capitalize',
+    },
+  },
 })
 
 export default theme
