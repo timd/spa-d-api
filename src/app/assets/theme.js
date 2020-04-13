@@ -1,6 +1,6 @@
 import { hexToRgbA } from '@kogaio/assets/helpers'
 import { kogaioTheme } from '@kogaio/assets/theme'
-const { borders, colors, fontSizes, fontWeights, radii, shadows, space, textStyles } = kogaioTheme
+const { borders, colors, fontSizes, fontWeights, radii, shadows, space } = kogaioTheme
 
 const PRIMARY_COLORS = {
   active: '#79B738',
@@ -340,20 +340,8 @@ const INPUT_VARIANTS = {
   },
 }
 
-const GRID_CONTAINER = {
-  '& > div': {
-    ':nth-of-type(3)': {
-      'margin-top': `${space[6]}px`,
-      'border-bottom': 'none',
-      'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`,
-    },
-    ':last-of-type': {
-      'border-radius': `${radii.none}px ${radii.none}px ${radii[4]}px ${radii[4]}px`,
-    },
-    ':nth-of-type(n + 4):not(:last-of-type)': {
-      'border-bottom': 'none',
-    },
-  },
+const LANDING_CONTAINER = {
+  'max-width': 1080
 }
 
 const TAG_INPUT = {
@@ -480,7 +468,7 @@ const theme = Object.seal({
   dropdowns: DROPDOWN_VARIANTS,
   fonts: FONTS,
   fontWeights: FONT_WEIGHTS,
-  GridContainer: GRID_CONTAINER,
+  LandingContainer: LANDING_CONTAINER,
   inputs: INPUT_VARIANTS,
   Skeleton: SKELETON,
   TagInput: TAG_INPUT,

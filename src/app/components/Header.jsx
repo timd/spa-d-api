@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link, navigate } from '@reach/router'
 import { Flex, Space, Typography } from '@kogaio'
-import { themeGet } from '@kogaio/utils'
+import { themed, themeGet } from '@kogaio/utils'
 
 const Header = () => (
-  <Space px={{ xs: 4, md: '160px' }} py={4}>
-    <Flex alignItems='center' justifyContent='space-between'>
-      <LandigLink
+  <Space px={4} mx='auto' py={4}>
+    <Container>
+      <LandingLink
         as='a'
         fontSize={{ xs: 3, md: 4 }}
         onClick={e => {
@@ -15,13 +15,20 @@ const Header = () => (
           navigate('/')
         }}>
         Divorcy
-      </LandigLink>
+      </LandingLink>
       <AboutUsLink to='about-us'>About us</AboutUsLink>
-    </Flex>
+    </Container>
   </Space>
 )
 
-const LandigLink = styled(Typography)`
+const Container = styled(Flex)`
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  ${themed('LandingContainer')};
+`
+
+const LandingLink = styled(Typography)`
   color: ${themeGet('colors.brand')};
   cursor: pointer;
   text-decoration: none;
