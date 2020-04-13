@@ -6,7 +6,7 @@ import { themed } from '@kogaio/utils'
 import images from '../assets'
 
 const Hero = props => (
-  <Space mx={{ md: 'auto' }} pb={{ xs: 0, md: '8%' }}>
+  <Space mx={{ md: 'auto' }} pb={{ xs: 0, md: 30 }}>
     <Container {...props}>
       <Typography color='dark-grey' maxWidth='640px' variant={{ xs: 'h2', md: 'h1' }} as='title'>
         Divorcy will help you plan and estimate the costs of your divorce
@@ -25,18 +25,16 @@ const Hero = props => (
           * We use all information very discretly
         </Typography>
       </Space>
-      <Space mx={{ md: 4 }}>
-        <Image display={{ md: 'none' }} objectFit='contain' src={images.heroImageMobile} width='100%' />
-        <Image
-          bottom={0}
-          display={{ xs: 'none', md: 'inherit' }}
-          position={{ xs: 'inherit', md: 'absolute' }}
-          src={images.heroImageDesktop}
-          objectFit='contain'
-          width='100%'
-          zIndex={-1}
-        />
-      </Space>
+      <Image display={{ md: 'none' }} objectFit='contain' src={images.heroImageMobile} width='100%' />
+      <Image
+        bottom={0}
+        display={{ xs: 'none', md: 'inherit' }}
+        position={{ xs: 'inherit', md: 'absolute' }}
+        src={images.heroImageDesktop}
+        objectFit='contain'
+        width='100%'
+        zIndex={-1}
+      />
     </Container>
   </Space>
 )
