@@ -5,7 +5,7 @@ import { Flex, Space, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
 const Header = () => (
-  <Space p={4}>
+  <Space px={{ xs: 4, md: '160px' }} py={4}>
     <Flex alignItems='center' justifyContent='space-between'>
       <LandigLink
         as='a'
