@@ -1,20 +1,22 @@
 import React from 'react'
 import { Router } from '@reach/router'
-import { Flex } from '@kogaio'
+import { Flex, Space } from '@kogaio/Responsive'
 import styled from 'styled-components'
 
 import { Header } from 'app/components'
 import { Landing as LandingScreen, NotFound } from 'app/screens'
 
 const AppRouter = () => (
-  <Wrapper id='app-body' role='app-body'>
-    <Header />
-    {/* Set to false to prevent dumb scroll on navigation */}
-    <Router primary={false}>
-      <LandingScreen path='/' />
-      <NotFound default />
-    </Router>
-  </Wrapper>
+  <Space px={4}>
+    <Wrapper id='app-body' role='app-body'>
+      <Header />
+      {/* Set to false to prevent dumb scroll on navigation */}
+      <Router primary={false}>
+        <LandingScreen path='/' />
+        <NotFound default />
+      </Router>
+    </Wrapper>
+  </Space>
 )
 
 const Wrapper = styled(Flex)`

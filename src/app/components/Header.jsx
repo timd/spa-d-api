@@ -5,7 +5,7 @@ import { Flex, Space, Typography } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
 
 const Header = () => (
-  <Space px={4} mx='auto' py={4}>
+  <Space mx='auto' py={4}>
     <Container>
       <LandingLink
         as='a'
