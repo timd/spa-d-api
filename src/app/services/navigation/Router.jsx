@@ -3,7 +3,7 @@ import { Router } from '@reach/router'
 import { Flex, Space } from '@kogaio/Responsive'
 import styled from 'styled-components'
 
-import { Header } from 'app/components'
+import { Header, Footer } from 'app/components'
 import { Landing as LandingScreen, NotFound } from 'app/screens'
 
 const AppRouter = () => (
@@ -15,6 +15,7 @@ const AppRouter = () => (
         <LandingScreen path='/' />
         <NotFound default />
       </Router>
+      <Footer />
     </Wrapper>
   </Space>
 )
