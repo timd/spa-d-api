@@ -5,17 +5,17 @@ const { borders, colors, fontSizes, fontWeights, radii, shadows, space, textStyl
 const PRIMARY_COLORS = {
   active: '#79B738',
   black: '#000000',
-  brand: '#3B2552',
+  brand: '#363DA0',
   'brand-hover': '#4C3068',
   'brand-secondary-hover': '#7E6B92',
-  'brand-secondary': '#7AACDE',
-  'brand-tertiary': '#9ABFD8',
+  'dark-grey': '#3C3C3C',
+  'brand-secondary': '#93E7ED',
+  'brand-tertiary': '#F4B2A7',
   'collapsible-bg': '#EFECEF',
   'collapsible-border': '#DDDAE0',
   description: '#a1a4b1',
   error: '#D00000',
   gunmetal: '#232735',
-  'label-grey': '#8F859A',
   'input-bg': '#F3F6F9',
   'skeleton-bg': '#eeeeee',
   'template-card-bg': '#FEFEFE',
@@ -43,6 +43,8 @@ const COLOR_DERIVATIONS = {
   'brand-secondary35': hexToRgbA(PRIMARY_COLORS['brand-secondary'], 0.35),
   'brand-tertiary25': hexToRgbA(PRIMARY_COLORS['brand-tertiary'], 0.25),
   error03: hexToRgbA(PRIMARY_COLORS.error, 0.03),
+  'dark-grey40': hexToRgbA(PRIMARY_COLORS['dark-grey'], 0.4),
+  'dark-grey60': hexToRgbA(PRIMARY_COLORS['dark-grey'], 0.6),
   'modal-white70': hexToRgbA(PRIMARY_COLORS.white, 0.7),
   'modal-white90': hexToRgbA(PRIMARY_COLORS.white, 0.9),
 
@@ -66,8 +68,8 @@ const COLORS = {
 }
 
 const FONTS = {
-  primary: 'Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif',
-  complementary: 'Rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif',
+  primary: 'PT Serif, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif',
+  complementary: 'Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, sans-serif',
 }
 
 const FONT_WEIGHTS = {
