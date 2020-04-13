@@ -1,6 +1,15 @@
 import React from 'react'
-import { Flex } from '@kogaio'
+import { Space } from '@kogaio'
+import { Hero, Features, Subscribe } from './components'
 
-const Landing = () => <Flex flexDirection='column'>Landing Screen</Flex>
+const Landing = () => (
+  <>
+    <Space mt={7}>
+      <Hero />
+    </Space>
+    <Features />
+    <Subscribe />
+  </>
+)
 
 export default Landing

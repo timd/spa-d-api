@@ -416,130 +416,59 @@ const SKELETON = {
 }
 
 const TYPOGRAPHY_VARIANTS = {
-  actionBtn: {
-    ...textStyles.caps,
-    'font-family': FONTS.complementary,
-    'font-size': fontSizes[0],
-    'font-weight': `${fontWeights.bold}`,
-  },
-  description: {
-    color: COLORS.description,
+  h1: {
     'font-family': FONTS.primary,
-    'font-size': fontSizes[1],
+    'font-weight': FONT_WEIGHTS.bold,
+    'font-size': '48px',
+    'line-height': '56px',
+  },
+  h2: {
+    'font-family': FONTS.primary,
+    'font-weight': FONT_WEIGHTS.bold,
+    'font-size': '32px',
+    'line-height': '40px',
+  },
+  h3: {
+    'font-family': FONTS.primary,
+    'font-weight': FONT_WEIGHTS.bold,
+    'font-size': '28px',
+    'line-height': '32px',
+  },
+  sh1: {
+    'font-family': FONTS.complementary,
+    'font-weight': fontWeights.regular,
+    'font-size': '24px',
+    'line-height': '32px',
+  },
+  sh2: {
+    'font-family': FONTS.complementary,
+    'font-weight': fontWeights.regular,
+    'font-size': '22px',
     'line-height': '24px',
   },
-  titleLight: {
-    color: COLORS.placeholder,
+  sh3: {
     'font-family': FONTS.complementary,
-    'font-size': fontSizes[2],
-    'font-weight': `${fontWeights.lighter}`,
-    '&.title-light-brand': {
-      color: COLORS['progress-bar-bg'],
-    },
-  },
-  inputLabel: {
-    color: COLORS.gunmetal,
-    'font-family': FONTS.primary,
-    fontWeight: FONT_WEIGHTS.medium,
-    'padding-bottom': `${space[2]}px`,
-  },
-  link: {
-    color: COLORS['brand-secondary'],
-    'font-weight': `${FONT_WEIGHTS.medium}`,
-  },
-  screenTitle: {
-    color: COLORS.brand,
-    'font-family': FONTS.complementary,
+    'font-weight': fontWeights.regular,
     'font-size': '18px',
-    'font-weight': `${fontWeights.lighter}`,
-  },
-  status: {
-    ...textStyles.caps,
-    color: COLORS.placeholder,
-    'font-size': fontSizes[0],
-  },
-  subscriptionTitle: {
-    color: COLORS.brand,
-    'font-family': FONTS.complementary,
-    'font-size': fontSizes[1],
-    'font-weight': `${fontWeights.bold}`,
-    ...textStyles.caps,
-  },
-  searchResult: {
-    description: {
-      color: COLORS.black,
-      'font-family': FONTS.primary,
-      'font-size': fontSizes[1],
-      'font-weight': `${fontWeights.regular}`,
-      'line-height': '24px',
-    },
-    title: {
-      color: COLORS.black,
-      'font-family': FONTS.primary,
-      'font-size': fontSizes[1],
-      'font-weight': `${FONT_WEIGHTS.medium}`,
-    },
-  },
-  modalTitle: {
-    color: COLORS.black,
-    'font-family': FONTS.complementary,
-    'font-size': fontSizes[3],
-    'font-weight': `${FONT_WEIGHTS.lighter}`,
-  },
-  avatar: {
-    small: {
-      'font-size': fontSizes[0],
-      'font-weight': `${FONT_WEIGHTS.bold}`,
-    },
-    large: {
-      'font-size': fontSizes[2],
-      'font-weight': `${FONT_WEIGHTS.bold}`,
-    },
-    xLarge: {
-      'font-size': fontSizes[5],
-      'font-weight': `${FONT_WEIGHTS.bold}`,
-    },
-  },
-  subtitle: {
-    color: COLORS['confirmation-message'],
-    'font-family': FONTS.primary,
-    'font-size': fontSizes[1],
     'line-height': '24px',
   },
-}
-
-const TABS = {
-  'align-items': 'center',
-  Link: {
-    'align-items': 'center',
-    'background-color': COLORS.white,
-    border: `${borders[1]} transparent`,
-    'border-bottom': `${borders[1]} ${COLORS.brand15}`,
-    'border-radius': `${radii[2]}px ${radii[2]}px 0 0`,
-    color: COLORS.brand25,
+  body: {
     'font-family': FONTS.complementary,
-    'font-size': `${fontSizes[0]}`,
-    'font-weight': `${fontWeights.bold}`,
-    'justify-content': 'center',
-    'margin-bottom': '-1px',
-    'min-width': '160px',
-    padding: `${space[3]}px`,
-    position: 'relative',
-    'text-transform': 'uppercase',
-    ':first-of-type': {
-      'margin-left': `${space[6]}px`,
-    },
-    '&[aria-selected="true"]': {
-      border: `${borders[1]} ${COLORS.brand15}`,
-      'border-bottom': `${borders[1]} ${COLORS.white}`,
-      color: COLORS.brand,
-    },
-    ':hover:not(:disabled)': {
-      color: COLORS.brand,
-    },
+    'font-weight': fontWeights.regular,
+    'font-size': '16px',
+    'line-height': '24px',
   },
-  Panel: {
-    'border-top': `${borders[1]} ${COLORS.brand15}`,
+  'super-title': {
+    'font-family': FONTS.complementary,
+    'font-weight': fontWeights.bold,
+    'font-size': '14px',
+    'line-height': '16px',
+  },
+  caption: {
+    'font-family': FONTS.complementary,
+    'font-weight': fontWeights.regular,
+    'font-size': '12px',
+    'line-height': '16px',
   },
 }
 
@@ -559,7 +488,6 @@ const theme = Object.seal({
   textareas: TEXTAREA_VARIANTS,
   TopBar: TOPBAR,
   typography: TYPOGRAPHY_VARIANTS,
-  Tabs: TABS,
 
   letterSpacings: {
     tight: '-0.02rem',
