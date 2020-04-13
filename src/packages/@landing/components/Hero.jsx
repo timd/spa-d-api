@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Button, Flex, Image, Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
 
-import images from '../assets'
+import { images } from '../assets'
 
 const Hero = props => (
   <Space mx={{ md: 'auto' }} pb={{ xs: 0, md: 30 }}>

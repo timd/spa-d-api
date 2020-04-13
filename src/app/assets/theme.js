@@ -9,6 +9,7 @@ const PRIMARY_COLORS = {
   'brand-hover': '#4C3068',
   'brand-secondary-hover': '#7E6B92',
   'dark-grey': '#3C3C3C',
+  'feature-bg': '#E1F2F2',
   'brand-secondary': '#93E7ED',
   'brand-tertiary': '#F4B2A7',
   'collapsible-bg': '#EFECEF',
@@ -341,7 +342,7 @@ const INPUT_VARIANTS = {
 }
 
 const LANDING_CONTAINER = {
-  'max-width': 1080
+  'max-width': 1080,
 }
 
 const TAG_INPUT = {
@@ -406,19 +407,19 @@ const SKELETON = {
 const TYPOGRAPHY_VARIANTS = {
   h1: {
     'font-family': FONTS.primary,
-    'font-weight': FONT_WEIGHTS.bold,
+    'font-weight': `${fontWeights.bold}`,
     'font-size': '48px',
     'line-height': '56px',
   },
   h2: {
     'font-family': FONTS.primary,
-    'font-weight': FONT_WEIGHTS.bold,
+    'font-weight': `${fontWeights.bold}`,
     'font-size': '32px',
     'line-height': '40px',
   },
   h3: {
     'font-family': FONTS.primary,
-    'font-weight': FONT_WEIGHTS.bold,
+    'font-weight': `${fontWeights.bold}`,
     'font-size': '28px',
     'line-height': '32px',
   },
@@ -430,31 +431,31 @@ const TYPOGRAPHY_VARIANTS = {
   },
   sh2: {
     'font-family': FONTS.complementary,
-    'font-weight': fontWeights.regular,
+    'font-weight': `${fontWeights.regular}`,
     'font-size': '22px',
     'line-height': '24px',
   },
   sh3: {
     'font-family': FONTS.complementary,
-    'font-weight': fontWeights.regular,
+    'font-weight': `${fontWeights.regular}`,
     'font-size': '18px',
     'line-height': '24px',
   },
   body: {
     'font-family': FONTS.complementary,
-    'font-weight': fontWeights.regular,
+    'font-weight': `${fontWeights.regular}`,
     'font-size': '16px',
     'line-height': '24px',
   },
   'super-title': {
     'font-family': FONTS.complementary,
-    'font-weight': fontWeights.bold,
+    'font-weight': `${fontWeights.bold}`,
     'font-size': '14px',
     'line-height': '16px',
   },
   caption: {
     'font-family': FONTS.complementary,
-    'font-weight': fontWeights.regular,
+    'font-weight': `${fontWeights.regular}`,
     'font-size': '12px',
     'line-height': '16px',
   },
