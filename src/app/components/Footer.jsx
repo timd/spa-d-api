@@ -6,7 +6,7 @@ import { themed, themeGet } from '@kogaio/utils'
 import Box from '@ivoryio/kogaio/Responsive/Box'
 
 const Footer = () => (
-  <Space px={16} py={10} mx='auto'>
+  <Space px={{ xs: 4, md: 16 }} py={10} mx='auto'>
     <Container flexDirection={{ xs: 'column-reverse', md: 'row' }}>
       <Box width={{ xs: 1, md: 1 / 2 }}>
         <Flex flexDirection='column'>
