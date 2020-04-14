@@ -21,17 +21,10 @@ const PRIMARY_COLORS = {
   'confirmation-message': '#5D637A',
   success: '#58a87b',
   transparent: 'transparent',
-  white: '#FFFFFF',
-  // NEW IMPLEMENTATION
-  brand3: '#EFECEF',
-  textTertiary: '#A1A4B1',
-  brandPrimary: '#3B2552',
-  uiWhite: '#FFFFFF',
+  white: '#FFFFFF'
 }
 
 const COLOR_DERIVATIONS = {
-  black15: hexToRgbA(PRIMARY_COLORS.black, 0.15),
-  black25: hexToRgbA(PRIMARY_COLORS.black, 0.25),
   brand07: hexToRgbA(PRIMARY_COLORS.brand, 0.07),
   brand15: hexToRgbA(PRIMARY_COLORS.brand, 0.15),
   brand25: hexToRgbA(PRIMARY_COLORS.brand, 0.25),
@@ -93,10 +86,11 @@ const ANCHOR = {
 
 const BUTTON_VARIANTS = {
   primary: {
-    'border-radius': `${radii[2]}px`,
+    'border-radius': `${radii[4]}px`,
     'font-family': FONTS.complementary,
     height: '40px',
     'min-width': '140px',
+    'max-width': '311px',
     'white-space': 'nowrap',
     width: 'fit-content',
     ':disabled': {
@@ -107,10 +101,11 @@ const BUTTON_VARIANTS = {
   },
   secondary: {
     'background-color': COLORS['brand-secondary'],
-    'border-radius': `${radii[2]}px`,
+    'border-radius': `${radii[4]}px`,
     'font-family': FONTS.complementary,
     height: '40px',
     'min-width': '140px',
+    'max-width': '311px',
     'white-space': 'nowrap',
     width: 'fit-content',
     ':hover': {
@@ -123,11 +118,12 @@ const BUTTON_VARIANTS = {
     },
   },
   outline: {
-    'border-radius': `${radii[2]}px`,
+    'border-radius': `${radii[4]}px`,
     border: `${borders[1]} ${COLORS.brand}`,
     'font-family': FONTS.complementary,
     height: '40px',
     'min-width': '140px',
+    'max-width': '311px',
     'white-space': 'nowrap',
     width: 'fit-content',
     ':hover': {
@@ -148,137 +144,8 @@ const BUTTON_VARIANTS = {
 }
 
 const CARD_VARIANTS = {
-  dataroom: {
-    'background-color': COLORS.white,
-    border: `${borders[1]} ${COLORS.brand07}`,
-    'border-radius': `${radii[2]}px`,
-    'box-shadow': '0px 2px 2px #D5DEE4',
-  },
-  light: {
-    'background-color': 'rgba(216, 243, 255, 0.1)',
-    'border-radius': '0px 2px 2px 0px',
-  },
   white: {
-    'border-radius': `${radii[2]}px`,
-  },
-}
-
-const DROPDOWN_VARIANTS = {
-  brand: {
-    'background-color': COLORS.white,
-    'min-width': '168px',
-    '.dropdown-item': {
-      'min-height': '40px',
-      ':hover': {
-        'background-color': COLORS['input-bg'],
-      },
-      '&.selected': {
-        'background-color': COLORS.brand07,
-      },
-    },
-    '.dropdown-placeholder': {
-      color: COLORS.white,
-      'font-weight': `${fontWeights.bold}`,
-      'text-transform': 'uppercase',
-    },
-    '&.dropdown-selected': {
-      'background-color': COLORS.brand,
-      'border-radius': `${radii[4]}px`,
-      border: `${borders[1]} ${COLORS.brand15}`,
-      '.dropdown-text:not(.dropdown-chevron)': {
-        'font-family': FONTS.complementary,
-        'font-size': fontSizes[0],
-        'font-weight': `${fontWeights.bold}`,
-        'text-transform': 'uppercase',
-      },
-      '.dropdown-text, .dropdown-chevron': {
-        color: COLORS.white,
-      },
-      ':hover': {
-        'background-color': COLORS['brand-hover'],
-      },
-    },
-    '&.dropdown-active': {
-      'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`,
-    },
-  },
-  default: {
-    'background-color': COLORS['input-bg'],
-    'min-width': '168px',
-    '&.dropdown-placeholder': {
-      color: COLORS.placeholder,
-    },
-    '&.dropdown-active': {
-      'border-color': COLORS['brand-secondary'],
-    },
-    '&.dropdown-selected': {
-      border: `${borders[1]} transparent`,
-      ':active, :hover': {
-        border: `${borders[1]} ${COLORS['brand-secondary']}`,
-      },
-    },
-    '.dropdown-text': {
-      color: COLORS.gunmetal,
-    },
-    '.dropdown-item': {
-      'min-height': '40px',
-      ':hover': {
-        'background-color': COLORS.brand07,
-      },
-      ':nth-of-type(n + 2)': {
-        'border-top': 'none',
-      },
-      '&.selected': {
-        'background-color': COLORS.brand07,
-      },
-    },
-  },
-  disabled: {
-    'min-width': '168px',
-    '&.dropdown-selected': {
-      border: `${borders[1]} transparent`,
-      ':hover': {
-        border: `${borders[1]} transparent`,
-      },
-    },
-    '&.dropdown-text': {
-      color: COLORS.placeholder,
-    },
-  },
-  error: {
-    'background-color': COLORS['input-bg'],
-    'min-width': '168px',
-    '&.dropdown-placeholder': {
-      color: COLORS.placeholder,
-    },
-    '&.dropdown-selected': {
-      'background-color': COLORS.error03,
-    },
-  },
-  white: {
-    'background-color': COLORS.white,
-    'min-width': '168px',
-    '.dropdown-item': {
-      'min-height': '40px',
-      ':hover': {
-        background: COLORS['input-bg'],
-      },
-    },
-    '&.dropdown-placeholder': {
-      color: COLORS.placeholder,
-    },
-    '&.dropdown-selected': {
-      'background-color': COLORS.white,
-      'border-radius': `${radii[4]}px`,
-      border: `${borders[1]} ${COLORS.brand15}`,
-      ':hover': {
-        border: `${borders[1]} ${COLORS['brand-secondary']}`,
-      },
-    },
-    '&.dropdown-active': {
-      'border-radius': `${radii[4]}px ${radii[4]}px ${radii.none}px ${radii.none}px`,
-      border: `${borders[1]} ${COLORS['brand-secondary']}`,
-    },
+    'border-radius': `${radii[4]}px`,
   },
 }
 
@@ -403,20 +270,6 @@ const TEXTAREA_VARIANTS = {
   },
 }
 
-const TOPBAR = {
-  border: `${borders[1]} ${COLORS.brand15}`,
-  'background-color': COLORS['background-01'],
-  height: '64px',
-  position: 'sticky',
-  top: 0,
-  'z-index': '10',
-}
-
-const SKELETON = {
-  background: COLORS['skeleton-bg'],
-  highlight: COLORS['input-bg'],
-}
-
 const TYPOGRAPHY_VARIANTS = {
   h1: {
     'font-family': FONTS.primary,
@@ -479,16 +332,13 @@ const theme = Object.seal({
   buttons: BUTTON_VARIANTS,
   cards: CARD_VARIANTS,
   colors: COLORS,
-  dropdowns: DROPDOWN_VARIANTS,
   fonts: FONTS,
   fontWeights: FONT_WEIGHTS,
   LandingContainer: LANDING_CONTAINER,
   inputs: INPUT_VARIANTS,
-  Skeleton: SKELETON,
   TagInput: TAG_INPUT,
   TextArea: TEXTAREA,
   textareas: TEXTAREA_VARIANTS,
-  TopBar: TOPBAR,
   typography: TYPOGRAPHY_VARIANTS,
 
   letterSpacings: {

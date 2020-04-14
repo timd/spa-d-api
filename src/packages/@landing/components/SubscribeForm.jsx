@@ -55,7 +55,7 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
               validate={[emailFormat]}
             />
             <Space ml={{ xs: 'auto', md: 2 }} mr={{ xs: 'auto', md: 0 }}>
-              <Button disabled={isSubmitting} variant='secondary' title='Subscribe' type='submit' />
+              <Button disabled={isSubmitting} variant='secondary' title='Subscribe' type='submit' width={{ xs: 1, md: 'auto' }} />
             </Space>
           </Flex>
         </FullWidthForm>
