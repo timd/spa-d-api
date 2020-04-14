@@ -7,7 +7,7 @@ import { themed, themeGet } from '@kogaio/utils'
 import { TextLogo } from '.'
 
 const Header = () => (
-  <Space mx='auto' py={4}>
+  <Space mx='auto' py={{ xs: 3, md: 6 }}>
     <Container>
       <TextLogo />
       <AboutUsLink to='about-us'>About us</AboutUsLink>
