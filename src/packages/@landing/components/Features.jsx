@@ -28,7 +28,7 @@ const Features = () => (
           ))}
         </FeatureCardsWrapper>
       </Space>
-      <Space mt={6}>
+      <Space display={{ md: 'none' }} mt={6}>
         <Button variant='outline'  title='Get Started' onClick={() => {}} width={1} />
       </Space>
     </Flex>
