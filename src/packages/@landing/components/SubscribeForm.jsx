@@ -41,11 +41,13 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
           <Typography color='error' variant='caption'>
             {status}
           </Typography>
+
           <Flex justifyContent='flex-end' flexWrap={{ xs: 'wrap', md: 'nowrap' }}>
             <ValidatedInput
               containerStyle={{
-                maxWidth: { md: '311px' },
+                maxWidth: { xs: '311px', md: 'auto' },
                 width: { xs: 1, md: 'calc(100% - 148px)' },
+                margin: 'auto',
               }}
               id='subscribe-email'
               icLeft='email'
@@ -55,7 +57,13 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
               validate={[emailFormat]}
             />
             <Space ml={{ xs: 'auto', md: 2 }} mr={{ xs: 'auto', md: 0 }}>
-              <Button disabled={isSubmitting} variant='secondary' title='Subscribe' type='submit' width={{ xs: 1, md: 'auto' }} />
+              <Button
+                disabled={isSubmitting}
+                variant='secondary'
+                title='Subscribe'
+                type='submit'
+                width={{ xs: 1, md: 'auto' }}
+              />
             </Space>
           </Flex>
         </FullWidthForm>

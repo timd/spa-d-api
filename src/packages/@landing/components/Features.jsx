@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Button, Flex, Space, Typography } from '@kogaio'
+import { Box, Button, Flex, Hide, Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
 
 import { FeatureCard } from '.'
 import { features } from '../constants'
 
 const Features = () => (
-  <Space mx={-4} px={3} py={10}>
-    <Flex flexDirection='column' alignItems='center' bg='feature-bg'>
+  <Space mx={-4} px={2} py={10}>
+    <Flex flexDirection='column' alignItems='center' bg='feature-bg40'>
       <Typography textAlign='center' color='dark-grey' variant={{ xs: 'h3', md: 'h2' }}>
         Why Divorcy?
       </Typography>
@@ -28,9 +28,11 @@ const Features = () => (
           ))}
         </FeatureCardsWrapper>
       </Space>
-      <Space display={{ md: 'none' }} mt={6}>
-        <Button variant='outline'  title='Get Started' onClick={() => {}} width={1} />
-      </Space>
+      <Hide md lg>
+        <Space mt={6}>
+          <Button variant='outline' title='Get Started' onClick={() => {}} width={1} />
+        </Space>
+      </Hide>
     </Flex>
   </Space>
 )

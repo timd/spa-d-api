@@ -8,16 +8,19 @@ import { SubscribeForm } from '.'
 const Subscribe = () => (
   <Space mx={-4}>
     <Flex flexDirection='column' alignItems='center' bg='brand'>
-      <Space py={12} px={{ xs: 4, md: 16 }}>
+      <Space py={12} px={{ xs: 6, md: 16 }}>
         <Container width={1}>
           <Flex flexDirection='column' width={{ xs: 1, md: 1 / 2 }}>
-            <Typography variant='h3' color='white' maxWidth={{ md: '340px' }}>
+            <Typography variant='h3' textAlign={{ xs: 'center', md: 'left' }} color='white' maxWidth={{ md: '340px' }}>
               Subscribe to our insights
             </Typography>
             <Space mt={2}>
-              <Typography variant='body' color='white' maxWidth={{ md: '340px' }}>
-                Money is unfortunately a big topic. With just a little information, we can estimate the one time and
-                ongoing cost you have to bear or the alimony you receive.
+              <Typography
+                variant='body'
+                textAlign={{ xs: 'center', md: 'left' }}
+                color='white'
+                maxWidth={{ md: '340px' }}>
+                It'll help you to understand whole process as well as save time & cost
               </Typography>
             </Space>
           </Flex>
