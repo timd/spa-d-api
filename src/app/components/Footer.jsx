@@ -53,12 +53,4 @@ const MoreLink = styled(Link)`
   line-height: 16px;
 `
 
-const LandingLink = styled(Typography)`
-  color: ${themeGet('colors.brand')};
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: ${themeGet('fontWeights.bold')};
-  line-height: ${themeGet('lineHeights.paragraph')};
-`
-
 export default Footer

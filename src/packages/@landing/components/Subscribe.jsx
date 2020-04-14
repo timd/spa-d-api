@@ -20,7 +20,7 @@ const Subscribe = () => (
                 textAlign={{ xs: 'center', md: 'left' }}
                 color='white'
                 maxWidth={{ md: '340px' }}>
-                It'll help you to understand whole process as well as save time & cost
+                It&apos;ll help you to understand whole process as well as save time & cost
               </Typography>
             </Space>
           </Flex>

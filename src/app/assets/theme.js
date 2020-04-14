@@ -1,9 +1,8 @@
 import { hexToRgbA } from '@kogaio/assets/helpers'
 import { kogaioTheme } from '@kogaio/assets/theme'
-const { borders, colors, fontSizes, fontWeights, radii, shadows, space } = kogaioTheme
+const { borders, colors, fontWeights, radii, shadows } = kogaioTheme
 
 const PRIMARY_COLORS = {
-  active: '#79B738',
   black: '#000000',
   brand: '#363DA0',
   'brand-hover': '#292F7A',
@@ -11,24 +10,16 @@ const PRIMARY_COLORS = {
   'brand-secondary': '#93E7ED',
   'brand-tertiary': '#F4B2A7',
   'feature-bg': '#E1F2F2',
+  'progress-bg': '#F1F3FB',
   error: '#D00000',
   gunmetal: '#232735',
-  'input-bg': '#F3F6F9',
-  'skeleton-bg': '#eeeeee',
-  'template-card-bg': '#FEFEFE',
-  'file-card-bg': '#EFECEF',
-  'template-name': '#121232',
-  'confirmation-message': '#5D637A',
-  success: '#58a87b',
   transparent: 'transparent',
   white: '#FFFFFF',
 }
 
 const COLOR_DERIVATIONS = {
-  brand07: hexToRgbA(PRIMARY_COLORS.brand, 0.07),
   brand15: hexToRgbA(PRIMARY_COLORS.brand, 0.15),
   brand25: hexToRgbA(PRIMARY_COLORS.brand, 0.25),
-  brand35: hexToRgbA(PRIMARY_COLORS.brand, 0.35),
   brand50: hexToRgbA(PRIMARY_COLORS.brand, 0.5),
   'feature-bg40': hexToRgbA(PRIMARY_COLORS['feature-bg'], 0.4),
   'brand-secondary-disabled': hexToRgbA(PRIMARY_COLORS['brand-secondary'], 0.2),
@@ -37,9 +28,6 @@ const COLOR_DERIVATIONS = {
   error03: hexToRgbA(PRIMARY_COLORS.error, 0.03),
   'dark-grey40': hexToRgbA(PRIMARY_COLORS['dark-grey'], 0.4),
   'dark-grey60': hexToRgbA(PRIMARY_COLORS['dark-grey'], 0.6),
-  'modal-white70': hexToRgbA(PRIMARY_COLORS.white, 0.7),
-  'modal-white90': hexToRgbA(PRIMARY_COLORS.white, 0.9),
-  'brand07-opaque': '#f1f0f3', // '#f0eff2'
 }
 
 const COLORS = {
@@ -65,24 +53,6 @@ const FONTS = {
 
 const FONT_WEIGHTS = {
   medium: 500,
-}
-
-const ANCHOR = {
-  color: COLORS['brand-secondary'],
-  'font-family': FONTS.primary,
-  '.anchor-bold': {
-    'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.bold}`,
-    ':hover': {
-      'font-weight': `${fontWeights.bold}`,
-    },
-  },
-  ':hover': {
-    color: COLORS['brand-secondary-hover'],
-  },
-  ':active': {
-    color: COLORS['brand-secondary-hover'],
-  },
 }
 
 const BUTTON_VARIANTS = {
@@ -152,12 +122,12 @@ const CARD_VARIANTS = {
 
 const INPUT_VARIANTS = {
   default: {
-    'background-color': COLORS['input-bg'],
+    'background-color': COLORS.white,
     border: `${borders[1]} transparent`,
     '::placeholder': {
       color: COLORS.placeholder,
     },
-    'border-radius': `${radii[2]}px`,
+    'border-radius': `${radii[4]}px`,
     ':focus, :hover': {
       border: `${borders[1]} ${COLORS['brand-secondary']}`,
     },
@@ -190,7 +160,7 @@ const INPUT_VARIANTS = {
     },
   },
   disabled: {
-    'background-color': COLORS['input-bg'],
+    'background-color': COLORS.white,
     border: 'none',
     'box-shadow': 'none',
     color: COLORS.brand25,
@@ -205,70 +175,11 @@ const INPUT_VARIANTS = {
     '&[type=number]': {
       '-moz-appearance': 'textfield',
     },
-  },
-  tagInput: {
-    'background-color': COLORS['input-bg'],
-    border: 'none',
-    color: COLORS.gunmetal,
-    'min-height': 'fit-content',
-    '::placeholder': {
-      colors: COLORS.placeholder,
-    },
-  },
-  white: {
-    'background-color': COLORS.white,
-    border: `${borders[1]} ${COLORS.brand15}`,
-    'border-radius': `${radii[4]}px`,
-  },
+  }
 }
 
 const LANDING_CONTAINER = {
   'max-width': 1080,
-}
-
-const TAG_INPUT = {
-  border: `${borders[1]} transparent`,
-  'background-color': COLORS['input-bg'],
-  'border-radius': `${radii[2]}px`,
-  'min-height': '40px',
-  padding: `0 ${space[1]}px`,
-  ':hover, :focus-within': {
-    border: `${borders[1]} ${COLORS['brand-secondary']}`,
-  },
-  tag: {
-    'margin-top': `${space[2]}px`,
-    'margin-right': `${space[1]}px`,
-  },
-}
-
-const TEXTAREA = {
-  'background-color': COLORS['input-bg'],
-  border: `${borders[1]} transparent`,
-  'border-radius': `${radii[2]}px`,
-  color: COLORS.gunmetal,
-  'font-family': FONTS.primary,
-  'font-size': fontSizes[1],
-  'line-height': '24px',
-  resize: 'none',
-  '::placeholder': {
-    color: COLORS.placeholder,
-    'font-family': FONTS.primary,
-  },
-  ':focus, :hover': {
-    border: `${borders[1]} ${COLORS['brand-secondary']}`,
-  },
-}
-
-const TEXTAREA_VARIANTS = {
-  default: TEXTAREA,
-  error: {
-    ...TEXTAREA,
-    'background-color': COLORS.error03,
-    border: `${borders[1]} ${COLORS.error}`,
-    ':focus, :hover': {
-      border: `${borders[1]} ${COLORS.error}`,
-    },
-  },
 }
 
 const TYPOGRAPHY_VARIANTS = {
@@ -341,7 +252,6 @@ const TYPOGRAPHY_VARIANTS = {
 }
 
 const theme = Object.seal({
-  Anchor: ANCHOR,
   buttons: BUTTON_VARIANTS,
   cards: CARD_VARIANTS,
   colors: COLORS,
@@ -349,9 +259,6 @@ const theme = Object.seal({
   fontWeights: FONT_WEIGHTS,
   LandingContainer: LANDING_CONTAINER,
   inputs: INPUT_VARIANTS,
-  TagInput: TAG_INPUT,
-  TextArea: TEXTAREA,
-  textareas: TEXTAREA_VARIANTS,
   typography: TYPOGRAPHY_VARIANTS,
 
   letterSpacings: {
