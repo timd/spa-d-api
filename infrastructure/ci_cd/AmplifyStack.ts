@@ -24,7 +24,7 @@ export class AmplifyStack extends Stack {
     return new GitHubSourceCodeProvider({
       owner: 'finleap',
       repository: 'divorcy-spa',
-      oauthToken: SecretValue.plainText(process.env.PROJECT_NAME || 'divorcy-spa'),
+      oauthToken: SecretValue.plainText(process.env.GITHUB_SECRET || ''),
     })
   }
 
