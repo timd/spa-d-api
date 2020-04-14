@@ -21,7 +21,7 @@ const PRIMARY_COLORS = {
   'confirmation-message': '#5D637A',
   success: '#58a87b',
   transparent: 'transparent',
-  white: '#FFFFFF'
+  white: '#FFFFFF',
 }
 
 const COLOR_DERIVATIONS = {
@@ -109,7 +109,7 @@ const BUTTON_VARIANTS = {
     'white-space': 'nowrap',
     width: 'fit-content',
     ':hover': {
-      'background-color': COLORS['brand-secondary-hover']
+      'background-color': COLORS['brand-secondary-hover'],
     },
     ':disabled': {
       ':hover': {
@@ -324,6 +324,18 @@ const TYPOGRAPHY_VARIANTS = {
     'font-weight': `${fontWeights.regular}`,
     'font-size': '12px',
     'line-height': '16px',
+  },
+  textLogoDesktop: {
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '26px',
+    'line-height': '28px',
+  },
+  textLogoMobile: {
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '20px',
+    'line-height': '24px',
   },
 }
 

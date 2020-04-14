@@ -1,26 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, navigate } from '@reach/router'
-import { Flex, Space, Typography } from '@kogaio'
+import { Link } from '@reach/router'
+import { Box, Flex, Space, Hide, Typography } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
-import Box from '@ivoryio/kogaio/Responsive/Box'
+
+import { TextLogo } from '.'
 
 const Footer = () => (
   <Space px={{ xs: 4, md: 16 }} py={10} mx='auto'>
     <Container flexDirection={{ xs: 'column-reverse', md: 'row' }}>
       <Box width={{ xs: 1, md: 1 / 2 }}>
         <Flex flexDirection='column'>
-          <LandingLink
-            as='a'
-            display={{ xs: 'none', md: 'inherit' }}
-            fontSize={{ xs: 3, md: 4 }}
-            onClick={e => {
-              e.preventDefault()
-              navigate('/')
-            }}>
-            Divorcy
-          </LandingLink>
-          <Space mt={12}>
+          <Hide xs sm>
+            <TextLogo />
+          </Hide>
+          <Space mt={11}>
             <Flex justifyContent='space-between'>
               <MoreLink to='/imprint'>Imprint</MoreLink>
               <MoreLink to='/data-protection'>Data Protection</MoreLink>
@@ -33,10 +27,10 @@ const Footer = () => (
         <Flex flexDirection='column' textAlign={{ xs: 'center', md: 'right' }}>
           <Typography variant='sh3'>Contact</Typography>
           <Space pt={4}>
-            <Typography variant='body'>support@divorcy.org</Typography>
+            <Typography variant='caption'>support@divorcy.org</Typography>
           </Space>
           <Space pt={4}>
-            <Typography variant='body'>Hardenbergstraße 32, 10623 Berlin</Typography>
+            <Typography variant='caption'>Hardenbergstraße 32, 10623 Berlin</Typography>
           </Space>
         </Flex>
       </Box>
