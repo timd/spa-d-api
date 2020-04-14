@@ -1,0 +1,76 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { Formik, Form } from 'formik'
+import { Button, Flex, Space, Typography } from '@kogaio'
+
+import { ValidatedInput } from '@shared-utils/components'
+import { emailFormat } from '@shared-utils/funcs'
+
+const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
+  const submitForm = async (formValues, actions) => {
+    const { setStatus, setSubmitting } = actions
+    try {
+      const { email } = formValues
+      setStatus(null)
+      const response = await requestSubscribe(email)
+      if (response.success) {
+        //To discuss (we can show a modal with success message)
+      } else if (response.error) {
+        setSubmitting(false)
+        handleCreateError(response.error)
+      }
+    } catch (err) {
+      setSubmitting(false)
+      console.error('* Unexpected error caught while subscribing with email', err)
+    }
+  }
+
+  const handleCreateError = err => {
+    console.error('* Error caught while subscribing with email', err)
+  }
+
+  return (
+    <Formik
+      initialValues={{
+        email: '',
+      }}
+      onSubmit={submitForm}>
+      {({ handleSubmit, isSubmitting, status }) => (
+        <FullWidthForm onSubmit={handleSubmit} noValidate>
+          <Typography color='error' variant='caption'>
+            {status}
+          </Typography>
+          <Flex justifyContent='flex-end' flexWrap={{ xs: 'wrap', md: 'nowrap' }}>
+            <ValidatedInput
+              containerStyle={{
+                maxWidth: { md: '311px' },
+                width: { xs: 1, md: 'calc(100% - 148px)' },
+              }}
+              id='subscribe-email'
+              icLeft='email'
+              name='email'
+              placeholder='Email address'
+              required
+              validate={[emailFormat]}
+            />
+            <Space ml={{ xs: 'auto', md: 2 }} mr={{ xs: 'auto', md: 0 }}>
+              <Button disabled={isSubmitting} variant='secondary' title='Subscribe' type='submit' />
+            </Space>
+          </Flex>
+        </FullWidthForm>
+      )}
+    </Formik>
+  )
+}
+
+const FullWidthForm = styled(Form)`
+  width: 100%;
+`
+
+SubscribeForm.propTypes = {
+  isSubscribing: PropTypes.bool,
+  requestSubscribe: PropTypes.func,
+}
+
+export default SubscribeForm

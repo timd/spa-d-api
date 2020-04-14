@@ -6,15 +6,11 @@ const PRIMARY_COLORS = {
   active: '#79B738',
   black: '#000000',
   brand: '#363DA0',
-  'brand-hover': '#4C3068',
-  'brand-secondary-hover': '#7E6B92',
+  'brand-hover': '#292F7A',
   'dark-grey': '#3C3C3C',
   'feature-bg': '#E1F2F2',
   'brand-secondary': '#93E7ED',
   'brand-tertiary': '#F4B2A7',
-  'collapsible-bg': '#EFECEF',
-  'collapsible-border': '#DDDAE0',
-  description: '#a1a4b1',
   error: '#D00000',
   gunmetal: '#232735',
   'input-bg': '#F3F6F9',
@@ -41,14 +37,14 @@ const COLOR_DERIVATIONS = {
   brand25: hexToRgbA(PRIMARY_COLORS.brand, 0.25),
   brand35: hexToRgbA(PRIMARY_COLORS.brand, 0.35),
   brand50: hexToRgbA(PRIMARY_COLORS.brand, 0.5),
-  'brand-secondary35': hexToRgbA(PRIMARY_COLORS['brand-secondary'], 0.35),
+  'brand-secondary-disabled': hexToRgbA(PRIMARY_COLORS['brand-secondary'], 0.2),
+  'brand-secondary-hover': hexToRgbA(PRIMARY_COLORS['brand-secondary'], 0.7),
   'brand-tertiary25': hexToRgbA(PRIMARY_COLORS['brand-tertiary'], 0.25),
   error03: hexToRgbA(PRIMARY_COLORS.error, 0.03),
   'dark-grey40': hexToRgbA(PRIMARY_COLORS['dark-grey'], 0.4),
   'dark-grey60': hexToRgbA(PRIMARY_COLORS['dark-grey'], 0.6),
   'modal-white70': hexToRgbA(PRIMARY_COLORS.white, 0.7),
   'modal-white90': hexToRgbA(PRIMARY_COLORS.white, 0.9),
-
   'brand07-opaque': '#f1f0f3', // '#f0eff2'
 }
 
@@ -106,6 +102,23 @@ const BUTTON_VARIANTS = {
     ':disabled': {
       ':hover': {
         'background-color': colors['brand-disabled'],
+      },
+    },
+  },
+  secondary: {
+    'background-color': COLORS['brand-secondary'],
+    'border-radius': `${radii[2]}px`,
+    'font-family': FONTS.complementary,
+    height: '40px',
+    'min-width': '140px',
+    'white-space': 'nowrap',
+    width: 'fit-content',
+    ':hover': {
+      'background-color': COLORS['brand-secondary-hover']
+    },
+    ':disabled': {
+      ':hover': {
+        'background-color': COLOR_DERIVATIONS['brand-secondary-disabled'],
       },
     },
   },
@@ -289,7 +302,7 @@ const INPUT_VARIANTS = {
     },
   },
   error: {
-    'background-color': COLORS.error03,
+    'background-color': COLORS.white,
     border: `${borders[1]} ${COLORS.error}`,
     'box-shadow': shadows['input-basic'],
     color: COLORS.error,

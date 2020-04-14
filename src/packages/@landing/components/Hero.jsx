@@ -18,7 +18,7 @@ const Hero = props => (
         </Typography>
       </Space>
       <Space mt={8} mx='auto'>
-        <Button onClick=''>Get started</Button>
+        <Button onClick={() => {}}>Get started</Button>
       </Space>
       <Space mt={4}>
         <Typography color='dark-grey' maxWidth='640px' variant='caption'>
