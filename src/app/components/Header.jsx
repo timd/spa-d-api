@@ -17,16 +17,17 @@ const Header = () => (
 
 const Container = styled(Flex)`
   align-items: center;
-  justify-content: space-between;
   width: 100%;
+  justify-content: space-between;
   ${themed('LandingContainer')};
 `
 
 const AboutUsLink = styled(Link)`
-  text-decoration: none;
   color: ${themeGet('colors.dark-grey')};
+  font-family: ${themeGet('fonts.complementary')};
   font-size: ${themeGet('fontSizes.1')};
   font-weight: ${themeGet('fontWeights.bold')};
+  text-decoration: none;
 `
 
 export default Header
