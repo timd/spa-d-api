@@ -10,7 +10,7 @@ import { TextLogo } from '.'
 import { withLocation } from 'app/services/navigation/withLocation'
 
 const Header = ({ location: { pathname } }) => (
-  <Space mx='auto' py={{ xs: 3, md: 6 }}>
+  <Space mx='auto' py={{ xs: 3, md: 4 }}>
     <Container pathname={pathname}>
       <TextLogo />
       {pathname === '/' && <AboutUsLink to='about-us'>About us</AboutUsLink>}

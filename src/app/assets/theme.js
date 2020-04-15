@@ -16,7 +16,8 @@ const PRIMARY_COLORS = {
   transparent: 'transparent',
   white: '#FFFFFF',
   headerShadow: '#D6D7DF',
-  touchableBg: '#F1F2FB'
+  touchableBg: '#F1F2FB',
+  questionnaireBg: '#F5F5F7'
 }
 
 const COLOR_DERIVATIONS = {

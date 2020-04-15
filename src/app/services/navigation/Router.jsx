@@ -3,7 +3,7 @@ import { Router } from '@reach/router'
 import { Flex, Space } from '@kogaio/Responsive'
 import styled from 'styled-components'
 
-import { Header, Footer } from 'app/components'
+import { Header } from 'app/components'
 import { Landing as LandingScreen, NotFound, QuestionnaireQuestions, QuestionnaireResults } from 'app/screens'
 
 const AppRouter = () => (
@@ -17,7 +17,6 @@ const AppRouter = () => (
         <QuestionnaireResults path='/questionnaire/results' />
         <NotFound default />
       </Router>
-      <Footer />
     </Wrapper>
   </Space>
 )
