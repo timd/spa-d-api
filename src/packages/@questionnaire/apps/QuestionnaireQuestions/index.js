@@ -1,18 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { Flex, Space } from '@kogaio'
 
-import { GetStarted } from './components'
+import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
+import { GetStarted, Questionnaire } from './components'
 
 const HEADER_HEIGHT_MD = 60
 
 const QuestionnaireQuestions = () => {
+  const { currentQuestionId } = useContext(QuestionnaireContext)
+
   const [acceptedConditions, setAcceptedConditions] = useState({
     policy: false,
     termsAndConditions: false,
   })
 
-  const handleAcceptedCondititionsChange = key => ev => {
+  const handleAcceptedCondititionsChange = key => () => {
     setAcceptedConditions(prevValue => ({
       ...prevValue,
       [key]: !prevValue[key],
@@ -26,7 +29,11 @@ const QuestionnaireQuestions = () => {
         bg={{ xs: 'white', md: 'questionnaireBg' }}
         height={{ md: `calc(100vh - ${HEADER_HEIGHT_MD}px)` }}>
         <Space mx={{ md: 4 }} mt={{ md: 10 }}>
-          <GetStarted acceptedConditions={acceptedConditions} toggleCheck={handleAcceptedCondititionsChange} />
+          {!currentQuestionId ? (
+            <GetStarted acceptedConditions={acceptedConditions} toggleCheck={handleAcceptedCondititionsChange} />
+          ) : (
+            <Questionnaire />
+          )}
         </Space>
       </Wrapper>
     </Space>

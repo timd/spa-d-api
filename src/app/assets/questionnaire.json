@@ -1,0 +1,18 @@
+{
+    "question-1": {
+        "title": "Where are you on your personal journey?",
+        "nextQuestionId": "question-2",
+        "progress": 0.33
+    },
+    "question-2": {
+        "title": "Whom have you consulted so far?",
+        "previousQuestionId": "question-1",
+        "nextQuestionId": "question-3",
+        "progress": 0.66
+    },
+    "question-3": {
+        "title": "How high is your monthly net income?",
+        "previousQuestionId": "question-2",
+        "progress": 1
+    }
+}
