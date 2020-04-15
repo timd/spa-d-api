@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { navigate } from '@reach/router'
 import { Button, Flex, Image, Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
 
@@ -18,7 +19,7 @@ const Hero = props => (
         </Typography>
       </Space>
       <Space mt={8} mx='auto'>
-        <Button width={1} onClick={() => {}}>
+        <Button width={1} onClick={() => navigate('/questionnaire')}>
           Get started
         </Button>
       </Space>

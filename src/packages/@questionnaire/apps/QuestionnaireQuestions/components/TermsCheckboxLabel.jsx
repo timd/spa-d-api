@@ -4,14 +4,14 @@ import styled from 'styled-components'
 import { Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
 
-const TermsCheckboxLabel = ({ prefix, suffix, anchorURL, anchorLabel }) => (
+const TermsCheckboxLabel = ({ anchorURL, anchorLabel }) => (
   <Space ml={2}>
     <Typography color='gunmetal' display='flex' fontSize={1}>
-      {prefix}&nbsp;
-      <Anchor href={anchorURL} rel='noopener noreferrer' target='_blank'>
+      I agree to the&nbsp;
+      <Anchor className='anchor-bold' href={anchorURL} rel='noopener noreferrer' target='_blank'>
         {anchorLabel}
       </Anchor>
-      &nbsp;{suffix}
+      &nbsp;of Divorcy
     </Typography>
   </Space>
 )
@@ -22,9 +22,7 @@ const Anchor = styled.a`
 
 TermsCheckboxLabel.propTypes = {
   anchorLabel: PropTypes.string,
-  anchorURL: PropTypes.string,
-  prefix: PropTypes.string,
-  suffix: PropTypes.string,
+  anchorURL: PropTypes.string
 }
 
 export default TermsCheckboxLabel
