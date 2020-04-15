@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 import Input from '@kogaio/Input'
 import { useField } from 'formik'
 
-import { InputSkeleton } from '../Skeletons'
 import { withFieldValidation } from './withFieldValidation'
 
-const ValidatedInput = ({ isInitializing, CustomLoading, ...props }) => {
+const ValidatedInput = ({ isInitializing, ...props }) => {
   const [field, { error, touched, ...meta }] = useField(props)
-  if (isInitializing) return CustomLoading ?? <InputSkeleton />
+  if (isInitializing) return null
 
   // Placeholder value to show on read only state
   if (!(props.value || field.value) && props.emptyReadOnlyPlaceholder && props.readOnly) {

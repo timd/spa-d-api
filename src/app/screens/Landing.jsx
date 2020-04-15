@@ -1,10 +1,4 @@
 import React from 'react'
-import { Flex, Typography } from '@kogaio'
+import Landing from '@landing/index'
 
-const Landing = () => (
-  <Flex>
-    <Typography>This is Divorcy landing screen</Typography>
-  </Flex>
-)
-
-export default Landing
+export default () => <Landing />
