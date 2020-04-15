@@ -5,6 +5,7 @@ import { Link } from '@reach/router'
 import { Flex, Space } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
 
+import { TouchableWithIcon } from '@shared-utils/components'
 import { TextLogo } from '.'
 import { withLocation } from 'app/services/navigation/withLocation'
 
@@ -12,13 +13,16 @@ const Header = ({ location: { pathname } }) => (
   <Space mx='auto' py={{ xs: 3, md: 6 }}>
     <Container pathname={pathname}>
       <TextLogo />
-      {!pathname.includes('questionnaire') && <AboutUsLink to='about-us'>About us</AboutUsLink>}
+      {pathname === '/' && <AboutUsLink to='about-us'>About us</AboutUsLink>}
+      {pathname.includes('results') && (
+        <TouchableWithIcon icon={{ name: 'save_alt', fontSize: '24px' }} label='Share' />
+      )}
     </Container>
   </Space>
 )
 
 const containerStyle = ({ pathname, ...props }) =>
-  pathname.includes('questionnaire')
+  pathname === '/questionnaire'
     ? css`
         box-shadow: 0px 1px 0px ${themeGet('colors.headerShadow')};
         justify-content: center;
