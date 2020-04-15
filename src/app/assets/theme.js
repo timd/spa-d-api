@@ -15,6 +15,7 @@ const PRIMARY_COLORS = {
   gunmetal: '#232735',
   transparent: 'transparent',
   white: '#FFFFFF',
+  headerShadow: '#D6D7DF'
 }
 
 const COLOR_DERIVATIONS = {
