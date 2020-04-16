@@ -12,14 +12,14 @@ const Content = ({ title, description, children, ...props }) => (
       bg='white'
       borderColor='headerShadow'
       borderWidth={{ xs: 0, md: 1 }}
-      borderStyle='solid'
-      borderRadius={4}
+      borderStyle={{ xs: 'none', md: 'solid' }}
+      borderRadius={{ xs: 0, md: 4 }}
       flexDirection='column'
       height='fit-content'
       width={1}
       maxWidth={{ md: `${QUESTIONNAIRE_CONTAINER_MAX_WIDTH}px` }}
-      position={{ md: 'relative' }}
-      overflow={{ md: 'hidden' }}
+      position='relative'
+      overflow={{ xs: 'inherit', md: 'hidden' }}
       {...props}>
       <Image alt='logo' src={logo} size={56} />
       <Space mt={6}>
