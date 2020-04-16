@@ -28,17 +28,20 @@ const GetStarted = ({
         <Checkbox
           checked={isPolicyAccepted}
           id='agree-policy'
-          label={<TermsCheckboxLabel anchorLabel='Privacy policy' anchorURL='https://google.com' />}
+          label={<TermsCheckboxLabel anchorLabel='Privacy policy' anchorURL='/privacy' />}
           onChange={toggleCheck('policy')}
         />
+      </Space>
+      <Space mt={2}>
         <Checkbox
           checked={areTermsAccepted}
           id='agree-terms'
-          label={<TermsCheckboxLabel anchorLabel='Terms And Conditions' anchorURL='https://yahoo.com' />}
+          label={<TermsCheckboxLabel anchorLabel='Terms And Conditions' anchorURL='/terms' />}
           onChange={toggleCheck('termsAndConditions')}
         />
       </Space>
-      <Space mt={6}>
+
+      <Space mt={6} mx={{ xs: 'auto', md: -1 }}>
         <Button
           disabled={!(isPolicyAccepted && areTermsAccepted)}
           onClick={_startQuestionnaire}
@@ -46,7 +49,7 @@ const GetStarted = ({
           width={{ xs: 1, md: 'fit-content' }}
         />
       </Space>
-      <Space mt={4}>
+      <Space mt={4} mx={{ xs: 'auto', md: -1 }}>
         <Typography color='dark-grey' maxWidth='311px' variant='caption' textAlign={{ xs: 'center', md: 'left' }}>
           * We use all information very discretely
         </Typography>

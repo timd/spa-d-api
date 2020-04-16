@@ -6,7 +6,7 @@ import { themed } from '@kogaio/utils'
 
 const TermsCheckboxLabel = ({ anchorURL, anchorLabel }) => (
   <Space ml={2}>
-    <Typography color='gunmetal' display='flex' fontSize={1}>
+    <Typography variant='body' color='dark-grey' fontSize={1}>
       I agree to the&nbsp;
       <Anchor className='anchor-bold' href={anchorURL} rel='noopener noreferrer' target='_blank'>
         {anchorLabel}
@@ -22,7 +22,7 @@ const Anchor = styled.a`
 
 TermsCheckboxLabel.propTypes = {
   anchorLabel: PropTypes.string,
-  anchorURL: PropTypes.string
+  anchorURL: PropTypes.string,
 }
 
 export default TermsCheckboxLabel
