@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Button, Checkbox, Space, Typography } from '@kogaio'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
-import { Content, TermsCheckboxLabel } from '.'
+import { Content, ProgressBar, TermsCheckboxLabel } from '.'
 import { questionnaireItemsObj } from '../assets'
 
 const GetStarted = ({
@@ -12,17 +12,18 @@ const GetStarted = ({
   ...props
 }) => {
   const { setCurrentQuestionId } = useContext(QuestionnaireContext)
-  
+
   const _startQuestionnaire = () => {
     const [firstQuestionId] = Object.keys(questionnaireItemsObj)
     setCurrentQuestionId(firstQuestionId)
   }
 
-  return(
+  return (
     <Content
       title={GetStartedTitle}
       description="We're gonna ask some basic questions and it probably takes about 5 minutes."
       {...props}>
+      <ProgressBar progress='8px' />
       <Space mt={6}>
         <Checkbox
           checked={isPolicyAccepted}

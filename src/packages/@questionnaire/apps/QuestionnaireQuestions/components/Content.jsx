@@ -18,6 +18,8 @@ const Content = ({ title, description, children, ...props }) => (
       height='fit-content'
       width={1}
       maxWidth={{ md: `${QUESTIONNAIRE_CONTAINER_MAX_WIDTH}px` }}
+      position={{ md: 'relative' }}
+      overflow={{ md: 'hidden' }}
       {...props}>
       <Image alt='logo' src={logo} size={56} />
       <Space mt={6}>
@@ -25,7 +27,9 @@ const Content = ({ title, description, children, ...props }) => (
       </Space>
       {description ? (
         <Space mt={2}>
-          <Typography color='dark-grey' variant='body'>{description}</Typography>
+          <Typography color='dark-grey' variant='body'>
+            {description}
+          </Typography>
         </Space>
       ) : null}
       {children}

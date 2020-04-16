@@ -4,7 +4,7 @@ import { navigate } from '@reach/router'
 import { TouchableWithIcon } from '@shared-utils/components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
-import { Content } from '.'
+import { ProgressBar, Content } from '.'
 import { questionnaireItemsObj } from '../assets'
 
 const Questionnaire = props => {
@@ -20,6 +20,7 @@ const Questionnaire = props => {
 
   return (
     <Content title={item.title} {...props}>
+      <ProgressBar progress={item.progress} />
       <Space mt={8}>
         <Flex justifyContent='space-between'>
           {item.previousQuestionId ? (
