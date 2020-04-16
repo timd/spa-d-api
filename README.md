@@ -62,6 +62,60 @@ To run the unit test, run the following command from the root directoy of the pr
 $ yarn test
 ```
 
+## Questionnaire setup
+
+The list of questions that appear in the questionnair is stored inside the `app` folder:
+
+```
+./src/app/assets/questionnaire.json
+```
+
+and it has the following structure:
+
+```
+{
+    "question-1": {
+        "title": "Where are you on your personal journey?",
+        "nextQuestionId": "question-2",
+        "progress": 0.2
+    },
+    "question-2": {
+        "title": "Whom have you consulted so far?",
+        "previousQuestionId": "question-1",
+        "nextQuestionId": "question-3",
+        "progress": 0.4
+    },
+    "question-3": {
+        "title": "How high is your monthly net income?",
+        "previousQuestionId": "question-2",
+        "nextQuestionId": "question-4",
+        "progress": 0.6
+    },
+    "question-4": {
+        "title": "How high are you joined assets?",
+        "previousQuestionId": "question-3",
+        "nextQuestionId": "question-5",
+        "progress": 0.8
+    },
+    "question-5": {
+        "title": "Do you have kid(s) with your spouse?",
+        "previousQuestionId": "question-4",
+        "progress": 1
+    }
+}
+```
+
+### Structure
+
+The `root` object represents a map between a list of `uniq ids` and the associated `questionnaire items`.
+
+A `questionnaire item` is composed from:
+
+- `title`: `string` value that represents the title.
+- `previousQuestionId`: Optional `string` value that points to the `id` of an item in the `root` object. It is used for the back navigation. Omit this field if you want to mark a field from which the user can not change her mind (for example the first item in the questionnaire).
+- `nextQuestionId`: Optional `string` value that points to the `id` of an item in the `root` object. It is used for the questionnaire navigation. Omit this field in the last questionnair item.
+- `progress`: `number` value between `0` and `1`. It represents the progress the user has made in the questionnair. Last item in the questionnair should always have it set to `1`.
+
 ## Architecture and Design
 
 When implementing new features it is important to keep the [conceptual integrity](https://architecture.typepad.com/architecture_blog/2011/10/the-importance-of-conceptual-integrity.html) of the service by applying the: [TDD](https://en.wikipedia.org/wiki/Test-driven_development), [SOLID](https://en.wikipedia.org/wiki/SOLID), practices and following the [Clean Code](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29) philosophy.

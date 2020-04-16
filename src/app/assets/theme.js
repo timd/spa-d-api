@@ -15,6 +15,9 @@ const PRIMARY_COLORS = {
   gunmetal: '#232735',
   transparent: 'transparent',
   white: '#FFFFFF',
+  headerShadow: '#D6D7DF',
+  touchableBg: '#F1F2FB',
+  questionnaireBg: '#F5F5F7'
 }
 
 const COLOR_DERIVATIONS = {
@@ -249,9 +252,34 @@ const TYPOGRAPHY_VARIANTS = {
     'font-size': '20px',
     'line-height': '24px',
   },
+  questionnaireTitle: {
+    color: COLORS['dark-grey'],
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '22px',
+    'line-height': '32px'
+  }
+}
+
+const ANCHOR = {
+  color: COLORS['brand-secondary'],
+  'font-family': FONTS.complementary,
+  '.anchor-bold': {
+    'font-weight': `${fontWeights.bold}`,
+    ':hover': {
+      'font-weight': `${fontWeights.bold}`
+    }
+  },
+  ':hover': {
+    color: COLORS['brand-secondary-hover']
+  },
+  ':active': {
+    color: COLORS['brand-secondary-hover']
+  }
 }
 
 const theme = Object.seal({
+  Anchor: ANCHOR,
   buttons: BUTTON_VARIANTS,
   cards: CARD_VARIANTS,
   colors: COLORS,

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { navigate } from '@reach/router'
 import { Box, Button, Flex, Hide, Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
 
@@ -30,7 +31,7 @@ const Features = () => (
       </Space>
       <Hide md lg>
         <Space mt={6}>
-          <Button variant='outline' title='Get Started' onClick={() => {}} width={1} />
+          <Button variant='outline' title='Get Started' onClick={() => navigate('/questionnaire')} width={1} />
         </Space>
       </Hide>
     </Flex>

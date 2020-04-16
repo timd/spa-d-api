@@ -6,11 +6,14 @@ import Router from './services/navigation/Router'
 import { GlobalStyle } from 'assets/GlobalStyle'
 
 import appTheme from 'assets/theme'
+import QuestionnaireProvider from './services/QuestionnaireProvider'
 
 const Root = () => (
   <ThemeProvider theme={buildTheme(appTheme)}>
-    <GlobalStyle />
-    <Router />
+    <QuestionnaireProvider>
+      <GlobalStyle />
+      <Router />
+    </QuestionnaireProvider>
   </ThemeProvider>
 )
 
