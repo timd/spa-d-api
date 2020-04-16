@@ -2,17 +2,53 @@
     "question-1": {
         "title": "Where are you on your personal journey?",
         "nextQuestionId": "question-2",
-        "progress": 0.33
+        "progress": 0.1
     },
     "question-2": {
         "title": "Whom have you consulted so far?",
         "previousQuestionId": "question-1",
         "nextQuestionId": "question-3",
-        "progress": 0.66
+        "progress": 0.2
     },
     "question-3": {
         "title": "How high is your monthly net income?",
         "previousQuestionId": "question-2",
+        "nextQuestionId": "question-4",
+        "progress": 0.3
+    },
+    "question-4": {
+        "title": "How high are you joined assets?",
+        "previousQuestionId": "question-3",
+        "nextQuestionId": "question-5",
+        "progress": 0.4
+    },
+    "question-5": {
+        "title": "Do you have kid(s) with your spouse?",
+        "previousQuestionId": "question-4",
+        "nextQuestionId": "question-6",
+        "progress": 0.5
+    },
+    "question-6": {
+        "title": "How many kid(s) do you have?",
+        "previousQuestionId": "question-5",
+        "nextQuestionId": "question-7",
+        "progress": 0.6
+    },
+    "question-7": {
+        "title": "How old is he/she?",
+        "previousQuestionId": "question-6",
+        "nextQuestionId": "question-8",
+        "progress": 0.7
+    },
+    "question-8": {
+        "title": "Are you their..",
+        "previousQuestionId": "question-7",
+        "nextQuestionId": "question-9",
+        "progress": 0.8
+    },
+    "question-9": {
+        "title": "Do you already have an idea, where the kids should live?",
+        "previousQuestionId": "question-8",
         "progress": 1
     }
 }
