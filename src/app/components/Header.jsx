@@ -15,7 +15,7 @@ const Header = ({ location: { pathname } }) => (
       <TextLogo />
       {pathname === '/' && <AboutUsLink to='about-us'>About us</AboutUsLink>}
       {pathname.includes('results') && (
-        <TouchableWithIcon icon={{ name: 'save_alt', fontSize: '24px' }} label='Share' />
+        <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label='Share' />
       )}
     </Container>
   </Space>
