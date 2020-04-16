@@ -24,7 +24,9 @@ const TouchableWithIcon = ({ icon: iconProps, label, onClick }) => (
 const Container = styled(Flex)`
   align-items: center;
   border-radius: ${themeGet('radii.4')}px;
-  :hover {
+  :hover,
+  :focus {
+    color: ${themeGet('colors.dark-grey')};
     background-color: ${themeGet('colors.touchableBg')};
   }
 `

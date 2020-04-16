@@ -28,7 +28,9 @@ const Questionnaire = props => {
               icon={{ name: 'keyboard_backspace', fontSize: '24px' }}
               label='Back'
             />
-          ) : null}
+          ) : (
+            <div></div>
+          )}
 
           {item.nextQuestionId ? (
             <Button onClick={showNextQuestion} title='Next' />
