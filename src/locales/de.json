@@ -2,5 +2,30 @@
   "Imprint": "Impressum",
   "Contact": "Kontakt",
   "Data Protection": "Datenschutzerklärung",
-  "Conditions": "Geschäftsbedingungen"
+  "Conditions": "Geschäftsbedingungen",
+  "About us": "Über uns",
+  "* We use all information very discretly": "* Alle Informationen werden diskret behandelt",
+  "hero": {
+    "title": "Divorcy hilft Dir, Deine Scheidung zu planen und die Kosten zu schätzen",
+    "subtitle": "Eine Scheidung ist echt ätzend. Divorcy hilft Dir, smarte und schnelle Entscheidungen zu treffen, sodass Du dich wieder auf Deine Zukunft konzentrieren kannst - und die Vergangenheit hinter Dir lässt"
+  },
+  "features": {
+    "understanding-card": {
+      "title": "Verstehen",
+      "description": "Der Grund Deiner Scheidung? Das ist nicht unsere Sache. Aber um Dir ein paar personalisierte Vorschläge zu machen, müssen wir Deine Situation verstehen, mit ein paar wenigen Klicks"
+    },
+    "calculating-card": {
+      "title": "Berechnen",
+      "description": "Geld ist leider das größte Thema. Mit ein paar Informationen können wir schätzen, welche Kosten einmalig auf Dich zukommen, und mit welchen Alimentezahlungen pro Monat du rechnen kannst"
+    },
+    "action-card": {
+      "title": "Handeln",
+      "description": "Bekomme Deine indivuduellen Resulate inklusive angepasste Ratschläge für die nächsten Schritte"
+    }
+  },
+  "questoinnaire": {
+    "question-1": {
+      "title": "Wo befindest Du Dich in Deinem Scheidungsprozess?"
+    }
+  }
 }
