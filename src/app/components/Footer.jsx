@@ -6,37 +6,42 @@ import { themed, themeGet } from '@kogaio/utils'
 
 import { TextLogo } from '.'
 
-const Footer = () => (
-  <Space px={{ xs: 4, md: 16 }} py={10} mx='auto'>
-    <Container flexDirection={{ xs: 'column-reverse', md: 'row' }}>
-      <Box width={{ xs: 1, md: 1 / 2 }}>
-        <Flex flexDirection='column'>
-          <Hide xs sm>
-            <TextLogo />
-          </Hide>
-          <Space mt={11}>
-            <Flex justifyContent='space-between'>
-              <MoreLink to='/imprint'>Imprint</MoreLink>
-              <MoreLink to='/data-protection'>Data Protection</MoreLink>
-              <MoreLink to='/conditions'>Conditions</MoreLink>
-            </Flex>
-          </Space>
-        </Flex>
-      </Box>
-      <Box width={{ xs: 1, md: 1 / 2 }}>
-        <Flex flexDirection='column' textAlign={{ xs: 'center', md: 'right' }}>
-          <Typography variant='sh3'>Contact</Typography>
-          <Space pt={4}>
-            <Typography variant='caption'>support@divorcy.org</Typography>
-          </Space>
-          <Space pt={4}>
-            <Typography variant='caption'>Hardenbergstraße 32, 10623 Berlin</Typography>
-          </Space>
-        </Flex>
-      </Box>
-    </Container>
-  </Space>
-)
+import { useTranslation } from 'react-i18next'
+
+const Footer = () => {
+  const { t } = useTranslation()
+  return (
+    <Space px={{ xs: 4, md: 16 }} py={10} mx='auto'>
+      <Container flexDirection={{ xs: 'column-reverse', md: 'row' }}>
+        <Box width={{ xs: 1, md: 1 / 2 }}>
+          <Flex flexDirection='column'>
+            <Hide xs sm>
+              <TextLogo />
+            </Hide>
+            <Space mt={11}>
+              <Flex justifyContent='space-between'>
+                <MoreLink to='/imprint'>{t('Imprint')}</MoreLink>
+                <MoreLink to='/data-protection'>{t('Data Protection')}</MoreLink>
+                <MoreLink to='/conditions'>{t('Conditions')}</MoreLink>
+              </Flex>
+            </Space>
+          </Flex>
+        </Box>
+        <Box width={{ xs: 1, md: 1 / 2 }}>
+          <Flex flexDirection='column' textAlign={{ xs: 'center', md: 'right' }}>
+            <Typography variant='sh3'>{t('Contact')}</Typography>
+            <Space pt={4}>
+              <Typography variant='caption'>support@divorcy.org</Typography>
+            </Space>
+            <Space pt={4}>
+              <Typography variant='caption'>Hardenbergstraße 32, 10623 Berlin</Typography>
+            </Space>
+          </Flex>
+        </Box>
+      </Container>
+    </Space>
+  )
+}
 
 const Container = styled(Flex)`
   width: 100%;
