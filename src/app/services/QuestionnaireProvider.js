@@ -10,7 +10,7 @@ const QuestionnaireProvider = ({ children }) => {
     <QuestionnaireContext.Provider
       value={{
         currentQuestionId,
-        setCurrentQuestionId
+        setCurrentQuestionId,
       }}>
       {children}
     </QuestionnaireContext.Provider>

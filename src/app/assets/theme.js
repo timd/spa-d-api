@@ -17,7 +17,7 @@ const PRIMARY_COLORS = {
   white: '#FFFFFF',
   headerShadow: '#D6D7DF',
   touchableBg: '#F1F2FB',
-  questionnaireBg: '#F5F5F7'
+  questionnaireBg: '#F5F5F7',
 }
 
 const COLOR_DERIVATIONS = {
@@ -178,7 +178,7 @@ const INPUT_VARIANTS = {
     '&[type=number]': {
       '-moz-appearance': 'textfield',
     },
-  }
+  },
 }
 
 const LANDING_CONTAINER = {
@@ -257,29 +257,49 @@ const TYPOGRAPHY_VARIANTS = {
     'font-family': FONTS.primary,
     'font-weight': `${fontWeights.bold}`,
     'font-size': '22px',
-    'line-height': '32px'
-  }
+    'line-height': '32px',
+  },
 }
 
 const ANCHOR = {
   color: COLORS['brand-secondary'],
   'font-family': FONTS.complementary,
-  '.anchor-bold': {
+  '&.anchor-bold': {
     'font-weight': `${fontWeights.bold}`,
     ':hover': {
-      'font-weight': `${fontWeights.bold}`
-    }
+      'font-weight': `${fontWeights.bold}`,
+    },
   },
   ':hover': {
-    color: COLORS['brand-secondary-hover']
+    color: COLORS['brand-secondary-hover'],
   },
   ':active': {
-    color: COLORS['brand-secondary-hover']
-  }
+    color: COLORS['brand-secondary-hover'],
+  },
+}
+
+const QUESTIONNAIRE_OPTION = {
+  'min-height': '50px',
+  'align-items': 'center',
+  border: `1px solid ${COLORS['headerShadow']}`,
+  'border-radius': `${radii[4]}px`,
+  'box-sizing': 'border-box',
+  color: COLORS['dark-grey'],
+  'flex-direction': 'row',
+  'font-weight': `${fontWeights.regular}`,
+  'justify-content': 'space-between',
+  '&.selected': {
+    'background-color': COLORS['touchableBg'],
+    '& *': {
+      color: COLORS['brand'],
+      'font-weight': `${fontWeights.bold}`,
+    },
+  },
 }
 
 const theme = Object.seal({
   Anchor: ANCHOR,
+  QuestionnaireOption: QUESTIONNAIRE_OPTION,
   buttons: BUTTON_VARIANTS,
   cards: CARD_VARIANTS,
   colors: COLORS,
