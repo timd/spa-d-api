@@ -6,15 +6,15 @@ import { themed } from '@kogaio/utils'
 
 import { icons } from '../assets'
 
-const AnswerTouchable = ({ title, isSelected, onClick, ...props }) => (
+const MoreTouchable = ({ title, onClick, ...props }) => (
   <Touchable effect='opacity' onClick={onClick}>
-    <Space pl={4} pr={isSelected ? 2 : 4} py={3}>
-      <Container {...props} className={isSelected ? 'selected' : ''}>
+    <Space px={4} py={3}>
+      <Container {...props}>
         <Typography variant='body' textAlign='left'>
           {title}
         </Typography>
-        <Space ml={isSelected ? 2 : 0}>
-          <Image display={isSelected ? 'block' : 'none'} src={icons.check} />
+        <Space ml={2}>
+          <Image src={icons.more} />
         </Space>
       </Container>
     </Space>
@@ -25,10 +25,9 @@ const Container = styled(Flex)`
   ${themed('QuestionnaireOption')};
 `
 
-AnswerTouchable.propTypes = {
+MoreTouchable.propTypes = {
   title: PropTypes.string,
   onClick: PropTypes.func,
-  isSelected: PropTypes.bool,
 }
 
-export default AnswerTouchable
+export default MoreTouchable

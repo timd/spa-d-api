@@ -5,7 +5,7 @@ import { TouchableWithIcon } from '@shared-utils/components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { questionnaireItemsObj } from '../assets'
-import { AnswerTouchable, ProgressBar, Content } from '.'
+import { AnswerTouchable, Content, MoreTouchable, ProgressBar } from '.'
 
 const Questionnaire = props => {
   const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionnaireContext)
@@ -23,8 +23,15 @@ const Questionnaire = props => {
   return (
     <Content title={item.title} {...props}>
       <ProgressBar progress={item.progress} />
-      <Space mt={8}>
-        <AnswerTouchable isSelected={isSelected} onClick={() => setIsSelected(!isSelected)}></AnswerTouchable>
+      <Space mt={2}>
+        <AnswerTouchable
+          title='I am in the middle of my divorce and waiting for the court to rule'
+          isSelected={isSelected}
+          onClick={() => setIsSelected(!isSelected)}
+        />
+      </Space>
+      <Space mt={2}>
+        <MoreTouchable title='Others' />
       </Space>
       <Space mt={8}>
         <Flex justifyContent='space-between'>

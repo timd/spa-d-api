@@ -284,10 +284,12 @@ const QUESTIONNAIRE_OPTION = {
   border: `1px solid ${COLORS['headerShadow']}`,
   'border-radius': `${radii[4]}px`,
   'box-sizing': 'border-box',
-  color: COLORS['dark-grey'],
   'flex-direction': 'row',
   'font-weight': `${fontWeights.regular}`,
   'justify-content': 'space-between',
+  '&, & *': {
+    color: COLORS['dark-grey'],
+  },
   '&.selected': {
     'background-color': COLORS['touchableBg'],
     '& *': {
