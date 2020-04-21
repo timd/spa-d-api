@@ -22,22 +22,18 @@ const Questionnaire = props => {
     <Content title={item.title} {...props}>
       <ProgressBar progress={item.progress} />
       <Space mt={8}>
-        <Flex justifyContent='space-between'>
-          {item.previousQuestionId ? (
+        <Flex justifyContent={item.previousQuestionId ? 'space-between' : 'flex-end'}>
+          {item.previousQuestionId && (
             <TouchableWithIcon
               onClick={showPrevQuestion}
               icon={{ name: 'keyboard_backspace', fontSize: '24px' }}
               label='Back'
             />
-          ) : (
-            <div></div>
           )}
-
-          {item.nextQuestionId ? (
-            <Button onClick={showNextQuestion} title='Next' />
-          ) : (
-            <Button onClick={showResults} title='Submit' />
-          )}
+          <Button
+            onClick={item.nextQuestionId ? showNextQuestion : showResults}
+            title={item.nextQuestionId ? 'Next' : 'Submit'}
+          />
         </Flex>
       </Space>
     </Content>
