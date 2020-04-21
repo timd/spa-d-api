@@ -29,7 +29,6 @@ const containerStyle = ({ pathname, ...props }) =>
         margin-left: -${themeGet('space.4')}px;
         padding-left: ${themeGet('space.4')}px;
         padding-right: ${themeGet('space.4')}px;
-        // 32 comes for horizontal padding from router wrapper
         width: calc(100% + 32px);
       `
     : themed('LandingContainer')
