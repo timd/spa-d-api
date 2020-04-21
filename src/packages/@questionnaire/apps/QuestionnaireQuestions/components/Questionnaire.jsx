@@ -10,7 +10,8 @@ import { useTranslation } from 'react-i18next'
 const Questionnaire = props => {
   const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionnaireContext)
   const item = questionnaireItemsObj[currentQuestionId]
-  const { t } = useTranslation()
+  const { i18n } = useTranslation()
+  const lang = i18n.language
   const showNextQuestion = () => setCurrentQuestionId(item.nextQuestionId)
   const showPrevQuestion = () => setCurrentQuestionId(item.previousQuestionId)
   const showResults = () => {
@@ -19,7 +20,7 @@ const Questionnaire = props => {
   }
 
   return (
-    <Content title={t(`questoinnaire.${currentQuestionId}.title`)} {...props}>
+    <Content title={item.title[lang]} {...props}>
       <ProgressBar progress={item.progress} />
       <Space mt={8}>
         <Flex justifyContent='space-between'>
