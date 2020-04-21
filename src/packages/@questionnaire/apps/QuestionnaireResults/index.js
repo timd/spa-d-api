@@ -1,9 +1,11 @@
 import React from 'react'
-import { Flex, Typography } from '@kogaio'
+import { Flex } from '@kogaio/Responsive'
+
+import { DivorcyForecast } from './components'
 
 const QuestionnaireResults = () => (
   <Flex flexDirection='column' alignItems='center' width={1}>
-    <Typography variant='h3'>Questionnaire Results</Typography>
+    <DivorcyForecast />
   </Flex>
 )
 
