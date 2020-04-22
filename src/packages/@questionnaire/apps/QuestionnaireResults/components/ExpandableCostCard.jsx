@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import { Box, Card, Flex, Image, Space, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
-import { normalizeCamelCase } from '@shared-utils/funcs'
-import { DashedLine } from '.'
+import { DashedLine, DetailedCosts } from '.'
 
 const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, ...props }) => {
   const totalCost = Object.values(costs).reduce((counter, cost) => counter + cost, 0)
@@ -45,14 +44,7 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, ...props 
         <Space mt={6}>
           <DashedLine />
         </Space>
-        {Object.keys(costs).map((keyName, idx) => (
-          <Space key={keyName} mt={{ xs: idx === 0 ? 4 : 2, md: idx === 0 ? 6 : 2 }}>
-            <Flex justifyContent='space-between'>
-              <Typography color='dark-grey' variant='body'>{normalizeCamelCase(keyName)}</Typography>
-              <Typography color='dark-grey' variant='body'>{costs[keyName]}</Typography>
-            </Flex>
-          </Space>
-        ))}
+        <DetailedCosts costs={costs} />
       </Card>
     </Space>
   )

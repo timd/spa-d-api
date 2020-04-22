@@ -7,7 +7,7 @@ import { chargeTypes } from '../constants'
 
 const DivorcyForecast = ({ costs, ...props }) => (
   <Space pb={10} pt={{ xs: 8, md: 14 }}>
-    <Flex bg='brand' flexDirection='column' width='100vw'>
+    <Flex bg='brand' flexDirection='column' width='100vw' {...props}>
       <Typography color='white' variant={{ xs: 'h3', md: 'h2' }} textAlign='center'>
         Your divorcy forecast
       </Typography>
