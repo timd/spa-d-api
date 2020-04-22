@@ -1,17 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { navigate } from '@reach/router'
 import { Box, Button, Flex, Hide, Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
+import { withTranslation } from 'react-i18next'
 
 import { FeatureCard } from '.'
 import { features } from '../constants'
 
-const Features = () => (
+const Features = ({ t }) => (
   <Space mx={-4} px={2} py={10}>
     <Flex flexDirection='column' alignItems='center' bg='feature-bg40'>
       <Typography textAlign='center' color='dark-grey' variant={{ xs: 'h3', md: 'h2' }}>
-        Why Divorcy?
+        {t('Why Divorcy?')}
       </Typography>
       <Space mt={4}>
         <FeatureCardsWrapper>
@@ -42,5 +44,7 @@ const FeatureCardsWrapper = styled(Flex)`
   flex-wrap: wrap;
   ${themed('LandingContainer')};
 `
-
-export default Features
+Features.propTypes = {
+  t: PropTypes.func,
+}
+export default withTranslation()(Features)

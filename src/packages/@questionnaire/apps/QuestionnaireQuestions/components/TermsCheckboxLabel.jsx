@@ -1,17 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { withTranslation } from 'react-i18next'
 import { Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
 
-const TermsCheckboxLabel = ({ anchorURL, anchorLabel }) => (
+const TermsCheckboxLabel = ({ anchorURL, anchorLabel, t }) => (
   <Space ml={2}>
     <Typography variant='body' color='dark-grey' fontSize={1}>
-      I agree to the&nbsp;
+      {t('I agree to the')}&nbsp;
       <Anchor className='anchor-bold' href={anchorURL} rel='noopener noreferrer' target='_blank'>
         {anchorLabel}
       </Anchor>
-      &nbsp;of Divorcy
+      &nbsp;{t('of Divorcy')}
     </Typography>
   </Space>
 )
@@ -23,6 +24,7 @@ const Anchor = styled.a`
 TermsCheckboxLabel.propTypes = {
   anchorLabel: PropTypes.string,
   anchorURL: PropTypes.string,
+  t: PropTypes.func,
 }
 
-export default TermsCheckboxLabel
+export default withTranslation()(TermsCheckboxLabel)

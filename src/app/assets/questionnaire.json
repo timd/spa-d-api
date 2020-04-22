@@ -1,54 +1,81 @@
 {
-    "question-1": {
-        "title": "Where are you on your personal journey?",
-        "nextQuestionId": "question-2",
-        "progress": "10%"
+  "question-1": {
+    "title": {
+      "en": "Where are you on your personal journey?",
+      "de": "Wo befindest Du Dich in Deinem Scheidungsprozess?"
     },
-    "question-2": {
-        "title": "Whom have you consulted so far?",
-        "previousQuestionId": "question-1",
-        "nextQuestionId": "question-3",
-        "progress": "20%"
+    "nextQuestionId": "question-2",
+    "progress": "10%"
+  },
+  "question-2": {
+    "title": {
+      "en": "Whom have you consulted so far?",
+      "de": "Mit wem hast du bisher gesprochen?"
     },
-    "question-3": {
-        "title": "How high is your monthly net income?",
-        "previousQuestionId": "question-2",
-        "nextQuestionId": "question-4",
-        "progress": "30%"
+    "previousQuestionId": "question-1",
+    "nextQuestionId": "question-3",
+    "progress": "20%"
+  },
+  "question-3": {
+    "title": {
+      "en": "How high is your monthly net income?",
+      "de": "Wie hoch ist dein monatliches Nettoeinkommen?"
     },
-    "question-4": {
-        "title": "How high are you joined assets?",
-        "previousQuestionId": "question-3",
-        "nextQuestionId": "question-5",
-        "progress": "40%"
+    "previousQuestionId": "question-2",
+    "nextQuestionId": "question-4",
+    "progress": "30%"
+  },
+  "question-4": {
+    "title": {
+      "en": "How high are you joined assets?",
+      "de": "Wieviel sind eure geteilten Vermögenswerte?"
     },
-    "question-5": {
-        "title": "Do you have kid(s) with your spouse?",
-        "previousQuestionId": "question-4",
-        "nextQuestionId": "question-6",
-        "progress": "50%"
+    "previousQuestionId": "question-3",
+    "nextQuestionId": "question-5",
+    "progress": "40%"
+  },
+  "question-5": {
+    "title": {
+      "en": "Do you have kid(s) with your spouse?",
+      "de": "Hast du mit Deinem Partner Kinder??"
     },
-    "question-6": {
-        "title": "How many kid(s) do you have?",
-        "previousQuestionId": "question-5",
-        "nextQuestionId": "question-7",
-        "progress": "60%"
+    "previousQuestionId": "question-4",
+    "nextQuestionId": "question-6",
+    "progress": "50%"
+  },
+  "question-6": {
+    "title": {
+      "en": "How many kid(s) do you have?",
+      "de": "Wieviele Kinder habt ihr?"
     },
-    "question-7": {
-        "title": "How old is he/she?",
-        "previousQuestionId": "question-6",
-        "nextQuestionId": "question-8",
-        "progress": "70%"
+    "previousQuestionId": "question-5",
+    "nextQuestionId": "question-7",
+    "progress": "60%"
+  },
+  "question-7": {
+    "title": {
+      "en": "How old is he/she?",
+      "de": "Wie alt ist er oder sie?"
     },
-    "question-8": {
-        "title": "Are you their..",
-        "previousQuestionId": "question-7",
-        "nextQuestionId": "question-9",
-        "progress": "80%"
+    "previousQuestionId": "question-6",
+    "nextQuestionId": "question-8",
+    "progress": "70%"
+  },
+  "question-8": {
+    "title": {
+      "en": "Are you their..",
+      "de": "Bist du ihr... ?"
     },
-    "question-9": {
-        "title": "Do you already have an idea, where the kids should live?",
-        "previousQuestionId": "question-8",
-        "progress": "100%"
-    }
+    "previousQuestionId": "question-7",
+    "nextQuestionId": "question-9",
+    "progress": "80%"
+  },
+  "question-9": {
+    "title": {
+      "en": "Do you already have an idea, where the kids should live?",
+      "de": "Habt ihr schon besprochen, bei wem die Kinder leben sollen?"
+    },
+    "previousQuestionId": "question-8",
+    "progress": "100%"
+  }
 }
