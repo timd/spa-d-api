@@ -5,7 +5,7 @@
       "de": "Wo befindest Du Dich in Deinem Scheidungsprozess?"
     },
     "nextQuestionId": "question-2",
-    "progress": 0.1
+    "progress": "10%"
   },
   "question-2": {
     "title": {
@@ -14,7 +14,7 @@
     },
     "previousQuestionId": "question-1",
     "nextQuestionId": "question-3",
-    "progress": 0.2
+    "progress": "20%"
   },
   "question-3": {
     "title": {
@@ -23,7 +23,7 @@
     },
     "previousQuestionId": "question-2",
     "nextQuestionId": "question-4",
-    "progress": 0.3
+    "progress": "30%"
   },
   "question-4": {
     "title": {
@@ -32,7 +32,7 @@
     },
     "previousQuestionId": "question-3",
     "nextQuestionId": "question-5",
-    "progress": 0.4
+    "progress": "40%"
   },
   "question-5": {
     "title": {
@@ -41,7 +41,7 @@
     },
     "previousQuestionId": "question-4",
     "nextQuestionId": "question-6",
-    "progress": 0.5
+    "progress": "50%"
   },
   "question-6": {
     "title": {
@@ -50,7 +50,7 @@
     },
     "previousQuestionId": "question-5",
     "nextQuestionId": "question-7",
-    "progress": 0.6
+    "progress": "60%"
   },
   "question-7": {
     "title": {
@@ -59,7 +59,7 @@
     },
     "previousQuestionId": "question-6",
     "nextQuestionId": "question-8",
-    "progress": 0.7
+    "progress": "70%"
   },
   "question-8": {
     "title": {
@@ -68,7 +68,7 @@
     },
     "previousQuestionId": "question-7",
     "nextQuestionId": "question-9",
-    "progress": 0.8
+    "progress": "80%"
   },
   "question-9": {
     "title": {
@@ -76,6 +76,6 @@
       "de": "Habt ihr schon besprochen, bei wem die Kinder leben sollen?"
     },
     "previousQuestionId": "question-8",
-    "progress": 1
+    "progress": "100%"
   }
 }
