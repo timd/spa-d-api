@@ -1,18 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Box, Flex, Space, Typography } from '@kogaio'
 import { themed } from '@kogaio/utils'
+import { withTranslation } from 'react-i18next'
 
 import { SubscribeForm } from '.'
 
-const Subscribe = () => (
+const Subscribe = ({ t }) => (
   <Space mx={-4}>
     <Flex flexDirection='column' alignItems='center' bg='brand'>
       <Space py={12} px={{ xs: 6, md: 16 }}>
         <Container width={1}>
           <Flex flexDirection='column' width={{ xs: 1, md: 1 / 2 }}>
             <Typography variant='h3' textAlign={{ xs: 'center', md: 'left' }} color='white' maxWidth={{ md: '340px' }}>
-              Subscribe to our insights
+              {t('subscribe.header')}
             </Typography>
             <Space mt={2}>
               <Typography
@@ -20,7 +22,7 @@ const Subscribe = () => (
                 textAlign={{ xs: 'center', md: 'left' }}
                 color='white'
                 maxWidth={{ md: '340px' }}>
-                It&apos;ll help you to understand whole process as well as save time & cost
+                {t('subscribe.description')}
               </Typography>
             </Space>
           </Flex>
@@ -40,5 +42,7 @@ const Container = styled(Flex)`
   flex-wrap: wrap;
   ${themed('LandingContainer')};
 `
-
-export default Subscribe
+Subscribe.propTypes = {
+  t: PropTypes.func,
+}
+export default withTranslation()(Subscribe)

@@ -114,7 +114,7 @@ A `questionnaire item` is composed from:
 - `title`: `string` value that represents the title.
 - `previousQuestionId`: Optional `string` value that points to the `id` of an item in the `root` object. It is used for the back navigation. Omit this field if you want to mark a field from which the user can not change her mind (for example the first item in the questionnaire).
 - `nextQuestionId`: Optional `string` value that points to the `id` of an item in the `root` object. It is used for the questionnaire navigation. Omit this field in the last questionnair item.
-- `progress`: `number` value between `0` and `1`. It represents the progress the user has made in the questionnair. Last item in the questionnair should always have it set to `1`.
+- `progress`: `string` value between `0%` and `100%`. It represents the progress the user has made in the questionnair. Last item in the questionnaire should always have it set to `100%`.
 
 ## Architecture and Design
 
