@@ -4,13 +4,16 @@ import PropTypes from 'prop-types'
 export const QuestionnaireContext = createContext()
 
 const QuestionnaireProvider = ({ children }) => {
-  const [currentQuestionId, setCurrentQuestionId] = useState()
+  const [questionnaireState, setQuestionnaireState] = useState({
+    currentQuestionId: null,
+    answers: {},
+  })
 
   return (
     <QuestionnaireContext.Provider
       value={{
-        currentQuestionId,
-        setCurrentQuestionId,
+        questionnaireState,
+        setQuestionnaireState,
       }}>
       {children}
     </QuestionnaireContext.Provider>

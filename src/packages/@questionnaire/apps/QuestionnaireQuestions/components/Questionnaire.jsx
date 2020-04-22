@@ -10,11 +10,10 @@ import { AnswerTouchable, Content, MoreTouchable, ProgressBar } from '.'
 import { withTranslation } from 'react-i18next'
 
 const Questionnaire = ({ i18n, ...props }) => {
-  const INITIAL_VISIBLE_ITEMS = 3
-  const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionnaireContext)
+  const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
   const [areAllOptionsVisible, setAllOptionsVisible] = useState(false)
 
-  const item = questionnaireItemsObj[currentQuestionId]
+  const item = questionnaireItemsObj[questionnaireState.currentQuestionId]
   const allOptions = item.options ?? []
   const lang = i18n.language
 
@@ -32,11 +31,22 @@ const Questionnaire = ({ i18n, ...props }) => {
     return false
   }
 
-  const showNextQuestion = () => setCurrentQuestionId(item.nextQuestionId)
-  const showPrevQuestion = () => setCurrentQuestionId(item.previousQuestionId)
+  const showNextQuestion = () => {
+    let newState = { ...questionnaireState }
+    newState.currentQuestionId = item.nextQuestionId
+    setQuestionnaireState(newState)
+  }
+  const showPrevQuestion = () => {
+    let newState = { ...questionnaireState }
+    newState.currentQuestionId = item.previousQuestionId
+    setQuestionnaireState(newState)
+  }
   const showResults = () => {
     navigate('/questionnaire/results')
-    setCurrentQuestionId(null)
+
+    let newState = { ...questionnaireState }
+    newState.currentQuestionId = null
+    setQuestionnaireState(newState)
   }
 
   return (
