@@ -9,7 +9,7 @@ const HEADER_HEIGHT_MD = 60
 
 const QuestionnaireQuestions = () => {
   const { currentQuestionId } = useContext(QuestionnaireContext)
-  
+
   const [acceptedConditions, setAcceptedConditions] = useState({
     policy: false,
     termsAndConditions: false,

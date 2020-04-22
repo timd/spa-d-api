@@ -11,9 +11,12 @@ import { withTranslation } from 'react-i18next'
 
 const Questionnaire = ({ i18n, ...props }) => {
   const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionnaireContext)
+  const [areAllOptionsVisible, setAllOptionsVisible] = useState(false)
+
   const item = questionnaireItemsObj[currentQuestionId]
+  const options = (areAllOptionsVisible ? item.options : item.options?.slice(0, 3)) ?? []
+
   const lang = i18n.language
-  const [isSelected, setIsSelected] = useState(false)
 
   const showNextQuestion = () => setCurrentQuestionId(item.nextQuestionId)
   const showPrevQuestion = () => setCurrentQuestionId(item.previousQuestionId)
@@ -27,21 +30,19 @@ const Questionnaire = ({ i18n, ...props }) => {
       <ProgressBar progress={item.progress} />
       <Space ml='auto' mt={10}>
         <Flex width={{ xs: 1, md: '400px' }} flexDirection='column' justifyContent='flex-end'>
+          {options.map(option => (
+            <Space key={option.id} mt={3}>
+              <AnswerTouchable title={option.title[lang]} isSelected={false} onClick={() => {}} />
+            </Space>
+          ))}
           <Space mt={3}>
-            <AnswerTouchable
-              title='Problems in my marriage'
-              isSelected={isSelected}
-              onClick={() => setIsSelected(!isSelected)}
+            <MoreTouchable
+              display={areAllOptionsVisible ? 'none' : 'inherit'}
+              title='Others'
+              onClick={() => {
+                setAllOptionsVisible(true)
+              }}
             />
-          </Space>
-          <Space mt={3}>
-            <AnswerTouchable title='Thinking about a divorce' isSelected={false} onClick={() => {}} />
-          </Space>
-          <Space mt={3}>
-            <AnswerTouchable title='I made the decision to get a divorce' isSelected={false} onClick={() => {}} />
-          </Space>
-          <Space mt={3}>
-            <MoreTouchable title='Others' />
           </Space>
         </Flex>
       </Space>
@@ -64,6 +65,8 @@ const Questionnaire = ({ i18n, ...props }) => {
   )
 }
 
-Questionnaire.propTypes = { i18n: PropTypes.object }
+Questionnaire.propTypes = {
+  i18n: PropTypes.object,
+}
 
 export default withTranslation()(Questionnaire)

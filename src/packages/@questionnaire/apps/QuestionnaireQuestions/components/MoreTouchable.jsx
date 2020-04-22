@@ -7,9 +7,9 @@ import { themed } from '@kogaio/utils'
 import { icons } from '../assets'
 
 const MoreTouchable = ({ title, onClick, ...props }) => (
-  <Touchable effect='opacity' onClick={onClick}>
+  <Touchable {...props} effect='opacity' onClick={onClick}>
     <Space px={4} py={3}>
-      <Container {...props}>
+      <Container width={1}>
         <Typography variant='body' textAlign='left'>
           {title}
         </Typography>
