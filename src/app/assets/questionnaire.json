@@ -63,6 +63,50 @@
       "en": "Whom have you consulted so far?",
       "de": "Mit wem hast du bisher gesprochen?"
     },
+    "options": [
+      {
+        "id": "option-2-1",
+        "title": {
+          "en": "Family & Friends",
+          "de": "[DE] Family & Friends"
+        }
+      },
+      {
+        "id": "option-2-2",
+        "title": {
+          "en": "Professional Counselor",
+          "de": "[DE] Professional Counselor"
+        }
+      },
+      {
+        "id": "option-2-3",
+        "title": {
+          "en": "Lawyer",
+          "de": "[DE] Lawyer"
+        }
+      },
+      {
+        "id": "option-2-4",
+        "title": {
+          "en": "Banker",
+          "de": "[DE] Banker"
+        }
+      },
+      {
+        "id": "option-2-5",
+        "title": {
+          "en": "Insurance",
+          "de": "[DE] We have separated already"
+        }
+      },
+      {
+        "id": "option-2-6",
+        "title": {
+          "en": "Pension",
+          "de": "[DE] Pension"
+        }
+      }
+    ],
     "previousQuestionId": "question-1",
     "nextQuestionId": "question-3",
     "progress": "20%"
@@ -90,6 +134,22 @@
       "en": "Do you have kid(s) with your spouse?",
       "de": "Hast du mit Deinem Partner Kinder??"
     },
+    "options": [
+      {
+        "id": "option-5-1",
+        "title": {
+          "en": "Yes",
+          "de": "[DE] Yes"
+        }
+      },
+      {
+        "id": "option-5-2",
+        "title": {
+          "en": "No",
+          "de": "[DE] No"
+        }
+      }
+    ],
     "previousQuestionId": "question-4",
     "nextQuestionId": "question-6",
     "progress": "50%"
@@ -99,6 +159,36 @@
       "en": "How many kid(s) do you have?",
       "de": "Wieviele Kinder habt ihr?"
     },
+    "options": [
+      {
+        "id": "option-6-1",
+        "title": {
+          "en": "1",
+          "de": "1"
+        }
+      },
+      {
+        "id": "option-6-2",
+        "title": {
+          "en": "2",
+          "de": "2"
+        }
+      },
+      {
+        "id": "option-6-3",
+        "title": {
+          "en": "3",
+          "de": "3"
+        }
+      },
+      {
+        "id": "option-6-4",
+        "title": {
+          "en": "More",
+          "de": "[DE] More"
+        }
+      }
+    ],
     "previousQuestionId": "question-5",
     "nextQuestionId": "question-7",
     "progress": "60%"
@@ -117,6 +207,22 @@
       "en": "Are you their..",
       "de": "Bist du ihr... ?"
     },
+    "options": [
+      {
+        "id": "option-8-1",
+        "title": {
+          "en": "Father",
+          "de": "[DE] Father"
+        }
+      },
+      {
+        "id": "option-8-2",
+        "title": {
+          "en": "Mother",
+          "de": "[DE] Mother"
+        }
+      }
+    ],
     "previousQuestionId": "question-7",
     "nextQuestionId": "question-9",
     "progress": "80%"
@@ -126,6 +232,29 @@
       "en": "Do you already have an idea, where the kids should live?",
       "de": "Habt ihr schon besprochen, bei wem die Kinder leben sollen?"
     },
+    "options": [
+      {
+        "id": "option-9-1",
+        "title": {
+          "en": "Father",
+          "de": "[DE] Father"
+        }
+      },
+      {
+        "id": "option-9-2",
+        "title": {
+          "en": "Mother",
+          "de": "[DE] Mother"
+        }
+      },
+      {
+        "id": "option-9-3",
+        "title": {
+          "en": "50/50",
+          "de": "[DE] 50/50"
+        }
+      }
+    ],
     "previousQuestionId": "question-8",
     "progress": "100%"
   }
