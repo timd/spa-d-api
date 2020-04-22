@@ -55,6 +55,7 @@
         }
       }
     ],
+    "initialOptionsCount": 3,
     "nextQuestionId": "question-2",
     "progress": "10%"
   },
@@ -107,6 +108,7 @@
         }
       }
     ],
+    "initialOptionsCount": 3,
     "previousQuestionId": "question-1",
     "nextQuestionId": "question-3",
     "progress": "20%"

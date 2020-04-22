@@ -10,13 +10,27 @@ import { AnswerTouchable, Content, MoreTouchable, ProgressBar } from '.'
 import { withTranslation } from 'react-i18next'
 
 const Questionnaire = ({ i18n, ...props }) => {
+  const INITIAL_VISIBLE_ITEMS = 3
   const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionnaireContext)
   const [areAllOptionsVisible, setAllOptionsVisible] = useState(false)
 
   const item = questionnaireItemsObj[currentQuestionId]
-  const options = (areAllOptionsVisible ? item.options : item.options?.slice(0, 3)) ?? []
-
+  const allOptions = item.options ?? []
   const lang = i18n.language
+
+  const visibleItems = () => {
+    if (item.initialOptionsCount) {
+      return areAllOptionsVisible ? allOptions : allOptions.slice(0, item.initialOptionsCount)
+    }
+
+    return allOptions
+  }
+  const shouldShowMoreButton = () => {
+    if (item.initialOptionsCount) {
+      return !areAllOptionsVisible && allOptions.length > item.initialOptionsCount
+    }
+    return false
+  }
 
   const showNextQuestion = () => setCurrentQuestionId(item.nextQuestionId)
   const showPrevQuestion = () => setCurrentQuestionId(item.previousQuestionId)
@@ -30,14 +44,14 @@ const Questionnaire = ({ i18n, ...props }) => {
       <ProgressBar progress={item.progress} />
       <Space ml='auto' mt={10}>
         <Flex width={{ xs: 1, md: '400px' }} flexDirection='column' justifyContent='flex-end'>
-          {options.map(option => (
+          {visibleItems().map(option => (
             <Space key={option.id} mt={3}>
               <AnswerTouchable title={option.title[lang]} isSelected={false} onClick={() => {}} />
             </Space>
           ))}
           <Space mt={3}>
             <MoreTouchable
-              display={areAllOptionsVisible ? 'none' : 'inherit'}
+              display={shouldShowMoreButton() ? 'inherit' : 'none'}
               title='Others'
               onClick={() => {
                 setAllOptionsVisible(true)
