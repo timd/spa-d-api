@@ -1,47 +1,26 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Formik, Form } from 'formik'
+
+import { Formik } from 'formik'
 import { Button, Flex, Space, Typography } from '@kogaio'
 
 import { ValidatedInput } from '@shared-utils/components'
 import { emailFormat } from '@shared-utils/funcs'
 
-const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
-  const submitForm = async (formValues, actions) => {
-    const { setStatus, setSubmitting } = actions
-    try {
-      const { email } = formValues
-      setStatus(null)
-      const response = await requestSubscribe(email)
-      if (response.success) {
-        //To discuss (we can show a modal with success message)
-      } else if (response.error) {
-        setSubmitting(false)
-        handleCreateError(response.error)
-      }
-    } catch (err) {
-      setSubmitting(false)
-      console.error('* Unexpected error caught while subscribing with email', err)
-    }
-  }
-
-  const handleCreateError = err => {
-    console.error('* Error caught while subscribing with email', err)
-  }
-
+const SubscribeForm = () => {
+  // eslint-disable-next-line no-undef
+  const mailChimpUrl = config.MAILCHIMP_URL
   return (
     <Formik
+      validateOnChange='true'
       initialValues={{
         email: '',
-      }}
-      onSubmit={submitForm}>
-      {({ handleSubmit, isSubmitting, status }) => (
-        <FullWidthForm onSubmit={handleSubmit} noValidate>
+      }}>
+      {({ status, errors, dirty }) => (
+        <FullWidthForm action={mailChimpUrl} method='POST' target='_blank' noValidate>
           <Typography color='error' variant='caption'>
             {status}
           </Typography>
-
           <Flex justifyContent='flex-end' flexWrap={{ xs: 'wrap', md: 'nowrap' }}>
             <ValidatedInput
               containerStyle={{
@@ -51,14 +30,14 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
               }}
               id='subscribe-email'
               icLeft='email'
-              name='email'
+              name='EMAIL'
               placeholder='Email address'
               required
               validate={[emailFormat]}
             />
             <Space ml={{ xs: 'auto', md: 2 }} mr={{ xs: 'auto', md: 0 }}>
               <Button
-                disabled={isSubmitting}
+                disabled={!dirty || (errors.EMAIL && errors.EMAIL.length > 0)}
                 variant='secondary'
                 title='Subscribe'
                 type='submit'
@@ -71,14 +50,7 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
     </Formik>
   )
 }
-
-const FullWidthForm = styled(Form)`
+const FullWidthForm = styled.form`
   width: 100%;
 `
-
-SubscribeForm.propTypes = {
-  isSubscribing: PropTypes.bool,
-  requestSubscribe: PropTypes.func,
-}
-
 export default SubscribeForm

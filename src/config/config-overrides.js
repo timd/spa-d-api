@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const { paths } = require('react-app-rewired')
+const webpack = require('webpack')
 
 module.exports = {
   webpack: function (config, env) {
@@ -11,6 +12,16 @@ module.exports = {
       assets: path.resolve(paths.appPath, `${paths.appSrc}/app/assets`),
       '@kogaio': path.resolve(paths.appPath, 'node_modules/@ivoryio/kogaio'),
     }
+    config.plugins = (config.plugins || []).concat([
+      new webpack.DefinePlugin({
+        'config.MAILCHIMP_URL':
+          env.MAILCHIMP_URL ||
+          JSON.stringify(
+            'https://finleap.us19.list-manage.com/subscribe/post?u=979577850ed7008dcd7b31f0d&amp;id=c79131ac6d'
+          ),
+      }),
+    ])
+
     return config
   },
   jest: function (config) {

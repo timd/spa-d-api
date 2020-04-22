@@ -46,7 +46,7 @@
       "yarn lint:js --fix"
     ],
     "*.{jsx,css}": [
-      "yarn lint:css --fix"
+      "yarn lint:css"
     ]
   },
   "config": {
