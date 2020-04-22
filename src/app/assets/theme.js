@@ -258,6 +258,11 @@ const TYPOGRAPHY_VARIANTS = {
     'font-weight': `${fontWeights.bold}`,
     'font-size': '22px',
     'line-height': '32px'
+  },
+  tooltip: {
+    'font-family': FONTS.complementary,
+    'font-size': '14px',
+    'line-height': '24px'
   }
 }
 
@@ -294,9 +299,7 @@ const theme = Object.seal({
     tracked: '0.05rem',
   },
   shadows: {
-    'card-simple': `0px 1px 4px ${COLORS.black25}`,
-    'card-highlight': `0px 3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
-    'text-editor': `0px -3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
+    'tooltip-white': `0px 4px 16px rgba(0, 0, 0, 0.3)`,
   },
   textStyles: {
     nowrap: {
