@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Flex, Image, Space, Typography } from '@kogaio'
+import { Box, Flex, Image, Space, Typography } from '@kogaio'
 
 import { logo } from '../assets'
 
@@ -23,11 +23,13 @@ const Content = ({ title, description, children, ...props }) => (
       {...props}>
       <Image alt='logo' src={logo} size={56} />
       <Space mt={6}>
-        <Typography variant='questionnaireTitle'>{title}</Typography>
+        <Typography width={{ xs: 1, md: '400px' }} variant='questionnaireTitle'>
+          {title}
+        </Typography>
       </Space>
       {description ? (
         <Space mt={2}>
-          <Typography color='dark-grey' variant='body'>
+          <Typography width={{ xs: 1, md: '400px' }} color='dark-grey' variant='body'>
             {description}
           </Typography>
         </Space>

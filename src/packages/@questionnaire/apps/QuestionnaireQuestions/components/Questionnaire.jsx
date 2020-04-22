@@ -25,15 +25,25 @@ const Questionnaire = ({ i18n, ...props }) => {
   return (
     <Content title={item.title[lang]} {...props}>
       <ProgressBar progress={item.progress} />
-      <Space mt={2}>
-        <AnswerTouchable
-          title='I am in the middle of my divorce and waiting for the court to rule'
-          isSelected={isSelected}
-          onClick={() => setIsSelected(!isSelected)}
-        />
-      </Space>
-      <Space mt={2}>
-        <MoreTouchable title='Others' />
+      <Space ml='auto' mt={10}>
+        <Flex width={{ xs: 1, md: '400px' }} flexDirection='column' justifyContent='flex-end'>
+          <Space mt={3}>
+            <AnswerTouchable
+              title='Problems in my marriage'
+              isSelected={isSelected}
+              onClick={() => setIsSelected(!isSelected)}
+            />
+          </Space>
+          <Space mt={3}>
+            <AnswerTouchable title='Thinking about a divorce' isSelected={false} onClick={() => {}} />
+          </Space>
+          <Space mt={3}>
+            <AnswerTouchable title='I made the decision to get a divorce' isSelected={false} onClick={() => {}} />
+          </Space>
+          <Space mt={3}>
+            <MoreTouchable title='Others' />
+          </Space>
+        </Flex>
       </Space>
       <Space mt={8}>
         <Flex justifyContent={item.previousQuestionId ? 'space-between' : 'flex-end'}>
