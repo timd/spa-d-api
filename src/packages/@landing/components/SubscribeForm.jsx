@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Formik, Form } from 'formik'
 import { Button, Flex, Space, Typography } from '@kogaio'
+import { withTranslation } from 'react-i18next'
 
 import { ValidatedInput } from '@shared-utils/components'
 import { emailFormat } from '@shared-utils/funcs'
 
-const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
+const SubscribeForm = ({ isSubscribing, requestSubscribe, t }) => {
   const submitForm = async (formValues, actions) => {
     const { setStatus, setSubmitting } = actions
     try {
@@ -52,7 +53,7 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
               id='subscribe-email'
               icLeft='email'
               name='email'
-              placeholder='Email address'
+              placeholder={t('subscribe.email')}
               required
               validate={[emailFormat]}
             />
@@ -60,7 +61,7 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe }) => {
               <Button
                 disabled={isSubmitting}
                 variant='secondary'
-                title='Subscribe'
+                title={t('subscribe.subscribe')}
                 type='submit'
                 width={{ xs: 1, md: 'auto' }}
               />
@@ -79,6 +80,7 @@ const FullWidthForm = styled(Form)`
 SubscribeForm.propTypes = {
   isSubscribing: PropTypes.bool,
   requestSubscribe: PropTypes.func,
+  t: PropTypes.func,
 }
 
-export default SubscribeForm
+export default withTranslation()(SubscribeForm)

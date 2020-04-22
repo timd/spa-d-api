@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 import { Button, Space, Flex } from '@kogaio'
 import { navigate } from '@reach/router'
 import { TouchableWithIcon } from '@shared-utils/components'
@@ -6,11 +7,11 @@ import { TouchableWithIcon } from '@shared-utils/components'
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { ProgressBar, Content } from '.'
 import { questionnaireItemsObj } from '../assets'
-import { useTranslation } from 'react-i18next'
-const Questionnaire = props => {
+import { withTranslation } from 'react-i18next'
+
+const Questionnaire = ({ i18n, ...props }) => {
   const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionnaireContext)
   const item = questionnaireItemsObj[currentQuestionId]
-  const { i18n } = useTranslation()
   const lang = i18n.language
   const showNextQuestion = () => setCurrentQuestionId(item.nextQuestionId)
   const showPrevQuestion = () => setCurrentQuestionId(item.previousQuestionId)
@@ -45,6 +46,6 @@ const Questionnaire = props => {
   )
 }
 
-Questionnaire.propTypes = {}
+Questionnaire.propTypes = { i18n: PropTypes.object }
 
-export default Questionnaire
+export default withTranslation()(Questionnaire)

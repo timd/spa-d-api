@@ -4,9 +4,30 @@
   "Data Protection": "Datenschutzerklärung",
   "Conditions": "Geschäftsbedingungen",
   "About us": "Über uns",
+  "Why Divorcy?": "Warum Divorcy?",
+  "Hello": "Hallo",
+  "Get Started": "Los Gehts",
+  "I agree to the": "Ich stimme den",
+  "of Divorcy": "von Divorcy zu",
+  "Privacy policy": "Datenschutzbestimmungen",
+  "Terms And Conditions": "Geschäftsbedingungen",
+  "I'm here for helping you get overview further process!": "Ich bin hier, um dir einen Überblick über den Prozess zu geben",
   "* We use all information very discretly": "* Alle Informationen werden diskret behandelt",
   "hero": {
     "title": "Divorcy hilft Dir, Deine Scheidung zu planen und die Kosten zu schätzen",
-    "subtitle": "Eine Scheidung ist echt ätzend. Divorcy hilft Dir, smarte und schnelle Entscheidungen zu treffen, sodass Du dich wieder auf Deine Zukunft konzentrieren kannst - und die Vergangenheit hinter Dir lässt"
+    "subtitle": "Eine Scheidung ist echt ätzend. Divorcy hilft Dir, smarte und schnelle Entscheidungen zu treffen, sodass Du dich wieder auf Deine Zukunft konzentrieren kannst - und die Vergangenheit hinter Dir lässt",
+    "button": "Leg Los"
+  },
+  "subscribe": {
+    "header": "Abonniere unsere Analysen",
+    "description": "Unsere Newsletter wird dir helfen, den Prozess zu verstehen und sowohl Zeit als auch Geld zu sparen",
+    "email": "Email Adresse",
+    "subscribe": "Abbonieren"
+  },
+  "questionnaire": {
+    "getStarted": {
+      "header:": "Hello, I'm here for helping you get overview further process!",
+      "description": "Wir werden dir ein paar einfache Fragen stellen. Es wird insgesamt ungefähr 5 Minuten dauern"
+    }
   }
 }

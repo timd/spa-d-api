@@ -1,6 +1,19 @@
 {
   "hero": {
     "title": "Divorcy will help you plan and estimate the costs of your divorce",
-    "subtitle": "Having a divorce sucks! Divorcy helps you make smart and swift decisions. So you can start focusing on your future - not your past!"
+    "subtitle": "Having a divorce sucks! Divorcy helps you make smart and swift decisions. So you can start focusing on your future - not your past!",
+    "button": "Get Started"
+  },
+  "subscribe": {
+    "header": "Subscribe to our insights",
+    "description": "It'll help you to understand whole process as well as save time & cost",
+    "email": "Email Address",
+    "subscribe": "Subscribe"
+  },
+  "questionnaire": {
+    "getStarted": {
+      "header:": "Hello, I'm here for helping you get overview further process!",
+      "description": "We're gonna ask some basic questions and it probably takes about 5 minutes."
+    }
   }
 }

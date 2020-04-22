@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Checkbox, Space, Typography } from '@kogaio'
+import { withTranslation } from 'react-i18next'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { Content, ProgressBar, TermsCheckboxLabel } from '.'
@@ -9,6 +10,7 @@ import { questionnaireItemsObj } from '../assets'
 const GetStarted = ({
   acceptedConditions: { policy: isPolicyAccepted, termsAndConditions: areTermsAccepted },
   toggleCheck,
+  t,
   ...props
 }) => {
   const { setCurrentQuestionId } = useContext(QuestionnaireContext)
@@ -19,16 +21,13 @@ const GetStarted = ({
   }
 
   return (
-    <Content
-      title={GetStartedTitle}
-      description="We're gonna ask some basic questions and it probably takes about 5 minutes."
-      {...props}>
+    <Content title={<GetStartedTitle t={t} />} description={t('questionnaire.getStarted.description')} {...props}>
       <ProgressBar progress='8px' />
       <Space mt={6}>
         <Checkbox
           checked={isPolicyAccepted}
           id='agree-policy'
-          label={<TermsCheckboxLabel anchorLabel='Privacy policy' anchorURL='/privacy' />}
+          label={<TermsCheckboxLabel anchorLabel={t('Privacy policy')} anchorURL='/privacy' />}
           onChange={toggleCheck('policy')}
         />
       </Space>
@@ -36,7 +35,7 @@ const GetStarted = ({
         <Checkbox
           checked={areTermsAccepted}
           id='agree-terms'
-          label={<TermsCheckboxLabel anchorLabel='Terms And Conditions' anchorURL='/terms' />}
+          label={<TermsCheckboxLabel anchorLabel={t('Terms And Conditions')} anchorURL='/terms' />}
           onChange={toggleCheck('termsAndConditions')}
         />
       </Space>
@@ -45,26 +44,30 @@ const GetStarted = ({
         <Button
           disabled={!(isPolicyAccepted && areTermsAccepted)}
           onClick={_startQuestionnaire}
-          title='Get Started'
+          title={t('Get Started')}
           width={{ xs: 1, md: 'fit-content' }}
         />
       </Space>
       <Space mt={4} mx={{ xs: 'auto', md: -1 }}>
         <Typography color='dark-grey' maxWidth='311px' variant='caption' textAlign={{ xs: 'center', md: 'left' }}>
-          * We use all information very discretely
+          {t('* We use all information very discretly')}
         </Typography>
       </Space>
     </Content>
   )
 }
 
-const GetStartedTitle = (
+const GetStartedTitle = ({ t, ...props }) => (
   <Typography variant='questionnaireTitle'>
-    Hello,
+    {t('Hello')},
     <br />
-    I&apos;m here for helping you get overview further process!
+    {t("I'm here for helping you get overview further process!")}
   </Typography>
 )
+
+GetStartedTitle.propTypes = {
+  t: PropTypes.func,
+}
 
 GetStarted.propTypes = {
   acceptedConditions: PropTypes.shape({
@@ -72,6 +75,7 @@ GetStarted.propTypes = {
     termsAndConditions: PropTypes.bool,
   }),
   toggleCheck: PropTypes.func,
+  t: PropTypes.func,
 }
 
-export default GetStarted
+export default withTranslation()(GetStarted)

@@ -38,7 +38,7 @@ export const features = [
     },
     description: {
       en: 'Get your individual results incl. tailored recommendations and clear next steps.',
-      de: 'Bekomme Deine indivuduellen Resulate inklusive angepasste Ratschläge für die nächsten Schritte',
+      de: 'Bekomme Deine individuellen Resulate inklusive angepasste Ratschläge für die nächsten Schritte',
     },
   },
 ]

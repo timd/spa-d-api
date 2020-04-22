@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Image, Flex, Space, Typography } from '@kogaio'
-import { useTranslation } from 'react-i18next'
-const FeatureCard = ({ id, icon, title, description, ...props }) => {
-  const { i18n } = useTranslation()
+import { withTranslation } from 'react-i18next'
+const FeatureCard = ({ id, icon, title, description, i18n, ...props }) => {
   const lang = i18n.language
   return (
     <Space p={{ xs: 0, md: 6 }}>
@@ -29,6 +28,7 @@ FeatureCard.propTypes = {
   icon: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
+  i18n: PropTypes.object,
 }
 
-export default FeatureCard
+export default withTranslation()(FeatureCard)
