@@ -13,15 +13,14 @@ const GetStarted = ({
   t,
   ...props
 }) => {
-  const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
+  const { setQuestionnaireState } = useContext(QuestionnaireContext)
 
   const _startQuestionnaire = () => {
     const [firstQuestionId] = Object.keys(questionnaireItemsObj)
-
-    let newState = { ...questionnaireState }
-    newState.currentQuestionId = firstQuestionId
-
-    setQuestionnaireState(newState)
+    setQuestionnaireState(prevState => ({
+      ...prevState,
+      currentQuestionId: firstQuestionId,
+    }))
   }
 
   return (

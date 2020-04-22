@@ -10,10 +10,13 @@ import { AnswerTouchable, Content, MoreTouchable, ProgressBar } from '.'
 import { withTranslation } from 'react-i18next'
 
 const Questionnaire = ({ i18n, ...props }) => {
-  const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
+  const {
+    questionnaireState: { currentQuestionId, answers },
+    setQuestionnaireState,
+  } = useContext(QuestionnaireContext)
   const [areAllOptionsVisible, setAllOptionsVisible] = useState(false)
 
-  const item = questionnaireItemsObj[questionnaireState.currentQuestionId]
+  const item = questionnaireItemsObj[currentQuestionId]
   const allOptions = item.options ?? []
   const lang = i18n.language
 
@@ -32,21 +35,23 @@ const Questionnaire = ({ i18n, ...props }) => {
   }
 
   const showNextQuestion = () => {
-    let newState = { ...questionnaireState }
-    newState.currentQuestionId = item.nextQuestionId
-    setQuestionnaireState(newState)
+    setQuestionnaireState(prevState => ({
+      ...prevState,
+      currentQuestionId: item.nextQuestionId,
+    }))
   }
   const showPrevQuestion = () => {
-    let newState = { ...questionnaireState }
-    newState.currentQuestionId = item.previousQuestionId
-    setQuestionnaireState(newState)
+    setQuestionnaireState(prevState => ({
+      ...prevState,
+      currentQuestionId: item.previousQuestionId,
+    }))
   }
   const showResults = () => {
     navigate('/questionnaire/results')
-
-    let newState = { ...questionnaireState }
-    newState.currentQuestionId = null
-    setQuestionnaireState(newState)
+    setQuestionnaireState(prevState => ({
+      ...prevState,
+      currentQuestionId: null,
+    }))
   }
 
   return (
@@ -56,7 +61,19 @@ const Questionnaire = ({ i18n, ...props }) => {
         <Flex width={{ xs: 1, md: '400px' }} flexDirection='column' justifyContent='flex-end'>
           {visibleItems().map(option => (
             <Space key={option.id} mt={3}>
-              <AnswerTouchable title={option.title[lang]} isSelected={false} onClick={() => {}} />
+              <AnswerTouchable
+                title={option.title[lang]}
+                isSelected={answers[currentQuestionId]?.id === option.id}
+                onClick={() =>
+                  setQuestionnaireState(prevState => ({
+                    ...prevState,
+                    answers: {
+                      ...prevState.answers,
+                      [currentQuestionId]: option,
+                    },
+                  }))
+                }
+              />
             </Space>
           ))}
           <Space mt={3}>
