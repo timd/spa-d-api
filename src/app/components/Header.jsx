@@ -15,13 +15,13 @@ const Header = ({ location: { pathname } }) => (
       <TextLogo />
       {pathname === '/' && <AboutUsLink to='about-us'>About us</AboutUsLink>}
       {pathname.includes('results') && (
-        <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label='Share' />
+        <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label='Share' onClick={() => {}} />
       )}
     </Container>
   </Space>
 )
 
-const containerStyle = ({ pathname, ...props }) =>
+const containerStyle = ({ pathname }) =>
   pathname === '/questionnaire'
     ? css`
         box-shadow: 0px 1px 0px ${themeGet('colors.headerShadow')};
