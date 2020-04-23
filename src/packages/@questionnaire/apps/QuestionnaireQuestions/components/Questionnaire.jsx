@@ -41,9 +41,9 @@ const Questionnaire = ({ i18n, ...props }) => {
   }
 
   const selectOption = option => {
-    setQuestionnaireState(prevState => {
+    setQuestionnaireState(state => {
       currentState.optionId = option.id
-      return { ...prevState }
+      return { ...state }
     })
   }
 
