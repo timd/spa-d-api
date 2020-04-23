@@ -81,25 +81,21 @@ and it has the following structure:
     },
     "question-2": {
         "title": "Whom have you consulted so far?",
-        "previousQuestionId": "question-1",
         "nextQuestionId": "question-3",
         "progress": 0.4
     },
     "question-3": {
         "title": "How high is your monthly net income?",
-        "previousQuestionId": "question-2",
         "nextQuestionId": "question-4",
         "progress": 0.6
     },
     "question-4": {
         "title": "How high are you joined assets?",
-        "previousQuestionId": "question-3",
         "nextQuestionId": "question-5",
         "progress": 0.8
     },
     "question-5": {
         "title": "Do you have kid(s) with your spouse?",
-        "previousQuestionId": "question-4",
         "progress": 1
     }
 }
@@ -112,7 +108,6 @@ The `root` object represents a map between a list of `uniq ids` and the associat
 A `questionnaire item` is composed from:
 
 - `title`: `string` value that represents the title.
-- `previousQuestionId`: Optional `string` value that points to the `id` of an item in the `root` object. It is used for the back navigation. Omit this field if you want to mark a field from which the user can not change her mind (for example the first item in the questionnaire).
 - `nextQuestionId`: Optional `string` value that points to the `id` of an item in the `root` object. It is used for the questionnaire navigation. Omit this field in the last questionnair item.
 - `progress`: `string` value between `0%` and `100%`. It represents the progress the user has made in the questionnair. Last item in the questionnaire should always have it set to `100%`.
 

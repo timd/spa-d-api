@@ -50,6 +50,7 @@ const Questionnaire = ({ i18n, ...props }) => {
   const isOptionSelected = option => currentState.optionId === option.id
 
   const isNextButtonDisabled = () => false //!currentState.optionId
+  const isBackButtonVisible = () => !!questionnaireState.previous()
 
   const showMoreOptions = () => {
     setQuestionnaireState(state => {
@@ -118,8 +119,8 @@ const Questionnaire = ({ i18n, ...props }) => {
         </Flex>
       </Space>
       <Space mt={8}>
-        <Flex justifyContent={item.previousQuestionId ? 'space-between' : 'flex-end'}>
-          {item.previousQuestionId && (
+        <Flex justifyContent={isBackButtonVisible() ? 'space-between' : 'flex-end'}>
+          {isBackButtonVisible() && (
             <TouchableWithIcon
               onClick={() => showPrevQuestion()}
               icon={{ name: 'keyboard_backspace', fontSize: '24px' }}

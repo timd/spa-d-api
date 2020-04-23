@@ -109,7 +109,6 @@
       }
     ],
     "initialOptionsCount": 3,
-    "previousQuestionId": "question-1",
     "nextQuestionId": "question-3",
     "progress": "20%"
   },
@@ -118,7 +117,6 @@
       "en": "How high is your monthly net income?",
       "de": "Wie hoch ist dein monatliches Nettoeinkommen?"
     },
-    "previousQuestionId": "question-2",
     "nextQuestionId": "question-4",
     "progress": "30%"
   },
@@ -127,7 +125,6 @@
       "en": "How high are you joined assets?",
       "de": "Wieviel sind eure geteilten Vermögenswerte?"
     },
-    "previousQuestionId": "question-3",
     "nextQuestionId": "question-5",
     "progress": "40%"
   },
@@ -152,7 +149,6 @@
         }
       }
     ],
-    "previousQuestionId": "question-4",
     "nextQuestionId": {
       "option-5-1": "question-6",
       "option-5-2": "question-9"
@@ -194,7 +190,6 @@
         }
       }
     ],
-    "previousQuestionId": "question-5",
     "nextQuestionId": "question-7",
     "progress": "60%"
   },
@@ -203,7 +198,6 @@
       "en": "How old is he/she?",
       "de": "Wie alt ist er oder sie?"
     },
-    "previousQuestionId": "question-6",
     "nextQuestionId": "question-8",
     "progress": "70%"
   },
@@ -228,7 +222,6 @@
         }
       }
     ],
-    "previousQuestionId": "question-7",
     "nextQuestionId": "question-9",
     "progress": "80%"
   },
@@ -260,7 +253,6 @@
         }
       }
     ],
-    "previousQuestionId": "question-8",
     "progress": "100%"
   }
 }
