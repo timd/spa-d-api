@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Box, Flex, Space, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
@@ -31,12 +31,12 @@ const checkpoints = [
   },
 ]
 
-const StepProgress = ({ activeIndex, isRow, ...props }) => {
+const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
   const progressWidth = checkpoints[activeIndex].progress
 
   return (
     <>
-      <Container flexDirection={isRow ? 'row' : 'column'} {...props}>
+      <Container isRow={isRow} {...props} minWidth={minWidth}>
         <Space pl={activeIndex === 0 ? 0 : 1}>
           <Box bg='brand' borderRadius={4} height={8} minWidth={progressWidth} />
         </Space>
@@ -56,26 +56,88 @@ const StepProgress = ({ activeIndex, isRow, ...props }) => {
           )
         )}
       </Container>
-      <Flex width={1} position='relative'>
-        {checkpoints.map((checkpoint, idx) => {
-          const isLastOne = idx === checkpoints.length - 1
+      {isRow ? (
+        <Flex width={1} position='relative'>
+          {checkpoints.map((checkpoint, idx) => {
+            const isLastOne = idx === checkpoints.length - 1
 
-          return (
-            <Space key={checkpoint.id} ml={!isLastOne ? checkpoint.progress : 0}>
-              <TimelineTitle position='absolute' isLastOne={isLastOne}>
+            return (
+              <TimelineTitle
+                key={checkpoint.id}
+                position='absolute'
+                isLastOne={isLastOne}
+                isRow={isRow}
+                progress={checkpoint.progress}>
                 {checkpoint.title}
               </TimelineTitle>
-            </Space>
-          )
-        })}
-      </Flex>
+            )
+          })}
+        </Flex>
+      ) : (
+        <Flex flexDirection='column' minWidth={minWidth} width={1} position='relative'>
+          {checkpoints.map((checkpoint, idx) => {
+            const isActive = idx === activeIndex
+            const isLastOne = idx === checkpoints.length - 1
+
+            return (
+              <Space key={checkpoint.id} ml={6}>
+                <TimelineTitle
+                  position='absolute'
+                  isActive={isActive}
+                  isLastOne={isLastOne}
+                  isFirst={idx === 0}
+                  isRow={isRow}
+                  progress={checkpoint.progress}>
+                  {checkpoint.title}
+                </TimelineTitle>
+              </Space>
+            )
+          })}
+        </Flex>
+      )}
     </>
   )
 }
 
+const timelineTitleStyle = ({ isActive, isFirst, isLastOne, isRow, progress }) => {
+  if (isRow) {
+    return isLastOne
+      ? css`
+          right: 0;
+          margin-left: 0;
+        `
+      : css`
+          margin-left: ${progress};
+        `
+  }
+  if (isActive) {
+    return isFirst
+      ? css`
+          margin-top: -2px;
+        `
+      : css`
+          margin-top: calc(${progress} - 18px);
+        `
+  }
+  return isFirst
+    ? css`
+        margin-top: -5px;
+      `
+    : css`
+        margin-top: calc(${progress} - 7px);
+      `
+}
+
+const containerStyle = ({ isRow }) =>
+  !isRow &&
+  css`
+    transform-origin: 0 100%;
+    transform: rotate(90deg);
+  `
+
 const TimelineTitle = styled(Typography)`
   position: absolute;
-  ${({ isLastOne }) => isLastOne && 'right: 0;'};
+  ${timelineTitleStyle};
 `
 
 const Container = styled(Flex)`
@@ -92,6 +154,7 @@ const Container = styled(Flex)`
     position: absolute;
     z-index: -1;
   }
+  ${containerStyle};
 `
 
 const ActiveCheckpoint = styled(Box)`
@@ -99,20 +162,20 @@ const ActiveCheckpoint = styled(Box)`
   background: ${themeGet('colors.brand')};
   border-radius: ${themeGet('radii.round')};
   z-index: 2;
-    :after {
-        background: ${themeGet('colors.white')};
-        border-radius: ${themeGet('radii.round')};
-        margin: auto;
-        bottom: 0;
-        top: 0;
-        left: 0;
-        right: 0;
-        content: '';
-        height: 8px;
-        width: 8px;
-        position: absolute;
-        z-index: 3;
-    }
+  :after {
+    background: ${themeGet('colors.white')};
+    border-radius: ${themeGet('radii.round')};
+    margin: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    height: 8px;
+    width: 8px;
+    position: absolute;
+    z-index: 3;
+  }
 `
 
 const UnreachedCheckpoint = styled(ActiveCheckpoint)`
@@ -125,11 +188,12 @@ const UnreachedCheckpoint = styled(ActiveCheckpoint)`
 StepProgress.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   isRow: PropTypes.bool,
+  minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
 }
 
 StepProgress.defaultProps = {
-  activeIndex: 3,
-  isRow: true,
+  activeIndex: 1,
+  isRow: false,
 }
 
 export default StepProgress

@@ -14,7 +14,7 @@ const DivorceJourney = props => (
       }}
     />
     <Space mt={{ xs: 3, md: 7 }}>
-      <StepProgress />
+      <StepProgress minWidth={600} />
     </Space>
   </Flex>
 )
