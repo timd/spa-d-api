@@ -14,24 +14,62 @@ const Questionnaire = ({ i18n, ...props }) => {
     questionnaireState: { currentQuestionId, answers },
     setQuestionnaireState,
   } = useContext(QuestionnaireContext)
-  const [areAllOptionsVisible, setAllOptionsVisible] = useState(false)
 
   const item = questionnaireItemsObj[currentQuestionId]
+  const answer = answers[currentQuestionId] ?? {}
+
   const allOptions = item.options ?? []
   const lang = i18n.language
 
   const visibleItems = () => {
+    if (answer.areAllOptionsVisible) {
+      return allOptions
+    }
+
     if (item.initialOptionsCount) {
-      return areAllOptionsVisible ? allOptions : allOptions.slice(0, item.initialOptionsCount)
+      return allOptions.slice(0, item.initialOptionsCount)
     }
 
     return allOptions
   }
   const shouldShowMoreButton = () => {
-    if (item.initialOptionsCount) {
-      return !areAllOptionsVisible && allOptions.length > item.initialOptionsCount
+    if (answer.areAllOptionsVisible) {
+      return false
     }
+
+    if (item.initialOptionsCount) {
+      return allOptions.length > item.initialOptionsCount
+    }
+
     return false
+  }
+
+  const selectOption = option => {
+    setQuestionnaireState(prevState => ({
+      ...prevState,
+      answers: {
+        ...prevState.answers,
+        [currentQuestionId]: {
+          ...answer,
+          ...option,
+        },
+      },
+    }))
+  }
+
+  const isOptionSelected = option => answer?.id === option.id
+
+  const isNextButtonDisabled = () => !answer?.id
+
+  const showMoreOptions = () => {
+    answer.areAllOptionsVisible = true
+    setQuestionnaireState(prevState => ({
+      ...prevState,
+      answers: {
+        ...prevState.answers,
+        [currentQuestionId]: answer,
+      },
+    }))
   }
 
   const showNextQuestion = () => {
@@ -63,16 +101,8 @@ const Questionnaire = ({ i18n, ...props }) => {
             <Space key={option.id} mt={3}>
               <AnswerTouchable
                 title={option.title[lang]}
-                isSelected={answers[currentQuestionId]?.id === option.id}
-                onClick={() =>
-                  setQuestionnaireState(prevState => ({
-                    ...prevState,
-                    answers: {
-                      ...prevState.answers,
-                      [currentQuestionId]: option,
-                    },
-                  }))
-                }
+                isSelected={isOptionSelected(option)}
+                onClick={() => selectOption(option)}
               />
             </Space>
           ))}
@@ -80,9 +110,7 @@ const Questionnaire = ({ i18n, ...props }) => {
             <MoreTouchable
               display={shouldShowMoreButton() ? 'inherit' : 'none'}
               title='Others'
-              onClick={() => {
-                setAllOptionsVisible(true)
-              }}
+              onClick={() => showMoreOptions()}
             />
           </Space>
         </Flex>
@@ -91,13 +119,14 @@ const Questionnaire = ({ i18n, ...props }) => {
         <Flex justifyContent={item.previousQuestionId ? 'space-between' : 'flex-end'}>
           {item.previousQuestionId && (
             <TouchableWithIcon
-              onClick={showPrevQuestion}
+              onClick={() => showPrevQuestion()}
               icon={{ name: 'keyboard_backspace', fontSize: '24px' }}
               label='Back'
             />
           )}
           <Button
             onClick={item.nextQuestionId ? showNextQuestion : showResults}
+            disabled={isNextButtonDisabled()}
             title={item.nextQuestionId ? 'Next' : 'Submit'}
           />
         </Flex>
