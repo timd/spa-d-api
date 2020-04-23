@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Box, Flex, Space, Typography } from '@kogaio'
-import { themeGet } from '@kogaio/utils'
+import { ConditionalWrap, themeGet } from '@kogaio/utils'
+
+import { CollapseTrigger } from '@shared-utils/components'
 
 const checkpoints = [
   {
     id: 'checkpoint-1',
     title: 'Title1',
-    description: 'Random description',
+    description: 'Random description1',
     progress: '0%',
   },
   {
@@ -20,7 +22,7 @@ const checkpoints = [
   {
     id: 'checkpoint-3',
     title: 'Title3',
-    description: '',
+    description: 'Random description3',
     progress: '50%',
   },
   {
@@ -32,6 +34,21 @@ const checkpoints = [
 ]
 
 const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
+  // eslint-disable-next-line no-unused-vars
+  const [collapsedContent, setCollapsedContent] = useState([])
+
+  const handleCollapseToggle = contentId => () => {
+    let collapsed = [...collapsedContent]
+    const idx = collapsedContent.indexOf(contentId)
+    if (idx >= 0) {
+      collapsed.splice(idx, 1)
+    } else {
+      collapsed.push(contentId)
+    }
+
+    setCollapsedContent(collapsed.slice(0))
+  }
+
   const progressWidth = checkpoints[activeIndex].progress
 
   return (
@@ -71,12 +88,28 @@ const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
                 isRow={isRow}
                 progress={checkpoint.progress}
                 flexDirection='column'>
-                <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>
-                  {checkpoint.title}
-                </TimelineTitle>
-                <Typography color='dark-grey' variant='tooltip'>
-                  {checkpoint.description}
-                </Typography>
+                <ConditionalWrap
+                  condition={!!checkpoint.description}
+                  wrap={() => (
+                    <CollapseTrigger
+                      isCollapsed={collapsedContent.includes(checkpoint.id)}
+                      onClick={handleCollapseToggle(checkpoint.id)}
+                      CustomTitleCmp={() => (
+                        <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>
+                          {checkpoint.title}
+                        </TimelineTitle>
+                      )}
+                    />
+                  )}>
+                  <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>
+                    {checkpoint.title}
+                  </TimelineTitle>
+                </ConditionalWrap>
+                {collapsedContent.includes(checkpoint.id) && (
+                  <Typography color='dark-grey' variant='tooltip'>
+                    {checkpoint.description}
+                  </Typography>
+                )}
               </TimelineContent>
             </Space>
           )

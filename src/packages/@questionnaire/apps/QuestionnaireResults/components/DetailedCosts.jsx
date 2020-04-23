@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import { Flex, Hide, Icon, Space, Typography, Touchable } from '@kogaio'
-import { themeGet } from '@kogaio/utils'
+import { Flex, Hide, Space, Typography } from '@kogaio'
 
 import { useBoolean } from '@shared-utils/hooks/useBoolean'
 import { normalizeCamelCase } from '@shared-utils/funcs'
+import { CollapseTrigger } from '@shared-utils/components'
 
 const DetailedCosts = ({ costs }) => {
   // eslint-disable-next-line no-unused-vars
@@ -15,14 +14,11 @@ const DetailedCosts = ({ costs }) => {
     <Flex flexDirection={isCollapsed ? 'column-reverse' : 'column'}>
       <Hide md lg xlg>
         <Space mx='auto' mt={isCollapsed ? 8 : 3}>
-          <Touchable effect='opacity' onClick={toggleDetails}>
-            <Flex alignItems='center'>
-              <CollapseTitle variant='caption'>{isCollapsed ? 'Show less' : 'Show details'}</CollapseTitle>
-              <Space ml={2}>
-                <Icon color='brand' name={isCollapsed ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
-              </Space>
-            </Flex>
-          </Touchable>
+          <CollapseTrigger
+            isCollapsed={isCollapsed}
+            label={isCollapsed ? 'Show less' : 'Show details'}
+            onClick={toggleDetails}
+          />
         </Space>
       </Hide>
       <Hide md lg xlg>
@@ -53,11 +49,6 @@ const ExpectationCosts = ({ costs, ...props }) => (
     ))}
   </Flex>
 )
-
-const CollapseTitle = styled(Typography)`
-  color: ${themeGet('colors.dark-grey')};
-  font-weight: ${themeGet('fontWeights.bold')};
-`
 
 ExpectationCosts.propTypes = {
   costs: PropTypes.shape({
