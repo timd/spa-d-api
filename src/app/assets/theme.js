@@ -126,6 +126,10 @@ const CARD_VARIANTS = {
     background: COLORS.white,
     border: `${borders[1]} ${COLORS.headerShadow}`,
     'border-radius': `${radii[4]}px`,
+  },
+  next: {
+    background: COLORS.touchableBg,
+    'border-radius': `${radii[4]}px`,
   }
 }
 

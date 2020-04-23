@@ -14,8 +14,8 @@ const DivorceJourney = props => (
       }}
     />
     <Space mt={{ xs: 3, md: 7 }} p={6}>
-      <Card display={{ md: 'none' }} minHeight={624} variant='journey'>
-        <StepProgress isRow={false} minWidth={600} />
+      <Card display={{ md: 'none' }} minHeight={324} variant='journey'>
+        <StepProgress isRow={false} maxWidth={300} />
       </Card>
     </Space>
     <Space mt={{ xs: 3, md: 7 }}>
