@@ -10,19 +10,15 @@ import { AnswerTouchable, Content, MoreTouchable, ProgressBar } from '.'
 import { withTranslation } from 'react-i18next'
 
 const Questionnaire = ({ i18n, ...props }) => {
-  const {
-    questionnaireState: { currentQuestionId, answers },
-    setQuestionnaireState,
-  } = useContext(QuestionnaireContext)
+  const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
+  const currentState = questionnaireState.currentValue()
 
-  const item = questionnaireItemsObj[currentQuestionId]
-  const answer = answers[currentQuestionId] ?? {}
-
+  const item = questionnaireItemsObj[currentState.questionId]
   const allOptions = item.options ?? []
   const lang = i18n.language
 
   const visibleItems = () => {
-    if (answer.areAllOptionsVisible) {
+    if (currentState.isExpanded) {
       return allOptions
     }
 
@@ -33,7 +29,7 @@ const Questionnaire = ({ i18n, ...props }) => {
     return allOptions
   }
   const shouldShowMoreButton = () => {
-    if (answer.areAllOptionsVisible) {
+    if (currentState.isExpanded) {
       return false
     }
 
@@ -45,45 +41,44 @@ const Questionnaire = ({ i18n, ...props }) => {
   }
 
   const selectOption = option => {
-    setQuestionnaireState(prevState => ({
-      ...prevState,
-      answers: {
-        ...prevState.answers,
-        [currentQuestionId]: {
-          ...answer,
-          ...option,
-        },
-      },
-    }))
+    setQuestionnaireState(prevState => {
+      currentState.optionId = option.id
+      return { ...prevState }
+    })
   }
 
-  const isOptionSelected = option => answer?.id === option.id
+  const isOptionSelected = option => currentState.optionId === option.id
 
-  const isNextButtonDisabled = () => !answer?.id
+  const isNextButtonDisabled = () => !currentState.optionId
 
   const showMoreOptions = () => {
-    answer.areAllOptionsVisible = true
-    setQuestionnaireState(prevState => ({
-      ...prevState,
-      answers: {
-        ...prevState.answers,
-        [currentQuestionId]: answer,
-      },
-    }))
+    setQuestionnaireState(prevState => {
+      currentState.isExpanded = true
+      return { ...prevState }
+    })
   }
 
   const showNextQuestion = () => {
-    let nextQuestionId = item.nextQuestionId[answer.id] || item.nextQuestionId
-    setQuestionnaireState(prevState => ({
-      ...prevState,
-      currentQuestionId: nextQuestionId,
-    }))
+    let questionId = item.nextQuestionId[currentState.optionId] || item.nextQuestionId
+    setQuestionnaireState(prevState => {
+      if (prevState.next()) {
+        prevState.seekForward()
+      } else {
+        prevState.add({
+          questionId,
+          optionId: null,
+          isExpanded: false,
+          values: {},
+        })
+      }
+      return { ...prevState }
+    })
   }
   const showPrevQuestion = () => {
-    setQuestionnaireState(prevState => ({
-      ...prevState,
-      currentQuestionId: item.previousQuestionId,
-    }))
+    setQuestionnaireState(prevState => {
+      prevState.seekBackward()
+      return { ...prevState }
+    })
   }
   const showResults = () => {
     navigate('/questionnaire/results')

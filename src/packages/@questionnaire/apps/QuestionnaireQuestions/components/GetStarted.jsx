@@ -17,10 +17,15 @@ const GetStarted = ({
 
   const _startQuestionnaire = () => {
     const [firstQuestionId] = Object.keys(questionnaireItemsObj)
-    setQuestionnaireState(prevState => ({
-      ...prevState,
-      currentQuestionId: firstQuestionId,
-    }))
+    setQuestionnaireState(prevState => {
+      prevState.add({
+        questionId: firstQuestionId,
+        optionId: null,
+        isExpanded: false,
+        values: {},
+      })
+      return { ...prevState }
+    })
   }
 
   return (
