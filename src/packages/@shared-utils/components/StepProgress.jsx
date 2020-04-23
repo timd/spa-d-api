@@ -9,31 +9,31 @@ import { CollapseTrigger } from '@shared-utils/components'
 const checkpoints = [
   {
     id: 'checkpoint-1',
-    title: 'Title1',
-    description: 'Random description1',
+    title: 'Marriage Crisis',
+    description: '',
     progress: '0%',
   },
   {
     id: 'checkpoint-2',
-    title: 'Title2',
+    title: 'Split Up',
     description: '',
     progress: '25%',
   },
   {
     id: 'checkpoint-3',
-    title: 'Title3',
-    description: 'Random description3',
+    title: 'Getting Divorced',
+    description: 'Definition about this phase. What do they need to do mainly  & how long it will take time',
     progress: '50%',
   },
   {
     id: 'checkpoint-4',
-    title: 'Title4',
-    description: '',
+    title: 'Being Divorced',
+    description: 'Definition about this phase. What do they need to do mainly  & how long it will take time',
     progress: '100%',
   },
 ]
 
-const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
+const StepProgress = ({ activeIndex, display, isRow, maxWidth, minWidth, ...props }) => {
   // eslint-disable-next-line no-unused-vars
   const [collapsedContent, setCollapsedContent] = useState([])
 
@@ -53,29 +53,36 @@ const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
 
   return (
     <>
-      <Container isRow={isRow} {...props} minWidth={minWidth}>
+      <Container display={display} isRow={isRow} maxWidth={maxWidth} minWidth={minWidth} {...props}>
         <Space pl={activeIndex === 0 ? 0 : 1}>
           <Box bg='brand' borderRadius={4} height={8} minWidth={progressWidth} />
         </Space>
         {checkpoints.map((checkpoint, idx) =>
           idx < activeIndex ? (
-            <Space key={`ccheckpoint-${checkpoint.id}`} mt='1px' ml={idx === 0 ? 1 : 0}>
+            <Space key={`checkpoint-${checkpoint.id}`} mt='1px' ml={idx === 0 ? 1 : 0}>
               <Box bg='white' borderRadius='round' left={checkpoint.progress} size={6} position='absolute' zIndex={2} />
             </Space>
           ) : idx === activeIndex ? (
-            <Space p={2} ml={idx === 0 ? 0 : -4} mt={-1}>
+            <Space key={`checkpoint-${checkpoint.id}`} p={2} ml={idx === 0 ? 0 : -4} mt={-1}>
               <ActiveCheckpoint left={checkpoint.progress} size={8} />
             </Space>
           ) : (
-            <Space p='2px'>
+            <Space key={`checkpoint-${checkpoint.id}`} p='2px'>
               <UnreachedCheckpoint left={checkpoint.progress} size={8} />
             </Space>
           )
         )}
       </Container>
-      <Flex flexDirection={isRow ? 'row' : 'column'} minWidth={minWidth} width={1} position='relative'>
+      <Flex
+        display={display}
+        flexDirection={isRow ? 'row' : 'column'}
+        maxWidth={maxWidth}
+        minWidth={minWidth}
+        width={1}
+        position='relative'>
         {checkpoints.map((checkpoint, idx) => {
           const isActive = idx === activeIndex
+          const isDone = idx < activeIndex
           const isLastOne = idx === checkpoints.length - 1
 
           return (
@@ -95,20 +102,30 @@ const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
                       isCollapsed={collapsedContent.includes(checkpoint.id)}
                       onClick={handleCollapseToggle(checkpoint.id)}
                       CustomTitleCmp={() => (
-                        <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>
+                        <TimelineTitle
+                          isDone={isDone}
+                          isActive={isActive}
+                          color={isActive ? 'brand' : 'dark-grey'}
+                          variant='body'>
                           {checkpoint.title}
                         </TimelineTitle>
                       )}
                     />
                   )}>
-                  <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>
+                  <TimelineTitle
+                    isDone={isDone}
+                    isActive={isActive}
+                    color={isActive ? 'brand' : 'dark-grey'}
+                    variant='body'>
                     {checkpoint.title}
                   </TimelineTitle>
                 </ConditionalWrap>
                 {collapsedContent.includes(checkpoint.id) && (
-                  <Typography color='dark-grey' variant='tooltip'>
-                    {checkpoint.description}
-                  </Typography>
+                  <Space mt={4}>
+                    <Typography color='dark-grey' maxWidth={{ xs: 280, md: 200, lg: 280 }} variant='tooltip'>
+                      {checkpoint.description}
+                    </Typography>
+                  </Space>
                 )}
               </TimelineContent>
             </Space>
@@ -119,7 +136,7 @@ const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
   )
 }
 
-const timelineTitleStyle = ({ isActive, isFirst, isLastOne, isRow, progress }) => {
+const timelineContentStyle = ({ isActive, isFirst, isLastOne, isRow, progress }) => {
   if (isRow) {
     return isLastOne
       ? css`
@@ -155,12 +172,29 @@ const containerStyle = ({ isRow }) =>
     transform: rotate(90deg);
   `
 
+const timelineTitleStyle = ({ isActive, isDone }) => {
+  if (isActive)
+    return css`
+      color: ${themeGet('colors.brand')};
+      font-weight: ${themeGet('fontWeights.bold')};
+    `
+
+  return isDone
+    ? css`
+        color: ${themeGet('colors.timelineDone')};
+        opacity: 0.4;
+      `
+    : css`
+        color: ${themeGet('colors.dark-grey')};
+      `
+}
+
 const TimelineContent = styled(Flex)`
-  ${timelineTitleStyle};
+  ${timelineContentStyle};
 `
 
 const TimelineTitle = styled(Typography)`
-  font-weight: ${themeGet('fontWeights.bold')};
+  ${timelineTitleStyle};
 `
 
 const Container = styled(Flex)`
@@ -211,12 +245,14 @@ const UnreachedCheckpoint = styled(ActiveCheckpoint)`
 StepProgress.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   isRow: PropTypes.bool,
+  display: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  maxWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
   minWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
 }
 
 StepProgress.defaultProps = {
   activeIndex: 1,
-  isRow: true,
+  isRow: false,
 }
 
 export default StepProgress

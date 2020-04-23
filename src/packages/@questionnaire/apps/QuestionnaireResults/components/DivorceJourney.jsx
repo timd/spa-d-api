@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Space } from '@kogaio/Responsive'
+import { Card, Flex, Space } from '@kogaio'
 
 import { StepProgress } from '@shared-utils/components'
 import { TitleWithTooltipInfo } from '.'
@@ -13,8 +13,13 @@ const DivorceJourney = props => (
         description: "If you don't know exact amount of money, it's fine for now. blah blah...",
       }}
     />
+    <Space mt={{ xs: 3, md: 7 }} p={6}>
+      <Card display={{ md: 'none' }} minHeight={624} variant='journey'>
+        <StepProgress isRow={false} minWidth={600} />
+      </Card>
+    </Space>
     <Space mt={{ xs: 3, md: 7 }}>
-      <StepProgress minWidth={600} />
+      <StepProgress display={{ xs: 'none', md: 'inherit' }} isRow maxWidth={{ md: 1080, lg: 1280 }} />
     </Space>
   </Flex>
 )

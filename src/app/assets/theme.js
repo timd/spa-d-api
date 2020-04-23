@@ -17,7 +17,8 @@ const PRIMARY_COLORS = {
   white: '#FFFFFF',
   headerShadow: '#D6D7DF',
   touchableBg: '#F1F2FB',
-  questionnaireBg: '#F5F5F7'
+  questionnaireBg: '#F5F5F7',
+  timelineDone: '#363D3C'
 }
 
 const COLOR_DERIVATIONS = {
@@ -121,6 +122,11 @@ const CARD_VARIANTS = {
   white: {
     'border-radius': `${radii[4]}px`,
   },
+  journey: {
+    background: COLORS.white,
+    border: `${borders[1]} ${COLORS.headerShadow}`,
+    'border-radius': `${radii[4]}px`,
+  }
 }
 
 const INPUT_VARIANTS = {

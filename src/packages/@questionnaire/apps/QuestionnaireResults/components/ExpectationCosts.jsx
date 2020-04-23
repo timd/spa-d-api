@@ -7,6 +7,7 @@ import { ExpandableCostCard, TitleWithTooltipInfo } from '.'
 const ExpectationCosts = ({ chargeTypes, ...props }) => (
   <Space mx='auto' px={{ xs: 4, md: 0 }}>
     <Flex flexDirection='column' maxWidth={{ md: 780 }} width={1} {...props}>
+      <Space ml={{ md: 3 }}>
       <TitleWithTooltipInfo
         title='Expectation Cost'
         titleColor='white'
@@ -15,6 +16,7 @@ const ExpectationCosts = ({ chargeTypes, ...props }) => (
           description: "If you don't know exact amount of money, it's fine for now. blah blah...",
         }}
       />
+      </Space>
       <Space mt={{ xs: 3, md: 5 }}>
         <Flex flexWrap='wrap'>
           {chargeTypes.map((chargeType, idx) => (

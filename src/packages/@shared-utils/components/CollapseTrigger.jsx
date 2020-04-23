@@ -25,7 +25,7 @@ const CollapseTitle = styled(Typography)`
 `
 
 CollapseTrigger.propTypes = {
-  CustomTitleCmp: PropTypes.node,
+  CustomTitleCmp: PropTypes.func,
   isCollapsed: PropTypes.bool,
   label: PropTypes.string,
   onClick: PropTypes.func,

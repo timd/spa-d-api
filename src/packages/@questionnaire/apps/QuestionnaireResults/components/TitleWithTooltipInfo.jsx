@@ -12,11 +12,9 @@ const TitleWithTooltipInfo = ({title, titleColor, tooltipInfo, ...props}) => {
 
   return (
     <Flex alignItems='center' position='relative' {...props}>
-      <Space ml={{ md: 3 }}>
         <Typography color={titleColor} variant='super-title'>
           {title}
         </Typography>
-      </Space>
       <Space ml={2}>
         <IconButton color='headerShadow' name='help' onClick={_showTooltip} fontSize={3} />
       </Space>
