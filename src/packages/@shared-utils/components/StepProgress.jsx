@@ -56,55 +56,32 @@ const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
           )
         )}
       </Container>
-      {isRow ? (
-        <Flex width={1} position='relative'>
-          {checkpoints.map((checkpoint, idx) => {
-            const isActive = idx === activeIndex
-            const isLastOne = idx === checkpoints.length - 1
+      <Flex flexDirection={isRow ? 'row' : 'column'} minWidth={minWidth} width={1} position='relative'>
+        {checkpoints.map((checkpoint, idx) => {
+          const isActive = idx === activeIndex
+          const isLastOne = idx === checkpoints.length - 1
 
-            return (
+          return (
+            <Space key={checkpoint.id} ml={isRow ? 0 : 6}>
               <TimelineContent
                 position='absolute'
+                isActive={isActive}
                 isLastOne={isLastOne}
+                isFirst={idx === 0}
                 isRow={isRow}
                 progress={checkpoint.progress}
-                key={checkpoint.id}
                 flexDirection='column'>
-                <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>{checkpoint.title}</TimelineTitle>
+                <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>
+                  {checkpoint.title}
+                </TimelineTitle>
                 <Typography color='dark-grey' variant='tooltip'>
                   {checkpoint.description}
                 </Typography>
               </TimelineContent>
-            )
-          })}
-        </Flex>
-      ) : (
-        <Flex flexDirection='column' minWidth={minWidth} width={1} position='relative'>
-          {checkpoints.map((checkpoint, idx) => {
-            const isActive = idx === activeIndex
-            const isLastOne = idx === checkpoints.length - 1
-
-            return (
-              <Space key={checkpoint.id} ml={6}>
-                <TimelineContent
-                  position='absolute'
-                  isActive={isActive}
-                  isLastOne={isLastOne}
-                  isFirst={idx === 0}
-                  isRow={isRow}
-                  progress={checkpoint.progress}
-                  key={checkpoint.id}
-                  flexDirection='column'>
-                  <TimelineTitle color={isActive ? 'brand' : 'dark-grey'} variant='body'>{checkpoint.title}</TimelineTitle>
-                  <Typography color='dark-grey' variant='tooltip'>
-                    {checkpoint.description}
-                  </Typography>
-                </TimelineContent>
-              </Space>
-            )
-          })}
-        </Flex>
-      )}
+            </Space>
+          )
+        })}
+      </Flex>
     </>
   )
 }
@@ -206,7 +183,7 @@ StepProgress.propTypes = {
 
 StepProgress.defaultProps = {
   activeIndex: 1,
-  isRow: false,
+  isRow: true,
 }
 
 export default StepProgress
