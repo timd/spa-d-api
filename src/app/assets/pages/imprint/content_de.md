@@ -1,40 +1,35 @@
 ---
-title: "Imprint German"
-language: "de"
+title: 'Imprint German'
+language: 'de'
 ---
 
 ## Adresse
 
-Gesund Zusammen gGmbH<br />
-Urbanstr. 71<br />
-10967 Berlin, Germany
+finleap GmbH<br />
+Hardenbergstraße 32<br />
+10623 Berlin, Germany<br />
+Email: …
 
-### Kontakt
+Handelsregister: Amtsgericht Charlottenburg HRB 159534 B<br />
+USt.-Ident-Nr.: DE296042460
 
-Tel .: +49 (0) 30 609865290<br />
-Email: media@gesund-zusammen.de
-
-### Managing Directors
+### Geschäftsführer\*Innen
 
 Ramin Niroumand<br />
-Julian Bernhard Edward Teicke
+Michael Hock<br />
+Dr. Florian Resatsch<br />
+Dr. Birte Sewing
 
-### Commercial Register
+### Rechtliche Hinweise
 
-Amtsgericht Charlottenburg<br />
-HRB 216639 B<br />
-VAT ID: [Aktualisierung nach erfolgreicher Eintragung]
+Alle auf unseren Internetseiten veröffentlichten Angaben und Informationen wurden gewissenhaft recherchiert und geprüft. Trotz aller Sorgfalt können wir für die Richtigkeit, Vollständigkeit und Aktualität der zur Verfügung gestellten Informationen keine Garantie oder Haftung übernehmen, da sich die Daten mittlerweile geändert haben können. Dies gilt auch für externe Internetseiten, auf die mithilfe eines Hyperlinks hingewiesen wird. Für die Inhalte dieser so erreichten Seiten übernehmen wir keine Verantwortung. Alle Inhalte und Gestaltungen unserer Internetseiten sind urheberrechtlich geschützt. Eine Vervielfältigung dieser Seiten oder Inhalte bedarf einer vorherigen schriftlichen Zustimmung von uns.
 
-### The following information is legally required according to German law
+#### Haftung für Inhalte
 
-Responsible for content according to § 55 RStV Abs. 2: Ramin Niroumand, see address above. Note on external links: In a judgment dated 12 May 1998, “Liability for Links” (312 O 85/98) the regional court (LG) of Hamburg decided that the owner of a website is responsible for the contents on linked pages of external websites. This can only be prevented by explicitly distancing oneself from these contents. We hereby disclaim responsibility for the contents of all linked pages on our website and declare that we do not adopt this content as its own.
+Alle Inhalte unserer Internetseite wurden mit größter Sorgfalt und Gewissenhaftigkeit erstellt. Wir übernehmen keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität der Inhalte. Als Dienstanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Dienstanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diesbezügliche Inhalte umgehend entfernen.
 
-#### Disclaimer
+### Urheberrecht
 
-The information provided on this website has been carefully checked and is updated regularly. However, no guarantee can be given that all information is always complete, correct and / or up to date. This applies especially to all links to other websites, which are directly
-or indirectly. We reserve all information to supplement without prior
-notice, to remove and / or modify.
+Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir diesbezügliche Inhalte umgehend entfernen.
 
-### Copyright
-
-All product names mentioned on this website, product names, brand names and logos are trademarks and / or property of their respective owners. All text and graphics on this site: &copy; Gesund Zusammen gGmbH i.G. or the copyright holders.
+Alle Texte und Grafiken auf dieser Seite: &copy; finleap GmbH oder die Urheberrechtsinhaber.
