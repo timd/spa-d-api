@@ -73,9 +73,10 @@ const Questionnaire = ({ i18n, ...props }) => {
   }
 
   const showNextQuestion = () => {
+    let nextQuestionId = item.nextQuestionId[answer.id] || item.nextQuestionId
     setQuestionnaireState(prevState => ({
       ...prevState,
-      currentQuestionId: item.nextQuestionId,
+      currentQuestionId: nextQuestionId,
     }))
   }
   const showPrevQuestion = () => {

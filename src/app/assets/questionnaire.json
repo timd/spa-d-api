@@ -153,7 +153,10 @@
       }
     ],
     "previousQuestionId": "question-4",
-    "nextQuestionId": "question-6",
+    "nextQuestionId": {
+      "option-5-1": "question-6",
+      "option-5-2": "question-9"
+    },
     "progress": "50%"
   },
   "question-6": {
