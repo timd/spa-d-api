@@ -8,7 +8,7 @@ const checkpoints = [
   {
     id: 'checkpoint-1',
     title: 'Title1',
-    description: '',
+    description: 'Random description',
     progress: '0%',
   },
   {
@@ -62,14 +62,18 @@ const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
             const isLastOne = idx === checkpoints.length - 1
 
             return (
-              <TimelineTitle
-                key={checkpoint.id}
+              <TimelineContent
                 position='absolute'
                 isLastOne={isLastOne}
                 isRow={isRow}
-                progress={checkpoint.progress}>
-                {checkpoint.title}
-              </TimelineTitle>
+                progress={checkpoint.progress}
+                key={checkpoint.id}
+                flexDirection='column'>
+                <TimelineTitle variant='body'>{checkpoint.title}</TimelineTitle>
+                <Typography color='dark-grey' variant='tooltip'>
+                  {checkpoint.description}
+                </Typography>
+              </TimelineContent>
             )
           })}
         </Flex>
@@ -81,15 +85,20 @@ const StepProgress = ({ activeIndex, isRow, minWidth, ...props }) => {
 
             return (
               <Space key={checkpoint.id} ml={6}>
-                <TimelineTitle
+                <TimelineContent
                   position='absolute'
                   isActive={isActive}
                   isLastOne={isLastOne}
                   isFirst={idx === 0}
                   isRow={isRow}
-                  progress={checkpoint.progress}>
-                  {checkpoint.title}
-                </TimelineTitle>
+                  progress={checkpoint.progress}
+                  key={checkpoint.id}
+                  flexDirection='column'>
+                  <TimelineTitle variant='body'>{checkpoint.title}</TimelineTitle>
+                  <Typography color='dark-grey' variant='tooltip'>
+                    {checkpoint.description}
+                  </Typography>
+                </TimelineContent>
               </Space>
             )
           })}
@@ -135,9 +144,12 @@ const containerStyle = ({ isRow }) =>
     transform: rotate(90deg);
   `
 
-const TimelineTitle = styled(Typography)`
-  position: absolute;
+const TimelineContent = styled(Flex)`
   ${timelineTitleStyle};
+`
+
+const TimelineTitle = styled(Typography)`
+  font-weight: ${themeGet('fontWeights.bold')};
 `
 
 const Container = styled(Flex)`
