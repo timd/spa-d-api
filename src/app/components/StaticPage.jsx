@@ -1,13 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ReactMarkdown from 'react-markdown'
-import { Footer } from 'app/components'
 
 //import ContentDE from '../../data/imprint/imprint_de.md'
-import ContentEN from '../assets/pages/imprint/imprint_en.md'
 
-export default () => (
+const StaticPage = ({ content }) => (
   <>
-    <ReactMarkdown source={ContentEN} escapeHtml={false} />
-    <Footer />
+    <ReactMarkdown source={content} escapeHtml={false} />
   </>
 )
+
+StaticPage.propTypes = {
+  content: PropTypes.string,
+}
+
+export default StaticPage

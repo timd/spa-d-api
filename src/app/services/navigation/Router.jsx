@@ -4,7 +4,16 @@ import { Flex, Space } from '@kogaio/Responsive'
 import styled from 'styled-components'
 
 import { Header } from 'app/components'
-import { Landing as LandingScreen, NotFound, QuestionnaireQuestions, QuestionnaireResults, Imprint } from 'app/screens'
+import {
+  Landing as LandingScreen,
+  NotFound,
+  QuestionnaireQuestions,
+  QuestionnaireResults,
+  Imprint,
+  Conditions,
+  DataProtection,
+  AboutUs,
+} from 'app/screens'
 
 const AppRouter = () => (
   <Space px={4}>
@@ -14,6 +23,9 @@ const AppRouter = () => (
       <Router primary={false}>
         <LandingScreen path='/' />
         <Imprint path='/imprint' />
+        <Conditions path='/conditions' />
+        <DataProtection path='/data-protection' />
+        <AboutUs path='/about-us' />
         <QuestionnaireQuestions path='/questionnaire' />
         <QuestionnaireResults path='/questionnaire/results' />
         <NotFound default />
