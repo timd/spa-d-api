@@ -10,7 +10,7 @@ class QuestionnaireProgressStorage {
     this._tail = null
   }
 
-  add = data => {
+  append = data => {
     let node = {
       data,
       next: null,
@@ -27,6 +27,19 @@ class QuestionnaireProgressStorage {
       this._current = node
       this._tail = node
     }
+  }
+
+  branch = data => {
+    let node = {
+      data,
+      next: null,
+      previous: null,
+    }
+
+    this._current.next = node
+    node.previous = this._current
+    this._current = node
+    this._tail = node
   }
 
   seekTo = node => (this._current = node)

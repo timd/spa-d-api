@@ -49,43 +49,49 @@ const Questionnaire = ({ i18n, ...props }) => {
 
   const isOptionSelected = option => currentState.optionId === option.id
 
-  const isNextButtonDisabled = () => !currentState.optionId
+  const isNextButtonDisabled = () => false //!currentState.optionId
 
   const showMoreOptions = () => {
-    setQuestionnaireState(prevState => {
+    setQuestionnaireState(state => {
       currentState.isExpanded = true
-      return { ...prevState }
+      return { ...state }
     })
   }
 
   const showNextQuestion = () => {
     let questionId = item.nextQuestionId[currentState.optionId] || item.nextQuestionId
-    setQuestionnaireState(prevState => {
-      if (prevState.next()) {
-        prevState.seekForward()
+    let data = {
+      questionId,
+      optionId: null,
+      isExpanded: false,
+      values: {},
+    }
+    setQuestionnaireState(state => {
+      if (state.next()) {
+        const nextValue = state.nextValue()
+        if (nextValue.questionId === questionId) {
+          state.seekForward()
+        } else {
+          state.branch(data)
+        }
       } else {
-        prevState.add({
-          questionId,
-          optionId: null,
-          isExpanded: false,
-          values: {},
-        })
+        state.append(data)
       }
-      return { ...prevState }
+      return { ...state }
     })
   }
   const showPrevQuestion = () => {
-    setQuestionnaireState(prevState => {
-      prevState.seekBackward()
-      return { ...prevState }
+    setQuestionnaireState(state => {
+      state.seekBackward()
+      return { ...state }
     })
   }
   const showResults = () => {
     navigate('/questionnaire/results')
-    setQuestionnaireState(prevState => ({
-      ...prevState,
-      currentQuestionId: null,
-    }))
+    setQuestionnaireState(state => {
+      state.seekTo(null)
+      return { ...state }
+    })
   }
 
   return (

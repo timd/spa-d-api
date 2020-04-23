@@ -16,15 +16,15 @@ const GetStarted = ({
   const { setQuestionnaireState } = useContext(QuestionnaireContext)
 
   const _startQuestionnaire = () => {
-    const [firstQuestionId] = Object.keys(questionnaireItemsObj)
-    setQuestionnaireState(prevState => {
-      prevState.add({
-        questionId: firstQuestionId,
+    const [questionId] = Object.keys(questionnaireItemsObj)
+    setQuestionnaireState(state => {
+      state.append({
+        questionId,
         optionId: null,
         isExpanded: false,
         values: {},
       })
-      return { ...prevState }
+      return { ...state }
     })
   }
 
