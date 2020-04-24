@@ -61,7 +61,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     setQuestionnaireState(state => {
       currentState.optionId = option.id
       currentState.name = item.name
-      currentState.value = value
+      currentState.value = value || undefined
       return { ...state }
     })
   }
@@ -72,14 +72,21 @@ const Questionnaire = ({ i18n, t, ...props }) => {
       currentState.name = item.name
 
       currentState.value = currentState.value ?? []
-      currentState.value[index] = value
+      currentState.value[index] = value || undefined
+
       return { ...state }
     })
   }
 
   const isOptionSelected = option => currentState.optionId === option.id
 
-  const isNextButtonDisabled = () => false //!currentState.optionId
+  const isNextButtonDisabled = () => {
+    if (Array.isArray(currentState.value)) {
+      return currentState.value.filter(item => !!item).length === 0
+    }
+    return !currentState.value
+  }
+
   const isBackButtonVisible = () => !!questionnaireState.previous()
 
   const showMoreOptions = () => {
