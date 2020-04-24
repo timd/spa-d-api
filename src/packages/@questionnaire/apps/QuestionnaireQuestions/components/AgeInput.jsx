@@ -1,37 +1,46 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Flex, Input } from '@kogaio'
+import { Flex, Input, Typography } from '@kogaio'
 
-import { themed, themeGet } from '@kogaio/utils'
+import { themeGet } from '@kogaio/utils'
+import Space from '@ivoryio/kogaio/Responsive/Space'
 
-const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => (
+const AgeInput = ({ id, label, value, placeholder, onChange, ...props }) => (
   <Container {...props}>
+    <Space mr={4}>
+      <Label variant='body'>{label}</Label>
+    </Space>
     <Input
       id={id}
       value={value}
       placeholder={placeholder}
       type='number'
       variant='questionnaire'
+      width='auto'
       noBottomSpace
       onChange={onChange}
     />
   </Container>
 )
 
+const Label = styled(Typography)`
+  color: ${themeGet('colors.dark-gray')};
+`
 const Container = styled(Flex)`
   position: relative;
   align-items: center;
+  justify-content: flex-end;
 
   input {
-    padding-right: 28px;
+    padding-right: 56px;
   }
 
   :after {
     font-family: ${themeGet('fonts.complementary')};
     display: block;
     color: ${themeGet('colors.brand')};
-    content: '€';
+    content: 'years';
     position: absolute;
     right: 12px;
     top: 0;
@@ -42,11 +51,12 @@ const Container = styled(Flex)`
   }
 `
 
-CurrencyInput.propTypes = {
+AgeInput.propTypes = {
   id: PropTypes.string,
+  label: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
 }
 
-export default CurrencyInput
+export default AgeInput

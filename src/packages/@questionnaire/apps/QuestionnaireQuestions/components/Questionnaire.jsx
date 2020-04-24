@@ -6,10 +6,10 @@ import { TouchableWithIcon } from '@shared-utils/components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { questionnaireItemsObj } from '../assets'
-import { AnswerTouchable, Content, CurrencyInput, MoreTouchable, ProgressBar, TitleWithTooltipInfo } from '.'
+import { AgeInput, AnswerTouchable, Content, CurrencyInput, MoreTouchable, ProgressBar, TitleWithTooltipInfo } from '.'
 import { withTranslation } from 'react-i18next'
 
-const Questionnaire = ({ i18n, ...props }) => {
+const Questionnaire = ({ i18n, t, ...props }) => {
   const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
   const currentState = questionnaireState.currentValue()
 
@@ -62,6 +62,17 @@ const Questionnaire = ({ i18n, ...props }) => {
       currentState.optionId = option.id
       currentState.name = item.name
       currentState.value = value
+      return { ...state }
+    })
+  }
+
+  const inputMultipleOptions = (option, index, value) => {
+    setQuestionnaireState(state => {
+      currentState.optionId = option.id
+      currentState.name = item.name
+
+      currentState.value = currentState.value ?? []
+      currentState.value[index] = value
       return { ...state }
     })
   }
@@ -119,11 +130,15 @@ const Questionnaire = ({ i18n, ...props }) => {
   }
 
   var dynamicOptions = []
-  const { dependency, type } = item.dynamic ?? {}
+  const { dependency, title, type } = item.dynamic ?? {}
   if (dependency) {
     let count = answers()[dependency]
-    for (var i = 0; i < count; i++) {
-      dynamicOptions.push(i)
+    for (var i = 1; i <= count; i++) {
+      dynamicOptions.push({
+        id: `${item.questionId}-${i}`,
+        type: type,
+        title: title,
+      })
     }
   }
 
@@ -141,11 +156,21 @@ const Questionnaire = ({ i18n, ...props }) => {
             />
           )}
 
-          {dynamicOptions.map(index => (
-            <Space key={`dfasf ${index}`} mt={3}>
-              <CurrencyInput id={`dfasf ${index}`} value='' placeholder='' onChange={event => {}} />
-            </Space>
-          ))}
+          {dynamicOptions.map((option, index) =>
+            option.type === 'age_input' ? (
+              <Space key={option.id} mt={3}>
+                <AgeInput
+                  id={option.id}
+                  value={currentState.value ? currentState.value[index] : null}
+                  label={`${option.title[lang]} ${index + 1}`}
+                  placeholder={t('Age')}
+                  onChange={event => inputMultipleOptions(option, index, event.target.value)}
+                />
+              </Space>
+            ) : (
+              <></>
+            )
+          )}
 
           {visibleItems().map(option =>
             option.type === 'currency_input' ? (

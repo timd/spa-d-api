@@ -248,11 +248,11 @@
       },
       {
         "id": "option-6-4",
-        "type": "custom",
         "title": {
           "en": "More",
           "de": "[DE] More"
-        }
+        },
+        "value": 10
       }
     ],
     "nextQuestionId": "question-7",
@@ -265,8 +265,12 @@
       "de": "Wie alt ist er oder sie?"
     },
     "dynamic": {
+      "type": "age_input",
       "dependency": "children_count",
-      "type": "currency_input"
+      "title": {
+        "en": "Kid",
+        "de": "[DE] Kid"
+      }
     },
     "nextQuestionId": "question-8",
     "progress": "70%"
