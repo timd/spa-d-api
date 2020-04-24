@@ -57,6 +57,15 @@ const Questionnaire = ({ i18n, ...props }) => {
     })
   }
 
+  const inputOption = (option, value) => {
+    setQuestionnaireState(state => {
+      currentState.optionId = option.id
+      currentState.name = item.name
+      currentState.value = value
+      return { ...state }
+    })
+  }
+
   const isOptionSelected = option => currentState.optionId === option.id
 
   const isNextButtonDisabled = () => false //!currentState.optionId
@@ -109,6 +118,15 @@ const Questionnaire = ({ i18n, ...props }) => {
     console.dir(answers())
   }
 
+  var dynamicOptions = []
+  const { dependency, type } = item.dynamic ?? {}
+  if (dependency) {
+    let count = answers()[dependency]
+    for (var i = 0; i < count; i++) {
+      dynamicOptions.push(i)
+    }
+  }
+
   return (
     <Content title={item.title[lang]} {...props}>
       <ProgressBar progress={item.progress} />
@@ -122,10 +140,22 @@ const Questionnaire = ({ i18n, ...props }) => {
               }}
             />
           )}
+
+          {dynamicOptions.map(index => (
+            <Space key={`dfasf ${index}`} mt={3}>
+              <CurrencyInput id={`dfasf ${index}`} value='' placeholder='' onChange={event => {}} />
+            </Space>
+          ))}
+
           {visibleItems().map(option =>
             option.type === 'currency_input' ? (
               <Space key={option.id} mt={3}>
-                <CurrencyInput id={option.id} placeholder={option.title[lang]} />
+                <CurrencyInput
+                  id={option.id}
+                  value={currentState.value}
+                  placeholder={option.title[lang]}
+                  onChange={event => inputOption(option, event.target.value)}
+                />
               </Space>
             ) : (
               <Space key={option.id} mt={3}>
