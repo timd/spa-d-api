@@ -168,7 +168,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
               <Space key={option.id} mt={3}>
                 <AgeInput
                   id={option.id}
-                  value={currentState.value ? currentState.value[index] : null}
+                  value={currentState.value ? currentState.value[index] : undefined}
                   label={`${option.title[lang]} ${index + 1}`}
                   placeholder={t('Age')}
                   onChange={event => inputMultipleOptions(option, index, event.target.value)}

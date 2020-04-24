@@ -26,8 +26,8 @@ const FeatureCard = ({ id, icon, title, description, i18n, ...props }) => {
 FeatureCard.propTypes = {
   id: PropTypes.string,
   icon: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
+  title: PropTypes.object,
+  description: PropTypes.object,
   i18n: PropTypes.object,
 }
 
