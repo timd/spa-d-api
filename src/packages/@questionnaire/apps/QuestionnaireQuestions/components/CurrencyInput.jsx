@@ -12,6 +12,7 @@ const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => (
       value={value}
       placeholder={placeholder}
       type='number'
+      min={0}
       variant='questionnaire'
       noBottomSpace
       onChange={onChange}

@@ -18,6 +18,8 @@ const AgeInput = ({ id, label, value, placeholder, onChange, ...props }) => (
       type='number'
       variant='questionnaire'
       width='auto'
+      min={0}
+      max={21}
       noBottomSpace
       onChange={onChange}
     />
