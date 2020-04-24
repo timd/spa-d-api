@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Flex, Image, Space, Typography } from '@kogaio'
+import { Flex, Image, Space, Typography } from '@kogaio'
 
 import { logo } from '../assets'
 

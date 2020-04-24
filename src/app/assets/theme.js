@@ -58,11 +58,97 @@ const FONT_WEIGHTS = {
   medium: 500,
 }
 
+const HEIGHTS = {
+  normal: '40px',
+  large: '50px',
+}
+
+const TYPOGRAPHY_VARIANTS = {
+  h1: {
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '48px',
+    'line-height': '56px',
+  },
+  h2: {
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '32px',
+    'line-height': '40px',
+  },
+  h3: {
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '28px',
+    'line-height': '32px',
+  },
+  sh1: {
+    'font-family': FONTS.complementary,
+    'font-weight': fontWeights.regular,
+    'font-size': '24px',
+    'line-height': '32px',
+  },
+  sh2: {
+    'font-family': FONTS.complementary,
+    'font-weight': `${fontWeights.regular}`,
+    'font-size': '22px',
+    'line-height': '24px',
+  },
+  sh3: {
+    'font-family': FONTS.complementary,
+    'font-weight': `${fontWeights.regular}`,
+    'font-size': '18px',
+    'line-height': '24px',
+  },
+  body: {
+    'font-family': FONTS.complementary,
+    'font-weight': `${fontWeights.regular}`,
+    'font-size': '16px',
+    'line-height': '24px',
+  },
+  'super-title': {
+    'font-family': FONTS.complementary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '14px',
+    'line-height': '16px',
+  },
+  caption: {
+    'font-family': FONTS.complementary,
+    'font-weight': `${fontWeights.regular}`,
+    'font-size': '12px',
+    'line-height': '16px',
+  },
+  textLogoDesktop: {
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '26px',
+    'line-height': '28px',
+  },
+  textLogoMobile: {
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '20px',
+    'line-height': '24px',
+  },
+  questionnaireTitle: {
+    color: COLORS['dark-grey'],
+    'font-family': FONTS.primary,
+    'font-weight': `${fontWeights.bold}`,
+    'font-size': '22px',
+    'line-height': '32px',
+  },
+  tooltip: {
+    'font-family': FONTS.complementary,
+    'font-size': '14px',
+    'line-height': '24px',
+  },
+}
+
 const BUTTON_VARIANTS = {
   primary: {
     'border-radius': `${radii[4]}px`,
     'font-family': FONTS.complementary,
-    height: '40px',
+    height: HEIGHTS.normal,
     'min-width': '140px',
     'max-width': '311px',
     'white-space': 'nowrap',
@@ -77,7 +163,7 @@ const BUTTON_VARIANTS = {
     'background-color': COLORS['brand-secondary'],
     'border-radius': `${radii[4]}px`,
     'font-family': FONTS.complementary,
-    height: '40px',
+    height: HEIGHTS.normal,
     'min-width': '140px',
     'max-width': '311px',
     'white-space': 'nowrap',
@@ -95,7 +181,7 @@ const BUTTON_VARIANTS = {
     'border-radius': `${radii[4]}px`,
     border: `${borders[1]} ${COLORS.brand}`,
     'font-family': FONTS.complementary,
-    height: '40px',
+    height: HEIGHTS.normal,
     'min-width': '140px',
     'max-width': '311px',
     'white-space': 'nowrap',
@@ -179,86 +265,32 @@ const INPUT_VARIANTS = {
       '-moz-appearance': 'textfield',
     },
   },
+  questionnaire: {
+    ...TYPOGRAPHY_VARIANTS.body,
+    height: HEIGHTS.large,
+    color: COLORS['dark-grey'],
+    'background-color': COLORS.white,
+    border: `${borders[1]} ${COLORS['headerShadow']}`,
+    'border-radius': `${radii[4]}px`,
+    '::placeholder': {
+      color: COLORS.placeholder,
+    },
+    ':focus, :hover': {
+      color: COLORS['brand'],
+      border: `${borders[1]} ${COLORS['brand']}`,
+    },
+    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
+    },
+    '&[type=number]': {
+      '-moz-appearance': 'textfield',
+    },
+  },
 }
 
 const LANDING_CONTAINER = {
   'max-width': 1080,
-}
-
-const TYPOGRAPHY_VARIANTS = {
-  h1: {
-    'font-family': FONTS.primary,
-    'font-weight': `${fontWeights.bold}`,
-    'font-size': '48px',
-    'line-height': '56px',
-  },
-  h2: {
-    'font-family': FONTS.primary,
-    'font-weight': `${fontWeights.bold}`,
-    'font-size': '32px',
-    'line-height': '40px',
-  },
-  h3: {
-    'font-family': FONTS.primary,
-    'font-weight': `${fontWeights.bold}`,
-    'font-size': '28px',
-    'line-height': '32px',
-  },
-  sh1: {
-    'font-family': FONTS.complementary,
-    'font-weight': fontWeights.regular,
-    'font-size': '24px',
-    'line-height': '32px',
-  },
-  sh2: {
-    'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.regular}`,
-    'font-size': '22px',
-    'line-height': '24px',
-  },
-  sh3: {
-    'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.regular}`,
-    'font-size': '18px',
-    'line-height': '24px',
-  },
-  body: {
-    'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.regular}`,
-    'font-size': '16px',
-    'line-height': '24px',
-  },
-  'super-title': {
-    'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.bold}`,
-    'font-size': '14px',
-    'line-height': '16px',
-  },
-  caption: {
-    'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.regular}`,
-    'font-size': '12px',
-    'line-height': '16px',
-  },
-  textLogoDesktop: {
-    'font-family': FONTS.primary,
-    'font-weight': `${fontWeights.bold}`,
-    'font-size': '26px',
-    'line-height': '28px',
-  },
-  textLogoMobile: {
-    'font-family': FONTS.primary,
-    'font-weight': `${fontWeights.bold}`,
-    'font-size': '20px',
-    'line-height': '24px',
-  },
-  questionnaireTitle: {
-    color: COLORS['dark-grey'],
-    'font-family': FONTS.primary,
-    'font-weight': `${fontWeights.bold}`,
-    'font-size': '22px',
-    'line-height': '32px',
-  },
 }
 
 const ANCHOR = {
@@ -316,9 +348,7 @@ const theme = Object.seal({
     tracked: '0.05rem',
   },
   shadows: {
-    'card-simple': `0px 1px 4px ${COLORS.black25}`,
-    'card-highlight': `0px 3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
-    'text-editor': `0px -3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
+    'tooltip-white': `0px 4px 16px rgba(0, 0, 0, 0.3)`,
   },
   textStyles: {
     nowrap: {

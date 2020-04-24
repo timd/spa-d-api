@@ -117,6 +117,26 @@
       "en": "How high is your monthly net income?",
       "de": "Wie hoch ist dein monatliches Nettoeinkommen?"
     },
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "[DE] Are you not sure?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
+        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+      }
+    },
+    "options": [
+      {
+        "id": "option-3-1",
+        "type": "currency_input",
+        "title": {
+          "en": "Income",
+          "de": "[DE] Income"
+        }
+      }
+    ],
     "nextQuestionId": "question-4",
     "progress": "30%"
   },

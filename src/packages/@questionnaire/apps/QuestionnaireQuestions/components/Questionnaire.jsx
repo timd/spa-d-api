@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Space, Flex } from '@kogaio'
 import { navigate } from '@reach/router'
@@ -6,7 +6,7 @@ import { TouchableWithIcon } from '@shared-utils/components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { questionnaireItemsObj } from '../assets'
-import { AnswerTouchable, Content, MoreTouchable, ProgressBar } from '.'
+import { AnswerTouchable, Content, CurrencyInput, MoreTouchable, ProgressBar, TitleWithTooltipInfo } from '.'
 import { withTranslation } from 'react-i18next'
 
 const Questionnaire = ({ i18n, ...props }) => {
@@ -100,15 +100,29 @@ const Questionnaire = ({ i18n, ...props }) => {
       <ProgressBar progress={item.progress} />
       <Space ml='auto' mt={10}>
         <Flex width={{ xs: 1, md: '400px' }} flexDirection='column' justifyContent='flex-end'>
-          {visibleItems().map(option => (
-            <Space key={option.id} mt={3}>
-              <AnswerTouchable
-                title={option.title[lang]}
-                isSelected={isOptionSelected(option)}
-                onClick={() => selectOption(option)}
-              />
-            </Space>
-          ))}
+          {item.tooltip && (
+            <TitleWithTooltipInfo
+              tooltipInfo={{
+                title: item.tooltip.title[lang],
+                description: item.tooltip.description[lang],
+              }}
+            />
+          )}
+          {visibleItems().map(option =>
+            option.type === 'currency_input' ? (
+              <Space key={option.id} mt={3}>
+                <CurrencyInput placeholder={option.title[lang]} />
+              </Space>
+            ) : (
+              <Space key={option.id} mt={3}>
+                <AnswerTouchable
+                  title={option.title[lang]}
+                  isSelected={isOptionSelected(option)}
+                  onClick={() => selectOption(option)}
+                />
+              </Space>
+            )
+          )}
           <Space mt={3}>
             <MoreTouchable
               display={shouldShowMoreButton() ? 'inherit' : 'none'}
