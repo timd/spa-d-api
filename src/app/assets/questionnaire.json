@@ -132,8 +132,8 @@
         "id": "option-3-1",
         "type": "currency_input",
         "title": {
-          "en": "Income",
-          "de": "[DE] Income"
+          "en": "Net income",
+          "de": "[DE] Net income"
         }
       }
     ],
@@ -145,6 +145,26 @@
       "en": "How high are you joined assets?",
       "de": "Wieviel sind eure geteilten Vermögenswerte?"
     },
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "[DE] Are you not sure?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
+        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+      }
+    },
+    "options": [
+      {
+        "id": "option-4-1",
+        "type": "currency_input",
+        "title": {
+          "en": "Joined assets",
+          "de": "[DE] Joined assets"
+        }
+      }
+    ],
     "nextQuestionId": "question-5",
     "progress": "40%"
   },
