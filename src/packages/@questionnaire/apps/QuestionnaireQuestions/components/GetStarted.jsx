@@ -20,9 +20,10 @@ const GetStarted = ({
     setQuestionnaireState(state => {
       state.append({
         questionId,
-        optionId: null,
+        optionId: undefined,
+        name: undefined,
+        value: undefined,
         isExpanded: false,
-        values: {},
       })
       return { ...state }
     })

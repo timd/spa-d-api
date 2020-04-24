@@ -17,6 +17,14 @@ const Questionnaire = ({ i18n, ...props }) => {
   const allOptions = item.options ?? []
   const lang = i18n.language
 
+  const answers = () =>
+    questionnaireState.values().reduce((accumulator, answer) => {
+      if (answer.name) {
+        accumulator[answer.name] = answer.value
+      }
+      return accumulator
+    }, {})
+
   const visibleItems = () => {
     if (currentState.isExpanded) {
       return allOptions
@@ -43,6 +51,8 @@ const Questionnaire = ({ i18n, ...props }) => {
   const selectOption = option => {
     setQuestionnaireState(state => {
       currentState.optionId = option.id
+      currentState.name = item.name
+      currentState.value = option.value
       return { ...state }
     })
   }
@@ -63,9 +73,10 @@ const Questionnaire = ({ i18n, ...props }) => {
     let questionId = item.nextQuestionId[currentState.optionId] || item.nextQuestionId
     let data = {
       questionId,
-      optionId: null,
+      optionId: undefined,
+      name: undefined,
+      value: undefined,
       isExpanded: false,
-      values: {},
     }
     setQuestionnaireState(state => {
       if (state.next()) {
@@ -93,6 +104,9 @@ const Questionnaire = ({ i18n, ...props }) => {
       state.seekTo(null)
       return { ...state }
     })
+
+    console.log('Calculator input')
+    console.dir(answers())
   }
 
   return (
@@ -111,7 +125,7 @@ const Questionnaire = ({ i18n, ...props }) => {
           {visibleItems().map(option =>
             option.type === 'currency_input' ? (
               <Space key={option.id} mt={3}>
-                <CurrencyInput placeholder={option.title[lang]} />
+                <CurrencyInput id={option.id} placeholder={option.title[lang]} />
               </Space>
             ) : (
               <Space key={option.id} mt={3}>

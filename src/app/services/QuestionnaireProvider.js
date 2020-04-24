@@ -42,6 +42,18 @@ class QuestionnaireProgressStorage {
     this._tail = node
   }
 
+  values = () => {
+    let node = this._head
+    let output = []
+
+    while (node) {
+      output.push(node.data)
+      node = node.next
+    }
+
+    return output
+  }
+
   seekTo = node => (this._current = node)
   seekForward = () => this.seekTo(this.next())
   seekBackward = () => this.seekTo(this.previous())

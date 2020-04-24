@@ -5,15 +5,16 @@ import { Flex, Input } from '@kogaio'
 
 import { themed, themeGet } from '@kogaio/utils'
 
-const CurrencyInput = ({ placeholder, value, onChange, ...props }) => (
+const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => (
   <Container {...props}>
     <Input
-      variant='questionnaire'
+      id={id}
       value={value}
       placeholder={placeholder}
       type='number'
-      onChange={onChange}
+      variant='questionnaire'
       noBottomSpace
+      onChange={onChange}
     />
   </Container>
 )
@@ -43,6 +44,7 @@ const Container = styled(Flex)`
 `
 
 CurrencyInput.propTypes = {
+  id: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
