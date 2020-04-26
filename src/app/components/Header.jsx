@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link, navigate } from '@reach/router'
 import styled, { css } from 'styled-components'
-import { Link } from '@reach/router'
 import { Flex, Space } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
 
@@ -12,7 +12,19 @@ import { withLocation } from 'app/services/navigation/withLocation'
 const Header = ({ location: { pathname } }) => (
   <Space mx='auto' py={{ xs: 3, md: 4 }}>
     <Container pathname={pathname}>
-      <TextLogo />
+      {pathname !== '/recommendations' ? (
+        <TextLogo />
+      ) : (
+        <TouchableWithIcon
+          icon={{ name: 'keyboard_arrow_left', fontSize: '24px' }}
+          label='Result'
+          labelStyle={{
+            fontWeight: 'bold'
+          }}
+          onClick={() => navigate('/questionnaire/results')}
+          showLabelOnMobile
+        />
+      )}
       {pathname === '/' && <AboutUsLink to='about-us'>About us</AboutUsLink>}
       {pathname.includes('results') && (
         <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label='Share' onClick={() => {}} />

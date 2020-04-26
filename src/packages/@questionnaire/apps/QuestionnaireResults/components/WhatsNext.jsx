@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { navigate } from '@reach/router'
 import { Button, Card, Space, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
@@ -13,7 +14,7 @@ const WhatsNext = props => (
         </Typography>
       </Space>
       <Space mt={8} mx='auto'>
-        <Button title='Check what to do next' onClick={() => {}} width={1} />
+        <Button title='Check what to do next' onClick={() => navigate('/recommendations')} width={1} />
       </Space>
       <Space mt={4} mx='auto'>
         <Button title='Send me the result' onClick={() => {}} variant='outline' width={1} />

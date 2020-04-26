@@ -234,7 +234,6 @@ const TYPOGRAPHY_VARIANTS = {
   },
   body: {
     'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.regular}`,
     'font-size': '16px',
     'line-height': '24px',
   },
