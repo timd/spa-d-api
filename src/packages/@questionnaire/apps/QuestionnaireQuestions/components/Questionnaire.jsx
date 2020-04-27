@@ -84,7 +84,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     if (Array.isArray(currentState.value)) {
       return currentState.value.filter(item => !!item).length === 0
     }
-    return !currentState.value
+    return currentState.value === undefined
   }
 
   const isBackButtonVisible = () => !!questionnaireState.previous()
@@ -229,6 +229,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
 }
 
 Questionnaire.propTypes = {
+  t: PropTypes.func,
   i18n: PropTypes.object,
 }
 
