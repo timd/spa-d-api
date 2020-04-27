@@ -257,6 +257,9 @@
       {
         "id": "option-6-4",
         "type": "custom_number",
+        "validation": {
+          "max": 10
+        },
         "title": {
           "en": "More",
           "de": "[DE] More"

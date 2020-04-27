@@ -220,9 +220,10 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     title={option.title[lang]}
                     value={currentState.value}
                     placeholder={option.title[lang]}
+                    validation={option.validation}
                     isSelected={isOptionSelected(option)}
                     onClick={() => selectOption(option)}
-                    onChange={event => inputOption(option, event.target.value)}
+                    onChange={value => inputOption(option, value)}
                   />
                 </Space>
               )
@@ -236,9 +237,10 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     value={currentState.value}
                     placeholder={option.title[lang]}
                     type='number'
+                    validation={option.validation}
                     isSelected={isOptionSelected(option)}
                     onClick={() => selectOption(option)}
-                    onChange={event => inputOption(option, event.target.value)}
+                    onChange={value => inputOption(option, value)}
                   />
                 </Space>
               )

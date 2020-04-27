@@ -6,34 +6,56 @@ import { themed } from '@kogaio/utils'
 
 import { icons } from '../assets'
 
-const CustomInput = ({ id, title, value, placeholder, isSelected, type, onClick, onChange, ...props }) => (
-  <Wrapper>
-    <Touchable effect='opacity' onClick={onClick}>
-      <Space pl={4} pr={isSelected ? 2 : 4} py={3}>
-        <Container {...props} className={isSelected ? 'selected' : ''}>
-          <Typography variant='body' textAlign='left'>
-            {title}
-          </Typography>
-          <Space ml={isSelected ? 2 : 0}>
-            <Image display={isSelected ? 'block' : 'none'} src={icons.check} />
-          </Space>
-        </Container>
+const CustomInput = ({ id, title, value, placeholder, isSelected, type, validation, onClick, onChange, ...props }) => {
+  const handleOnChange = event => {
+    event.preventDefault()
+
+    const newValue = event.target.value
+    if (type === 'number') {
+      var options = {
+        min: 0,
+        ...validation,
+      }
+
+      if (newValue >= options.min && newValue <= options.max) {
+        onChange(newValue)
+      } else {
+        onChange(value)
+      }
+    } else {
+      onChange(newValue)
+    }
+  }
+
+  return (
+    <Wrapper>
+      <Touchable effect='opacity' onClick={onClick}>
+        <Space pl={4} pr={isSelected ? 2 : 4} py={3}>
+          <Container {...props} className={isSelected ? 'selected' : ''}>
+            <Typography variant='body' textAlign='left'>
+              {title}
+            </Typography>
+            <Space ml={isSelected ? 2 : 0}>
+              <Image display={isSelected ? 'block' : 'none'} src={icons.check} />
+            </Space>
+          </Container>
+        </Space>
+      </Touchable>
+      <Space mt={3}>
+        <Input
+          id={id}
+          value={value}
+          placeholder={placeholder}
+          type={type}
+          variant='questionnaire'
+          noBottomSpace
+          display={isSelected ? 'inherit' : 'none'}
+          onChange={handleOnChange}
+        />
       </Space>
-    </Touchable>
-    <Space mt={3}>
-      <Input
-        id={id}
-        value={value}
-        placeholder={placeholder}
-        type={type}
-        variant='questionnaire'
-        noBottomSpace
-        display={isSelected ? 'inherit' : 'none'}
-        onChange={onChange}
-      />
-    </Space>
-  </Wrapper>
-)
+    </Wrapper>
+  )
+}
 
 const Wrapper = styled(Flex)`
   flex-direction: column;
@@ -48,6 +70,7 @@ CustomInput.propTypes = {
   title: PropTypes.string,
   value: PropTypes.string,
   type: PropTypes.string,
+  validation: PropTypes.object,
   placeholder: PropTypes.string,
   isSelected: PropTypes.bool,
   onClick: PropTypes.func,
@@ -55,6 +78,7 @@ CustomInput.propTypes = {
 }
 CustomInput.defaultProps = {
   type: 'text',
+  validation: {},
 }
 
 export default CustomInput

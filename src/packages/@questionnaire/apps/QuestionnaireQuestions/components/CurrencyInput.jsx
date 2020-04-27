@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Flex, Input } from '@kogaio'
-
-import { themed, themeGet } from '@kogaio/utils'
+import { themeGet } from '@kogaio/utils'
 
 const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
   const MIN = 0
@@ -18,6 +17,7 @@ const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
       onChange(value)
     }
   }
+
   return (
     <Container {...props}>
       <Input
