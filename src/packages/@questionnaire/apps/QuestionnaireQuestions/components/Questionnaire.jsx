@@ -6,7 +6,16 @@ import { TouchableWithIcon } from '@shared-utils/components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { questionnaireItemsObj } from '../assets'
-import { AgeInput, AnswerTouchable, Content, CurrencyInput, MoreTouchable, ProgressBar, TitleWithTooltipInfo } from '.'
+import {
+  AgeInput,
+  AnswerTouchable,
+  Content,
+  CurrencyInput,
+  CustomInput,
+  MoreTouchable,
+  ProgressBar,
+  TitleWithTooltipInfo,
+} from '.'
 import { withTranslation } from 'react-i18next'
 
 const Questionnaire = ({ i18n, t, ...props }) => {
@@ -182,17 +191,50 @@ const Questionnaire = ({ i18n, t, ...props }) => {
             )
           )}
 
-          {visibleItems().map(option =>
-            option.type === 'currency_input' ? (
-              <Space key={option.id} mt={3}>
-                <CurrencyInput
-                  id={option.id}
-                  value={currentState.value}
-                  placeholder={option.title[lang]}
-                  onChange={event => inputOption(option, event.target.value)}
-                />
-              </Space>
-            ) : (
+          {visibleItems().map(option => {
+            if (option.type === 'currency_input') {
+              return (
+                <Space key={option.id} mt={3}>
+                  <CurrencyInput
+                    id={option.id}
+                    value={currentState.value}
+                    placeholder={option.title[lang]}
+                    onChange={event => inputOption(option, event.target.value)}
+                  />
+                </Space>
+              )
+            }
+            if (option.type === 'custom_string') {
+              return (
+                <Space key={option.id} mt={3}>
+                  <CustomInput
+                    id={option.id}
+                    title={option.title[lang]}
+                    value={currentState.value}
+                    placeholder={option.title[lang]}
+                    isSelected={isOptionSelected(option)}
+                    onClick={() => selectOption(option)}
+                    onChange={event => inputOption(option, event.target.value)}
+                  />
+                </Space>
+              )
+            }
+            if (option.type === 'custom_number') {
+              return (
+                <Space key={option.id} mt={3}>
+                  <CustomInput
+                    id={option.id}
+                    title={option.title[lang]}
+                    value={currentState.value}
+                    placeholder={option.title[lang]}
+                    isSelected={isOptionSelected(option)}
+                    onClick={() => selectOption(option)}
+                    onChange={event => inputOption(option, event.target.value)}
+                  />
+                </Space>
+              )
+            }
+            return (
               <Space key={option.id} mt={3}>
                 <AnswerTouchable
                   title={option.title[lang]}
@@ -201,7 +243,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                 />
               </Space>
             )
-          )}
+          })}
           <Space mt={3}>
             <MoreTouchable
               display={isShowMoreOptionsButtonVisible() ? 'inherit' : 'none'}

@@ -121,6 +121,14 @@
           "de": "[DE] Pension"
         },
         "value": "pension"
+      },
+      {
+        "id": "option-2-7",
+        "type": "custom_string",
+        "title": {
+          "en": "Other",
+          "de": "[DE] Other"
+        }
       }
     ],
     "initialOptionsCount": 3,
@@ -248,11 +256,11 @@
       },
       {
         "id": "option-6-4",
+        "type": "custom_number",
         "title": {
           "en": "More",
           "de": "[DE] More"
-        },
-        "value": 10
+        }
       }
     ],
     "nextQuestionId": "question-7",
