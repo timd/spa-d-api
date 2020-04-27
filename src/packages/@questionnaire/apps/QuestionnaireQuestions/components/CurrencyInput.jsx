@@ -5,20 +5,34 @@ import { Flex, Input } from '@kogaio'
 
 import { themed, themeGet } from '@kogaio/utils'
 
-const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => (
-  <Container {...props}>
-    <Input
-      id={id}
-      value={value}
-      placeholder={placeholder}
-      type='number'
-      min={0}
-      variant='questionnaire'
-      noBottomSpace
-      onChange={onChange}
-    />
-  </Container>
-)
+const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
+  const MIN = 0
+
+  const handleOnChange = event => {
+    event.preventDefault()
+
+    const newValue = event.target.value
+    if (newValue >= MIN) {
+      onChange(newValue)
+    } else {
+      onChange(value)
+    }
+  }
+  return (
+    <Container {...props}>
+      <Input
+        id={id}
+        value={value}
+        placeholder={placeholder}
+        type='number'
+        min={0}
+        variant='questionnaire'
+        noBottomSpace
+        onChange={handleOnChange}
+      />
+    </Container>
+  )
+}
 
 const Container = styled(Flex)`
   position: relative;

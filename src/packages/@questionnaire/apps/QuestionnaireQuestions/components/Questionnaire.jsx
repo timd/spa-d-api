@@ -199,7 +199,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     id={option.id}
                     value={currentState.value}
                     placeholder={option.title[lang]}
-                    onChange={event => inputOption(option, event.target.value)}
+                    onChange={value => inputOption(option, value)}
                   />
                 </Space>
               )
