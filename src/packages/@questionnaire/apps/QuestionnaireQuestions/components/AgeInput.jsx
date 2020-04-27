@@ -6,25 +6,41 @@ import { Flex, Input, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 import Space from '@ivoryio/kogaio/Responsive/Space'
 
-const AgeInput = ({ id, label, value, placeholder, onChange, ...props }) => (
-  <Container {...props}>
-    <Space mr={4}>
-      <Label variant='body'>{label}</Label>
-    </Space>
-    <Input
-      id={id}
-      value={value}
-      placeholder={placeholder}
-      type='number'
-      variant='questionnaire'
-      width='auto'
-      min={0}
-      max={21}
-      noBottomSpace
-      onChange={onChange}
-    />
-  </Container>
-)
+const AgeInput = ({ id, label, value, placeholder, onChange, ...props }) => {
+  const [MIN, MAX] = [0, 18]
+
+  const handleOnChange = event => {
+    event.preventDefault()
+
+    const newValue = event.target.value
+    if (newValue >= MIN && newValue <= MAX) {
+      onChange(newValue)
+    } else {
+      onChange(value)
+    }
+  }
+
+  return (
+    <Container {...props}>
+      <Space mr={4}>
+        <Label variant='body'>{label}</Label>
+      </Space>
+      <Input
+        id={id}
+        value={value}
+        placeholder={placeholder}
+        type='number'
+        variant='questionnaire'
+        width='auto'
+        minWidth='120px'
+        min={0}
+        max={21}
+        noBottomSpace
+        onChange={handleOnChange}
+      />
+    </Container>
+  )
+}
 
 const Label = styled(Typography)`
   color: ${themeGet('colors.dark-gray')};

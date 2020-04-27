@@ -183,7 +183,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                   value={currentState.value ? currentState.value[index] : undefined}
                   label={`${option.title[lang]} ${index + 1}`}
                   placeholder={t('Age')}
-                  onChange={event => inputMultipleOptions(option, index, event.target.value)}
+                  onChange={age => inputMultipleOptions(option, index, age)}
                 />
               </Space>
             ) : (
