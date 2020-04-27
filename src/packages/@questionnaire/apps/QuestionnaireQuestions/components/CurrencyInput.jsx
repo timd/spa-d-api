@@ -7,10 +7,16 @@ import { themeGet } from '@kogaio/utils'
 const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
   const MIN = 0
 
+  const localize = value => value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  const normalize = value => value.replace(/,/g, '')
+
   const handleOnChange = event => {
     event.preventDefault()
 
-    const newValue = event.target.value
+    let newValue = event.target.value ?? ''
+    newValue = normalize(newValue)
+    newValue = parseInt(newValue) || 0
+
     if (newValue >= MIN) {
       onChange(newValue)
     } else {
@@ -22,10 +28,8 @@ const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
     <Container {...props}>
       <Input
         id={id}
-        value={value}
+        value={localize(value || '')}
         placeholder={placeholder}
-        type='number'
-        min={0}
         variant='questionnaire'
         noBottomSpace
         onChange={handleOnChange}
