@@ -36,43 +36,34 @@ const Questionnaire = ({ i18n, t, ...props }) => {
 
     return allOptions
   }
-  const shouldShowMoreButton = () => {
-    if (currentState.isExpanded) {
-      return false
-    }
-
-    if (item.initialOptionsCount) {
-      return allOptions.length > item.initialOptionsCount
-    }
-
-    return false
-  }
 
   const selectOption = option => {
     setQuestionnaireState(state => {
-      currentState.optionId = option.id
-      currentState.name = item.name
-      currentState.value = option.value
+      let current = state.currentValue()
+      current.optionId = option.id
+      current.name = item.name
+      current.value = option.value
       return { ...state }
     })
   }
 
   const inputOption = (option, value) => {
     setQuestionnaireState(state => {
-      currentState.optionId = option.id
-      currentState.name = item.name
-      currentState.value = value || undefined
+      let current = state.currentValue()
+      current.optionId = option.id
+      current.name = item.name
+      current.value = value || undefined
       return { ...state }
     })
   }
 
   const inputMultipleOptions = (option, index, value) => {
     setQuestionnaireState(state => {
-      currentState.optionId = option.id
-      currentState.name = item.name
-
-      currentState.value = currentState.value ?? []
-      currentState.value[index] = value || undefined
+      let current = state.currentValue()
+      current.optionId = option.id
+      current.name = item.name
+      current.value = current.value ?? []
+      current.value[index] = value || undefined
 
       return { ...state }
     })
@@ -88,6 +79,18 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
 
   const isBackButtonVisible = () => !!questionnaireState.previous()
+
+  const isShowMoreOptionsButtonVisible = () => {
+    if (currentState.isExpanded) {
+      return false
+    }
+
+    if (item.initialOptionsCount) {
+      return allOptions.length > item.initialOptionsCount
+    }
+
+    return false
+  }
 
   const showMoreOptions = () => {
     setQuestionnaireState(state => {
@@ -201,7 +204,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
           )}
           <Space mt={3}>
             <MoreTouchable
-              display={shouldShowMoreButton() ? 'inherit' : 'none'}
+              display={isShowMoreOptionsButtonVisible() ? 'inherit' : 'none'}
               title='Others'
               onClick={() => showMoreOptions()}
             />
