@@ -6,7 +6,7 @@ import { themed } from '@kogaio/utils'
 
 import { icons } from '../assets'
 
-const CustomInput = ({ id, title, value, placeholder, isSelected, onClick, onChange, ...props }) => (
+const CustomInput = ({ id, title, value, placeholder, isSelected, type, onClick, onChange, ...props }) => (
   <Wrapper>
     <Touchable effect='opacity' onClick={onClick}>
       <Space pl={4} pr={isSelected ? 2 : 4} py={3}>
@@ -25,6 +25,7 @@ const CustomInput = ({ id, title, value, placeholder, isSelected, onClick, onCha
         id={id}
         value={value}
         placeholder={placeholder}
+        type={type}
         variant='questionnaire'
         noBottomSpace
         display={isSelected ? 'inherit' : 'none'}
@@ -46,10 +47,14 @@ CustomInput.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   value: PropTypes.string,
+  type: PropTypes.string,
   placeholder: PropTypes.string,
   isSelected: PropTypes.bool,
   onClick: PropTypes.func,
   onChange: PropTypes.func,
+}
+CustomInput.defaultProps = {
+  type: 'text',
 }
 
 export default CustomInput

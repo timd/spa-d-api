@@ -227,6 +227,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     title={option.title[lang]}
                     value={currentState.value}
                     placeholder={option.title[lang]}
+                    type='number'
                     isSelected={isOptionSelected(option)}
                     onClick={() => selectOption(option)}
                     onChange={event => inputOption(option, event.target.value)}
