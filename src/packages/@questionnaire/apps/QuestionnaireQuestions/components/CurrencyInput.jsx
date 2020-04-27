@@ -7,8 +7,8 @@ import { themeGet } from '@kogaio/utils'
 const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
   const MIN = 0
 
-  const localize = value => value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-  const normalize = value => value.replace(/,/g, '')
+  const localize = value => value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+  const normalize = value => value.replace(/\./g, '')
 
   const handleOnChange = event => {
     event.preventDefault()

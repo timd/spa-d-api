@@ -91,9 +91,14 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   const isSubmitButtonVisible = () => !nextQuestionId()
 
   const nextQuestionId = () => {
+    if (!item.nextQuestionId) {
+      return false
+    }
+
     if (typeof item.nextQuestionId === 'string') {
       return item.nextQuestionId
     }
+
     return item.nextQuestionId[currentState.optionId]
   }
 
