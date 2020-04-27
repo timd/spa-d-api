@@ -88,6 +88,14 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
 
   const isBackButtonVisible = () => !!questionnaireState.previous()
+  const isSubmitButtonVisible = () => !nextQuestionId()
+
+  const nextQuestionId = () => {
+    if (typeof item.nextQuestionId === 'string') {
+      return item.nextQuestionId
+    }
+    return item.nextQuestionId[currentState.optionId]
+  }
 
   const isShowMoreOptionsButtonVisible = () => {
     if (currentState.isExpanded) {
@@ -109,7 +117,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
 
   const showNextQuestion = () => {
-    let questionId = item.nextQuestionId[currentState.optionId] || item.nextQuestionId
+    let questionId = nextQuestionId()
     let data = {
       questionId,
       optionId: undefined,
@@ -260,13 +268,13 @@ const Questionnaire = ({ i18n, t, ...props }) => {
             <TouchableWithIcon
               onClick={() => showPrevQuestion()}
               icon={{ name: 'keyboard_backspace', fontSize: '24px' }}
-              label='Back'
+              label={t('Back')}
             />
           )}
           <Button
-            onClick={item.nextQuestionId ? showNextQuestion : showResults}
+            title={isSubmitButtonVisible() ? t('Submit') : t('Next')}
             disabled={isNextButtonDisabled()}
-            title={item.nextQuestionId ? 'Next' : 'Submit'}
+            onClick={isSubmitButtonVisible() ? showResults : showNextQuestion}
           />
         </Flex>
       </Space>
