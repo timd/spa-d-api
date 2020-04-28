@@ -8,8 +8,9 @@ import { themed, themeGet } from '@kogaio/utils'
 import { TouchableWithIcon } from '@shared-utils/components'
 import { TextLogo } from '.'
 import { withLocation } from 'app/services/navigation/withLocation'
+import { withTranslation } from 'react-i18next'
 
-const Header = ({ location: { pathname } }) => (
+const Header = ({ location: { pathname }, t }) => (
   <Space mx='auto' py={{ xs: 3, md: 4 }}>
     <Container pathname={pathname}>
       {pathname !== '/recommendations' ? (
@@ -64,6 +65,7 @@ const AboutUsLink = styled(Link)`
 
 Header.propTypes = {
   location: PropTypes.object,
+  t: PropTypes.func,
 }
 
-export default withLocation(Header)
+export default withTranslation()(withLocation(Header))

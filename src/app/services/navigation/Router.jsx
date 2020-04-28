@@ -4,11 +4,15 @@ import { Flex, Space } from '@kogaio/Responsive'
 import styled from 'styled-components'
 
 import { Header } from 'app/components'
+import { ScrollToTop } from './ScrollToTop'
 import {
   Landing as LandingScreen,
   NotFound,
   QuestionnaireQuestions,
   QuestionnaireResults,
+  Imprint,
+  Conditions,
+  DataProtection,
   Recommendations,
 } from 'app/screens'
 
@@ -18,11 +22,16 @@ const AppRouter = () => (
       <Header />
       {/* Set to false to prevent dumb scroll on navigation */}
       <Router primary={false}>
-        <LandingScreen path='/' />
-        <QuestionnaireQuestions path='/questionnaire' />
-        <QuestionnaireResults path='/questionnaire/results' />
-        <Recommendations path='/recommendations' />
-        <NotFound default />
+        <ScrollToTop path='/'>
+          <LandingScreen path='/' />
+          <Imprint path='/imprint' />
+          <Conditions path='/conditions' />
+          <DataProtection path='/data-protection' />
+          <QuestionnaireQuestions path='/questionnaire' />
+          <QuestionnaireResults path='/questionnaire/results' />
+          <Recommendations path='/recommendations' />
+          <NotFound default />
+        </ScrollToTop>
       </Router>
     </Wrapper>
   </Space>

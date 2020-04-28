@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import { Formik } from 'formik'
 import { Button, Flex, Space, Typography } from '@kogaio'
+import { withTranslation } from 'react-i18next'
 
 import { ValidatedInput } from '@shared-utils/components'
 import { emailFormat } from '@shared-utils/funcs'
 
-const SubscribeForm = () => {
+const SubscribeForm = ({ isSubscribing, requestSubscribe, t }) => {
   // eslint-disable-next-line no-undef
   const mailChimpUrl = config.MAILCHIMP_URL
   return (
@@ -31,7 +33,7 @@ const SubscribeForm = () => {
               id='subscribe-email'
               icLeft='email'
               name='EMAIL'
-              placeholder='Email address'
+              placeholder={t('subscribe.email')}
               required
               validate={[emailFormat]}
             />
@@ -39,7 +41,7 @@ const SubscribeForm = () => {
               <Button
                 disabled={!dirty || (errors.EMAIL && errors.EMAIL.length > 0)}
                 variant='secondary'
-                title='Subscribe'
+                title={t('subscribe.subscribe')}
                 type='submit'
                 width={{ xs: 1, md: 'auto' }}
               />
@@ -50,7 +52,15 @@ const SubscribeForm = () => {
     </Formik>
   )
 }
+
 const FullWidthForm = styled.form`
   width: 100%;
 `
-export default SubscribeForm
+
+SubscribeForm.propTypes = {
+  isSubscribing: PropTypes.bool,
+  requestSubscribe: PropTypes.func,
+  t: PropTypes.func,
+}
+
+export default withTranslation()(SubscribeForm)
