@@ -15,10 +15,13 @@ const CurrencyInput = ({ id, value, label, placeholder, onValueChange, ...props 
   const handleOnChange = event => {
     event.preventDefault()
 
-    let newValue = event.target.value ?? ''
-    newValue = normalize(newValue)
-    newValue = parseInt(newValue) || 0
+    let newValue = event.target.value
+    if (!newValue) {
+      onValueChange(newValue)
+    }
 
+    newValue = normalize(newValue)
+    newValue = parseInt(newValue)
     if (newValue >= MIN) {
       onValueChange(newValue)
     }

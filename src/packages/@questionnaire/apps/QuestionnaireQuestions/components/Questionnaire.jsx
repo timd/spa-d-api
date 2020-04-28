@@ -55,7 +55,7 @@ const buildOptions = (item, answers) => {
     let count = answers[dependency]
     for (var i = 1; i <= count; i++) {
       options.push({
-        id: `${item.questionId}-${i}`,
+        id: `option-${i}`,
         type: type,
         title: title,
       })
@@ -92,6 +92,10 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
 
   const normalize = value => {
+    if (typeof value === 'number') {
+      return value ?? undefined
+    }
+
     if (typeof value === 'boolean') {
       return value ?? undefined
     }
