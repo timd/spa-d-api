@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { withTranslation } from 'react-i18next'
 import { Box, Card, Flex, Icon, Image, Space, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
 import { recommendations } from '../constants'
 
-const RecommendationsList = ({ isMobile, ...props }) => (
+const RecommendationsList = ({ isMobile, t, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
     {recommendations.map(recommendation => (
       <Space key={recommendation.id} px={2} mt={4}>
@@ -17,6 +18,7 @@ const RecommendationsList = ({ isMobile, ...props }) => (
             imgColor={recommendation.imgColor}
             isMobile={isMobile}
             title={recommendation.title}
+            t={t}
           />
         </Box>
       </Space>
@@ -24,17 +26,17 @@ const RecommendationsList = ({ isMobile, ...props }) => (
   </Flex>
 )
 
-const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, onClick, ...props }) => (
+const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, onClick, t, ...props }) => (
   <Space pl={2} pr={4} pb={{ xs: 4, md: 6 }} pt={{ xs: 2, md: 6 }}>
     <CardContainer isMobile={isMobile} onClick={onClick} variant='journey' {...props}>
       <Flex flexDirection='column' position='relative'>
         <Image src={imgSrc} size={32} position='absolute' left={0} opacity={imgColor === 'brand' ? 1 : 0.5} />
         <Space ml={2} mt={1}>
-          <Title variant='body'>{title}</Title>
+          <Title variant='body'>{t(title)}</Title>
         </Space>
         <Space mt={{ md: 2 }}>
           <Typography color='dark-grey' variant='tooltip'>
-            {description}
+            {t(description)}
           </Typography>
         </Space>
       </Flex>
@@ -83,6 +85,7 @@ const Title = styled(Typography)`
 
 RecommendationsList.propTypes = {
   isMobile: PropTypes.string,
+  t: PropTypes.func,
 }
 
 RecommendationItem.propTypes = {
@@ -92,6 +95,7 @@ RecommendationItem.propTypes = {
   imgSrc: PropTypes.string,
   isMobile: PropTypes.bool,
   onClick: PropTypes.func,
+  t: PropTypes.func,
 }
 
-export default RecommendationsList
+export default withTranslation()(RecommendationsList)

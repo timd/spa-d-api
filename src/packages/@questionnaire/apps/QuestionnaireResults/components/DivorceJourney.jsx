@@ -1,19 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Card, Flex, Hide, Space } from '@kogaio'
+import { withTranslation } from 'react-i18next'
 
 import { HorizontalTimeline, VerticalTimeline } from '@shared-utils/components'
 import { TitleWithTooltipInfo } from '.'
 import { checkpoints } from '../constants'
 
-const DivorceJourney = props => (
+const DivorceJourney = ({ t, ...props }) => (
   <Space maxWidth={{ md: 600, lg: 1080 }} mx='auto'>
     <Flex flexDirection='column' width={1} {...props}>
       <Hide xs>
         <TitleWithTooltipInfo
-          title='Divorce journey'
+          title={t('Divorce journey')}
           tooltipInfo={{
-            title: 'Divorce journey?',
-            description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+            title: `${t('Divorce journey')}?`,
+            description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
           }}
           tooltipSpacing={{
             ml: { xs: 0, sm: '99px' },
@@ -27,10 +29,10 @@ const DivorceJourney = props => (
             direction: 'bottom',
             alignment: 'top',
           }}
-          title='Divorce journey'
+          title={t('Divorce journey')}
           tooltipInfo={{
-            title: 'Divorce journey?',
-            description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+            title: `${t('Divorce journey')}?`,
+            description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
           }}
           tooltipSpacing={{
             ml: { xs: 0, sm: '-99px' },
@@ -50,6 +52,6 @@ const DivorceJourney = props => (
   </Space>
 )
 
-DivorceJourney.propTypes = {}
+DivorceJourney.propTypes = { t: PropTypes.func }
 
-export default DivorceJourney
+export default withTranslation()(DivorceJourney)

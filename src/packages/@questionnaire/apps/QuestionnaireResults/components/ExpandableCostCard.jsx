@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Box, Card, Flex, Image, Space, Typography } from '@kogaio'
+import { withTranslation } from 'react-i18next'
 import { themeGet } from '@kogaio/utils'
 
 import { DashedLine, DetailedCosts } from '.'
 
-const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, ...props }) => {
+const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...props }) => {
   const totalCost = Object.values(costs).reduce((counter, cost) => counter + cost, 0)
   const monthlyRate = (totalCost / 12).toFixed(0)
 
@@ -15,9 +16,9 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, ...props 
       <Card display='flex' flexDirection='column' position='relative' variant='white' {...props}>
         <Flex alignItems='center' justifyContent='space-between' position='relative'>
           <Box>
-            <ChargeType variant='sh3'>{chargeType}</ChargeType>
+            <ChargeType variant='sh3'>{t(chargeType)}</ChargeType>
             <Space mt={4}>
-              <Description variant='super-title'>{description}</Description>
+              <Description variant='super-title'>{t(description)}</Description>
             </Space>
           </Box>
           <Image src={iconSrc} size={80} />
@@ -35,7 +36,7 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, ...props 
             {chargeType === 'Monthly' && (
               <Space mt={1}>
                 <Typography color='dark-grey' variant='caption'>
-                  per month
+                  {t('per month')}
                 </Typography>
               </Space>
             )}
@@ -68,6 +69,7 @@ ExpandableCostCard.propTypes = {
   chargeType: PropTypes.oneOf(['One time', 'Monthly']),
   description: PropTypes.string,
   iconSrc: PropTypes.string,
+  t: PropTypes.func,
 }
 
-export default ExpandableCostCard
+export default withTranslation()(ExpandableCostCard)

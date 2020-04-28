@@ -1,5 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Flex, Space, Typography } from '@kogaio'
+import { withTranslation } from 'react-i18next'
+
 import { VerticalTimeline } from '@shared-utils/components'
 import { RecommendationsList, SectionDescription } from '@questionnaire/apps/QuestionnaireResults/components'
 
@@ -25,18 +28,18 @@ const recommendationCheckpoints = [
   },
 ]
 
-const RemcommendationsScreen = () => (
+const RemcommendationsScreen = ({ t }) => (
   <Flex flexDirection='column'>
     <Typography color='dark-grey' variant='h3' textAlign='center'>
-      Our recommendations
+      {t('Our recommendations')}
     </Typography>
     <Space mt={4} px={2}>
       <SectionDescription
         color='dark-grey'
-        firstRowPrefix='At your'
-        boldedText="'Getting divorced'"
-        firstRowSuffix='phase,'
-        bottomText='we recommend those following steps'
+        firstRowPrefix={t('At your')}
+        boldedText={t("'Getting divorced'")}
+        firstRowSuffix={`${t('phase')},`}
+        bottomText={t('we recommend those following steps')}
       />
     </Space>
     <Space ml={1} mt={8}>
@@ -50,4 +53,8 @@ const RemcommendationsScreen = () => (
   </Flex>
 )
 
-export default RemcommendationsScreen
+RemcommendationsScreen.propTypes = {
+  t: PropTypes.func
+}
+
+export default withTranslation()(RemcommendationsScreen)

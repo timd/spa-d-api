@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import { withTranslation } from 'react-i18next'
 import { Box, Space, Typography } from '@kogaio'
 import { ConditionalWrap, themeGet } from '@kogaio/utils'
 
@@ -16,6 +17,7 @@ const TimelineContent = ({
   isDone,
   isFirst,
   isMobile,
+  t,
   ...props
 }) => (
   <Container
@@ -39,7 +41,7 @@ const TimelineContent = ({
                 isActive={isActive}
                 color={isActive ? 'brand' : 'dark-grey'}
                 variant='body'>
-                {title}
+                {t(title)}
               </TimelineTitle>
             )}
           />
@@ -47,14 +49,14 @@ const TimelineContent = ({
       )}>
       <Space mt={{ md: 11 }}>
         <TimelineTitle isDone={isDone} isActive={isActive} color={isActive ? 'brand' : 'dark-grey'} variant='body'>
-          {title}
+          {t(title)}
         </TimelineTitle>
       </Space>
     </ConditionalWrap>
     {collapsedContent.includes(id) && (
       <Space mt={4}>
         <Typography color='dark-grey' maxWidth={{ xs: 220, sm: 240, md: 180, lg: 240 }} variant='tooltip'>
-          {description}
+          {t(description)}
         </Typography>
       </Space>
     )}
@@ -116,6 +118,7 @@ TimelineContent.propTypes = {
   isFirst: PropTypes.bool,
   isMobile: PropTypes.bool,
   title: PropTypes.string,
+  t: PropTypes.func
 }
 
-export default TimelineContent
+export default withTranslation()(TimelineContent)

@@ -4,11 +4,11 @@ import { Link, navigate } from '@reach/router'
 import styled, { css } from 'styled-components'
 import { Flex, Space } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
+import { withTranslation } from 'react-i18next'
 
 import { TouchableWithIcon } from '@shared-utils/components'
 import { TextLogo } from '.'
 import { withLocation } from 'app/services/navigation/withLocation'
-import { withTranslation } from 'react-i18next'
 
 const Header = ({ location: { pathname }, t }) => (
   <Space mx='auto' py={{ xs: 3, md: 4 }}>
@@ -19,7 +19,7 @@ const Header = ({ location: { pathname }, t }) => (
         <Space ml={-3}>
           <TouchableWithIcon
             icon={{ name: 'keyboard_arrow_left', fontSize: '24px' }}
-            label='Result'
+            label={t('Result')}
             labelStyle={{
               fontWeight: 'bold',
             }}
@@ -28,9 +28,9 @@ const Header = ({ location: { pathname }, t }) => (
           />
         </Space>
       )}
-      {pathname === '/' && <AboutUsLink to='about-us'>About us</AboutUsLink>}
+      {pathname === '/' && <AboutUsLink to='about-us'>{t('About us')}</AboutUsLink>}
       {pathname.includes('results') && (
-        <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label='Share' onClick={() => {}} />
+        <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label={t('Share')} onClick={() => {}} />
       )}
     </Container>
   </Space>

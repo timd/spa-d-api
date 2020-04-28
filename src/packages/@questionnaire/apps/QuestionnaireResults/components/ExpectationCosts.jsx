@@ -1,20 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Flex, Hide, Space, Typography } from '@kogaio'
+import { withTranslation } from 'react-i18next'
 
 import { ExpandableCostCard, TitleWithTooltipInfo } from '.'
 
-const ExpectationCosts = ({ chargeTypes, ...props }) => (
+const ExpectationCosts = ({ chargeTypes, t, ...props }) => (
   <Space mx='auto' px={{ xs: 4, md: 0 }}>
     <Flex flexDirection='column' maxWidth={{ md: 780 }} width={1} {...props}>
       <Hide xs>
         <Space ml={{ md: 3 }}>
           <TitleWithTooltipInfo
-            title='Expectation Cost'
+            title={t('Expectation Cost')}
             titleColor='white'
             tooltipInfo={{
-              title: 'Expectation Cost?',
-              description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+              title: `${t('Expectation Cost')}?`,
+              description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
             }}
           />
         </Space>
@@ -26,11 +27,11 @@ const ExpectationCosts = ({ chargeTypes, ...props }) => (
               direction: 'bottom',
               alignment: 'top',
             }}
-            title='Expectation Cost'
+            title={t('Expectation Cost')}
             titleColor='white'
             tooltipInfo={{
-              title: 'Expectation Cost?',
-              description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+              title: `${t('Expectation Cost')}?`,
+              description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
             }}
           />
         </Space>
@@ -53,7 +54,7 @@ const ExpectationCosts = ({ chargeTypes, ...props }) => (
       </Space>
       <Space ml={{ md: 3 }} mt={1}>
         <Typography color='white' variant='caption'>
-          * It&apos;s average cost based on your condition
+          {t("* It's average cost based on your condition")}
         </Typography>
       </Space>
     </Flex>
@@ -71,6 +72,7 @@ ExpectationCosts.propTypes = {
       icon: PropTypes.string,
     })
   ),
+  t: PropTypes.func
 }
 
-export default ExpectationCosts
+export default withTranslation()(ExpectationCosts)
