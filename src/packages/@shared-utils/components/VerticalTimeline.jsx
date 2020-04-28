@@ -58,7 +58,7 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     isMobile
                     collapsedContent={collapsedContent}
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
-                    title={checkpoint.title}
+                    title={`${idx + 1}. ${checkpoint.title}`}
                     id={checkpoint.id}
                     description={checkpoint.description}
                     isActive={isActive}
@@ -77,7 +77,7 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     isMobile
                     collapsedContent={collapsedContent}
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
-                    title={checkpoint.title}
+                    title={`${idx + 1}. ${checkpoint.title}`}
                     id={checkpoint.id}
                     description={checkpoint.description}
                     isActive={isActive}
@@ -99,7 +99,7 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     isMobile
                     collapsedContent={collapsedContent}
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
-                    title={checkpoint.title}
+                    title={`${idx + 1}. ${checkpoint.title}`}
                     id={checkpoint.id}
                     description={checkpoint.description}
                     isActive={isActive}

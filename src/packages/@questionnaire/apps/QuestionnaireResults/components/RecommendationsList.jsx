@@ -9,7 +9,7 @@ import { recommendations } from '../constants'
 
 const RecommendationsList = ({ isMobile, t, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
-    {recommendations.map(recommendation => (
+    {recommendations.map((recommendation, idx) => (
       <Space key={recommendation.id} px={2} mt={4}>
         <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
           <RecommendationItem
@@ -17,7 +17,7 @@ const RecommendationsList = ({ isMobile, t, ...props }) => (
             imgSrc={recommendation.imgSrc}
             imgColor={recommendation.imgColor}
             isMobile={isMobile}
-            title={recommendation.title}
+            title={`${idx + 1}. ${recommendation.title}`}
             t={t}
           />
         </Box>
