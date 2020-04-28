@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Flex, Input, Typography, Space } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
-const CurrencyInput = ({ id, value, label, placeholder, onChange, ...props }) => {
+const CurrencyInput = ({ id, value, label, placeholder, onValueChange, ...props }) => {
   const MIN = 0
 
   const localize = value => value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
@@ -20,7 +20,7 @@ const CurrencyInput = ({ id, value, label, placeholder, onChange, ...props }) =>
     newValue = parseInt(newValue) || 0
 
     if (newValue >= MIN) {
-      onChange(newValue)
+      onValueChange(newValue)
     }
   }
 
@@ -75,7 +75,7 @@ CurrencyInput.propTypes = {
   value: PropTypes.number,
   label: PropTypes.string,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
 }
 
 export default CurrencyInput

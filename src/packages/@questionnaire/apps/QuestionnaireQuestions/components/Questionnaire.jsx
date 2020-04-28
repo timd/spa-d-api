@@ -32,7 +32,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   const allOptions = item.options ?? []
   const lang = i18n.language
 
-  const answers = () =>
+  const userAnswers = () =>
     questionnaireState.values().reduce((accumulator, answer) => {
       if (answer.name) {
         accumulator[answer.name] = answer.value
@@ -40,7 +40,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
       return accumulator
     }, {})
 
-  const visibleItems = () => {
+  const visibleOptions = () => {
     if (currentState.isExpanded) {
       return allOptions
     }
@@ -52,14 +52,12 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     return allOptions
   }
 
-  const selectOption = option => {
-    setQuestionnaireState(state => {
-      let current = state.currentValue()
-      current.optionId = option.id
-      current.name = item.name
-      current.value = option.value
-      return { ...state }
-    })
+  const normalize = value => {
+    if (typeof value === 'boolean') {
+      return value ?? undefined
+    }
+
+    return value || undefined
   }
 
   const setOptionValue = (option, index, value) => {
@@ -69,7 +67,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
         current.optionId = option.id
         current.name = item.name
         current.value = current.value ?? {}
-        current.value[option.name] = value || undefined
+        current.value[option.name] = normalize(value)
 
         return { ...state }
       })
@@ -79,7 +77,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
         current.optionId = option.id
         current.name = item.name
         current.value = current.value ?? []
-        current.value[index] = value || undefined
+        current.value[index] = normalize(value)
 
         return { ...state }
       })
@@ -89,7 +87,8 @@ const Questionnaire = ({ i18n, t, ...props }) => {
       let current = state.currentValue()
       current.optionId = option.id
       current.name = item.name
-      current.value = value || undefined
+      current.value = normalize(value)
+
       return { ...state }
     })
   }
@@ -105,6 +104,8 @@ const Questionnaire = ({ i18n, t, ...props }) => {
 
     return currentState.value
   }
+
+  const getOptionLabel = (option, index) => (item.showLabels ? option.title[lang] : undefined)
 
   const isOptionSelected = option => currentState.optionId === option.id
   const isRequired = () => item.required === false
@@ -191,13 +192,13 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     })
 
     console.log('Calculator input')
-    console.dir(answers())
+    console.dir(userAnswers())
   }
 
   var dynamicOptions = []
   const { dependency, title, type } = item.dynamic ?? {}
   if (dependency) {
-    let count = answers()[dependency]
+    let count = userAnswers()[dependency]
     for (var i = 1; i <= count; i++) {
       dynamicOptions.push({
         id: `${item.questionId}-${i}`,
@@ -229,7 +230,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                   value={getOptionValue(option, index)}
                   label={`${option.title[lang]} ${index + 1}`}
                   placeholder={t('Age')}
-                  onChange={value => setOptionValue(option, index, value)}
+                  onValueChange={value => setOptionValue(option, index, value)}
                 />
               </Space>
             ) : (
@@ -237,16 +238,16 @@ const Questionnaire = ({ i18n, t, ...props }) => {
             )
           )}
 
-          {visibleItems().map((option, index) => {
+          {visibleOptions().map((option, index) => {
             if (option.type === 'currency_input') {
               return (
                 <Space key={option.id} mt={3}>
                   <CurrencyInput
                     id={option.id}
                     value={getOptionValue(option, index)}
-                    label={option.showLabel ? option.title[lang] : undefined}
+                    label={getOptionLabel(option, index)}
                     placeholder={option.title[lang]}
-                    onChange={value => setOptionValue(option, index, value)}
+                    onValueChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
               )
@@ -261,8 +262,8 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     placeholder={option.title[lang]}
                     validation={option.validation}
                     isSelected={isOptionSelected(option)}
-                    onClick={() => selectOption(option)}
-                    onChange={value => setOptionValue(option, index, value)}
+                    onSelect={() => setOptionValue(option, index, option.value)}
+                    onValueChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
               )
@@ -273,13 +274,13 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                   <CustomInput
                     id={option.id}
                     title={option.title[lang]}
-                    value={currentState.value}
+                    value={getOptionValue(option, index)}
                     placeholder={option.title[lang]}
                     type='number'
                     validation={option.validation}
                     isSelected={isOptionSelected(option)}
-                    onClick={() => selectOption(option)}
-                    onChange={value => setOptionValue(option, index, value)}
+                    onSelect={() => setOptionValue(option, index, option.value)}
+                    onValueChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
               )
@@ -289,7 +290,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                 <AnswerTouchable
                   title={option.title[lang]}
                   isSelected={isOptionSelected(option)}
-                  onClick={() => selectOption(option)}
+                  onSelect={() => setOptionValue(option, index, option.value)}
                 />
               </Space>
             )

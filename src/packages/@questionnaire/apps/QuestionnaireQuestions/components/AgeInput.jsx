@@ -6,7 +6,7 @@ import { Flex, Input, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 import Space from '@ivoryio/kogaio/Responsive/Space'
 
-const AgeInput = ({ id, value, label, placeholder, onChange, ...props }) => {
+const AgeInput = ({ id, value, label, placeholder, onValueChange, ...props }) => {
   const [MIN, MAX] = [0, 99]
 
   const handleOnChange = event => {
@@ -14,7 +14,7 @@ const AgeInput = ({ id, value, label, placeholder, onChange, ...props }) => {
 
     const newValue = parseInt(event.target.value) || 0
     if (newValue >= MIN && newValue <= MAX) {
-      onChange(newValue)
+      onValueChange(newValue)
     }
   }
 
@@ -72,7 +72,7 @@ AgeInput.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
 }
 
 export default AgeInput

@@ -6,7 +6,18 @@ import { themed } from '@kogaio/utils'
 
 import { icons } from '../assets'
 
-const CustomInput = ({ id, type, value, title, placeholder, validation, isSelected, onClick, onChange, ...props }) => {
+const CustomInput = ({
+  id,
+  type,
+  value,
+  title,
+  placeholder,
+  validation,
+  isSelected,
+  onSelect,
+  onValueChange,
+  ...props
+}) => {
   const handleOnChange = event => {
     event.preventDefault()
 
@@ -18,16 +29,16 @@ const CustomInput = ({ id, type, value, title, placeholder, validation, isSelect
       }
 
       if (newValue >= options.min && newValue <= options.max) {
-        onChange(newValue)
+        onValueChange(newValue)
       }
     } else {
-      onChange(newValue)
+      onValueChange(newValue)
     }
   }
 
   return (
     <Wrapper>
-      <Touchable effect='opacity' onClick={onClick}>
+      <Touchable effect='opacity' onClick={onSelect}>
         <Space pl={4} pr={isSelected ? 2 : 4} py={3}>
           <Container {...props} className={isSelected ? 'selected' : ''}>
             <Typography variant='body' textAlign='left'>
@@ -71,8 +82,8 @@ CustomInput.propTypes = {
   placeholder: PropTypes.string,
   validation: PropTypes.object,
   isSelected: PropTypes.bool,
-  onClick: PropTypes.func,
-  onChange: PropTypes.func,
+  onSelect: PropTypes.func,
+  onValueChange: PropTypes.func,
 }
 CustomInput.defaultProps = {
   type: 'text',

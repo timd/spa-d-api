@@ -6,8 +6,8 @@ import { themed } from '@kogaio/utils'
 
 import { icons } from '../assets'
 
-const AnswerTouchable = ({ id, value, title, isSelected, onClick, ...props }) => (
-  <Touchable effect='opacity' onClick={onClick}>
+const AnswerTouchable = ({ id, title, isSelected, onSelect, ...props }) => (
+  <Touchable effect='opacity' onClick={onSelect}>
     <Space pl={4} pr={isSelected ? 2 : 4} py={3}>
       <Container {...props} className={isSelected ? 'selected' : ''}>
         <Typography variant='body' textAlign='left'>
@@ -27,10 +27,9 @@ const Container = styled(Flex)`
 
 AnswerTouchable.propTypes = {
   id: PropTypes.string,
-  value: PropTypes.string,
   title: PropTypes.string,
   isSelected: PropTypes.bool,
-  onClick: PropTypes.func,
+  onSelect: PropTypes.func,
 }
 
 export default AnswerTouchable
