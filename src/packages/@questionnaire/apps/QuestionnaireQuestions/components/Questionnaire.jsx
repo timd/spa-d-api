@@ -18,6 +18,12 @@ import {
 } from '.'
 import { withTranslation } from 'react-i18next'
 
+const ANSWER_TYPE = {
+  single: 'single',
+  list: 'list',
+  composition: 'composition',
+}
+
 const Questionnaire = ({ i18n, t, ...props }) => {
   const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
   const currentState = questionnaireState.currentValue()
@@ -56,8 +62,30 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     })
   }
 
-  const inputOption = (option, value) => {
-    setQuestionnaireState(state => {
+  const setOptionValue = (option, index, value) => {
+    if (item.type === ANSWER_TYPE.composition) {
+      return setQuestionnaireState(state => {
+        let current = state.currentValue()
+        current.optionId = option.id
+        current.name = item.name
+        current.value = current.value ?? {}
+        current.value[option.name] = value || undefined
+
+        return { ...state }
+      })
+    } else if (item.type === ANSWER_TYPE.list) {
+      return setQuestionnaireState(state => {
+        let current = state.currentValue()
+        current.optionId = option.id
+        current.name = item.name
+        current.value = current.value ?? []
+        current.value[index] = value || undefined
+
+        return { ...state }
+      })
+    }
+
+    return setQuestionnaireState(state => {
       let current = state.currentValue()
       current.optionId = option.id
       current.name = item.name
@@ -66,16 +94,16 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     })
   }
 
-  const inputMultipleOptions = (option, index, value) => {
-    setQuestionnaireState(state => {
-      let current = state.currentValue()
-      current.optionId = option.id
-      current.name = item.name
-      current.value = current.value ?? []
-      current.value[index] = value || undefined
+  const getOptionValue = (option, index) => {
+    if (item.type === ANSWER_TYPE.composition) {
+      return currentState.value ? currentState.value[option.name] : undefined
+    }
 
-      return { ...state }
-    })
+    if (item.type === ANSWER_TYPE.list) {
+      return currentState.value ? currentState.value[index] : undefined
+    }
+
+    return currentState.value
   }
 
   const isOptionSelected = option => currentState.optionId === option.id
@@ -193,10 +221,10 @@ const Questionnaire = ({ i18n, t, ...props }) => {
               <Space key={option.id} mt={3}>
                 <AgeInput
                   id={option.id}
-                  value={currentState.value ? currentState.value[index] : undefined}
+                  value={getOptionValue(option, index)}
                   label={`${option.title[lang]} ${index + 1}`}
                   placeholder={t('Age')}
-                  onChange={age => inputMultipleOptions(option, index, age)}
+                  onChange={value => setOptionValue(option, index, value)}
                 />
               </Space>
             ) : (
@@ -204,15 +232,15 @@ const Questionnaire = ({ i18n, t, ...props }) => {
             )
           )}
 
-          {visibleItems().map(option => {
+          {visibleItems().map((option, index) => {
             if (option.type === 'currency_input') {
               return (
                 <Space key={option.id} mt={3}>
                   <CurrencyInput
                     id={option.id}
-                    value={currentState.value}
+                    value={getOptionValue(option, index)}
                     placeholder={option.title[lang]}
-                    onChange={value => inputOption(option, value)}
+                    onChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
               )
@@ -223,12 +251,12 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                   <CustomInput
                     id={option.id}
                     title={option.title[lang]}
-                    value={currentState.value}
+                    value={getOptionValue(option, index)}
                     placeholder={option.title[lang]}
                     validation={option.validation}
                     isSelected={isOptionSelected(option)}
                     onClick={() => selectOption(option)}
-                    onChange={value => inputOption(option, value)}
+                    onChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
               )
@@ -245,7 +273,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     validation={option.validation}
                     isSelected={isOptionSelected(option)}
                     onClick={() => selectOption(option)}
-                    onChange={value => inputOption(option, value)}
+                    onChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
               )

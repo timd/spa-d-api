@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Flex, Input } from '@kogaio'
+import { Flex, Input, Typography, Space } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
-const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
+const CurrencyInput = ({ id, value, label, placeholder, onChange, ...props }) => {
   const MIN = 0
 
   const localize = value => value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
@@ -26,6 +26,11 @@ const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
 
   return (
     <Container {...props}>
+      <Space mr={4}>
+        <Label variant='body' display={label ? 'inherit' : 'none'}>
+          {label}
+        </Label>
+      </Space>
       <Input
         id={id}
         value={localize(value || '')}
@@ -37,6 +42,10 @@ const CurrencyInput = ({ id, value, placeholder, onChange, ...props }) => {
     </Container>
   )
 }
+
+const Label = styled(Typography)`
+  color: ${themeGet('colors.dark-gray')};
+`
 
 const Container = styled(Flex)`
   position: relative;
@@ -63,7 +72,8 @@ const Container = styled(Flex)`
 
 CurrencyInput.propTypes = {
   id: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.number,
+  label: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
 }

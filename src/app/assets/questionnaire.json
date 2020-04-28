@@ -223,6 +223,7 @@
     "progress": "45%"
   },
   "question-6": {
+    "type": "composition",
     "name": "financial_asset_distribution",
     "title": {
       "en": "How are these assets roughly distributed?",
@@ -242,6 +243,7 @@
       {
         "id": "option-1",
         "type": "currency_input",
+        "name": "real_estate",
         "title": {
           "en": "Real Estate",
           "de": "[DE] Real Estate"
@@ -250,6 +252,7 @@
       {
         "id": "option-2",
         "type": "currency_input",
+        "name": "cash_accounts",
         "title": {
           "en": "Cash Accounts",
           "de": "[DE] Cash Accounts"
@@ -258,6 +261,7 @@
       {
         "id": "option-3",
         "type": "currency_input",
+        "name": "stocks",
         "title": {
           "en": "Stocks",
           "de": "[DE] Stocks"
@@ -266,6 +270,7 @@
       {
         "id": "option-4",
         "type": "currency_input",
+        "name": "car",
         "title": {
           "en": "Car",
           "de": "[DE] Car"
@@ -274,6 +279,7 @@
       {
         "id": "option-5",
         "type": "currency_input",
+        "name": "motor_bike",
         "title": {
           "en": "Motor Bike",
           "de": "[DE] Motor Bike"
@@ -282,6 +288,7 @@
       {
         "id": "option-6",
         "type": "currency_input",
+        "name": "life_ensurance",
         "title": {
           "en": "Life Insurance",
           "de": "[DE] Life Insurance"
@@ -290,6 +297,7 @@
       {
         "id": "option-7",
         "type": "currency_input",
+        "name": "raise_pension",
         "title": {
           "en": "Raise Pension",
           "de": "[DE] Raise Pension"
@@ -298,6 +306,7 @@
       {
         "id": "option-8",
         "type": "currency_input",
+        "name": "company_pesions",
         "title": {
           "en": "Company Pensions",
           "de": "[DE] Real Estate"
@@ -384,14 +393,15 @@
     "progress": "72%"
   },
   "question-9": {
+    "type": "list",
     "name": "children_ages",
     "title": {
       "en": "How old is he/she?",
       "de": "Wie alt ist er oder sie?"
     },
     "dynamic": {
-      "type": "age_input",
       "dependency": "children_count",
+      "type": "age_input",
       "title": {
         "en": "Kid",
         "de": "[DE] Kid"
