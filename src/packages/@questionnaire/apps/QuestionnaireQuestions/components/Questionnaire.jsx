@@ -239,6 +239,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                   <CurrencyInput
                     id={option.id}
                     value={getOptionValue(option, index)}
+                    label={option.showLabel ? option.title[lang] : undefined}
                     placeholder={option.title[lang]}
                     onChange={value => setOptionValue(option, index, value)}
                   />

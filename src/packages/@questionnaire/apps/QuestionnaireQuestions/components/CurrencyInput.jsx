@@ -27,7 +27,7 @@ const CurrencyInput = ({ id, value, label, placeholder, onChange, ...props }) =>
   return (
     <Container {...props}>
       <Space mr={4}>
-        <Label variant='body' display={label ? 'inherit' : 'none'}>
+        <Label variant='body' display={label ? 'inherit' : 'none'} width={label ? 3 / 4 : 0}>
           {label}
         </Label>
       </Space>

@@ -167,7 +167,7 @@
   "question-4": {
     "name": "financial_supouse_net_income",
     "title": {
-      "en": "How high is your supouse'smonthly net income?",
+      "en": "How high is your supouse's monthly net income?",
       "de": "[DE] How high is your supouse'smonthly net income?"
     },
     "tooltip": {
@@ -247,7 +247,8 @@
         "title": {
           "en": "Real Estate",
           "de": "[DE] Real Estate"
-        }
+        },
+        "showLabel": true
       },
       {
         "id": "option-2",
@@ -256,7 +257,8 @@
         "title": {
           "en": "Cash Accounts",
           "de": "[DE] Cash Accounts"
-        }
+        },
+        "showLabel": true
       },
       {
         "id": "option-3",
@@ -265,7 +267,8 @@
         "title": {
           "en": "Stocks",
           "de": "[DE] Stocks"
-        }
+        },
+        "showLabel": true
       },
       {
         "id": "option-4",
@@ -274,7 +277,8 @@
         "title": {
           "en": "Car",
           "de": "[DE] Car"
-        }
+        },
+        "showLabel": true
       },
       {
         "id": "option-5",
@@ -283,7 +287,8 @@
         "title": {
           "en": "Motor Bike",
           "de": "[DE] Motor Bike"
-        }
+        },
+        "showLabel": true
       },
       {
         "id": "option-6",
@@ -292,7 +297,8 @@
         "title": {
           "en": "Life Insurance",
           "de": "[DE] Life Insurance"
-        }
+        },
+        "showLabel": true
       },
       {
         "id": "option-7",
@@ -301,7 +307,8 @@
         "title": {
           "en": "Raise Pension",
           "de": "[DE] Raise Pension"
-        }
+        },
+        "showLabel": true
       },
       {
         "id": "option-8",
@@ -310,7 +317,8 @@
         "title": {
           "en": "Company Pensions",
           "de": "[DE] Real Estate"
-        }
+        },
+        "showLabel": true
       }
     ],
     "nextQuestionId": "question-7",
