@@ -68,14 +68,15 @@ const buildOptions = (item, answers) => {
 const Questionnaire = ({ i18n, t, ...props }) => {
   const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
   const currentState = questionnaireState.currentValue()
-  const currentUserAnswers = questionnaireState.values().reduce((accumulator, answer) => {
-    if (answer.name) {
-      accumulator[answer.name] = answer.value
-    }
-    return accumulator
-  }, {})
+  const currentUserAnswers = () =>
+    questionnaireState.values().reduce((accumulator, answer) => {
+      if (answer.name) {
+        accumulator[answer.name] = answer.value
+      }
+      return accumulator
+    }, {})
 
-  const item = buildItem(currentState.questionId, questionnaireItemsObj, currentUserAnswers)
+  const item = buildItem(currentState.questionId, questionnaireItemsObj, currentUserAnswers())
   const allOptions = item.options ?? []
   const lang = i18n.language
 
@@ -230,13 +231,13 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
   const showResults = () => {
     navigate('/questionnaire/results')
-    setQuestionnaireState(state => {
-      state.seekTo(null)
-      return { ...state }
-    })
+    questionnaireState.cut()
 
     console.log('Calculator input')
-    console.dir(currentUserAnswers)
+    console.dir(currentUserAnswers())
+
+    questionnaireState.clear()
+    setQuestionnaireState(state => ({ ...state }))
   }
 
   return (

@@ -10,6 +10,12 @@ class QuestionnaireProgressStorage {
     this._tail = null
   }
 
+  clear = () => {
+    this._head = null
+    this._current = null
+    this._tail = null
+  }
+
   append = data => {
     let node = {
       data,
@@ -40,6 +46,11 @@ class QuestionnaireProgressStorage {
     node.previous = this._current
     this._current = node
     this._tail = node
+  }
+
+  cut = () => {
+    this._current.next = null
+    this._tail = this._current
   }
 
   values = () => {
