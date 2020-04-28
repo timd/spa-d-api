@@ -10,10 +10,14 @@ const DivorceJourney = props => (
     <Flex flexDirection='column' width={1} {...props}>
       <Hide xs>
         <TitleWithTooltipInfo
-          title='Expectation Cost'
+          title='Divorce journey'
           tooltipInfo={{
-            title: 'Expectation Cost?',
+            title: 'Divorce journey?',
             description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+          }}
+          tooltipSpacing={{
+            ml: { xs: 0, sm: '99px' },
+            top: { xs: '-140px', sm: '-116px' },
           }}
         />
       </Hide>
@@ -23,10 +27,14 @@ const DivorceJourney = props => (
             direction: 'bottom',
             alignment: 'top',
           }}
-          title='Expectation Cost'
+          title='Divorce journey'
           tooltipInfo={{
-            title: 'Expectation Cost?',
+            title: 'Divorce journey?',
             description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+          }}
+          tooltipSpacing={{
+            ml: { xs: 0, sm: '-99px' },
+            top: { xs: '-140px', sm: '-116px' },
           }}
         />
       </Hide>

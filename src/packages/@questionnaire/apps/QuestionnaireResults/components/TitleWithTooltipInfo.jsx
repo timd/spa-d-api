@@ -4,7 +4,7 @@ import { Flex, IconButton, Space, Tooltip, Typography } from '@kogaio'
 
 import { useBoolean } from '@shared-utils/hooks/useBoolean'
 
-const TitleWithTooltipInfo = ({ arrow, title, titleColor, tooltipInfo, ...props }) => {
+const TitleWithTooltipInfo = ({ arrow, title, titleColor, tooltipInfo, tooltipSpacing, ...props }) => {
   const [isTooltipShown, setTooltipShown] = useBoolean()
 
   const _showTooltip = () => setTooltipShown(true)
@@ -19,29 +19,27 @@ const TitleWithTooltipInfo = ({ arrow, title, titleColor, tooltipInfo, ...props 
         <IconButton color='headerShadow' name='help' onClick={_showTooltip} fontSize={3} />
       </Space>
       {isTooltipShown && (
-        <Space ml={{ xs: 0, sm: '106px', md: '106px' }}>
-          <Tooltip
-            arrow={arrow}
-            borderRadius={4}
-            boxShadow='tooltip-white'
-            visible
-            width={1}
-            maxWidth={{ xs: '252px', sm: '280px', md: '320px' }}
-            position='absolute'
-            top={{ xs: '-140px', sm: '-116px' }}>
-            <Flex alignItems='center' justifyContent='space-between'>
-              <Typography color='brand' fontWeight='bold' variant='tooltip'>
-                {tooltipInfo?.title}
-              </Typography>
-              <IconButton color='dark-grey' fontSize={3} name='close' onClick={_hideTooltip} />
-            </Flex>
-            <Space mt={1}>
-              <Typography color='dark-grey' variant='tooltip'>
-                {tooltipInfo?.description}
-              </Typography>
-            </Space>
-          </Tooltip>
-        </Space>
+        <Tooltip
+          arrow={arrow}
+          borderRadius={4}
+          boxShadow='tooltip-white'
+          visible
+          width={1}
+          maxWidth={{ xs: '240px', sm: '280px', md: '320px' }}
+          position='absolute'
+          {...tooltipSpacing}>
+          <Flex alignItems='center' justifyContent='space-between'>
+            <Typography color='brand' fontWeight='bold' variant='tooltip'>
+              {tooltipInfo?.title}
+            </Typography>
+            <IconButton color='dark-grey' fontSize={3} name='close' onClick={_hideTooltip} />
+          </Flex>
+          <Space mt={1}>
+            <Typography color='dark-grey' variant='tooltip'>
+              {tooltipInfo?.description}
+            </Typography>
+          </Space>
+        </Tooltip>
       )}
     </Flex>
   )
@@ -55,6 +53,7 @@ TitleWithTooltipInfo.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
   }),
+  tooltipSpacing: PropTypes.object,
 }
 
 TitleWithTooltipInfo.defaultProps = {
@@ -63,6 +62,10 @@ TitleWithTooltipInfo.defaultProps = {
     alignment: 'left',
   },
   titleColor: 'dark-grey',
+  tooltipSpacing: {
+    ml: { xs: '6px', sm: '106px' },
+    top: { xs: '-140px', sm: '-116px' },
+  },
 }
 
 export default TitleWithTooltipInfo
