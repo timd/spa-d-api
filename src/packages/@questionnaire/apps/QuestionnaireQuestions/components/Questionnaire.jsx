@@ -160,7 +160,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     }
 
     if (Array.isArray(currentState.value)) {
-      return currentState.value.filter(item => !!item).length === 0
+      return currentState.value.filter(item => item !== undefined).length === 0
     }
     return currentState.value === undefined
   }

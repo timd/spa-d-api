@@ -12,7 +12,12 @@ const AgeInput = ({ id, value, label, placeholder, onValueChange, ...props }) =>
   const handleOnChange = event => {
     event.preventDefault()
 
-    const newValue = parseInt(event.target.value) || 0
+    let newValue = event.target.value
+    if (!newValue) {
+      onValueChange(newValue)
+    }
+
+    newValue = parseInt(newValue)
     if (newValue >= MIN && newValue <= MAX) {
       onValueChange(newValue)
     }
