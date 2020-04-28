@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import { Link } from '@reach/router'
 import { Flex, Space } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
 
@@ -10,20 +9,16 @@ import { TextLogo } from '.'
 import { withLocation } from 'app/services/navigation/withLocation'
 import { withTranslation } from 'react-i18next'
 
-const Header = ({ location: { pathname }, t }) => {
-  const showAboutUs = ['/', '/imprint', '/conditions', '/data-protection'].includes(pathname)
-  return (
-    <Space mx='auto' py={{ xs: 3, md: 4 }}>
-      <Container pathname={pathname}>
-        <TextLogo />
-        {showAboutUs && <AboutUsLink to='about-us'>{t('About us')}</AboutUsLink>}
-        {pathname.includes('results') && (
-          <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label='Share' />
-        )}
-      </Container>
-    </Space>
-  )
-}
+const Header = ({ location: { pathname }, t }) => (
+  <Space mx='auto' py={{ xs: 3, md: 4 }}>
+    <Container pathname={pathname}>
+      <TextLogo />
+      {pathname.includes('results') && (
+        <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label='Share' />
+      )}
+    </Container>
+  </Space>
+)
 
 const containerStyle = ({ pathname, ...props }) =>
   pathname === '/questionnaire'
@@ -42,14 +37,6 @@ const Container = styled(Flex)`
   width: 100%;
   justify-content: space-between;
   ${containerStyle};
-`
-
-const AboutUsLink = styled(Link)`
-  color: ${themeGet('colors.dark-grey')};
-  font-family: ${themeGet('fonts.complementary')};
-  font-size: ${themeGet('fontSizes.1')};
-  font-weight: ${themeGet('fontWeights.bold')};
-  text-decoration: none;
 `
 
 Header.propTypes = {

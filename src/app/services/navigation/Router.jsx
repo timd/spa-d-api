@@ -12,7 +12,6 @@ import {
   Imprint,
   Conditions,
   DataProtection,
-  AboutUs,
 } from 'app/screens'
 
 const AppRouter = () => (
@@ -25,7 +24,6 @@ const AppRouter = () => (
         <Imprint path='/imprint' />
         <Conditions path='/conditions' />
         <DataProtection path='/data-protection' />
-        <AboutUs path='/about-us' />
         <QuestionnaireQuestions path='/questionnaire' />
         <QuestionnaireResults path='/questionnaire/results' />
         <NotFound default />
