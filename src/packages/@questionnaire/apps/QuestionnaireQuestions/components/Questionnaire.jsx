@@ -24,21 +24,53 @@ const ANSWER_TYPE = {
   composition: 'composition',
 }
 
+const buildItem = (id, items, answers) => {
+  const item = items[id]
+  let output = {
+    type: ANSWER_TYPE.single,
+    required: true,
+    showLabels: false,
+    ...item,
+    options: buildOptions(item, answers),
+  }
+
+  return output
+}
+
+const buildOptions = (item, answers) => {
+  if (item.options) {
+    return item.options
+  }
+
+  var options = []
+  const { dependency, title, type } = item.dynamic ?? {}
+  if (dependency) {
+    let count = answers[dependency]
+    for (var i = 1; i <= count; i++) {
+      options.push({
+        id: `${item.questionId}-${i}`,
+        type: type,
+        title: title,
+      })
+    }
+  }
+
+  return options
+}
+
 const Questionnaire = ({ i18n, t, ...props }) => {
   const { questionnaireState, setQuestionnaireState } = useContext(QuestionnaireContext)
   const currentState = questionnaireState.currentValue()
+  const currentUserAnswers = questionnaireState.values().reduce((accumulator, answer) => {
+    if (answer.name) {
+      accumulator[answer.name] = answer.value
+    }
+    return accumulator
+  }, {})
 
-  const item = questionnaireItemsObj[currentState.questionId]
+  const item = buildItem(currentState.questionId, questionnaireItemsObj, currentUserAnswers)
   const allOptions = item.options ?? []
   const lang = i18n.language
-
-  const userAnswers = () =>
-    questionnaireState.values().reduce((accumulator, answer) => {
-      if (answer.name) {
-        accumulator[answer.name] = answer.value
-      }
-      return accumulator
-    }, {})
 
   const visibleOptions = () => {
     if (currentState.isExpanded) {
@@ -105,9 +137,10 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     return currentState.value
   }
 
-  const getOptionLabel = (option, index) => (item.showLabels ? option.title[lang] : undefined)
+  const getOptionLabel = option => (item.showLabels ? option.title[lang] : undefined)
 
   const isOptionSelected = option => currentState.optionId === option.id
+
   const isRequired = () => item.required === false
 
   const isNextButtonDisabled = () => {
@@ -192,20 +225,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     })
 
     console.log('Calculator input')
-    console.dir(userAnswers())
-  }
-
-  var dynamicOptions = []
-  const { dependency, title, type } = item.dynamic ?? {}
-  if (dependency) {
-    let count = userAnswers()[dependency]
-    for (var i = 1; i <= count; i++) {
-      dynamicOptions.push({
-        id: `${item.questionId}-${i}`,
-        type: type,
-        title: title,
-      })
-    }
+    console.dir(currentUserAnswers)
   }
 
   return (
@@ -222,22 +242,6 @@ const Questionnaire = ({ i18n, t, ...props }) => {
             />
           )}
 
-          {dynamicOptions.map((option, index) =>
-            option.type === 'age_input' ? (
-              <Space key={option.id} mt={3}>
-                <AgeInput
-                  id={option.id}
-                  value={getOptionValue(option, index)}
-                  label={`${option.title[lang]} ${index + 1}`}
-                  placeholder={t('Age')}
-                  onValueChange={value => setOptionValue(option, index, value)}
-                />
-              </Space>
-            ) : (
-              <></>
-            )
-          )}
-
           {visibleOptions().map((option, index) => {
             if (option.type === 'currency_input') {
               return (
@@ -247,6 +251,19 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     value={getOptionValue(option, index)}
                     label={getOptionLabel(option, index)}
                     placeholder={option.title[lang]}
+                    onValueChange={value => setOptionValue(option, index, value)}
+                  />
+                </Space>
+              )
+            }
+            if (option.type === 'age_input') {
+              return (
+                <Space key={option.id} mt={3}>
+                  <AgeInput
+                    id={option.id}
+                    value={getOptionValue(option, index)}
+                    label={`${option.title[lang]} ${index + 1}`}
+                    placeholder={t('Age')}
                     onValueChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
