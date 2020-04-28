@@ -6,17 +6,15 @@ import { Flex, Input, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 import Space from '@ivoryio/kogaio/Responsive/Space'
 
-const AgeInput = ({ id, label, value, placeholder, onChange, ...props }) => {
+const AgeInput = ({ id, value, label, placeholder, onChange, ...props }) => {
   const [MIN, MAX] = [0, 99]
 
   const handleOnChange = event => {
     event.preventDefault()
 
-    const newValue = event.target.value
+    const newValue = parseInt(event.target.value) || 0
     if (newValue >= MIN && newValue <= MAX) {
       onChange(newValue)
-    } else {
-      onChange(value)
     }
   }
 

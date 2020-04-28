@@ -6,7 +6,7 @@ import { themed } from '@kogaio/utils'
 
 import { icons } from '../assets'
 
-const CustomInput = ({ id, title, value, placeholder, isSelected, type, validation, onClick, onChange, ...props }) => {
+const CustomInput = ({ id, type, value, title, placeholder, validation, isSelected, onClick, onChange, ...props }) => {
   const handleOnChange = event => {
     event.preventDefault()
 
@@ -19,8 +19,6 @@ const CustomInput = ({ id, title, value, placeholder, isSelected, type, validati
 
       if (newValue >= options.min && newValue <= options.max) {
         onChange(newValue)
-      } else {
-        onChange(value)
       }
     } else {
       onChange(newValue)
@@ -44,12 +42,12 @@ const CustomInput = ({ id, title, value, placeholder, isSelected, type, validati
       <Space mt={3}>
         <Input
           id={id}
+          type={type}
           value={value}
           placeholder={placeholder}
-          type={type}
           variant='questionnaire'
-          noBottomSpace
           display={isSelected ? 'inherit' : 'none'}
+          noBottomSpace
           onChange={handleOnChange}
         />
       </Space>
@@ -67,11 +65,11 @@ const Container = styled(Flex)`
 
 CustomInput.propTypes = {
   id: PropTypes.string,
-  title: PropTypes.string,
-  value: PropTypes.string,
   type: PropTypes.string,
-  validation: PropTypes.object,
+  value: PropTypes.string,
+  title: PropTypes.string,
   placeholder: PropTypes.string,
+  validation: PropTypes.object,
   isSelected: PropTypes.bool,
   onClick: PropTypes.func,
   onChange: PropTypes.func,
