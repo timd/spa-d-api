@@ -7,7 +7,7 @@ import { themeGet } from '@kogaio/utils'
 import Space from '@ivoryio/kogaio/Responsive/Space'
 
 const AgeInput = ({ id, label, value, placeholder, onChange, ...props }) => {
-  const [MIN, MAX] = [0, 18]
+  const [MIN, MAX] = [0, 99]
 
   const handleOnChange = event => {
     event.preventDefault()
@@ -28,13 +28,13 @@ const AgeInput = ({ id, label, value, placeholder, onChange, ...props }) => {
       <Input
         id={id}
         value={value}
+        min={MIN}
+        max={MAX}
         placeholder={placeholder}
         type='number'
         variant='questionnaire'
         width='auto'
         minWidth='120px'
-        min={0}
-        max={21}
         noBottomSpace
         onChange={handleOnChange}
       />

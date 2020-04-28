@@ -10,6 +10,8 @@ const CurrencyInput = ({ id, value, label, placeholder, onChange, ...props }) =>
   const localize = value => value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
   const normalize = value => value.replace(/\./g, '')
 
+  const localisedValue = localize(value ?? '')
+
   const handleOnChange = event => {
     event.preventDefault()
 
@@ -19,8 +21,6 @@ const CurrencyInput = ({ id, value, label, placeholder, onChange, ...props }) =>
 
     if (newValue >= MIN) {
       onChange(newValue)
-    } else {
-      onChange(value)
     }
   }
 
@@ -33,7 +33,7 @@ const CurrencyInput = ({ id, value, label, placeholder, onChange, ...props }) =>
       </Space>
       <Input
         id={id}
-        value={localize(value || '')}
+        value={localisedValue}
         placeholder={placeholder}
         variant='questionnaire'
         noBottomSpace
