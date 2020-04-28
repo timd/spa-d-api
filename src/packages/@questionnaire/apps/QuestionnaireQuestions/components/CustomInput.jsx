@@ -77,7 +77,7 @@ const Container = styled(Flex)`
 CustomInput.propTypes = {
   id: PropTypes.string,
   type: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   title: PropTypes.string,
   placeholder: PropTypes.string,
   validation: PropTypes.object,

@@ -70,7 +70,7 @@ const Container = styled(Flex)`
 AgeInput.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.number,
   placeholder: PropTypes.string,
   onValueChange: PropTypes.func,
 }
