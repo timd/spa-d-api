@@ -1,22 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Flex, Space, Typography } from '@kogaio'
+import { Box, Flex, Hide, Space, Typography } from '@kogaio'
 
 import { ExpandableCostCard, TitleWithTooltipInfo } from '.'
 
 const ExpectationCosts = ({ chargeTypes, ...props }) => (
   <Space mx='auto' px={{ xs: 4, md: 0 }}>
     <Flex flexDirection='column' maxWidth={{ md: 780 }} width={1} {...props}>
-      <Space ml={{ md: 3 }}>
-      <TitleWithTooltipInfo
-        title='Expectation Cost'
-        titleColor='white'
-        tooltipInfo={{
-          title: 'Expectation Cost?',
-          description: "If you don't know exact amount of money, it's fine for now. blah blah...",
-        }}
-      />
-      </Space>
+      <Hide xs>
+        <Space ml={{ md: 3 }}>
+          <TitleWithTooltipInfo
+            title='Expectation Cost'
+            titleColor='white'
+            tooltipInfo={{
+              title: 'Expectation Cost?',
+              description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+            }}
+          />
+        </Space>
+      </Hide>
+      <Hide sm md lg xlg>
+        <Space ml={{ md: 3 }}>
+          <TitleWithTooltipInfo
+            arrow={{
+              direction: 'bottom',
+              alignment: 'top',
+            }}
+            title='Expectation Cost'
+            titleColor='white'
+            tooltipInfo={{
+              title: 'Expectation Cost?',
+              description: "If you don't know exact amount of money, it's fine for now. blah blah...",
+            }}
+          />
+        </Space>
+      </Hide>
       <Space mt={{ xs: 3, md: 5 }}>
         <Flex flexWrap='wrap'>
           {chargeTypes.map((chargeType, idx) => (

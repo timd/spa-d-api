@@ -4,7 +4,7 @@ import { Flex, IconButton, Space, Tooltip, Typography } from '@kogaio'
 
 import { useBoolean } from '@shared-utils/hooks/useBoolean'
 
-const TitleWithTooltipInfo = ({title, titleColor, tooltipInfo, ...props}) => {
+const TitleWithTooltipInfo = ({ arrow, title, titleColor, tooltipInfo, ...props }) => {
   const [isTooltipShown, setTooltipShown] = useBoolean()
 
   const _showTooltip = () => setTooltipShown(true)
@@ -12,23 +12,23 @@ const TitleWithTooltipInfo = ({title, titleColor, tooltipInfo, ...props}) => {
 
   return (
     <Flex alignItems='center' position='relative' {...props}>
-        <Typography color={titleColor} variant='super-title'>
-          {title}
-        </Typography>
+      <Typography color={titleColor} variant='super-title'>
+        {title}
+      </Typography>
       <Space ml={2}>
         <IconButton color='headerShadow' name='help' onClick={_showTooltip} fontSize={3} />
       </Space>
       {isTooltipShown && (
-        <Space ml={{ xs: '106px', md: '118px' }}>
+        <Space ml={{ xs: 0, sm: '106px', md: '106px' }}>
           <Tooltip
-            arrow={{ direction: 'bottom', alignment: 'left' }}
+            arrow={arrow}
             borderRadius={4}
             boxShadow='tooltip-white'
             visible
             width={1}
-            maxWidth={{ xs: '264px', md: '320px' }}
+            maxWidth={{ xs: '252px', sm: '280px', md: '320px' }}
             position='absolute'
-            top={{xs: '-140px', md: '-116px'}}>
+            top={{ xs: '-140px', sm: '-116px' }}>
             <Flex alignItems='center' justifyContent='space-between'>
               <Typography color='brand' fontWeight='bold' variant='tooltip'>
                 {tooltipInfo?.title}
@@ -47,17 +47,22 @@ const TitleWithTooltipInfo = ({title, titleColor, tooltipInfo, ...props}) => {
   )
 }
 
-TitleWithTooltipInfo.propTypes= {
+TitleWithTooltipInfo.propTypes = {
+  arrow: PropTypes.object,
   title: PropTypes.string,
   titleColor: PropTypes.string,
   tooltipInfo: PropTypes.shape({
     title: PropTypes.string,
-    description: PropTypes.string
-  })
+    description: PropTypes.string,
+  }),
 }
 
-TitleWithTooltipInfo.defaultTypes = {
-  titleColor: 'dark-grey'
+TitleWithTooltipInfo.defaultProps = {
+  arrow: {
+    direction: 'bottom',
+    alignment: 'left',
+  },
+  titleColor: 'dark-grey',
 }
 
 export default TitleWithTooltipInfo
