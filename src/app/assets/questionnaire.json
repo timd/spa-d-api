@@ -12,7 +12,7 @@
           "en": "Problems in my marriage",
           "de": "[DE] Problems in my marriage"
         },
-        "value": "having_marriage_problems"
+        "value": "Problems in my marriage"
       },
       {
         "id": "option-2",
@@ -20,7 +20,7 @@
           "en": "Thinking about a divorce",
           "de": "[DE] Thinking about a divorce"
         },
-        "value": "considering_divorce"
+        "value": "Thinking about a divorce"
       },
       {
         "id": "option-3",
@@ -28,15 +28,15 @@
           "en": "I made the decision to get a divorce",
           "de": "[DE] I made the decision to get a divorce"
         },
-        "value": "decided_to_divorce"
+        "value": "I made the decision to get a divorce"
       },
       {
         "id": "option-4",
         "title": {
-          "en": "My partner wants a divorce/filed for divorce ",
-          "de": "[DE] My partner wants a divorce/filed for divorce "
+          "en": "My partner wants a divorce/filed for divorce",
+          "de": "[DE] My partner wants a divorce/filed for divorce"
         },
-        "value": "partner_wants_to_divorce"
+        "value": "My partner wants a divorce/filed for divorce"
       },
       {
         "id": "option-5",
@@ -44,15 +44,15 @@
           "en": "We have separated already",
           "de": "[DE] We have separated already"
         },
-        "value": "are_separated"
+        "value": "We have separated already"
       },
       {
         "id": "option-6",
         "title": {
-          "en": "We are already living separated for a year ",
-          "de": "[DE] We are already living separated for a year "
+          "en": "We are already living separated for a year",
+          "de": "[DE] We are already living separated for a year"
         },
-        "value": "are_separated_for_a_year"
+        "value": "We are already living separated for a year"
       },
       {
         "id": "option-7",
@@ -60,7 +60,7 @@
           "en": "I am in the middle of my divorce and waiting for the court to rule",
           "de": "[DE] I am in the middle of my divorce and waiting for the court to rule"
         },
-        "value": "in_the_middle_of_divorce"
+        "value": "I am in the middle of my divorce and waiting for the court to rule"
       }
     ],
     "initialOptionsCount": 3,
@@ -80,7 +80,7 @@
           "en": "Family & Friends",
           "de": "[DE] Family & Friends"
         },
-        "value": "family_and_friends"
+        "value": "Family & Friends"
       },
       {
         "id": "option-2",
@@ -88,7 +88,7 @@
           "en": "Professional Counselor",
           "de": "[DE] Professional Counselor"
         },
-        "value": "professional_counselor"
+        "value": "Professional Counselor"
       },
       {
         "id": "option-3",
@@ -96,7 +96,7 @@
           "en": "Lawyer",
           "de": "[DE] Lawyer"
         },
-        "value": "lawyer"
+        "value": "Lawyer"
       },
       {
         "id": "option-4",
@@ -104,7 +104,7 @@
           "en": "Banker",
           "de": "[DE] Banker"
         },
-        "value": "banker"
+        "value": "Banker"
       },
       {
         "id": "option-5",
@@ -112,7 +112,7 @@
           "en": "Insurance",
           "de": "[DE] We have separated already"
         },
-        "value": "insurance"
+        "value": "Insurance"
       },
       {
         "id": "option-6",
@@ -120,7 +120,7 @@
           "en": "Pension",
           "de": "[DE] Pension"
         },
-        "value": "pension"
+        "value": "Pension"
       },
       {
         "id": "option-7",
