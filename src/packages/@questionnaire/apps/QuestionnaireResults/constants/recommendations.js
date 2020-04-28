@@ -8,13 +8,13 @@ export const recommendations = [
         imgSrc: circleIconTertiary
     },
     {
-        id: 'lawyer',
+        id: 'collect-docs',
         title: '2. Collect the documents',
         description: 'Short description about this',
         imgSrc: circleIconSecondary
     },
     {
-        id: 'lawyer',
+        id: 'collect-info',
         title: '3. Collect the following information',
         description: 'Short description about this',
         imgSrc: circleIconBrand,
