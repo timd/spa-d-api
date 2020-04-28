@@ -225,6 +225,7 @@
   "question-6": {
     "type": "composition",
     "name": "financial_asset_distribution",
+    "required": false,
     "title": {
       "en": "How are these assets roughly distributed?",
       "de": "[DE] How are these assets roughly distributed?"

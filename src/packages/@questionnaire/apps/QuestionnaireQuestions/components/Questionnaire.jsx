@@ -107,8 +107,13 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
 
   const isOptionSelected = option => currentState.optionId === option.id
+  const isRequired = () => item.required === false
 
   const isNextButtonDisabled = () => {
+    if (isRequired()) {
+      return false
+    }
+
     if (Array.isArray(currentState.value)) {
       return currentState.value.filter(item => !!item).length === 0
     }
