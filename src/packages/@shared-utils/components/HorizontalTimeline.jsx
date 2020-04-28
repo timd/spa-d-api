@@ -27,7 +27,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, isRow, ...props 
     setCollapsedContent(collapsed.slice(0))
   }
 
-  const progressWidth = checkpoints[activeIndex].progress
+  const progressWidth = `${checkpoints[activeIndex].progress * 100}%`
   const containerMB = containerMarginBottom
     ? Object.keys(containerMarginBottom).reduce(
         (acc, deviceSizeKey) => ({ ...acc, [deviceSizeKey]: `${containerMarginBottom[deviceSizeKey] + 44}px` }),
@@ -45,21 +45,14 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, isRow, ...props 
           const isActive = idx === activeIndex
           const isDone = idx < activeIndex
           const isLastOne = idx === checkpoints.length - 1
+          const progress = `${checkpoint.progress * 100}%`
 
           return idx < activeIndex ? (
             <Space key={`checkpoint-${checkpoint.id}`} mt='1px' ml={idx === 0 ? 1 : 0}>
-              <Box
-                bg='white'
-                borderRadius='round'
-                left={checkpoint.progress}
-                top={0}
-                size={6}
-                position='absolute'
-                zIndex={2}>
+              <Box bg='white' borderRadius='round' left={progress} top={0} size={6} position='absolute' zIndex={2}>
                 <TimelineContent
                   collapsedContent={collapsedContent}
-                  collapseHeight={checkpoint.collapseHeight}
-                  handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeight)}
+                  handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightDesktop)}
                   title={checkpoint.title}
                   id={checkpoint.id}
                   description={checkpoint.description}
@@ -70,12 +63,11 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, isRow, ...props 
             </Space>
           ) : idx === activeIndex ? (
             <Space key={`checkpoint-${checkpoint.id}`} p={2} ml={idx === 0 ? 0 : -4} mt={-1}>
-              <ActiveCheckpoint left={checkpoint.progress} top={0} size={8}>
+              <ActiveCheckpoint left={progress} top={0} size={8}>
                 <Space key={checkpoint.id} ml={isRow ? 0 : 6}>
                   <TimelineContent
                     collapsedContent={collapsedContent}
-                    collapseHeight={checkpoint.collapseHeight}
-                    handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeight)}
+                    handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightDesktop)}
                     title={checkpoint.title}
                     id={checkpoint.id}
                     description={checkpoint.description}
@@ -87,15 +79,11 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, isRow, ...props 
             </Space>
           ) : (
             <Space key={`checkpoint-${checkpoint.id}`} top={0} p='2px'>
-              <UnreachedCheckpoint
-                left={isLastOne ? 'unset' : checkpoint.progress}
-                right={isLastOne ? 0 : 'unset'}
-                size={8}>
+              <UnreachedCheckpoint left={isLastOne ? 'unset' : progress} right={isLastOne ? 0 : 'unset'} size={8}>
                 <Space key={checkpoint.id} ml={isRow ? 0 : 6}>
                   <TimelineContent
                     collapsedContent={collapsedContent}
-                    collapseHeight={checkpoint.collapseHeight}
-                    handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeight)}
+                    handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightDesktop)}
                     title={checkpoint.title}
                     id={checkpoint.id}
                     description={checkpoint.description}
