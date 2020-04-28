@@ -18,16 +18,23 @@ import {
 } from '.'
 import { withTranslation } from 'react-i18next'
 
-const ANSWER_TYPE = {
+const ITEM_TYPE = {
   single: 'single',
   list: 'list',
   composition: 'composition',
 }
 
+const OPTION_TYPE = {
+  currency: 'currency',
+  age: 'age',
+  customText: 'custom_text',
+  customNumber: 'custom_number',
+}
+
 const buildItem = (id, items, answers) => {
   const item = items[id]
   let output = {
-    type: ANSWER_TYPE.single,
+    type: ITEM_TYPE.single,
     required: true,
     showLabels: false,
     ...item,
@@ -93,7 +100,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
 
   const setOptionValue = (option, index, value) => {
-    if (item.type === ANSWER_TYPE.composition) {
+    if (item.type === ITEM_TYPE.composition) {
       return setQuestionnaireState(state => {
         let current = state.currentValue()
         current.optionId = option.id
@@ -103,7 +110,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
 
         return { ...state }
       })
-    } else if (item.type === ANSWER_TYPE.list) {
+    } else if (item.type === ITEM_TYPE.list) {
       return setQuestionnaireState(state => {
         let current = state.currentValue()
         current.optionId = option.id
@@ -126,11 +133,11 @@ const Questionnaire = ({ i18n, t, ...props }) => {
   }
 
   const getOptionValue = (option, index) => {
-    if (item.type === ANSWER_TYPE.composition) {
+    if (item.type === ITEM_TYPE.composition) {
       return currentState.value ? currentState.value[option.name] : undefined
     }
 
-    if (item.type === ANSWER_TYPE.list) {
+    if (item.type === ITEM_TYPE.list) {
       return currentState.value ? currentState.value[index] : undefined
     }
 
@@ -243,7 +250,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
           )}
 
           {visibleOptions().map((option, index) => {
-            if (option.type === 'currency_input') {
+            if (option.type === OPTION_TYPE.currency) {
               return (
                 <Space key={option.id} mt={3}>
                   <CurrencyInput
@@ -256,7 +263,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                 </Space>
               )
             }
-            if (option.type === 'age_input') {
+            if (option.type === OPTION_TYPE.age) {
               return (
                 <Space key={option.id} mt={3}>
                   <AgeInput
@@ -269,7 +276,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                 </Space>
               )
             }
-            if (option.type === 'custom_string') {
+            if (option.type === OPTION_TYPE.customText) {
               return (
                 <Space key={option.id} mt={3}>
                   <CustomInput
@@ -285,7 +292,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                 </Space>
               )
             }
-            if (option.type === 'custom_number') {
+            if (option.type === OPTION_TYPE.customNumber) {
               return (
                 <Space key={option.id} mt={3}>
                   <CustomInput

@@ -124,7 +124,7 @@
       },
       {
         "id": "option-7",
-        "type": "custom_string",
+        "type": "custom_text",
         "title": {
           "en": "Other",
           "de": "[DE] Other"
@@ -154,7 +154,7 @@
     "options": [
       {
         "id": "option-1",
-        "type": "currency_input",
+        "type": "currency",
         "title": {
           "en": "Net income",
           "de": "[DE] Net income"
@@ -183,7 +183,7 @@
     "options": [
       {
         "id": "option-1",
-        "type": "currency_input",
+        "type": "currency",
         "title": {
           "en": "Net income",
           "de": "[DE] Net income"
@@ -212,7 +212,7 @@
     "options": [
       {
         "id": "option-4-1",
-        "type": "currency_input",
+        "type": "currency",
         "title": {
           "en": "Joined assets",
           "de": "[DE] Joined assets"
@@ -244,7 +244,7 @@
     "options": [
       {
         "id": "option-1",
-        "type": "currency_input",
+        "type": "currency",
         "name": "real_estate",
         "title": {
           "en": "Real Estate",
@@ -253,7 +253,7 @@
       },
       {
         "id": "option-2",
-        "type": "currency_input",
+        "type": "currency",
         "name": "cash_accounts",
         "title": {
           "en": "Cash Accounts",
@@ -262,7 +262,7 @@
       },
       {
         "id": "option-3",
-        "type": "currency_input",
+        "type": "currency",
         "name": "stocks",
         "title": {
           "en": "Stocks",
@@ -271,7 +271,7 @@
       },
       {
         "id": "option-4",
-        "type": "currency_input",
+        "type": "currency",
         "name": "car",
         "title": {
           "en": "Car",
@@ -280,7 +280,7 @@
       },
       {
         "id": "option-5",
-        "type": "currency_input",
+        "type": "currency",
         "name": "motor_bike",
         "title": {
           "en": "Motor Bike",
@@ -289,7 +289,7 @@
       },
       {
         "id": "option-6",
-        "type": "currency_input",
+        "type": "currency",
         "name": "life_ensurance",
         "title": {
           "en": "Life Insurance",
@@ -298,7 +298,7 @@
       },
       {
         "id": "option-7",
-        "type": "currency_input",
+        "type": "currency",
         "name": "raise_pension",
         "title": {
           "en": "Raise Pension",
@@ -307,7 +307,7 @@
       },
       {
         "id": "option-8",
-        "type": "currency_input",
+        "type": "currency",
         "name": "company_pesions",
         "title": {
           "en": "Company Pensions",
@@ -403,7 +403,7 @@
     },
     "dynamic": {
       "dependency": "children_count",
-      "type": "age_input",
+      "type": "age",
       "title": {
         "en": "Kid",
         "de": "[DE] Kid"
