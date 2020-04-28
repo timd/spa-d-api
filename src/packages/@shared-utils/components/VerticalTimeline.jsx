@@ -119,7 +119,6 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
 
 const Container = styled(Box)`
   position: relative;
-  min-height: 300px;
   width: 8px;
   z-index: 0;
   :after {
@@ -174,7 +173,7 @@ VerticalTimeline.propTypes = {
 }
 
 VerticalTimeline.defaultProps = {
-  activeIndex: 3,
+  activeIndex: 0,
 }
 
 export default VerticalTimeline

@@ -17,7 +17,7 @@ const DivorceJourney = props => (
       />
       <Space mt={{ xs: 3, md: 7 }} p={6}>
         <Card display={{ md: 'none' }} minHeight={324} variant='journey'>
-          <VerticalTimeline checkpoints={checkpoints} height={300} />
+          <VerticalTimeline activeIndex={2} checkpoints={checkpoints} height={300} />
         </Card>
       </Space>
       <Space mt={{ xs: 3, md: 7 }} mx='auto'>

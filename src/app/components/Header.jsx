@@ -15,15 +15,17 @@ const Header = ({ location: { pathname } }) => (
       {pathname !== '/recommendations' ? (
         <TextLogo />
       ) : (
-        <TouchableWithIcon
-          icon={{ name: 'keyboard_arrow_left', fontSize: '24px' }}
-          label='Result'
-          labelStyle={{
-            fontWeight: 'bold'
-          }}
-          onClick={() => navigate('/questionnaire/results')}
-          showLabelOnMobile
-        />
+        <Space ml={-3}>
+          <TouchableWithIcon
+            icon={{ name: 'keyboard_arrow_left', fontSize: '24px' }}
+            label='Result'
+            labelStyle={{
+              fontWeight: 'bold',
+            }}
+            onClick={() => navigate('/questionnaire/results')}
+            showLabelOnMobile
+          />
+        </Space>
       )}
       {pathname === '/' && <AboutUsLink to='about-us'>About us</AboutUsLink>}
       {pathname.includes('results') && (

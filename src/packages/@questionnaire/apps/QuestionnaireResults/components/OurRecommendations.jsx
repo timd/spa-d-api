@@ -1,7 +1,6 @@
 import React from 'react'
 import { Flex, Space, Typography } from '@kogaio'
 
-import { recommendations } from '../constants'
 import { RecommendationsList, SectionDescription } from '.'
 
 const OurRecommendations = props => (
@@ -20,7 +19,7 @@ const OurRecommendations = props => (
         />
       </Space>
       <Space mx='auto' mt={6}>
-        <RecommendationsList maxWidth={1080} recommendations={recommendations} />
+          <RecommendationsList maxWidth={1080} />
       </Space>
     </Flex>
   </Space>

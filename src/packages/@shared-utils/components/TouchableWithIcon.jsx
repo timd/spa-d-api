@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { Flex, Hide, Icon, Space, Touchable, Typography } from '@kogaio'
 import { ConditionalWrap, themeGet } from '@kogaio/utils'
 
-const TouchableWithIcon = ({ icon: iconProps, label, onClick, showLabelOnMobile, labelStyle }) => (
-  <Touchable effect='opacity' onClick={onClick}>
+const TouchableWithIcon = ({ icon: iconProps, label, onClick, showLabelOnMobile, labelStyle, ...props }) => (
+  <Touchable effect='opacity' onClick={onClick} {...props}>
     <Space py={1} pl={3} pr={2}>
       <Container>
         <Icon {...iconProps} />
