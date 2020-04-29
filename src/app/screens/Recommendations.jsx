@@ -37,7 +37,7 @@ const RemcommendationsScreen = ({ t }) => (
       <SectionDescription
         color='dark-grey'
         firstRowPrefix={t('At your')}
-        boldedText={t("'Getting divorced'")}
+        boldedText={`'${t('Getting divorced')}'`}
         firstRowSuffix={`${t('phase')},`}
         bottomText={t('we recommend those following steps')}
       />
