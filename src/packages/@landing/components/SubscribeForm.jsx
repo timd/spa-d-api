@@ -31,7 +31,7 @@ const SubscribeForm = ({ isSubscribing, requestSubscribe, t }) => {
                 margin: 'auto',
               }}
               id='subscribe-email'
-              icLeft='email'
+              icLeft='mail_outline'
               name='EMAIL'
               placeholder={t('subscribe.email')}
               required

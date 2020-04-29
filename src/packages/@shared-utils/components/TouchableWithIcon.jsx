@@ -2,20 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Flex, Hide, Icon, Space, Touchable, Typography } from '@kogaio'
-import { themeGet } from '@kogaio/utils'
+import { ConditionalWrap, themeGet } from '@kogaio/utils'
 
-const TouchableWithIcon = ({ icon: iconProps, label, onClick }) => (
-  <Touchable effect='opacity' onClick={onClick}>
+const TouchableWithIcon = ({ icon: iconProps, label, onClick, showLabelOnMobile, labelStyle, ...props }) => (
+  <Touchable effect='opacity' onClick={onClick} {...props}>
     <Space py={1} pl={3} pr={2}>
       <Container>
         <Icon {...iconProps} />
-        <Hide xs sm>
+        <ConditionalWrap
+          condition={!showLabelOnMobile}
+          wrap={() => (
+            <Hide xs sm>
+              <Space ml={2}>
+                <Typography color='dark-grey' variant='body' {...labelStyle}>
+                  {label}
+                </Typography>
+              </Space>
+            </Hide>
+          )}>
           <Space ml={2}>
-            <Typography color='dark-grey' variant='body'>
+            <Typography color='dark-grey' variant='body' {...labelStyle}>
               {label}
             </Typography>
           </Space>
-        </Hide>
+        </ConditionalWrap>
       </Container>
     </Space>
   </Touchable>
@@ -39,12 +49,15 @@ TouchableWithIcon.propTypes = {
   }),
   label: PropTypes.string,
   onClick: PropTypes.func.isRequired,
+  showLabelOnMobile: PropTypes.bool,
+  labelStyle: PropTypes.bool,
 }
 
 TouchableWithIcon.defaultProps = {
   icon: {
     color: 'dark-grey',
   },
+  showLabelOnMobile: false,
 }
 
 export default TouchableWithIcon

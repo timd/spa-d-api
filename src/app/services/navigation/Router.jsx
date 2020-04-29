@@ -13,6 +13,7 @@ import {
   Imprint,
   Conditions,
   DataProtection,
+  Recommendations,
 } from 'app/screens'
 
 const AppRouter = () => (
@@ -28,6 +29,7 @@ const AppRouter = () => (
           <DataProtection path='/data-protection' />
           <QuestionnaireQuestions path='/questionnaire' />
           <QuestionnaireResults path='/questionnaire/results' />
+          <Recommendations path='/recommendations' />
           <NotFound default />
         </ScrollToTop>
       </Router>

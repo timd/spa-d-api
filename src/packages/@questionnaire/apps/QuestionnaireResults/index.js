@@ -1,9 +1,30 @@
 import React from 'react'
-import { Flex, Typography } from '@kogaio'
+import { Flex, Hide, Space } from '@kogaio'
+
+import { Footer } from 'app/components'
+import { DivorcyForecast, DivorceJourney, OurRecommendations, WhatsNext } from './components'
 
 const QuestionnaireResults = () => (
   <Flex flexDirection='column' alignItems='center' width={1}>
-    <Typography variant='h3'>Questionnaire Results</Typography>
+    <DivorcyForecast />
+    <Space mt={10}>
+      <DivorceJourney />
+    </Space>
+    <Hide md lg xlg>
+      <Space mt={4}>
+        <WhatsNext />
+      </Space>
+    </Hide>
+    <Hide xs sm>
+      <Space mt={14}>
+        <OurRecommendations />
+      </Space>
+    </Hide>
+    <Hide xs sm>
+      <Space mt={10}>
+        <Footer />
+      </Space>
+    </Hide>
   </Flex>
 )
 

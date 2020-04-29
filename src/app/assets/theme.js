@@ -8,16 +8,20 @@ const PRIMARY_COLORS = {
   'brand-hover': '#292F7A',
   'dark-grey': '#3C3C3C',
   'brand-secondary': '#93E7ED',
+  'brand-secondary-hover': '#82CCD1',
+  'brand-secondary-disabled': '#93E7ED',
   'brand-tertiary': '#F4B2A7',
   'feature-bg': '#E1F2F2',
   'progress-bg': '#F1F3FB',
-  error: '#D00000',
+  error: '#FA4834',
   gunmetal: '#232735',
   transparent: 'transparent',
   white: '#FFFFFF',
   headerShadow: '#D6D7DF',
   touchableBg: '#F1F2FB',
-  questionnaireBg: '#F5F5F7'
+  questionnaireBg: '#F5F5F7',
+  timelineDone: '#363D3C',
+  featureTitle: '#323232',
 }
 
 const COLOR_DERIVATIONS = {
@@ -25,8 +29,6 @@ const COLOR_DERIVATIONS = {
   brand25: hexToRgbA(PRIMARY_COLORS.brand, 0.25),
   brand50: hexToRgbA(PRIMARY_COLORS.brand, 0.5),
   'feature-bg40': hexToRgbA(PRIMARY_COLORS['feature-bg'], 0.4),
-  'brand-secondary-disabled': hexToRgbA(PRIMARY_COLORS['brand-secondary'], 0.2),
-  'brand-secondary-hover': hexToRgbA(PRIMARY_COLORS['brand-secondary'], 0.7),
   'brand-tertiary25': hexToRgbA(PRIMARY_COLORS['brand-tertiary'], 0.25),
   error03: hexToRgbA(PRIMARY_COLORS.error, 0.03),
   'dark-grey40': hexToRgbA(PRIMARY_COLORS['dark-grey'], 0.4),
@@ -67,6 +69,9 @@ const BUTTON_VARIANTS = {
     'max-width': '311px',
     'white-space': 'nowrap',
     width: 'fit-content',
+    ':active': {
+      transform: 'unset',
+    },
     ':disabled': {
       ':hover': {
         'background-color': colors['brand-disabled'],
@@ -82,12 +87,16 @@ const BUTTON_VARIANTS = {
     'max-width': '311px',
     'white-space': 'nowrap',
     width: 'fit-content',
+    ':active': {
+      transform: 'unset',
+    },
     ':hover': {
       'background-color': COLORS['brand-secondary-hover'],
     },
     ':disabled': {
+      'background-color': PRIMARY_COLORS['brand-secondary-disabled'],
       ':hover': {
-        'background-color': COLOR_DERIVATIONS['brand-secondary-disabled'],
+        'background-color': PRIMARY_COLORS['brand-secondary-disabled'],
       },
     },
   },
@@ -100,9 +109,13 @@ const BUTTON_VARIANTS = {
     'max-width': '311px',
     'white-space': 'nowrap',
     width: 'fit-content',
+    ':active': {
+      transform: 'unset',
+    },
     ':hover': {
+      'background-color': COLORS.brand,
       border: `${borders[1]} ${COLORS.brand50}`,
-      color: COLORS.brand50,
+      color: COLORS.white,
       img: {
         opacity: 0.5,
       },
@@ -121,6 +134,15 @@ const CARD_VARIANTS = {
   white: {
     'border-radius': `${radii[4]}px`,
   },
+  journey: {
+    background: COLORS.white,
+    border: `${borders[1]} ${COLORS.headerShadow}`,
+    'border-radius': `${radii[4]}px`,
+  },
+  next: {
+    background: COLORS.touchableBg,
+    'border-radius': `${radii[4]}px`,
+  }
 }
 
 const INPUT_VARIANTS = {
@@ -224,7 +246,6 @@ const TYPOGRAPHY_VARIANTS = {
   },
   body: {
     'font-family': FONTS.complementary,
-    'font-weight': `${fontWeights.regular}`,
     'font-size': '16px',
     'line-height': '24px',
   },
@@ -258,6 +279,11 @@ const TYPOGRAPHY_VARIANTS = {
     'font-weight': `${fontWeights.bold}`,
     'font-size': '22px',
     'line-height': '32px'
+  },
+  tooltip: {
+    'font-family': FONTS.complementary,
+    'font-size': '14px',
+    'line-height': '24px'
   }
 }
 
@@ -294,9 +320,7 @@ const theme = Object.seal({
     tracked: '0.05rem',
   },
   shadows: {
-    'card-simple': `0px 1px 4px ${COLORS.black25}`,
-    'card-highlight': `0px 3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
-    'text-editor': `0px -3px 6px ${COLORS['shadow-gray']}, 0px 0px 2px ${COLORS.black15}`,
+    'tooltip-white': `0px 4px 16px rgba(0, 0, 0, 0.3)`,
   },
   textStyles: {
     nowrap: {
