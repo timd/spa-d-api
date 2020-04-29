@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, navigate } from '@reach/router'
+import { navigate } from '@reach/router'
 import styled, { css } from 'styled-components'
 import { Flex, Space } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
@@ -28,7 +28,6 @@ const Header = ({ location: { pathname }, t }) => (
           />
         </Space>
       )}
-      {pathname === '/' && <AboutUsLink to='about-us'>{t('About us')}</AboutUsLink>}
       {pathname.includes('results') && (
         <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label={t('Share')} onClick={() => {}} />
       )}
@@ -53,14 +52,6 @@ const Container = styled(Flex)`
   width: 100%;
   justify-content: space-between;
   ${containerStyle};
-`
-
-const AboutUsLink = styled(Link)`
-  color: ${themeGet('colors.dark-grey')};
-  font-family: ${themeGet('fonts.complementary')};
-  font-size: ${themeGet('fontSizes.1')};
-  font-weight: ${themeGet('fontWeights.bold')};
-  text-decoration: none;
 `
 
 Header.propTypes = {
