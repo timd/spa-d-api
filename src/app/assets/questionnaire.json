@@ -1,81 +1,477 @@
 {
   "question-1": {
+    "name": "process_stage",
     "title": {
       "en": "Where are you on your personal journey?",
       "de": "Wo befindest Du Dich in Deinem Scheidungsprozess?"
     },
+    "options": [
+      {
+        "id": "option-1",
+        "title": {
+          "en": "Problems in my marriage",
+          "de": "[DE] Problems in my marriage"
+        },
+        "value": "Problems in my marriage"
+      },
+      {
+        "id": "option-2",
+        "title": {
+          "en": "Thinking about a divorce",
+          "de": "[DE] Thinking about a divorce"
+        },
+        "value": "Thinking about a divorce"
+      },
+      {
+        "id": "option-3",
+        "title": {
+          "en": "I made the decision to get a divorce",
+          "de": "[DE] I made the decision to get a divorce"
+        },
+        "value": "I made the decision to get a divorce"
+      },
+      {
+        "id": "option-4",
+        "title": {
+          "en": "My partner wants a divorce/filed for divorce",
+          "de": "[DE] My partner wants a divorce/filed for divorce"
+        },
+        "value": "My partner wants a divorce/filed for divorce"
+      },
+      {
+        "id": "option-5",
+        "title": {
+          "en": "We have separated already",
+          "de": "[DE] We have separated already"
+        },
+        "value": "We have separated already"
+      },
+      {
+        "id": "option-6",
+        "title": {
+          "en": "We are already living separated for a year",
+          "de": "[DE] We are already living separated for a year"
+        },
+        "value": "We are already living separated for a year"
+      },
+      {
+        "id": "option-7",
+        "title": {
+          "en": "I am in the middle of my divorce and waiting for the court to rule",
+          "de": "[DE] I am in the middle of my divorce and waiting for the court to rule"
+        },
+        "value": "I am in the middle of my divorce and waiting for the court to rule"
+      }
+    ],
+    "initialOptionsCount": 3,
     "nextQuestionId": "question-2",
-    "progress": "10%"
+    "progress": "9%"
   },
   "question-2": {
+    "name": "process_aid",
     "title": {
       "en": "Whom have you consulted so far?",
       "de": "Mit wem hast du bisher gesprochen?"
     },
-    "previousQuestionId": "question-1",
+    "options": [
+      {
+        "id": "option-1",
+        "title": {
+          "en": "Family & Friends",
+          "de": "[DE] Family & Friends"
+        },
+        "value": "Family & Friends"
+      },
+      {
+        "id": "option-2",
+        "title": {
+          "en": "Professional Counselor",
+          "de": "[DE] Professional Counselor"
+        },
+        "value": "Professional Counselor"
+      },
+      {
+        "id": "option-3",
+        "title": {
+          "en": "Lawyer",
+          "de": "[DE] Lawyer"
+        },
+        "value": "Lawyer"
+      },
+      {
+        "id": "option-4",
+        "title": {
+          "en": "Banker",
+          "de": "[DE] Banker"
+        },
+        "value": "Banker"
+      },
+      {
+        "id": "option-5",
+        "title": {
+          "en": "Insurance",
+          "de": "[DE] We have separated already"
+        },
+        "value": "Insurance"
+      },
+      {
+        "id": "option-6",
+        "title": {
+          "en": "Pension",
+          "de": "[DE] Pension"
+        },
+        "value": "Pension"
+      },
+      {
+        "id": "option-7",
+        "type": "custom_text",
+        "title": {
+          "en": "Other",
+          "de": "[DE] Other"
+        }
+      }
+    ],
+    "initialOptionsCount": 3,
     "nextQuestionId": "question-3",
-    "progress": "20%"
+    "progress": "18%"
   },
   "question-3": {
+    "name": "financial_net_income",
     "title": {
       "en": "How high is your monthly net income?",
       "de": "Wie hoch ist dein monatliches Nettoeinkommen?"
     },
-    "previousQuestionId": "question-2",
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "[DE] Are you not sure?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
+        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+      }
+    },
+    "options": [
+      {
+        "id": "option-1",
+        "type": "currency",
+        "title": {
+          "en": "Net income",
+          "de": "[DE] Net income"
+        }
+      }
+    ],
     "nextQuestionId": "question-4",
-    "progress": "30%"
+    "progress": "27%"
   },
   "question-4": {
+    "name": "financial_supouse_net_income",
+    "title": {
+      "en": "How high is your supouse's monthly net income?",
+      "de": "[DE] How high is your supouse'smonthly net income?"
+    },
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "[DE] Are you not sure?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
+        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+      }
+    },
+    "options": [
+      {
+        "id": "option-1",
+        "type": "currency",
+        "title": {
+          "en": "Net income",
+          "de": "[DE] Net income"
+        }
+      }
+    ],
+    "nextQuestionId": "question-5",
+    "progress": "36%"
+  },
+  "question-5": {
+    "name": "financial_joined_assets",
     "title": {
       "en": "How high are you joined assets?",
       "de": "Wieviel sind eure geteilten Vermögenswerte?"
     },
-    "previousQuestionId": "question-3",
-    "nextQuestionId": "question-5",
-    "progress": "40%"
-  },
-  "question-5": {
-    "title": {
-      "en": "Do you have kid(s) with your spouse?",
-      "de": "Hast du mit Deinem Partner Kinder??"
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "[DE] Are you not sure?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
+        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+      }
     },
-    "previousQuestionId": "question-4",
+    "options": [
+      {
+        "id": "option-4-1",
+        "type": "currency",
+        "title": {
+          "en": "Joined assets",
+          "de": "[DE] Joined assets"
+        }
+      }
+    ],
     "nextQuestionId": "question-6",
-    "progress": "50%"
+    "progress": "45%"
   },
   "question-6": {
+    "type": "composition",
+    "name": "financial_asset_distribution",
+    "required": false,
+    "showLabels": true,
+    "title": {
+      "en": "How are these assets roughly distributed?",
+      "de": "[DE] How are these assets roughly distributed?"
+    },
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "[DE] Are you not sure?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
+        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+      }
+    },
+    "options": [
+      {
+        "id": "option-1",
+        "type": "currency",
+        "name": "real_estate",
+        "title": {
+          "en": "Real Estate",
+          "de": "[DE] Real Estate"
+        }
+      },
+      {
+        "id": "option-2",
+        "type": "currency",
+        "name": "cash_accounts",
+        "title": {
+          "en": "Cash Accounts",
+          "de": "[DE] Cash Accounts"
+        }
+      },
+      {
+        "id": "option-3",
+        "type": "currency",
+        "name": "stocks",
+        "title": {
+          "en": "Stocks",
+          "de": "[DE] Stocks"
+        }
+      },
+      {
+        "id": "option-4",
+        "type": "currency",
+        "name": "car",
+        "title": {
+          "en": "Car",
+          "de": "[DE] Car"
+        }
+      },
+      {
+        "id": "option-5",
+        "type": "currency",
+        "name": "motor_bike",
+        "title": {
+          "en": "Motor Bike",
+          "de": "[DE] Motor Bike"
+        }
+      },
+      {
+        "id": "option-6",
+        "type": "currency",
+        "name": "life_ensurance",
+        "title": {
+          "en": "Life Insurance",
+          "de": "[DE] Life Insurance"
+        }
+      },
+      {
+        "id": "option-7",
+        "type": "currency",
+        "name": "raise_pension",
+        "title": {
+          "en": "Raise Pension",
+          "de": "[DE] Raise Pension"
+        }
+      },
+      {
+        "id": "option-8",
+        "type": "currency",
+        "name": "company_pesions",
+        "title": {
+          "en": "Company Pensions",
+          "de": "[DE] Real Estate"
+        }
+      }
+    ],
+    "nextQuestionId": "question-7",
+    "progress": "54%"
+  },
+  "question-7": {
+    "name": "have_children",
+    "title": {
+      "en": "Do you have kid(s) with your spouse?",
+      "de": "Hast du mit Deinem Partner Kinder?"
+    },
+    "options": [
+      {
+        "id": "option-1",
+        "title": {
+          "en": "Yes",
+          "de": "[DE] Yes"
+        },
+        "value": true
+      },
+      {
+        "id": "option-2",
+        "title": {
+          "en": "No",
+          "de": "[DE] No"
+        },
+        "value": false
+      }
+    ],
+    "nextQuestionId": {
+      "option-1": "question-8",
+      "option-2": null
+    },
+    "progress": "56%"
+  },
+  "question-8": {
+    "name": "children_count",
     "title": {
       "en": "How many kid(s) do you have?",
       "de": "Wieviele Kinder habt ihr?"
     },
-    "previousQuestionId": "question-5",
-    "nextQuestionId": "question-7",
-    "progress": "60%"
+    "options": [
+      {
+        "id": "option-1",
+        "title": {
+          "en": "1",
+          "de": "1"
+        },
+        "value": 1
+      },
+      {
+        "id": "option-2",
+        "title": {
+          "en": "2",
+          "de": "2"
+        },
+        "value": 2
+      },
+      {
+        "id": "option-3",
+        "title": {
+          "en": "3",
+          "de": "3"
+        },
+        "value": 3
+      },
+      {
+        "id": "option-4",
+        "type": "custom_number",
+        "validation": {
+          "min": 1,
+          "max": 10
+        },
+        "title": {
+          "en": "More",
+          "de": "[DE] More"
+        }
+      }
+    ],
+    "nextQuestionId": "question-9",
+    "progress": "72%"
   },
-  "question-7": {
+  "question-9": {
+    "type": "list",
+    "name": "children_ages",
     "title": {
       "en": "How old is he/she?",
       "de": "Wie alt ist er oder sie?"
     },
-    "previousQuestionId": "question-6",
-    "nextQuestionId": "question-8",
-    "progress": "70%"
+    "dynamic": {
+      "dependency": "children_count",
+      "type": "age",
+      "title": {
+        "en": "Kid",
+        "de": "[DE] Kid"
+      }
+    },
+    "nextQuestionId": "question-10",
+    "progress": "81%"
   },
-  "question-8": {
+  "question-10": {
+    "name": "children_parent_type",
     "title": {
       "en": "Are you their..",
       "de": "Bist du ihr... ?"
     },
-    "previousQuestionId": "question-7",
-    "nextQuestionId": "question-9",
-    "progress": "80%"
+    "options": [
+      {
+        "id": "option-1",
+        "title": {
+          "en": "Father",
+          "de": "[DE] Father"
+        },
+        "value": "father"
+      },
+      {
+        "id": "option-2",
+        "title": {
+          "en": "Mother",
+          "de": "[DE] Mother"
+        },
+        "value": "mother"
+      }
+    ],
+    "nextQuestionId": "question-11",
+    "progress": "90%"
   },
-  "question-9": {
+  "question-11": {
+    "name": "children_custody",
     "title": {
       "en": "Do you already have an idea, where the kids should live?",
       "de": "Habt ihr schon besprochen, bei wem die Kinder leben sollen?"
     },
-    "previousQuestionId": "question-8",
+    "options": [
+      {
+        "id": "option-1",
+        "title": {
+          "en": "Father",
+          "de": "[DE] Father"
+        },
+        "value": "father"
+      },
+      {
+        "id": "option-2",
+        "title": {
+          "en": "Mother",
+          "de": "[DE] Mother"
+        },
+        "value": "mother"
+      },
+      {
+        "id": "option-3",
+        "title": {
+          "en": "50/50",
+          "de": "[DE] 50/50"
+        },
+        "value": "50_50"
+      }
+    ],
     "progress": "100%"
   }
 }

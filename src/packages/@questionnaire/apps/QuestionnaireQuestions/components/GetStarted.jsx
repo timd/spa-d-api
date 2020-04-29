@@ -13,11 +13,20 @@ const GetStarted = ({
   t,
   ...props
 }) => {
-  const { setCurrentQuestionId } = useContext(QuestionnaireContext)
+  const { setQuestionnaireState } = useContext(QuestionnaireContext)
 
   const _startQuestionnaire = () => {
-    const [firstQuestionId] = Object.keys(questionnaireItemsObj)
-    setCurrentQuestionId(firstQuestionId)
+    const [questionId] = Object.keys(questionnaireItemsObj)
+    setQuestionnaireState(state => {
+      state.append({
+        questionId,
+        optionId: undefined,
+        name: undefined,
+        value: undefined,
+        isExpanded: false,
+      })
+      return { ...state }
+    })
   }
 
   return (

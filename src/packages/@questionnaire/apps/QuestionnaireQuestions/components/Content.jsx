@@ -23,11 +23,13 @@ const Content = ({ title, description, children, ...props }) => (
       {...props}>
       <Image alt='logo' src={logo} size={56} />
       <Space mt={6}>
-        <Typography variant='questionnaireTitle'>{title}</Typography>
+        <Typography width={{ xs: 1, md: '400px' }} variant='questionnaireTitle'>
+          {title}
+        </Typography>
       </Space>
       {description ? (
         <Space mt={2}>
-          <Typography color='dark-grey' variant='body'>
+          <Typography width={{ xs: 1, md: '400px' }} color='dark-grey' variant='body'>
             {description}
           </Typography>
         </Space>

@@ -60,153 +60,6 @@ const FONT_WEIGHTS = {
   medium: 500,
 }
 
-const BUTTON_VARIANTS = {
-  primary: {
-    'border-radius': `${radii[4]}px`,
-    'font-family': FONTS.complementary,
-    height: '40px',
-    'min-width': '140px',
-    'max-width': '311px',
-    'white-space': 'nowrap',
-    width: 'fit-content',
-    ':active': {
-      transform: 'unset',
-    },
-    ':disabled': {
-      ':hover': {
-        'background-color': colors['brand-disabled'],
-      },
-    },
-  },
-  secondary: {
-    'background-color': COLORS['brand-secondary'],
-    'border-radius': `${radii[4]}px`,
-    'font-family': FONTS.complementary,
-    height: '40px',
-    'min-width': '140px',
-    'max-width': '311px',
-    'white-space': 'nowrap',
-    width: 'fit-content',
-    ':active': {
-      transform: 'unset',
-    },
-    ':hover': {
-      'background-color': COLORS['brand-secondary-hover'],
-    },
-    ':disabled': {
-      'background-color': PRIMARY_COLORS['brand-secondary-disabled'],
-      ':hover': {
-        'background-color': PRIMARY_COLORS['brand-secondary-disabled'],
-      },
-    },
-  },
-  outline: {
-    'border-radius': `${radii[4]}px`,
-    border: `${borders[1]} ${COLORS.brand}`,
-    'font-family': FONTS.complementary,
-    height: '40px',
-    'min-width': '140px',
-    'max-width': '311px',
-    'white-space': 'nowrap',
-    width: 'fit-content',
-    ':active': {
-      transform: 'unset',
-    },
-    ':hover': {
-      'background-color': COLORS.brand,
-      border: `${borders[1]} ${COLORS.brand50}`,
-      color: COLORS.white,
-      img: {
-        opacity: 0.5,
-      },
-    },
-    ':disabled': {
-      border: `${borders[1]} ${COLORS.brand15}`,
-      color: COLORS.brand50,
-      ':hover': {
-        'border-color': COLORS.brand15,
-      },
-    },
-  },
-}
-
-const CARD_VARIANTS = {
-  white: {
-    'border-radius': `${radii[4]}px`,
-  },
-  journey: {
-    background: COLORS.white,
-    border: `${borders[1]} ${COLORS.headerShadow}`,
-    'border-radius': `${radii[4]}px`,
-  },
-  next: {
-    background: COLORS.touchableBg,
-    'border-radius': `${radii[4]}px`,
-  }
-}
-
-const INPUT_VARIANTS = {
-  default: {
-    'background-color': COLORS.white,
-    border: `${borders[1]} transparent`,
-    '::placeholder': {
-      color: COLORS.placeholder,
-    },
-    'border-radius': `${radii[4]}px`,
-    ':focus, :hover': {
-      border: `${borders[1]} ${COLORS['brand-secondary']}`,
-    },
-    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
-      '-webkit-appearance': 'none',
-      margin: 0,
-    },
-    '&[type=number]': {
-      '-moz-appearance': 'textfield',
-    },
-  },
-  error: {
-    'background-color': COLORS.white,
-    border: `${borders[1]} ${COLORS.error}`,
-    'box-shadow': shadows['input-basic'],
-    color: COLORS.error,
-    '::placeholder': {
-      color: COLORS.placeholder,
-    },
-    ':-webkit-autofill': {
-      'background-color': COLORS.error03,
-      color: COLORS.error,
-    },
-    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
-      '-webkit-appearance': 'none',
-      margin: 0,
-    },
-    '&[type=number]': {
-      '-moz-appearance': 'textfield',
-    },
-  },
-  disabled: {
-    'background-color': COLORS.white,
-    border: 'none',
-    'box-shadow': 'none',
-    color: COLORS.brand25,
-    cursor: 'not-allowed',
-    '::placeholder': {
-      color: COLORS.placeholder,
-    },
-    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
-      '-webkit-appearance': 'none',
-      margin: 0,
-    },
-    '&[type=number]': {
-      '-moz-appearance': 'textfield',
-    },
-  }
-}
-
-const LANDING_CONTAINER = {
-  'max-width': 1080,
-}
-
 const TYPOGRAPHY_VARIANTS = {
   h1: {
     'font-family': FONTS.primary,
@@ -278,34 +131,230 @@ const TYPOGRAPHY_VARIANTS = {
     'font-family': FONTS.primary,
     'font-weight': `${fontWeights.bold}`,
     'font-size': '22px',
-    'line-height': '32px'
+    'line-height': '32px',
   },
   tooltip: {
     'font-family': FONTS.complementary,
     'font-size': '14px',
-    'line-height': '24px'
-  }
+    'line-height': '24px',
+  },
+}
+
+const BUTTON_HEIGHTS = {
+  normal: '40px',
+  large: '50px',
+}
+
+const BUTTON_VARIANTS = {
+  primary: {
+    'border-radius': `${radii[4]}px`,
+    'font-family': FONTS.complementary,
+    height: BUTTON_HEIGHTS.normal,
+    'min-width': '140px',
+    'max-width': '311px',
+    'white-space': 'nowrap',
+    width: 'fit-content',
+    ':active': {
+      transform: 'unset',
+    },
+    ':disabled': {
+      ':hover': {
+        'background-color': colors['brand-disabled'],
+      },
+    },
+  },
+  secondary: {
+    'background-color': COLORS['brand-secondary'],
+    'border-radius': `${radii[4]}px`,
+    'font-family': FONTS.complementary,
+    height: BUTTON_HEIGHTS.normal,
+    'min-width': '140px',
+    'max-width': '311px',
+    'white-space': 'nowrap',
+    width: 'fit-content',
+    ':active': {
+      transform: 'unset',
+    },
+    ':hover': {
+      'background-color': COLORS['brand-secondary-hover'],
+    },
+    ':disabled': {
+      'background-color': PRIMARY_COLORS['brand-secondary-disabled'],
+      ':hover': {
+        'background-color': PRIMARY_COLORS['brand-secondary-disabled'],
+      },
+    },
+  },
+  outline: {
+    'border-radius': `${radii[4]}px`,
+    border: `${borders[1]} ${COLORS.brand}`,
+    'font-family': FONTS.complementary,
+    height: BUTTON_HEIGHTS.normal,
+    'min-width': '140px',
+    'max-width': '311px',
+    'white-space': 'nowrap',
+    width: 'fit-content',
+    ':active': {
+      transform: 'unset',
+    },
+    ':hover': {
+      'background-color': COLORS.brand,
+      border: `${borders[1]} ${COLORS.brand50}`,
+      color: COLORS.white,
+      img: {
+        opacity: 0.5,
+      },
+    },
+    ':disabled': {
+      border: `${borders[1]} ${COLORS.brand15}`,
+      color: COLORS.brand50,
+      ':hover': {
+        'border-color': COLORS.brand15,
+      },
+    },
+  },
+}
+
+const CARD_VARIANTS = {
+  white: {
+    'border-radius': `${radii[4]}px`,
+  },
+  journey: {
+    background: COLORS.white,
+    border: `${borders[1]} ${COLORS.headerShadow}`,
+    'border-radius': `${radii[4]}px`,
+  },
+  next: {
+    background: COLORS.touchableBg,
+    'border-radius': `${radii[4]}px`,
+  },
+}
+
+const INPUT_VARIANTS = {
+  default: {
+    'background-color': COLORS.white,
+    border: `${borders[1]} transparent`,
+    '::placeholder': {
+      color: COLORS.placeholder,
+    },
+    'border-radius': `${radii[4]}px`,
+    ':focus, :hover': {
+      border: `${borders[1]} ${COLORS['brand-secondary']}`,
+    },
+    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
+    },
+    '&[type=number]': {
+      '-moz-appearance': 'textfield',
+    },
+  },
+  error: {
+    'background-color': COLORS.white,
+    border: `${borders[1]} ${COLORS.error}`,
+    'box-shadow': shadows['input-basic'],
+    color: COLORS.error,
+    '::placeholder': {
+      color: COLORS.placeholder,
+    },
+    ':-webkit-autofill': {
+      'background-color': COLORS.error03,
+      color: COLORS.error,
+    },
+    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
+    },
+    '&[type=number]': {
+      '-moz-appearance': 'textfield',
+    },
+  },
+  disabled: {
+    'background-color': COLORS.white,
+    border: 'none',
+    'box-shadow': 'none',
+    color: COLORS.brand25,
+    cursor: 'not-allowed',
+    '::placeholder': {
+      color: COLORS.placeholder,
+    },
+    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
+    },
+    '&[type=number]': {
+      '-moz-appearance': 'textfield',
+    },
+  },
+  questionnaire: {
+    ...TYPOGRAPHY_VARIANTS.body,
+    height: BUTTON_HEIGHTS.large,
+    color: COLORS['dark-grey'],
+    'background-color': COLORS.white,
+    border: `${borders[1]} ${COLORS['headerShadow']}`,
+    'border-radius': `${radii[4]}px`,
+    '::placeholder': {
+      color: COLORS.placeholder,
+    },
+    ':focus, :hover': {
+      color: COLORS['brand'],
+      border: `${borders[1]} ${COLORS['brand']}`,
+    },
+    '&[type=number]::-webkit-outer-spin-button, &[type=number]::-webkit-inner-spin-button': {
+      '-webkit-appearance': 'none',
+      margin: 0,
+    },
+    '&[type=number]': {
+      '-moz-appearance': 'textfield',
+    },
+  },
+}
+
+const LANDING_CONTAINER = {
+  'max-width': 1080,
 }
 
 const ANCHOR = {
   color: COLORS['brand-secondary'],
   'font-family': FONTS.complementary,
-  '.anchor-bold': {
+  '&.anchor-bold': {
     'font-weight': `${fontWeights.bold}`,
     ':hover': {
-      'font-weight': `${fontWeights.bold}`
-    }
+      'font-weight': `${fontWeights.bold}`,
+    },
   },
   ':hover': {
-    color: COLORS['brand-secondary-hover']
+    color: COLORS['brand-secondary-hover'],
   },
   ':active': {
-    color: COLORS['brand-secondary-hover']
-  }
+    color: COLORS['brand-secondary-hover'],
+  },
+}
+
+const QUESTIONNAIRE_OPTION = {
+  'min-height': '50px',
+  'align-items': 'center',
+  border: `1px solid ${COLORS['headerShadow']}`,
+  'border-radius': `${radii[4]}px`,
+  'box-sizing': 'border-box',
+  'flex-direction': 'row',
+  'font-weight': `${fontWeights.regular}`,
+  'justify-content': 'space-between',
+  '&, & *': {
+    color: COLORS['dark-grey'],
+  },
+  '&.selected': {
+    'background-color': COLORS['touchableBg'],
+    '& *': {
+      color: COLORS['brand'],
+      'font-weight': `${fontWeights.bold}`,
+    },
+  },
 }
 
 const theme = Object.seal({
   Anchor: ANCHOR,
+  QuestionnaireOption: QUESTIONNAIRE_OPTION,
   buttons: BUTTON_VARIANTS,
   cards: CARD_VARIANTS,
   colors: COLORS,
