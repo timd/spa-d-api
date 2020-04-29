@@ -1,4 +1,8 @@
 export { default as Landing } from './Landing'
+export { default as Imprint } from './Imprint'
+export { default as DataProtection } from './DataProtection'
+export { default as Conditions } from './Conditions'
 export { default as NotFound } from './NotFound'
 export { default as QuestionnaireQuestions } from './QuestionnaireQuestions'
 export { default as QuestionnaireResults } from './QuestionnaireResults'
+export { default as Recommendations } from './Recommendations'

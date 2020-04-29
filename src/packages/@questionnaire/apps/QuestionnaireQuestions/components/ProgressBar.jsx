@@ -22,7 +22,7 @@ const Container = styled(Flex)`
 `
 
 ProgressBar.propTypes = {
-  progress: PropTypes.string,
+  progress: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 }
 
 export default ProgressBar
