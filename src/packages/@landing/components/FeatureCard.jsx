@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Image, Flex, Space, Typography } from '@kogaio'
+import styled from 'styled-components'
 import { withTranslation } from 'react-i18next'
+import { Image, Flex, Space, Typography } from '@kogaio'
+import { themeGet } from '@kogaio/utils'
+
 const FeatureCard = ({ id, icon, title, description, i18n, ...props }) => {
   const lang = i18n.language
   return (
@@ -9,9 +12,9 @@ const FeatureCard = ({ id, icon, title, description, i18n, ...props }) => {
       <Flex flexDirection='column' borderRadius={4} height='100%' bg={{ xs: 'transparent', md: 'white' }}>
         <Image src={icon} alt={`logo-${id}`} size={60} />
         <Space mt={6}>
-          <Typography color='dark-grey' variant='h3'>
+          <Title variant='questionnaireTitle'>
             {title[lang]}
-          </Typography>
+          </Title>
         </Space>
         <Space mt={2}>
           <Typography color='dark-grey' variant='body'>
@@ -22,6 +25,10 @@ const FeatureCard = ({ id, icon, title, description, i18n, ...props }) => {
     </Space>
   )
 }
+
+const Title = styled(Typography)`
+  color: ${themeGet('colors.featureTitle')};
+`
 
 FeatureCard.propTypes = {
   id: PropTypes.string,
