@@ -12,7 +12,7 @@ export const features = [
       en:
         'The reason for your divorce? That’s not our business. But to give you personalized recommendations, we need to understand your current situation with just a couple of clicks.',
       de:
-        'Der Grund Deiner Scheidung? Das ist nicht unsere Sache. Aber um Dir ein paar personalisierte Vorschläge zu machen, müssen wir Deine Situation verstehen, mit ein paar wenigen Klicks',
+        'Warum du über eine Scheidung nachdenkst, geht uns nichts an. Um Dir persönliche Empfehlungen geben zu können, brauchen wir aber ein paar Informationen um deine Situation besser zu verstehen.',
     },
   },
   {
@@ -26,7 +26,7 @@ export const features = [
       en:
         'Money is unfortunately a big topic. With just a little information, we can estimate the one time and ongoing cost you have to bear or the alimony you receive.',
       de:
-        'Geld ist leider das größte Thema. Mit ein paar Informationen können wir schätzen, welche Kosten einmalig auf Dich zukommen, und mit welchen Alimentezahlungen pro Monat du rechnen kannst',
+        'Leider sind Finanzen ein großes Thema bei einer Scheidung. Mit nur wenigen Daten können wir einmalige (z.B. Anwaltskosten) und laufenden Verpflichtungen einfach berechnen.',
     },
   },
   {
@@ -38,7 +38,8 @@ export const features = [
     },
     description: {
       en: 'Get your individual results incl. tailored recommendations and clear next steps.',
-      de: 'Bekomme Deine individuellen Resulate inklusive angepasste Ratschläge für die nächsten Schritte',
+      de:
+        'Bekomme Empfehlungen, die zu Dir und Deiner Situation passen, damit Du die richtigen Entscheidungen triffst.',
     },
   },
 ]

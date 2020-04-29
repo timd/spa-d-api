@@ -327,7 +327,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
           <Space mt={3}>
             <MoreTouchable
               display={isShowMoreOptionsButtonVisible() ? 'inherit' : 'none'}
-              title='Others'
+              title={t('Others')}
               onClick={() => showMoreOptions()}
             />
           </Space>
