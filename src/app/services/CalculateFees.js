@@ -1,4 +1,4 @@
-const lawyerFees = [
+const LAWYER_FEES = [
   { start: 0.0, end: 499.99, fee: 45.0 },
   { start: 500.0, end: 999.99, fee: 80 },
   { start: 1000.0, end: 1499.99, fee: 115.0 },
@@ -43,7 +43,7 @@ const lawyerFees = [
   { start: 470000.0, end: 499999.99, fee: 3213.0 },
 ]
 
-const courtFees = [
+const COURT_FEES = [
   { start: 0.0, end: 499.99, fee: 35.0 },
   { start: 500.0, end: 999.99, fee: 53.0 },
   { start: 1000.0, end: 1499.99, fee: 71.0 },
@@ -88,18 +88,48 @@ const courtFees = [
   { start: 470000.0, end: 499999.99, fee: 3536.0 },
 ]
 
-const constants = {
+const PARAM = {
+  vat: 1.19,
   expensesFlatRate: 20,
   claimForMentainance: 250,
   childExemption: 7500,
   spouseExemption: 15000,
+  netIncomeAdjustmentRate: 3.0,
+  assetsAdjustmentRate: 0.05,
   proceduralFeeRate: 1.3,
   appointmentFeeRate: 1.2,
   courtFeeRate: 2.0,
 }
 
-export const calculateFees = () => ({
-  total: 227.68,
-  lawyer: 157.68,
-  court: 70.0,
-})
+const lookupFees = (value, fees) =>
+  fees
+    .filter(item => item.start <= value && value <= item.end)
+    .map(item => item.fee)
+    .pop()
+
+const ceil = value => Math.ceil(value * 100) / 100
+
+export const calculateFees = input => {
+  const totalNetIncome = input.personalNetIncome
+  const adjustedTotalNetIncome = totalNetIncome * PARAM.netIncomeAdjustmentRate
+
+  const supousesExemption = PARAM.spouseExemption * 2
+  const totalAssets = input.joinedAssets - supousesExemption
+  const adjustedTotalAssets = totalAssets * PARAM.assetsAdjustmentRate
+
+  const proceduralValue = Math.max(adjustedTotalNetIncome + adjustedTotalAssets, 0)
+  const netFees = Math.round(lookupFees(proceduralValue, LAWYER_FEES))
+
+  const proceduralFees = ceil(netFees * PARAM.proceduralFeeRate)
+  const appointmentFees = ceil(netFees * PARAM.appointmentFeeRate)
+
+  const lawyerFees = ceil((proceduralFees + appointmentFees + PARAM.expensesFlatRate) * PARAM.vat)
+  const courtFees = ceil(lookupFees(proceduralValue, COURT_FEES) * PARAM.courtFeeRate)
+  const totalFees = lawyerFees + courtFees
+
+  return {
+    total: totalFees,
+    lawyer: lawyerFees,
+    court: courtFees,
+  }
+}
