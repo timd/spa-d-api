@@ -54,7 +54,7 @@ const RemcommendationsScreen = ({ t }) => (
 )
 
 RemcommendationsScreen.propTypes = {
-  t: PropTypes.func
+  t: PropTypes.func,
 }
 
 export default withTranslation()(RemcommendationsScreen)
