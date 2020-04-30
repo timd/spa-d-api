@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Flex, Input, Typography } from '@kogaio'
+import { withTranslation } from 'react-i18next'
 
 import { themeGet } from '@kogaio/utils'
 import Space from '@ivoryio/kogaio/Responsive/Space'
 
-const AgeInput = ({ id, value, label, placeholder, onValueChange, ...props }) => {
+const AgeInput = ({ id, value, label, placeholder, onValueChange, t, ...props }) => {
   const [MIN, MAX] = [0, 99]
 
   const handleOnChange = event => {
@@ -22,9 +23,8 @@ const AgeInput = ({ id, value, label, placeholder, onValueChange, ...props }) =>
       onValueChange(newValue)
     }
   }
-
   return (
-    <Container {...props}>
+    <Container inputSuffix={t('years')} {...props}>
       <Space mr={4}>
         <Label variant='body'>{label}</Label>
       </Space>
@@ -61,7 +61,7 @@ const Container = styled(Flex)`
     font-family: ${themeGet('fonts.complementary')};
     display: block;
     color: ${themeGet('colors.brand')};
-    content: 'years';
+    content: '${props => props.inputSuffix}';
     position: absolute;
     right: 12px;
     top: 0;
@@ -78,6 +78,7 @@ AgeInput.propTypes = {
   value: PropTypes.number,
   placeholder: PropTypes.string,
   onValueChange: PropTypes.func,
+  t: PropTypes.func,
 }
 
-export default AgeInput
+export default withTranslation()(AgeInput)

@@ -18,7 +18,7 @@ const DivorcyForecast = ({ costs, t, ...props }) => (
           firstRowPrefix={t('You are in')}
           boldedText={`'${t('Getting divorced')}'`}
           firstRowSuffix={t('phase')}
-          bottomText={t("Here's expected cost & recommendations of next steps.")}
+          bottomText={t('forecast.subtitle')}
         />
       </Space>
       <Space mt={{ xs: 9, md: 15 }}>
@@ -30,7 +30,7 @@ const DivorcyForecast = ({ costs, t, ...props }) => (
 
 DivorcyForecast.propTypes = {
   costs: PropTypes.shape({}),
-  t: PropTypes.func
+  t: PropTypes.func,
 }
 
 export default withTranslation()(DivorcyForecast)

@@ -3,14 +3,14 @@
     "name": "process_stage",
     "title": {
       "en": "Where are you on your personal journey?",
-      "de": "Wo befindest Du Dich in Deinem Scheidungsprozess?"
+      "de": "Wo stehst Du aktuell in deinem Trennungsprozess?"
     },
     "options": [
       {
         "id": "option-1",
         "title": {
           "en": "Problems in my marriage",
-          "de": "[DE] Problems in my marriage"
+          "de": "Ich habe Probleme in meiner Ehe"
         },
         "value": "Problems in my marriage"
       },
@@ -18,7 +18,7 @@
         "id": "option-2",
         "title": {
           "en": "Thinking about a divorce",
-          "de": "[DE] Thinking about a divorce"
+          "de": "Ich denke über eine Scheidung nach"
         },
         "value": "Thinking about a divorce"
       },
@@ -26,7 +26,7 @@
         "id": "option-3",
         "title": {
           "en": "I made the decision to get a divorce",
-          "de": "[DE] I made the decision to get a divorce"
+          "de": "Ich habe mich für eine Scheidung entschieden"
         },
         "value": "I made the decision to get a divorce"
       },
@@ -34,7 +34,7 @@
         "id": "option-4",
         "title": {
           "en": "My partner wants a divorce/filed for divorce",
-          "de": "[DE] My partner wants a divorce/filed for divorce"
+          "de": "Mein Partner möchte eine Scheidung / Mein Partner hat eine Scheidung eingereicht"
         },
         "value": "My partner wants a divorce/filed for divorce"
       },
@@ -42,7 +42,7 @@
         "id": "option-5",
         "title": {
           "en": "We have separated already",
-          "de": "[DE] We have separated already"
+          "de": "Wir haben uns schon getrennt"
         },
         "value": "We have separated already"
       },
@@ -50,7 +50,7 @@
         "id": "option-6",
         "title": {
           "en": "We are already living separated for a year",
-          "de": "[DE] We are already living separated for a year"
+          "de": "Wir leben schon seit einem Jahr getrennt"
         },
         "value": "We are already living separated for a year"
       },
@@ -58,7 +58,7 @@
         "id": "option-7",
         "title": {
           "en": "I am in the middle of my divorce and waiting for the court to rule",
-          "de": "[DE] I am in the middle of my divorce and waiting for the court to rule"
+          "de": "Ich bin mitten in meiner Scheidung und warte darauf, dass das Gericht entscheidet"
         },
         "value": "I am in the middle of my divorce and waiting for the court to rule"
       }
@@ -71,14 +71,14 @@
     "name": "process_aid",
     "title": {
       "en": "Whom have you consulted so far?",
-      "de": "Mit wem hast du bisher gesprochen?"
+      "de": "Wer hat Dich bisher beraten?"
     },
     "options": [
       {
         "id": "option-1",
         "title": {
           "en": "Family & Friends",
-          "de": "[DE] Family & Friends"
+          "de": "Freunde & Familie"
         },
         "value": "Family & Friends"
       },
@@ -86,7 +86,7 @@
         "id": "option-2",
         "title": {
           "en": "Professional Counselor",
-          "de": "[DE] Professional Counselor"
+          "de": "Professioneller Berater"
         },
         "value": "Professional Counselor"
       },
@@ -94,7 +94,7 @@
         "id": "option-3",
         "title": {
           "en": "Lawyer",
-          "de": "[DE] Lawyer"
+          "de": "Anwalt"
         },
         "value": "Lawyer"
       },
@@ -102,7 +102,7 @@
         "id": "option-4",
         "title": {
           "en": "Banker",
-          "de": "[DE] Banker"
+          "de": "Bankberater"
         },
         "value": "Banker"
       },
@@ -110,7 +110,7 @@
         "id": "option-5",
         "title": {
           "en": "Insurance",
-          "de": "[DE] We have separated already"
+          "de": "Versicherungsberater"
         },
         "value": "Insurance"
       },
@@ -118,7 +118,7 @@
         "id": "option-6",
         "title": {
           "en": "Pension",
-          "de": "[DE] Pension"
+          "de": "Rentenberater"
         },
         "value": "Pension"
       },
@@ -127,7 +127,7 @@
         "type": "custom_text",
         "title": {
           "en": "Other",
-          "de": "[DE] Other"
+          "de": "Andere"
         }
       }
     ],
@@ -139,16 +139,16 @@
     "name": "financial_net_income",
     "title": {
       "en": "How high is your monthly net income?",
-      "de": "Wie hoch ist dein monatliches Nettoeinkommen?"
+      "de": "Wie hoch ist Dein monatliches Nettoeinkommen?"
     },
     "tooltip": {
       "title": {
         "en": "Are you not sure?",
-        "de": "[DE] Are you not sure?"
+        "de": "Du bist Dir nicht sicher?"
       },
       "description": {
-        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
-        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+        "en": "If you don't know exact amount of money, it's fine for now.",
+        "de": "Es ist kein Problem, wenn Du den genauen Betrag nicht kennst."
       }
     },
     "options": [
@@ -157,7 +157,7 @@
         "type": "currency",
         "title": {
           "en": "Net income",
-          "de": "[DE] Net income"
+          "de": "Netto Einkommen"
         }
       }
     ],
@@ -167,17 +167,17 @@
   "question-4": {
     "name": "financial_supouse_net_income",
     "title": {
-      "en": "How high is your supouse's monthly net income?",
-      "de": "[DE] How high is your supouse'smonthly net income?"
+      "en": "How high is your spouse's monthly net income?",
+      "de": "Wie hoch ist das monatliche Einkommen Deines Partners?"
     },
     "tooltip": {
       "title": {
         "en": "Are you not sure?",
-        "de": "[DE] Are you not sure?"
+        "de": "Du bist Dir nicht sicher?"
       },
       "description": {
-        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
-        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+        "en": "If you don't know exact amount of money, it's fine for now.",
+        "de": "Es ist kein Problem, wenn Du den genauen Betrag nicht kennst."
       }
     },
     "options": [
@@ -186,7 +186,7 @@
         "type": "currency",
         "title": {
           "en": "Net income",
-          "de": "[DE] Net income"
+          "de": "Netto Einkommen"
         }
       }
     ],
@@ -197,16 +197,16 @@
     "name": "financial_joined_assets",
     "title": {
       "en": "How high are you joined assets?",
-      "de": "Wieviel sind eure geteilten Vermögenswerte?"
+      "de": "Wie hoch sind Eure geteilten Vermögenswerte (z.B. eine Immobilie, Auto)?"
     },
     "tooltip": {
       "title": {
         "en": "Are you not sure?",
-        "de": "[DE] Are you not sure?"
+        "de": "Du bist Dir nicht sicher?"
       },
       "description": {
-        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
-        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+        "en": "If you don't know exact amount of money, it's fine for now.",
+        "de": "Es ist kein Problem, wenn Du den genauen Betrag nicht kennst."
       }
     },
     "options": [
@@ -215,7 +215,7 @@
         "type": "currency",
         "title": {
           "en": "Joined assets",
-          "de": "[DE] Joined assets"
+          "de": "Gemeinsame Vermögenswerte"
         }
       }
     ],
@@ -229,16 +229,16 @@
     "showLabels": true,
     "title": {
       "en": "How are these assets roughly distributed?",
-      "de": "[DE] How are these assets roughly distributed?"
+      "de": "Wie ungefäht sind die gemeinsamen Vermögenswerte verteilt?"
     },
     "tooltip": {
       "title": {
         "en": "Are you not sure?",
-        "de": "[DE] Are you not sure?"
+        "de": "Du bist Dir nicht sicher?"
       },
       "description": {
-        "en": "If you don't know exact amount of money, it's fine for now. blah blah..",
-        "de": "[DE] If you don't know exact amount of money, it's fine for now. blah blah.."
+        "en": "If you don't know exact amount of money, it's fine for now.",
+        "de": "Es ist kein Problem, wenn Du den genauen Betrag nicht kennst."
       }
     },
     "options": [
@@ -248,7 +248,7 @@
         "name": "real_estate",
         "title": {
           "en": "Real Estate",
-          "de": "[DE] Real Estate"
+          "de": "Immobilien"
         }
       },
       {
@@ -257,7 +257,7 @@
         "name": "cash_accounts",
         "title": {
           "en": "Cash Accounts",
-          "de": "[DE] Cash Accounts"
+          "de": "Bargeld Konten"
         }
       },
       {
@@ -266,7 +266,7 @@
         "name": "stocks",
         "title": {
           "en": "Stocks",
-          "de": "[DE] Stocks"
+          "de": "Aktien"
         }
       },
       {
@@ -275,7 +275,7 @@
         "name": "car",
         "title": {
           "en": "Car",
-          "de": "[DE] Car"
+          "de": "Auto"
         }
       },
       {
@@ -284,7 +284,7 @@
         "name": "motor_bike",
         "title": {
           "en": "Motor Bike",
-          "de": "[DE] Motor Bike"
+          "de": "Motorad"
         }
       },
       {
@@ -293,7 +293,7 @@
         "name": "life_ensurance",
         "title": {
           "en": "Life Insurance",
-          "de": "[DE] Life Insurance"
+          "de": "Lebensversicherung"
         }
       },
       {
@@ -302,7 +302,7 @@
         "name": "raise_pension",
         "title": {
           "en": "Raise Pension",
-          "de": "[DE] Raise Pension"
+          "de": "Rentenzusatzversicherung"
         }
       },
       {
@@ -311,7 +311,7 @@
         "name": "company_pesions",
         "title": {
           "en": "Company Pensions",
-          "de": "[DE] Real Estate"
+          "de": "Arbeitgeberentenversicherung"
         }
       }
     ],
@@ -322,14 +322,14 @@
     "name": "have_children",
     "title": {
       "en": "Do you have kid(s) with your spouse?",
-      "de": "Hast du mit Deinem Partner Kinder?"
+      "de": "Haben Du und Dein Partner gemeinsame Kinder?"
     },
     "options": [
       {
         "id": "option-1",
         "title": {
           "en": "Yes",
-          "de": "[DE] Yes"
+          "de": "Ja"
         },
         "value": true
       },
@@ -337,7 +337,7 @@
         "id": "option-2",
         "title": {
           "en": "No",
-          "de": "[DE] No"
+          "de": "Nein"
         },
         "value": false
       }
@@ -352,7 +352,7 @@
     "name": "children_count",
     "title": {
       "en": "How many kid(s) do you have?",
-      "de": "Wieviele Kinder habt ihr?"
+      "de": "Wie viele gemeinsame Kinder habt Ihr?"
     },
     "options": [
       {
@@ -388,7 +388,7 @@
         },
         "title": {
           "en": "More",
-          "de": "[DE] More"
+          "de": "Mehr"
         }
       }
     ],
@@ -400,14 +400,14 @@
     "name": "children_ages",
     "title": {
       "en": "How old is he/she?",
-      "de": "Wie alt ist er oder sie?"
+      "de": "Wie alt ist das Kind?"
     },
     "dynamic": {
       "dependency": "children_count",
       "type": "age",
       "title": {
         "en": "Kid",
-        "de": "[DE] Kid"
+        "de": "Kind"
       }
     },
     "nextQuestionId": "question-10",
@@ -424,7 +424,7 @@
         "id": "option-1",
         "title": {
           "en": "Father",
-          "de": "[DE] Father"
+          "de": "Vater"
         },
         "value": "father"
       },
@@ -432,7 +432,7 @@
         "id": "option-2",
         "title": {
           "en": "Mother",
-          "de": "[DE] Mother"
+          "de": "Mutter"
         },
         "value": "mother"
       }
@@ -444,14 +444,14 @@
     "name": "children_custody",
     "title": {
       "en": "Do you already have an idea, where the kids should live?",
-      "de": "Habt ihr schon besprochen, bei wem die Kinder leben sollen?"
+      "de": "Weißt Du schon, wo die Kinder wohnen sollen?"
     },
     "options": [
       {
         "id": "option-1",
         "title": {
           "en": "Father",
-          "de": "[DE] Father"
+          "de": "Vater"
         },
         "value": "father"
       },
@@ -459,7 +459,7 @@
         "id": "option-2",
         "title": {
           "en": "Mother",
-          "de": "[DE] Mother"
+          "de": "Mutter"
         },
         "value": "mother"
       },
@@ -467,7 +467,7 @@
         "id": "option-3",
         "title": {
           "en": "50/50",
-          "de": "[DE] 50/50"
+          "de": "50% / 50%"
         },
         "value": "50_50"
       }
