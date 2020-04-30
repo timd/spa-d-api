@@ -28,7 +28,7 @@ const OurRecommendations = ({ t, ...props }) => (
 )
 
 OurRecommendations.propTypes = {
-  t: PropTypes.func
+  t: PropTypes.func,
 }
 
 export default withTranslation()(OurRecommendations)
