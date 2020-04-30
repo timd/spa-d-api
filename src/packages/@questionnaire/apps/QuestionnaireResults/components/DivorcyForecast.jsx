@@ -22,7 +22,7 @@ const DivorcyForecast = ({ costs, t, ...props }) => (
         />
       </Space>
       <Space mt={{ xs: 9, md: 15 }}>
-        <ExpectationCosts chargeTypes={chargeTypes} />
+        <ExpectationCosts chargeTypes={chargeTypes(costs)} />
       </Space>
     </Flex>
   </Space>

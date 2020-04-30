@@ -5,18 +5,21 @@ import { Footer } from 'app/components'
 import { DivorcyForecast, DivorceJourney, OurRecommendations, WhatsNext } from './components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
-import { calculateFees } from 'app/services/CalculateFees'
+import { calculateFees as calculateOneTimeFees } from 'app/services/CalculateFees'
 
 const QuestionnaireResults = () => {
   const { questionnaireState } = useContext(QuestionnaireContext)
   const answers = questionnaireState.buildAnswers()
 
-  console.log(answers)
+  const oneTimeCosts = calculateOneTimeFees({ ...answers })
+
+  console.log('Answers: ', answers)
+  console.log('One time costs', oneTimeCosts)
   questionnaireState.clear()
 
   return (
     <Flex flexDirection='column' alignItems='center' width={1}>
-      <DivorcyForecast />
+      <DivorcyForecast costs={oneTimeCosts} />
       <Space mt={10}>
         <DivorceJourney />
       </Space>
