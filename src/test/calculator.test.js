@@ -1,10 +1,10 @@
-import { calculateFees } from '../app/services/CalculateFees.js'
+import { calculateOneTimeFees } from '../app/services/FeesCalculator.js'
 
-describe('calculateFees', () => {
+describe('calculateOneTimeFees', () => {
   test('should return a total fee of €227,68 when the input is missing', () => {
     // Arrange
     // Act
-    const actual = calculateFees()
+    const actual = calculateOneTimeFees()
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -20,7 +20,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -39,7 +39,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -58,7 +58,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -77,7 +77,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -96,7 +96,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -115,7 +115,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -134,7 +134,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(227.68)
@@ -153,7 +153,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(367.8)
@@ -172,7 +172,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(367.8)
@@ -191,7 +191,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(1027.5)
@@ -210,7 +210,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(1786.4)
@@ -229,7 +229,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(1596.68)
@@ -248,7 +248,7 @@ describe('calculateFees', () => {
     }
 
     // Act
-    const actual = calculateFees(input)
+    const actual = calculateOneTimeFees(input)
 
     // Assert
     expect(actual.total).toBe(1406.95)

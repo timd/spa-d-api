@@ -109,7 +109,7 @@ const lookupFees = (value, fees) =>
 
 const ceil = value => Math.ceil(value * 100) / 100
 
-export const calculateFees = input => {
+export const calculateOneTimeFees = input => {
   const data = {
     childrenCount: 0,
     personalNetIncome: 0,
