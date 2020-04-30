@@ -12,7 +12,7 @@
           "en": "Problems in my marriage",
           "de": "Ich habe Probleme in meiner Ehe"
         },
-        "value": "Problems in my marriage"
+        "value": "marriage_crisis"
       },
       {
         "id": "option-2",
@@ -20,7 +20,7 @@
           "en": "Thinking about a divorce",
           "de": "Ich denke über eine Scheidung nach"
         },
-        "value": "Thinking about a divorce"
+        "value": "marriage_crisis"
       },
       {
         "id": "option-3",
@@ -28,7 +28,7 @@
           "en": "I made the decision to get a divorce",
           "de": "Ich habe mich für eine Scheidung entschieden"
         },
-        "value": "I made the decision to get a divorce"
+        "value": "split_up"
       },
       {
         "id": "option-4",
@@ -36,7 +36,7 @@
           "en": "My partner wants a divorce/filed for divorce",
           "de": "Mein Partner möchte eine Scheidung / Mein Partner hat eine Scheidung eingereicht"
         },
-        "value": "My partner wants a divorce/filed for divorce"
+        "value": "split_up"
       },
       {
         "id": "option-5",
@@ -44,7 +44,7 @@
           "en": "We have separated already",
           "de": "Wir haben uns schon getrennt"
         },
-        "value": "We have separated already"
+        "value": "getting_divorced"
       },
       {
         "id": "option-6",
@@ -52,7 +52,7 @@
           "en": "We are already living separated for a year",
           "de": "Wir leben schon seit einem Jahr getrennt"
         },
-        "value": "We are already living separated for a year"
+        "value": "getting_divorced"
       },
       {
         "id": "option-7",
@@ -60,7 +60,7 @@
           "en": "I am in the middle of my divorce and waiting for the court to rule",
           "de": "Ich bin mitten in meiner Scheidung und warte darauf, dass das Gericht entscheidet"
         },
-        "value": "I am in the middle of my divorce and waiting for the court to rule"
+        "value": "being_divorced"
       }
     ],
     "initialOptionsCount": 3,
