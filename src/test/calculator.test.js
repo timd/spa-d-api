@@ -172,13 +172,13 @@ describe('calculateFees', () => {
     expect(actual.court).toBe(254.0)
   })
 
-  test('should return a total fee of €837,78 when the number of chilren is 2, personal net income €1000, spouse net income is $1000, joined assets are $0 and open loans are $0', () => {
+  test('should return a total fee of €1786,4 when the number of chilren is 0, personal net income €1000, spouse net income is $1000, joined assets are $50,000 and open loans are $0', () => {
     // Arrange
     const input = {
-      childrenCount: 2,
+      childrenCount: 0,
       personalNetIncome: 1000,
       spouseNetIncome: 1000,
-      joinedAssets: 0,
+      joinedAssets: 50000,
       openLoans: 0,
     }
 
@@ -186,8 +186,27 @@ describe('calculateFees', () => {
     const actual = calculateFees(input)
 
     // Assert
-    expect(actual.total).toBe(837.78)
-    expect(actual.lawyer).toBe(621.78)
-    expect(actual.court).toBe(216.0)
+    expect(actual.total).toBe(1786.4)
+    expect(actual.lawyer).toBe(1380.4)
+    expect(actual.court).toBe(406.0)
+  })
+
+  test('should return a total fee of €1596,68 when the number of chilren is 0, personal net income €1000, spouse net income is $1000, joined assets are $50,000 and open loans are $10,000', () => {
+    // Arrange
+    const input = {
+      childrenCount: 0,
+      personalNetIncome: 1000,
+      spouseNetIncome: 1000,
+      joinedAssets: 50000,
+      openLoans: 10000,
+    }
+
+    // Act
+    const actual = calculateFees(input)
+
+    // Assert
+    expect(actual.total).toBe(1596.68)
+    expect(actual.lawyer).toBe(1228.68)
+    expect(actual.court).toBe(368)
   })
 })
