@@ -110,7 +110,7 @@ const lookupFees = (value, fees) =>
 const ceil = value => Math.ceil(value * 100) / 100
 
 export const calculateFees = input => {
-  const totalNetIncome = input.personalNetIncome
+  const totalNetIncome = input.personalNetIncome + input.spouseNetIncome
   const adjustedTotalNetIncome = totalNetIncome * PARAM.netIncomeAdjustmentRate
 
   const supousesExemption = PARAM.spouseExemption * 2
