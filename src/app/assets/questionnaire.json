@@ -319,6 +319,35 @@
     "progress": "54%"
   },
   "question-7": {
+    "name": "financial_joined_liabilities",
+    "title": {
+      "en": "How high are your joined liabilities (i.e., mortgages, loans)?",
+      "de": "[DE] How high are your joined liabilities (i.e., mortgages, loans)?"
+    },
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "Du bist Dir nicht sicher?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now.",
+        "de": "Es ist kein Problem, wenn Du den genauen Betrag nicht kennst."
+      }
+    },
+    "options": [
+      {
+        "id": "option-1",
+        "type": "currency",
+        "title": {
+          "en": "Joined liabilities",
+          "de": "[DE] Joined liabilities"
+        }
+      }
+    ],
+    "nextQuestionId": "question-8",
+    "progress": "45%"
+  },
+  "question-8": {
     "name": "have_children",
     "title": {
       "en": "Do you have kid(s) with your spouse?",
@@ -343,12 +372,12 @@
       }
     ],
     "nextQuestionId": {
-      "option-1": "question-8",
+      "option-1": "question-9",
       "option-2": null
     },
     "progress": "56%"
   },
-  "question-8": {
+  "question-9": {
     "name": "children_count",
     "title": {
       "en": "How many kid(s) do you have?",
@@ -392,10 +421,10 @@
         }
       }
     ],
-    "nextQuestionId": "question-9",
+    "nextQuestionId": "question-10",
     "progress": "72%"
   },
-  "question-9": {
+  "question-10": {
     "type": "list",
     "name": "children_ages",
     "title": {
@@ -410,10 +439,10 @@
         "de": "Kind"
       }
     },
-    "nextQuestionId": "question-10",
+    "nextQuestionId": "question-11",
     "progress": "81%"
   },
-  "question-10": {
+  "question-11": {
     "name": "children_parent_type",
     "title": {
       "en": "Are you their..",
@@ -437,10 +466,10 @@
         "value": "mother"
       }
     ],
-    "nextQuestionId": "question-11",
+    "nextQuestionId": "question-12",
     "progress": "90%"
   },
-  "question-11": {
+  "question-12": {
     "name": "children_custody",
     "title": {
       "en": "Do you already have an idea, where the kids should live?",
