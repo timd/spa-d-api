@@ -110,14 +110,23 @@ const lookupFees = (value, fees) =>
 const ceil = value => Math.ceil(value * 100) / 100
 
 export const calculateFees = input => {
-  const claimForMaintaince = input.childrenCount * PARAM.claimForMentainance
-  const totalNetIncome = input.personalNetIncome + input.spouseNetIncome - claimForMaintaince
+  const data = {
+    childrenCount: 0,
+    personalNetIncome: 0,
+    spouseNetIncome: 0,
+    joinedAssets: 0,
+    openLoans: 0,
+    ...input,
+  }
+
+  const claimForMaintaince = data.childrenCount * PARAM.claimForMentainance
+  const totalNetIncome = data.personalNetIncome + data.spouseNetIncome - claimForMaintaince
 
   const adjustedTotalNetIncome = totalNetIncome * PARAM.netIncomeAdjustmentRate
 
   const supousesExemption = 2 * PARAM.spouseExemption
-  const childrenExemption = input.childrenCount * PARAM.childExemption
-  const totalAssets = input.joinedAssets - input.openLoans - supousesExemption - childrenExemption
+  const childrenExemption = data.childrenCount * PARAM.childExemption
+  const totalAssets = data.joinedAssets - data.openLoans - supousesExemption - childrenExemption
   const adjustedTotalAssets = totalAssets * PARAM.assetsAdjustmentRate
 
   const proceduralValue = Math.max(adjustedTotalNetIncome + adjustedTotalAssets, 0)

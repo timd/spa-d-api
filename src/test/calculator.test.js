@@ -1,6 +1,17 @@
 import { calculateFees } from '../app/services/CalculateFees.js'
 
 describe('calculateFees', () => {
+  test('should return a total fee of €227,68 when the input is missing', () => {
+    // Arrange
+    // Act
+    const actual = calculateFees()
+
+    // Assert
+    expect(actual.total).toBe(227.68)
+    expect(actual.lawyer).toBe(157.68)
+    expect(actual.court).toBe(70.0)
+  })
+
   test('should return a total fee of €227,68 when the number of chilren is 0, personal net income €0, spouse net income is $0, joined assets are $0 and open loans are $0', () => {
     // Arrange
     const input = {
