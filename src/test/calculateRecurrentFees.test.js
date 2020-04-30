@@ -4,7 +4,7 @@ describe('calculateRecurrentFees', () => {
   test('should return [] when there are no children ages', () => {
     // Arrange
     const input = {
-      providerNetIncome: 0,
+      netIncome: 0,
       childrenAges: [],
     }
 
@@ -18,7 +18,7 @@ describe('calculateRecurrentFees', () => {
   test('should return [0] when the provider income is €0 and there is only one child of age 0', () => {
     // Arrange
     const input = {
-      providerNetIncome: 0,
+      netIncome: 0,
       childrenAges: [0],
     }
 
@@ -32,7 +32,7 @@ describe('calculateRecurrentFees', () => {
   test('should return [267] when the provider income is €1600 and there is only one child of age 0', () => {
     // Arrange
     const input = {
-      providerNetIncome: 1600,
+      netIncome: 1600,
       childrenAges: [0],
     }
 
@@ -46,7 +46,7 @@ describe('calculateRecurrentFees', () => {
   test('should return [145.20, 214.80] when the provider income is €1600 and there is child of age 0 and one of age 12', () => {
     // Arrange
     const input = {
-      providerNetIncome: 1600,
+      netIncome: 1600,
       childrenAges: [0, 12],
     }
 
@@ -60,7 +60,7 @@ describe('calculateRecurrentFees', () => {
   test('should return [163.19, 196.81] when the provider income is €1600 and there is child of age 1 and one of age 6', () => {
     // Arrange
     const input = {
-      providerNetIncome: 1600,
+      netIncome: 1600,
       childrenAges: [1, 6],
     }
 
@@ -74,7 +74,7 @@ describe('calculateRecurrentFees', () => {
   test('should return [267, 322] when the provider income is €2000 and there is child of age 1 and one of age 6', () => {
     // Arrange
     const input = {
-      providerNetIncome: 2000,
+      netIncome: 2000,
       childrenAges: [1, 6],
     }
 
@@ -88,7 +88,7 @@ describe('calculateRecurrentFees', () => {
   test('should return [0, 0] when the provider income is €1000 and there is child of age 1 and one of age 6', () => {
     // Arrange
     const input = {
-      providerNetIncome: 1000,
+      netIncome: 1000,
       childrenAges: [1, 6],
     }
 

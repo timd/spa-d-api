@@ -177,13 +177,12 @@ export const calculateOneTimeFees = input => {
 
 export const calculateRecurrentFees = input => {
   const data = {
-    providerNetIncome: 0,
+    netIncome: 0,
     childrenAges: [],
     ...input,
   }
 
-  const adjustedNetIncome =
-    data.providerNetIncome * 0.05 < 150 ? data.providerNetIncome * 0.95 : data.providerNetIncome - 150
+  const adjustedNetIncome = data.netIncome * 0.05 < 150 ? data.netIncome * 0.95 : data.netIncome - 150
   const minimumIncome = lookupMinimumIncome(adjustedNetIncome, CHILD_CUSTODY)
 
   const netAllowances = data.childrenAges.map(age => calcualteRecurrentFeesForAge(adjustedNetIncome, age))
