@@ -5,6 +5,7 @@ import { Footer } from 'app/components'
 import { DivorcyForecast, DivorceJourney, OurRecommendations, WhatsNext } from './components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
+import { calculateFees } from 'app/services/CalculateFees'
 
 const QuestionnaireResults = () => {
   const { questionnaireState } = useContext(QuestionnaireContext)

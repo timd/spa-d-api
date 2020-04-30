@@ -35,7 +35,7 @@ describe('calculateFees', () => {
       personalNetIncome: 0,
       spouseNetIncome: 0,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -54,7 +54,7 @@ describe('calculateFees', () => {
       personalNetIncome: 0,
       spouseNetIncome: 0,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -73,7 +73,7 @@ describe('calculateFees', () => {
       personalNetIncome: 0,
       spouseNetIncome: 0,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -92,7 +92,7 @@ describe('calculateFees', () => {
       personalNetIncome: 499,
       spouseNetIncome: 0,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -111,7 +111,7 @@ describe('calculateFees', () => {
       personalNetIncome: 0,
       spouseNetIncome: 499,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -130,7 +130,7 @@ describe('calculateFees', () => {
       personalNetIncome: 299,
       spouseNetIncome: 200,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -149,7 +149,7 @@ describe('calculateFees', () => {
       personalNetIncome: 670,
       spouseNetIncome: 0,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -168,7 +168,7 @@ describe('calculateFees', () => {
       personalNetIncome: 370,
       spouseNetIncome: 300,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -187,7 +187,7 @@ describe('calculateFees', () => {
       personalNetIncome: 1000,
       spouseNetIncome: 1000,
       joinedAssets: 0,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -206,7 +206,7 @@ describe('calculateFees', () => {
       personalNetIncome: 1000,
       spouseNetIncome: 1000,
       joinedAssets: 50000,
-      openLoans: 0,
+      joinedLiabilities: 0,
     }
 
     // Act
@@ -225,7 +225,7 @@ describe('calculateFees', () => {
       personalNetIncome: 1000,
       spouseNetIncome: 1000,
       joinedAssets: 50000,
-      openLoans: 10000,
+      joinedLiabilities: 10000,
     }
 
     // Act
@@ -244,7 +244,7 @@ describe('calculateFees', () => {
       personalNetIncome: 1000,
       spouseNetIncome: 1000,
       joinedAssets: 100000,
-      openLoans: 10000,
+      joinedLiabilities: 10000,
     }
 
     // Act

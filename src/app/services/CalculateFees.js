@@ -115,7 +115,7 @@ export const calculateFees = input => {
     personalNetIncome: 0,
     spouseNetIncome: 0,
     joinedAssets: 0,
-    openLoans: 0,
+    joinedLiabilities: 0,
     ...input,
   }
 
@@ -126,7 +126,7 @@ export const calculateFees = input => {
 
   const supousesExemption = 2 * PARAM.spouseExemption
   const childrenExemption = data.childrenCount * PARAM.childExemption
-  const totalAssets = data.joinedAssets - data.openLoans - supousesExemption - childrenExemption
+  const totalAssets = data.joinedAssets - data.joinedLiabilities - supousesExemption - childrenExemption
   const adjustedTotalAssets = totalAssets * PARAM.assetsAdjustmentRate
 
   const proceduralValue = Math.max(adjustedTotalNetIncome + adjustedTotalAssets, 0)
