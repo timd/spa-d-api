@@ -110,18 +110,21 @@ const lookupFees = (value, fees) =>
 const ceil = value => Math.ceil(value * 100) / 100
 
 export const calculateFees = input => {
-  const totalNetIncome = input.personalNetIncome + input.spouseNetIncome
+  const claimForMaintaince = input.childrenCount * PARAM.claimForMentainance
+  const totalNetIncome = input.personalNetIncome + input.spouseNetIncome - claimForMaintaince
+
   const adjustedTotalNetIncome = totalNetIncome * PARAM.netIncomeAdjustmentRate
 
-  const supousesExemption = PARAM.spouseExemption * 2
-  const totalAssets = input.joinedAssets - supousesExemption
+  const supousesExemption = 2 * PARAM.spouseExemption
+  const childrenExemption = input.childrenCount * PARAM.childExemption
+  const totalAssets = input.joinedAssets - supousesExemption - childrenExemption
   const adjustedTotalAssets = totalAssets * PARAM.assetsAdjustmentRate
 
   const proceduralValue = Math.max(adjustedTotalNetIncome + adjustedTotalAssets, 0)
   const netFees = Math.round(lookupFees(proceduralValue, LAWYER_FEES))
 
-  const proceduralFees = ceil(netFees * PARAM.proceduralFeeRate)
-  const appointmentFees = ceil(netFees * PARAM.appointmentFeeRate)
+  const proceduralFees = netFees * PARAM.proceduralFeeRate
+  const appointmentFees = netFees * PARAM.appointmentFeeRate
 
   const lawyerFees = ceil((proceduralFees + appointmentFees + PARAM.expensesFlatRate) * PARAM.vat)
   const courtFees = ceil(lookupFees(proceduralValue, COURT_FEES) * PARAM.courtFeeRate)
