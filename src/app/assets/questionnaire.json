@@ -136,7 +136,7 @@
     "progress": "18%"
   },
   "question-3": {
-    "name": "financial_net_income",
+    "name": "personalNetIncome",
     "title": {
       "en": "How high is your monthly net income?",
       "de": "Wie hoch ist Dein monatliches Nettoeinkommen?"
@@ -165,7 +165,7 @@
     "progress": "27%"
   },
   "question-4": {
-    "name": "financial_supouse_net_income",
+    "name": "spouseNetIncome",
     "title": {
       "en": "How high is your spouse's monthly net income?",
       "de": "Wie hoch ist das monatliche Einkommen Deines Partners?"
@@ -194,7 +194,7 @@
     "progress": "36%"
   },
   "question-5": {
-    "name": "financial_joined_assets",
+    "name": "joinedAssets",
     "title": {
       "en": "How high are you joined assets?",
       "de": "Wie hoch sind Eure geteilten Vermögenswerte (z.B. eine Immobilie, Auto)?"
@@ -224,7 +224,7 @@
   },
   "question-6": {
     "type": "composition",
-    "name": "financial_asset_distribution",
+    "name": "joinedAssetsDistribution",
     "required": false,
     "showLabels": true,
     "title": {
@@ -319,7 +319,7 @@
     "progress": "54%"
   },
   "question-7": {
-    "name": "financial_joined_liabilities",
+    "name": "joinedLiabilities",
     "title": {
       "en": "How high are your joined liabilities (i.e., mortgages, loans)?",
       "de": "[DE] How high are your joined liabilities (i.e., mortgages, loans)?"
@@ -348,7 +348,7 @@
     "progress": "45%"
   },
   "question-8": {
-    "name": "have_children",
+    "name": "haveChildren",
     "title": {
       "en": "Do you have kid(s) with your spouse?",
       "de": "Haben Du und Dein Partner gemeinsame Kinder?"
@@ -378,7 +378,7 @@
     "progress": "56%"
   },
   "question-9": {
-    "name": "children_count",
+    "name": "childrenCount",
     "title": {
       "en": "How many kid(s) do you have?",
       "de": "Wie viele gemeinsame Kinder habt Ihr?"
@@ -426,13 +426,13 @@
   },
   "question-10": {
     "type": "list",
-    "name": "children_ages",
+    "name": "childrenAges",
     "title": {
       "en": "How old is he/she?",
       "de": "Wie alt ist das Kind?"
     },
     "dynamic": {
-      "dependency": "children_count",
+      "dependency": "childrenCount",
       "type": "age",
       "title": {
         "en": "Kid",
@@ -443,7 +443,7 @@
     "progress": "81%"
   },
   "question-11": {
-    "name": "children_parent_type",
+    "name": "childrenParentType",
     "title": {
       "en": "Are you their..",
       "de": "Bist du ihr... ?"
@@ -470,7 +470,7 @@
     "progress": "90%"
   },
   "question-12": {
-    "name": "children_custody",
+    "name": "childrenCustody",
     "title": {
       "en": "Do you already have an idea, where the kids should live?",
       "de": "Weißt Du schon, wo die Kinder wohnen sollen?"
