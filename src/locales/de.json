@@ -65,8 +65,11 @@
   },
   "questionnaire": {
     "getStarted": {
-      "header:": "Hello, I'm here for helping you get overview further process!",
+      "header:": "[DE] Hello, I'm here for helping you get overview further process!",
       "description": "Ich stelle Dir gleich ein paar einfache Fragen und in weniger als 3 Minuten sind wir fertig."
     }
+  },
+  "forecast": {
+    "subtitle": "Hier kannst Du deine zu erwartenden Kosten sowie Empfehlungen zu nächsten Schritten sehen."
   }
 }

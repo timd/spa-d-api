@@ -15,5 +15,8 @@
       "header:": "Hello, I'm here for helping you get overview further process!",
       "description": "We're gonna ask some basic questions and it probably takes about 5 minutes."
     }
+  },
+  "forecast": {
+    "subtitle": "Here's expected cost & recommendations of next steps."
   }
 }
