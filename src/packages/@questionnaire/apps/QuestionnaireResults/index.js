@@ -11,11 +11,14 @@ const QuestionnaireResults = () => {
   const { questionnaireState } = useContext(QuestionnaireContext)
   const answers = questionnaireState.buildAnswers()
 
-  const oneTimeCosts = calculateOneTimeFees({ ...answers })
-  const ongoingCosts = calculateRecurrentFees({
-    netIncome: answers.personalNetIncome,
-    childrenAges: answers.childrenAges?.filter(item => item !== undefined) ?? [],
-  })
+  const oneTimeCosts = calculateOneTimeFees({ ...answers }, 0)
+  const ongoingCosts = calculateRecurrentFees(
+    {
+      netIncome: answers.personalNetIncome,
+      childrenAges: answers.childrenAges?.filter(item => item !== undefined) ?? [],
+    },
+    0
+  )
 
   console.log('Answers:', answers)
   console.log('One time costs:', oneTimeCosts)

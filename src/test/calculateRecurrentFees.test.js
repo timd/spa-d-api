@@ -99,3 +99,33 @@ describe('calculateRecurrentFees', () => {
     expect(actual).toEqual([0, 0])
   })
 })
+
+describe('calculateRecurrentFees with 0 decimals precision', () => {
+  test('should return [145, 215] (rounded up from [145.20, 214.80]) when the provider income is €1600 and there is child of age 0 and one of age 12', () => {
+    // Arrange
+    const input = {
+      netIncome: 1600,
+      childrenAges: [0, 12],
+    }
+
+    // Act
+    const actual = calculateRecurrentFees(input, 0)
+
+    // Assert
+    expect(actual).toEqual([145, 215])
+  })
+})
+
+test('should return [163, 197] (rounded up from [163.19, 196.81]) when the provider income is €1600 and there is child of age 1 and one of age 6', () => {
+  // Arrange
+  const input = {
+    netIncome: 1600,
+    childrenAges: [1, 6],
+  }
+
+  // Act
+  const actual = calculateRecurrentFees(input, 0)
+
+  // Assert
+  expect(actual).toEqual([163, 197])
+})

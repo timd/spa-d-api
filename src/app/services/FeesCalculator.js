@@ -135,10 +135,10 @@ const lookupMinimumIncome = (value, fees) =>
     .map(item => item.minimumIncome)
     .pop()
 
-const ceil = value => Math.ceil(value * 100) / 100
-const round = value => Math.round(value * 100) / 100
+const ceil = (value, precision = 2) => Math.ceil(value * Math.pow(10, precision)) / Math.pow(10, precision)
+const round = (value, precision = 2) => Math.round(value * Math.pow(10, precision)) / Math.pow(10, precision)
 
-export const calculateOneTimeFees = input => {
+export const calculateOneTimeFees = (input, precision = 2) => {
   const data = {
     childrenCount: 0,
     personalNetIncome: 0,
@@ -159,13 +159,13 @@ export const calculateOneTimeFees = input => {
   const adjustedTotalAssets = totalAssets * PARAM.assetsAdjustmentRate
 
   const proceduralValue = Math.max(adjustedTotalNetIncome + adjustedTotalAssets, 0)
-  const netFees = Math.round(lookupFees(proceduralValue, LAWYER_FEES))
+  const netFees = lookupFees(proceduralValue, LAWYER_FEES)
 
   const proceduralFees = netFees * PARAM.proceduralFeeRate
   const appointmentFees = netFees * PARAM.appointmentFeeRate
 
-  const lawyerFees = ceil((proceduralFees + appointmentFees + PARAM.expensesFlatRate) * PARAM.vat)
-  const courtFees = ceil(lookupFees(proceduralValue, COURT_FEES) * PARAM.courtFeeRate)
+  const lawyerFees = ceil((proceduralFees + appointmentFees + PARAM.expensesFlatRate) * PARAM.vat, precision)
+  const courtFees = ceil(lookupFees(proceduralValue, COURT_FEES) * PARAM.courtFeeRate, precision)
   const totalFees = lawyerFees + courtFees
 
   return {
@@ -175,7 +175,7 @@ export const calculateOneTimeFees = input => {
   }
 }
 
-export const calculateRecurrentFees = input => {
+export const calculateRecurrentFees = (input, precision = 2) => {
   const data = {
     netIncome: 0,
     childrenAges: [],
@@ -190,7 +190,7 @@ export const calculateRecurrentFees = input => {
   const adjustmentRatio = (adjustedNetIncome - minimumIncome) / agesSum
   const ratio = Math.min(Math.max(adjustmentRatio, 0), 1)
 
-  return netAllowances.map(value => value * ratio).map(value => round(value))
+  return netAllowances.map(value => value * ratio).map(value => round(value, precision))
 }
 
 const calcualteRecurrentFeesForAge = (income, age) => {
