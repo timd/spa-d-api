@@ -2,7 +2,7 @@ export const checkpoints = [
   {
     id: 'marriage_crisis',
     title: 'Marriage Crisis',
-    description: '',
+    description: 'Definition about this phase. What do they need to do mainly  & how long it will take time',
     progress: 0,
     collapseHeightDesktop: {
       md: 96,
@@ -12,7 +12,7 @@ export const checkpoints = [
   {
     id: 'split_up',
     title: 'Split Up',
-    description: '',
+    description: 'Definition about this phase. What do they need to do mainly  & how long it will take time',
     progress: 0.25,
     collapseHeightDesktop: {
       md: 96,

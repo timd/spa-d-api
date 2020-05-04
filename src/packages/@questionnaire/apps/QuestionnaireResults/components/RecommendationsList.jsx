@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { withTranslation } from 'react-i18next'
 import { Box, Card, Flex, Icon, Image, Space, Typography } from '@kogaio'
-import { themeGet } from '@kogaio/utils'
+import { themed, themeGet } from '@kogaio/utils'
 
 import { recommendations } from '../constants'
 
@@ -26,7 +26,7 @@ const RecommendationsList = ({ isMobile, processStage, t, ...props }) => (
   </Flex>
 )
 
-const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, onClick, t, ...props }) => (
+const RecommendationItem = ({ anchor, title, description, imgColor, imgSrc, isMobile, onClick, t, ...props }) => (
   <Space pl={2} pr={4} pb={{ xs: 4, md: 6 }} pt={{ xs: 2, md: 6 }}>
     <CardContainer isMobile={isMobile} onClick={onClick} variant='journey' {...props}>
       <Flex flexDirection='column' position='relative'>
@@ -37,6 +37,11 @@ const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, on
         <Space mt={{ md: 2 }}>
           <Typography color='dark-grey' variant='tooltip'>
             {t(description)}
+            {anchor && (
+              <Anchor className='anchor-bold' href={anchor.URL} rel='noopener noreferrer' target='_blank'>
+                &nbsp;{anchor.label}
+              </Anchor>
+            )}
           </Typography>
         </Space>
       </Flex>
@@ -46,6 +51,10 @@ const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, on
     </CardContainer>
   </Space>
 )
+
+const Anchor = styled.a`
+  ${themed('Anchor')};
+`
 
 const mobileItemStyle = ({ isMobile }) =>
   isMobile &&
@@ -90,6 +99,10 @@ RecommendationsList.propTypes = {
 }
 
 RecommendationItem.propTypes = {
+  anchor: PropTypes.shape({
+    label: PropTypes.string,
+    URL: PropTypes.string,
+  }),
   title: PropTypes.string,
   description: PropTypes.string,
   imgColor: PropTypes.string,

@@ -8,8 +8,8 @@ import { TimelineContent } from '.'
 
 const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
   // eslint-disable-next-line no-unused-vars
-  const [collapsedContent, setCollapsedContent] = useState([])
-  const [containerMarginBottom, setContainerMarginBottom] = useState(0)
+  const [collapsedContent, setCollapsedContent] = useState([checkpoints[activeIndex].id])
+  const [containerMarginBottom, setContainerMarginBottom] = useState(checkpoints[activeIndex].collapseHeightMobile)
 
   const handleCollapseToggle = (contentId, collapseHeight) => () => {
     let collapsed = [...collapsedContent]
@@ -60,7 +60,6 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
                     title={`${idx + 1}. ${checkpoint.title}`}
                     id={checkpoint.id}
-                    description={checkpoint.description}
                     isActive={isActive}
                     isDone={isDone}
                     isFirst={isFirst}
