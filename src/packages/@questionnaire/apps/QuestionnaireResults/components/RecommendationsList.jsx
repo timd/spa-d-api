@@ -7,9 +7,9 @@ import { themeGet } from '@kogaio/utils'
 
 import { recommendations } from '../constants'
 
-const RecommendationsList = ({ isMobile, t, ...props }) => (
+const RecommendationsList = ({ isMobile, processStage, t, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
-    {recommendations.map((recommendation, idx) => (
+    {recommendations[processStage].map((recommendation, idx) => (
       <Space key={recommendation.id} px={2} mt={4}>
         <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
           <RecommendationItem
@@ -85,6 +85,7 @@ const Title = styled(Typography)`
 
 RecommendationsList.propTypes = {
   isMobile: PropTypes.string,
+  processStage: PropTypes.string,
   t: PropTypes.func,
 }
 

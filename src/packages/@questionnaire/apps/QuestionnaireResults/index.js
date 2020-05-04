@@ -32,7 +32,7 @@ const QuestionnaireResults = () => {
       </Hide>
       <Hide xs sm>
         <Space mt={14}>
-          <OurRecommendations />
+          <OurRecommendations processStage={answers.process_stage} />
         </Space>
       </Hide>
       <Hide xs sm>
