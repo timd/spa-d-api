@@ -9,7 +9,6 @@ import { DashedLine, DetailedCosts } from '.'
 
 const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...props }) => {
   const totalCost = Object.values(costs).reduce((counter, cost) => counter + cost, 0)
-  const monthlyRate = (totalCost / 12).toFixed(0)
 
   return (
     <Space px={{ xs: 4, md: 6 }} pb={{ xs: 3, md: 6 }} pt={{ xs: 2, md: 6 }}>
@@ -31,7 +30,7 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...pro
             top='auto'
             textAlign='center'>
             <Typography color='dark-grey' fontWeight='bold' variant='sh1'>
-              {chargeType === 'Monthly' ? monthlyRate : totalCost} &euro;
+              {totalCost} &euro;
             </Typography>
             {chargeType === 'Monthly' && (
               <Space mt={1}>
