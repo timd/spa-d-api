@@ -18,6 +18,8 @@ const TimelineContent = ({
   isFirst,
   isMobile,
   t,
+  i18n,
+  index,
   ...props
 }) => (
   <Container
@@ -41,7 +43,7 @@ const TimelineContent = ({
                 isActive={isActive}
                 color={isActive ? 'brand' : 'dark-grey'}
                 variant='body'>
-                {t(title)}
+                {index + 1}. {t(title)}
               </TimelineTitle>
             )}
           />
@@ -49,14 +51,14 @@ const TimelineContent = ({
       )}>
       <Space mt={{ md: 11 }}>
         <TimelineTitle isDone={isDone} isActive={isActive} color={isActive ? 'brand' : 'dark-grey'} variant='body'>
-          {t(title)}
+          {index + 1}. {t(title)}
         </TimelineTitle>
       </Space>
     </ConditionalWrap>
     {collapsedContent.includes(id) && (
       <Space mt={4}>
         <Typography color='dark-grey' maxWidth={{ xs: 220, sm: 240, md: 180, lg: 240 }} variant='tooltip'>
-          {t(description)}
+          {description[i18n.language]}
         </Typography>
       </Space>
     )}
@@ -118,7 +120,9 @@ TimelineContent.propTypes = {
   isFirst: PropTypes.bool,
   isMobile: PropTypes.bool,
   title: PropTypes.string,
-  t: PropTypes.func
+  t: PropTypes.func,
+  i18n: PropTypes.object,
+  index: PropTypes.number,
 }
 
 export default withTranslation()(TimelineContent)

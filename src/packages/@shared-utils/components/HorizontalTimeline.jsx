@@ -72,6 +72,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, isRow, ...props 
                     description={checkpoint.description}
                     isActive={isActive}
                     isDone={isDone}
+                    index={idx}
                   />
                 </Space>
               </ActiveCheckpoint>
@@ -88,6 +89,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, isRow, ...props 
                     description={checkpoint.description}
                     isActive={isActive}
                     isDone={isDone}
+                    index={idx}
                   />
                 </Space>
               </UnreachedCheckpoint>
