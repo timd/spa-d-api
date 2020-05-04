@@ -67,8 +67,8 @@ class QuestionnaireProgressStorage {
 
   buildAnswers = () =>
     this.values().reduce((accumulator, answer) => {
-      if (answer.name) {
-        accumulator[answer.name] = answer.value
+      if (answer.questionId) {
+        accumulator[answer.questionId] = answer.value
       }
       return accumulator
     }, {})

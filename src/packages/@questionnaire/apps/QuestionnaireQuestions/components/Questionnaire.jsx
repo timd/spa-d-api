@@ -103,9 +103,8 @@ const Questionnaire = ({ i18n, t, ...props }) => {
       return setQuestionnaireState(state => {
         let current = state.currentValue()
         current.optionId = option.id
-        current.name = item.name
         current.value = current.value ?? {}
-        current.value[option.name] = normalize(value)
+        current.value[option.id] = normalize(value)
 
         return { ...state }
       })
@@ -113,7 +112,6 @@ const Questionnaire = ({ i18n, t, ...props }) => {
       return setQuestionnaireState(state => {
         let current = state.currentValue()
         current.optionId = option.id
-        current.name = item.name
         current.value = current.value ?? []
         current.value[index] = normalize(value)
 
@@ -124,7 +122,6 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     return setQuestionnaireState(state => {
       let current = state.currentValue()
       current.optionId = option.id
-      current.name = item.name
       current.value = normalize(value)
 
       return { ...state }
@@ -133,7 +130,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
 
   const getOptionValue = (option, index) => {
     if (item.type === ITEM_TYPE.composition) {
-      return currentState.value ? currentState.value[option.name] : undefined
+      return currentState.value ? currentState.value[option.id] : undefined
     }
 
     if (item.type === ITEM_TYPE.list) {
@@ -199,7 +196,6 @@ const Questionnaire = ({ i18n, t, ...props }) => {
     let data = {
       questionId,
       optionId: undefined,
-      name: undefined,
       value: undefined,
       isExpanded: false,
     }

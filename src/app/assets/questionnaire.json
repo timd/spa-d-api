@@ -1,6 +1,5 @@
 {
-  "question-1": {
-    "name": "process_stage",
+  "processStage": {
     "title": {
       "en": "Where are you on your personal journey?",
       "de": "Wo stehst Du aktuell in deinem Trennungsprozess?"
@@ -64,11 +63,10 @@
       }
     ],
     "initialOptionsCount": 3,
-    "nextQuestionId": "question-2",
+    "nextQuestionId": "processAid",
     "progress": "9%"
   },
-  "question-2": {
-    "name": "process_aid",
+  "processAid": {
     "title": {
       "en": "Whom have you consulted so far?",
       "de": "Wer hat Dich bisher beraten?"
@@ -132,11 +130,10 @@
       }
     ],
     "initialOptionsCount": 3,
-    "nextQuestionId": "question-3",
+    "nextQuestionId": "personalNetIncome",
     "progress": "18%"
   },
-  "question-3": {
-    "name": "personalNetIncome",
+  "personalNetIncome": {
     "title": {
       "en": "How high is your monthly net income?",
       "de": "Wie hoch ist Dein monatliches Nettoeinkommen?"
@@ -161,11 +158,10 @@
         }
       }
     ],
-    "nextQuestionId": "question-4",
+    "nextQuestionId": "spouseNetIncome",
     "progress": "27%"
   },
-  "question-4": {
-    "name": "spouseNetIncome",
+  "spouseNetIncome": {
     "title": {
       "en": "How high is your spouse's monthly net income?",
       "de": "Wie hoch ist das monatliche Einkommen Deines Partners?"
@@ -190,11 +186,10 @@
         }
       }
     ],
-    "nextQuestionId": "question-5",
+    "nextQuestionId": "joinedAssets",
     "progress": "36%"
   },
-  "question-5": {
-    "name": "joinedAssets",
+  "joinedAssets": {
     "title": {
       "en": "How high are you joint assets?",
       "de": "Wie hoch sind Eure geteilten Vermögenswerte (z.B. eine Immobilie, Auto)?"
@@ -219,12 +214,11 @@
         }
       }
     ],
-    "nextQuestionId": "question-6",
+    "nextQuestionId": "joinedAssetsDistribution",
     "progress": "45%"
   },
-  "question-6": {
+  "joinedAssetsDistribution": {
     "type": "composition",
-    "name": "joinedAssetsDistribution",
     "required": false,
     "showLabels": true,
     "title": {
@@ -243,83 +237,74 @@
     },
     "options": [
       {
-        "id": "option-1",
+        "id": "realEstate",
         "type": "currency",
-        "name": "real_estate",
         "title": {
           "en": "Real Estate",
           "de": "Immobilien"
         }
       },
       {
-        "id": "option-2",
+        "id": "cashAccounts",
         "type": "currency",
-        "name": "cash_accounts",
         "title": {
           "en": "Cash Accounts",
           "de": "Bargeld Konten"
         }
       },
       {
-        "id": "option-3",
+        "id": "stocks",
         "type": "currency",
-        "name": "stocks",
         "title": {
           "en": "Stocks",
           "de": "Aktien"
         }
       },
       {
-        "id": "option-4",
+        "id": "car",
         "type": "currency",
-        "name": "car",
         "title": {
           "en": "Car",
           "de": "Auto"
         }
       },
       {
-        "id": "option-5",
+        "id": "motorBike",
         "type": "currency",
-        "name": "motor_bike",
         "title": {
           "en": "Motor Bike",
           "de": "Motorad"
         }
       },
       {
-        "id": "option-6",
+        "id": "lifeEnsurance",
         "type": "currency",
-        "name": "life_ensurance",
         "title": {
           "en": "Life Insurance",
           "de": "Lebensversicherung"
         }
       },
       {
-        "id": "option-7",
+        "id": "raisePension",
         "type": "currency",
-        "name": "raise_pension",
         "title": {
           "en": "Raise Pension",
           "de": "Rentenzusatzversicherung"
         }
       },
       {
-        "id": "option-8",
+        "id": "companyPesions",
         "type": "currency",
-        "name": "company_pesions",
         "title": {
           "en": "Company Pensions",
           "de": "Arbeitgeberentenversicherung"
         }
       }
     ],
-    "nextQuestionId": "question-7",
+    "nextQuestionId": "joinedLiabilities",
     "progress": "54%"
   },
-  "question-7": {
-    "name": "joinedLiabilities",
+  "joinedLiabilities": {
     "title": {
       "en": "How high are your joint liabilities (i.e., mortgages, loans)?",
       "de": "Wie hoch sind Eure gemeinsamen Verbindlichkeiten (z.B. Kredite und Hypotheken)?"
@@ -344,11 +329,10 @@
         }
       }
     ],
-    "nextQuestionId": "question-8",
+    "nextQuestionId": "haveChildren",
     "progress": "45%"
   },
-  "question-8": {
-    "name": "haveChildren",
+  "haveChildren": {
     "title": {
       "en": "Do you have kid(s) with your spouse?",
       "de": "Haben Du und Dein Partner gemeinsame Kinder?"
@@ -372,13 +356,12 @@
       }
     ],
     "nextQuestionId": {
-      "option-1": "question-9",
+      "option-1": "childrenCount",
       "option-2": null
     },
     "progress": "56%"
   },
-  "question-9": {
-    "name": "childrenCount",
+  "childrenCount": {
     "title": {
       "en": "How many kid(s) do you have?",
       "de": "Wie viele gemeinsame Kinder habt Ihr?"
@@ -421,12 +404,11 @@
         }
       }
     ],
-    "nextQuestionId": "question-10",
+    "nextQuestionId": "childrenAges",
     "progress": "72%"
   },
-  "question-10": {
+  "childrenAges": {
     "type": "list",
-    "name": "childrenAges",
     "title": {
       "en": "How old is he/she?",
       "de": "Wie alt ist das Kind?"
@@ -439,11 +421,10 @@
         "de": "Kind"
       }
     },
-    "nextQuestionId": "question-11",
+    "nextQuestionId": "childrenParentType",
     "progress": "81%"
   },
-  "question-11": {
-    "name": "childrenParentType",
+  "childrenParentType": {
     "title": {
       "en": "Are you their..",
       "de": "Bist du ihr... ?"
@@ -466,11 +447,10 @@
         "value": "mother"
       }
     ],
-    "nextQuestionId": "question-12",
+    "nextQuestionId": "childrenCustody",
     "progress": "90%"
   },
-  "question-12": {
-    "name": "childrenCustody",
+  "childrenCustody": {
     "title": {
       "en": "Do you already have an idea, where the kids should live?",
       "de": "Weißt Du schon, wo die Kinder wohnen sollen?"
