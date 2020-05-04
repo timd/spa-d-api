@@ -118,22 +118,21 @@ const PARAM = {
 }
 
 const lookupFees = (value, fees) =>
-  fees
-    .filter(item => item.start <= value && value <= item.end)
-    .map(item => item.fee)
-    .pop()
+  fees.reduce((acc, item) => (item.start <= value && value <= item.end ? item : acc), fees[fees.length - 1]).fee
 
-const lookupFeesByAge = (value, age, fees) =>
-  fees
-    .filter(item => item.start <= value && value <= item.end)
-    .map(item => item.fees[Math.min(Math.max(age, 0), 18)])
-    .pop()
+const lookupFeesByAge = (value, age, fees) => {
+  const item = fees.reduce(
+    (acc, item) => (item.start <= value && value <= item.end ? item : acc),
+    fees[fees.length - 1]
+  )
+  const fee = item.fees[Math.min(Math.max(age, 0), 18)]
+
+  return fee
+}
 
 const lookupMinimumIncome = (value, fees) =>
-  fees
-    .filter(item => item.start <= value && value <= item.end)
-    .map(item => item.minimumIncome)
-    .pop()
+  fees.reduce((acc, item) => (item.start <= value && value <= item.end ? item : acc), fees[fees.length - 1])
+    .minimumIncome
 
 export const ceil = (value, precision = 2) => Math.ceil(value * Math.pow(10, precision)) / Math.pow(10, precision)
 export const round = (value, precision = 2) => Math.round(value * Math.pow(10, precision)) / Math.pow(10, precision)
