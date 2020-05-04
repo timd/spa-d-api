@@ -196,7 +196,7 @@
   "question-5": {
     "name": "joinedAssets",
     "title": {
-      "en": "How high are you joined assets?",
+      "en": "How high are you joint assets?",
       "de": "Wie hoch sind Eure geteilten Vermögenswerte (z.B. eine Immobilie, Auto)?"
     },
     "tooltip": {
@@ -229,7 +229,7 @@
     "showLabels": true,
     "title": {
       "en": "How are these assets roughly distributed?",
-      "de": "Wie ungefäht sind die gemeinsamen Vermögenswerte verteilt?"
+      "de": "Wie ungefähr sind die gemeinsamen Vermögenswerte verteilt?"
     },
     "tooltip": {
       "title": {
@@ -321,8 +321,8 @@
   "question-7": {
     "name": "joinedLiabilities",
     "title": {
-      "en": "How high are your joined liabilities (i.e., mortgages, loans)?",
-      "de": "[DE] How high are your joined liabilities (i.e., mortgages, loans)?"
+      "en": "How high are your joint liabilities (i.e., mortgages, loans)?",
+      "de": "Wie hoch sind Eure gemeinsamen Verbindlichkeiten (z.B. Kredite und Hypotheken)?"
     },
     "tooltip": {
       "title": {
@@ -339,8 +339,8 @@
         "id": "option-1",
         "type": "currency",
         "title": {
-          "en": "Joined liabilities",
-          "de": "[DE] Joined liabilities"
+          "en": "Joint liabilities",
+          "de": "Gemeinsame Verbindlichkeiten"
         }
       }
     ],
