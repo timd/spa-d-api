@@ -135,8 +135,8 @@ const lookupMinimumIncome = (value, fees) =>
     .map(item => item.minimumIncome)
     .pop()
 
-const ceil = (value, precision = 2) => Math.ceil(value * Math.pow(10, precision)) / Math.pow(10, precision)
-const round = (value, precision = 2) => Math.round(value * Math.pow(10, precision)) / Math.pow(10, precision)
+export const ceil = (value, precision = 2) => Math.ceil(value * Math.pow(10, precision)) / Math.pow(10, precision)
+export const round = (value, precision = 2) => Math.round(value * Math.pow(10, precision)) / Math.pow(10, precision)
 
 export const calculateOneTimeFees = (input, precision = 2) => {
   const data = {
@@ -190,7 +190,7 @@ export const calculateRecurrentFees = (input, precision = 2) => {
   const adjustmentRatio = (adjustedNetIncome - minimumIncome) / agesSum
   const ratio = Math.min(Math.max(adjustmentRatio, 0), 1)
 
-  return netAllowances.map(value => value * ratio).map(value => round(value, precision))
+  return netAllowances.map(value => value * ratio).map(value => ceil(value, precision))
 }
 
 const calcualteRecurrentFeesForAge = (income, age) => {
