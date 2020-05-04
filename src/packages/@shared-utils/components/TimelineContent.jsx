@@ -26,7 +26,7 @@ const TimelineContent = ({
     isMobile={isMobile}
     position='absolute'
     flexDirection='column'
-    width={{ md: 180, lg: 280 }}
+    width={{ md: 160, lg: 280 }}
     {...props}>
     <ConditionalWrap
       condition={!!description}
