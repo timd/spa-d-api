@@ -13,7 +13,7 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...pro
 
   return (
     <Space px={{ xs: 4, md: 6 }} pb={{ xs: 3, md: 6 }} pt={{ xs: 2, md: 6 }}>
-      <Card display='flex' flexDirection='column' position='relative' variant='white' {...props}>
+      <CardContainer variant='white' {...props}>
         <Flex alignItems='center' justifyContent='space-between' position='relative'>
           <Box>
             <ChargeType variant='sh3'>{t(chargeType)}</ChargeType>
@@ -46,10 +46,18 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...pro
           <DashedLine />
         </Space>
         <DetailedCosts costs={costs} />
-      </Card>
+      </CardContainer>
     </Space>
   )
 }
+
+const CardContainer = styled(Card)`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+`
 
 const ChargeType = styled(Typography)`
   color: ${themeGet('colors.brand')};
