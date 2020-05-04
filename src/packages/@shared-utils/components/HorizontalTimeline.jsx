@@ -164,7 +164,7 @@ HorizontalTimeline.propTypes = {
 }
 
 HorizontalTimeline.defaultProps = {
-  activeIndex: 2,
+  activeIndex: 0,
   isRow: true,
 }
 
