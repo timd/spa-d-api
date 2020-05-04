@@ -7,6 +7,7 @@ import { useBoolean } from '@shared-utils/hooks/useBoolean'
 import { normalizeCamelCase } from '@shared-utils/funcs'
 import { CollapseTrigger } from '@shared-utils/components'
 
+import { localize } from '../../../services'
 
 const DetailedCosts = ({ costs, t }) => {
   // eslint-disable-next-line no-unused-vars
@@ -44,7 +45,7 @@ const ExpectationCosts = ({ costs, t, ...props }) => (
             {t(normalizeCamelCase(keyName))}
           </Typography>
           <Typography color='dark-grey' variant='body'>
-            {costs[keyName]}
+            {localize(costs[keyName])}
           </Typography>
         </Flex>
       </Space>
@@ -58,7 +59,7 @@ ExpectationCosts.propTypes = {
     lawyer: PropTypes.number,
     notary: PropTypes.number,
   }),
-  t: PropTypes.func
+  t: PropTypes.func,
 }
 
 DetailedCosts.propTypes = {
@@ -67,7 +68,7 @@ DetailedCosts.propTypes = {
     lawyer: PropTypes.number,
     notary: PropTypes.number,
   }),
-  t: PropTypes.func
+  t: PropTypes.func,
 }
 
 export default withTranslation()(DetailedCosts)

@@ -4,12 +4,10 @@ import styled from 'styled-components'
 import { Flex, Input, Typography, Space } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
+import { localize, normalize } from '../../../services'
+
 const CurrencyInput = ({ id, value, label, placeholder, onValueChange, ...props }) => {
   const MIN = 0
-
-  const localize = value => value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
-  const normalize = value => value.replace(/\./g, '')
-
   const localisedValue = localize(value ?? '')
 
   const handleOnChange = event => {
