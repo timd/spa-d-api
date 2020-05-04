@@ -15,7 +15,7 @@ const OurRecommendations = ({ processStage, t, ...props }) => (
         <SectionDescription
           color='dark-grey'
           firstRowPrefix={t('At your')}
-          boldedText={`'${t('Getting divorced')}'`}
+          boldedText={`'${t(processStage)}'`}
           firstRowSuffix={t('phase, we recommend those')}
           bottomText={t('following steps')}
         />
@@ -33,7 +33,7 @@ OurRecommendations.propTypes = {
 }
 
 OurRecommendations.defaultProps = {
-  processStage: 'marriage_crisis'
+  processStage: 'marriage_crisis',
 }
 
 export default withTranslation()(OurRecommendations)

@@ -256,3 +256,51 @@ describe('calculateOneTimeFees', () => {
     expect(actual.court).toBe(330)
   })
 })
+
+describe('calculateOneTimeFees with 0 decimals precision', () => {
+  test('should return a total fee of €228 (rounded up from €227.68) when the input is missing', () => {
+    // Arrange
+    // Act
+    const actual = calculateOneTimeFees({}, 0)
+
+    // Assert
+    expect(actual.total).toBe(228.0)
+    expect(actual.lawyer).toBe(158.0)
+    expect(actual.court).toBe(70.0)
+  })
+
+  test('should return a total fee of €228 (rounded up from €227.68) when the input is partial', () => {
+    // Arrange
+    const input = {
+      childrenCount: 2,
+      personalNetIncome: 499,
+    }
+
+    // Act
+    const actual = calculateOneTimeFees(input, 0)
+
+    // Assert
+    expect(actual.total).toBe(228.0)
+    expect(actual.lawyer).toBe(158.0)
+    expect(actual.court).toBe(70.0)
+  })
+
+  test('should return a total fee of €1787 (rounded up from €1786,4) when the number of chilren is 0, personal net income €1000, spouse net income is $1000, joined assets are $50,000 and open loans are $0', () => {
+    // Arrange
+    const input = {
+      childrenCount: 0,
+      personalNetIncome: 1000,
+      spouseNetIncome: 1000,
+      joinedAssets: 50000,
+      joinedLiabilities: 0,
+    }
+
+    // Act
+    const actual = calculateOneTimeFees(input, 0)
+
+    // Assert
+    expect(actual.total).toBe(1787.0)
+    expect(actual.lawyer).toBe(1381.0)
+    expect(actual.court).toBe(406.0)
+  })
+})
