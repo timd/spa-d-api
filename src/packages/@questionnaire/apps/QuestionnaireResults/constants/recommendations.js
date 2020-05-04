@@ -8,6 +8,10 @@ export const recommendations = {
       title: 'Professional Advice',
       description: 'Seek marriage counseling now. Ideally together with your partner.',
       imgSrc: circleIconTertiary,
+      anchor: {
+        URL: 'http://paartherapie.de/',
+        label: '[EN] Hier kannst du nach einem Ansprechpartner suchen'
+      }
     },
     {
       id: 'goals',
@@ -21,6 +25,10 @@ export const recommendations = {
       description: "If you don't see a future in marriage, get a lawyer to explain the consequences",
       imgSrc: circleIconBrand,
       imgColor: 'brand',
+      anchor: {
+        URL: 'https://www.anwalt24.de/',
+        label: '[EN] Hier kannnst du nach einem Anwalt suchen'
+      }
     },
   ],
   split_up: [
@@ -29,6 +37,10 @@ export const recommendations = {
       title: 'Legal Advice',
       description: 'Get a lawyer to explain the consequences and detailed steps as quickly as possible.',
       imgSrc: circleIconTertiary,
+      anchor: {
+        URL: 'https://www.anwalt24.de/',
+        label: '[EN] Hier kannnst du nach einem Anwalt suchen'
+      }
     },
     {
       id: 'separation',
@@ -50,6 +62,10 @@ export const recommendations = {
       title: 'Filing for Divorce',
       description: 'When the separation year is over and you have all the documents together, the divorce can be filed through a lawyer.',
       imgSrc: circleIconTertiary,
+      anchor: {
+        URL: 'https://www.anwalt24.de/',
+        label: '[EN] Hier kannnst du nach einem Anwalt suchen'
+      }
     },
     {
       id: 'date',
@@ -71,6 +87,10 @@ export const recommendations = {
       title: 'Insurance',
       description: 'Check whether you need new insurance (e.g. liability and household insurance).',
       imgSrc: circleIconTertiary,
+      anchor: {
+        URL: 'https://www.finanztip.de/sinnvolle-versicherungen/',
+        label: '[EN] ​Schaue hier nach möglichen sinnvollen Versicherungen'
+      }
     },
     {
       id: 'finances',

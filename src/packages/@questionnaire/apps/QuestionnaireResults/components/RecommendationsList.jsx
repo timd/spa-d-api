@@ -13,6 +13,7 @@ const RecommendationsList = ({ isMobile, processStage, t, ...props }) => (
       <Space key={recommendation.id} px={2} mt={4}>
         <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
           <RecommendationItem
+            anchor={recommendation.anchor}
             description={recommendation.description}
             imgSrc={recommendation.imgSrc}
             imgColor={recommendation.imgColor}
@@ -38,9 +39,12 @@ const RecommendationItem = ({ anchor, title, description, imgColor, imgSrc, isMo
           <Typography color='dark-grey' variant='tooltip'>
             {t(description)}
             {anchor && (
-              <Anchor className='anchor-bold' href={anchor.URL} rel='noopener noreferrer' target='_blank'>
-                &nbsp;{anchor.label}
-              </Anchor>
+              <>
+                &nbsp;
+                <Anchor className='anchor-bold' href={anchor.URL} rel='noopener noreferrer' target='_blank'>
+                  {t(anchor.label)}
+                </Anchor>
+              </>
             )}
           </Typography>
         </Space>
