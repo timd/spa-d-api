@@ -555,19 +555,74 @@ and it has the following structure:
 
 The `root` object represents a map between a list of `uniq ids` and the associated `questionnaire items`.
 
+The `id` of a questionnaire item is also used as the property name for the answers object.
+
+```
+{
+  processStage: "split_up",
+  processAid: "Lawyer",
+  personalNetIncome: 2000,
+  spouseNetIncome: 2000,
+  joinedAssets: 100000,
+  joinedAssetsDistribution: {
+    realEstate: 40000,
+    stocks: 25000,
+    car: 55000,
+    lifeEnsurance: 10000
+  },
+  joinedLiabilities: 10000,
+  haveChildren: true,
+  childrenCount: 3,
+  childrenAges: [0, 6, 12],
+  childrenParentType: "father",
+  childrenCustody: "50_50"
+}
+```
+
+Please note that the following id's are reserverd and used by the **One Time
+Costs** and ** Ongoing Costs Calculator**.
+
+| Id                       | Observations                                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------------- |
+| processStage             | Accepted options value: `marriage_crisis` , `split_up` , `getting_divorced` and `being_divorced`. |
+| personalNetIncome        | Required an option of `currency` type.                                                            |
+| spouseNetIncome          | Required an option of `currency` type.                                                            |
+| joinedAssets             | Required an option of `currency` type.                                                            |
+| joinedAssetsDistribution | Questinnaire item of type `composed`. Required options of `currency` type.                        |
+| joinedLiabilities        | Required an option of `currency` type.                                                            |
+| childrenCount            | Requires an option that can be converted into a number.                                           |
+| childrenAges             | Questinnaire item of type `list`. Required options of `age` type.                                 |
+| childrenParentType       | n/a                                                                                               |
+| childrenCustody          | n/a                                                                                               |
+
 A `questionnaire item` is composed from:
 
 | Field                 | Value                                  | Optional                            | Default value | Discussion                                                                                                                                                                                                                    |
 | --------------------- | -------------------------------------- | ----------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                | string                                 | no                                  | n/a           | It is used as the property name for the results object that will be passed as input to the results page.                                                                                                                      |
 | `title`               | object                                 | no                                  | n/a           | It is displayed in the buttons, placeholders and/or input labels. It is an object that has two localisation keys: `en` and `de`.                                                                                              |
 | `required`            | `bool`                                 | yes                                 | `true`        | The user must answer to this questionnaire item in order to be able to continue.                                                                                                                                              |
 | `showLabels`          | `bool`                                 | yes                                 | `false`       | Show the `title` property as label for the user input options.                                                                                                                                                                |
-| `dynamic`             | `object`                               | yes                                 | n/a           | It indicates that the options will be generated dynamically based on the answer for the questionnaire item identified with the name specified in the `dependency` field.                                                      |
+| `dynamic`             | object of type `Dynamic`               | yes                                 | n/a           | It indicates that the options will be generated dynamically based on the answer of the questionnaire id specified in the `dependency` field.                                                                                  |
 | `options`             | `[Option]`                             | yes (if the `dynamic` field is set) | --            | An array of options. --                                                                                                                                                                                                       |
 | `initialOptionsCount` | `number`                               | yes                                 | n/a           | The number of options to be listed before displaying a show all button. Omit this field if you want to show all the options by default.                                                                                       |
 | `nextQuestionId`      | `string` or `object`                   | yes                                 | n/a           | Points to the `id` of an item in the `root` object. It is used for the questionnaire navigation. Omit this field in the last questionnair item. If you want to branch, use an object that links an option id with an item id. |
 | `progress`            | `string` value between `0%` and `100%` | no                                  | n/a           | It represents the progress the user has made in the questionnair. Last item in the questionnaire should always have it set to `100%`.                                                                                         |
+
+A `Option` proprty is composed from:
+
+| Field   | Value    | Optional | Default value | Discussion                                                                                 |
+| ------- | -------- | -------- | ------------- | ------------------------------------------------------------------------------------------ |
+| `id`    | `string` | no       | n/a           | A uniq id in the questionnaire item scope.                                                 |
+| `type`  | `string` | yes      | n/a           | What type of input should be generated: `currency`, `age`, `custom_text`, `custom_number`. |
+| `title` | `object` | no       | n/a           | It is an object that has two localisation keys: `en` and `de`.                             |
+
+A `Dynamic` proprty is composed from:
+
+| Field        | Value    | Optional | Default value | Discussion                                                                                 |
+| ------------ | -------- | -------- | ------------- | ------------------------------------------------------------------------------------------ |
+| `dependency` | `string` | no       | n/a           | A reference to a previous questionnaire item that has a number as value.                   |
+| `type`       | `string` | yes      | n/a           | What type of input should be generated: `currency`, `age`, `custom_text`, `custom_number`. |
+| `title`      | `object` | no       | n/a           | It is an object that has two localisation keys: `en` and `de`.                             |
 
 ## Architecture and Design
 
