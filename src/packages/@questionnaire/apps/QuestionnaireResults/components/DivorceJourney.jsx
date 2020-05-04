@@ -48,7 +48,7 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
             <VerticalTimeline
               activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 0}
               checkpoints={checkpoints}
-              height={300}
+              height={500}
             />
           </Card>
         </Space>
