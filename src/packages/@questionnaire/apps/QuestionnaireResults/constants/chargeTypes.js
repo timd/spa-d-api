@@ -1,6 +1,6 @@
 import { circleIconSecondary, circleIconTertiary } from '../assets'
 
-export const chargeTypes = ({ oneTimeCosts, ongoingCosts }) => [
+export const chargeTypes = ({ oneTimeCosts, ongoingCosts }, t) => [
   {
     id: 'one-time',
     name: 'One time',
@@ -13,12 +13,12 @@ export const chargeTypes = ({ oneTimeCosts, ongoingCosts }) => [
   },
   {
     id: 'monthly',
-    name: 'Monthly',
+    name: 'Ongoing Costs',
     costs: ongoingCosts.reduce((acc, item, index) => {
-      acc[`Kid ${index + 1}`] = item
+      acc[`${t('Kid')} ${index + 1}`] = item
       return acc
     }, {}),
-    description: 'You pay for 12 months',
+    description: 'You pay monthly',
     icon: circleIconSecondary,
   },
 ]

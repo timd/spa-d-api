@@ -66,7 +66,7 @@ ExpandableCostCard.propTypes = {
     lawyer: PropTypes.number,
     notary: PropTypes.number,
   }),
-  chargeType: PropTypes.oneOf(['One time', 'Monthly']),
+  chargeType: PropTypes.oneOf(['One time', 'Ongoing Costs']),
   description: PropTypes.string,
   iconSrc: PropTypes.string,
   t: PropTypes.func,
