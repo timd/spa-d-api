@@ -23,7 +23,7 @@ const QuestionnaireResults = () => {
     <Flex flexDirection='column' alignItems='center' width={1}>
       <DivorcyForecast costs={{ oneTimeCosts, ongoingCosts }} />
       <Space mt={10}>
-        <DivorceJourney />
+        <DivorceJourney processStage={answers.process_stage} />
       </Space>
       <Hide md lg xlg>
         <Space mt={4}>
