@@ -6,6 +6,7 @@ import { withTranslation } from 'react-i18next'
 import { themeGet } from '@kogaio/utils'
 
 import { DashedLine, DetailedCosts } from '.'
+import { localize } from '../../../services'
 
 const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...props }) => {
   const totalCost = Object.values(costs).reduce((counter, cost) => counter + cost, 0)
@@ -30,7 +31,7 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...pro
             top='auto'
             textAlign='center'>
             <Typography color='dark-grey' fontWeight='bold' variant='sh1'>
-              {totalCost} &euro;
+              {localize(totalCost)} &euro;
             </Typography>
             {chargeType === 'Monthly' && (
               <Space mt={1}>
