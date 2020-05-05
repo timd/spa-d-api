@@ -1,6 +1,5 @@
 {
-  "question-1": {
-    "name": "process_stage",
+  "processStage": {
     "title": {
       "en": "Where are you on your personal journey?",
       "de": "Wo stehst Du aktuell in deinem Trennungsprozess?"
@@ -12,7 +11,7 @@
           "en": "Problems in my marriage",
           "de": "Ich habe Probleme in meiner Ehe"
         },
-        "value": "Problems in my marriage"
+        "value": "marriage_crisis"
       },
       {
         "id": "option-2",
@@ -20,7 +19,7 @@
           "en": "Thinking about a divorce",
           "de": "Ich denke über eine Scheidung nach"
         },
-        "value": "Thinking about a divorce"
+        "value": "marriage_crisis"
       },
       {
         "id": "option-3",
@@ -28,7 +27,7 @@
           "en": "I made the decision to get a divorce",
           "de": "Ich habe mich für eine Scheidung entschieden"
         },
-        "value": "I made the decision to get a divorce"
+        "value": "split_up"
       },
       {
         "id": "option-4",
@@ -36,7 +35,7 @@
           "en": "My partner wants a divorce/filed for divorce",
           "de": "Mein Partner möchte eine Scheidung / Mein Partner hat eine Scheidung eingereicht"
         },
-        "value": "My partner wants a divorce/filed for divorce"
+        "value": "split_up"
       },
       {
         "id": "option-5",
@@ -44,7 +43,7 @@
           "en": "We have separated already",
           "de": "Wir haben uns schon getrennt"
         },
-        "value": "We have separated already"
+        "value": "getting_divorced"
       },
       {
         "id": "option-6",
@@ -52,7 +51,7 @@
           "en": "We are already living separated for a year",
           "de": "Wir leben schon seit einem Jahr getrennt"
         },
-        "value": "We are already living separated for a year"
+        "value": "getting_divorced"
       },
       {
         "id": "option-7",
@@ -60,15 +59,14 @@
           "en": "I am in the middle of my divorce and waiting for the court to rule",
           "de": "Ich bin mitten in meiner Scheidung und warte darauf, dass das Gericht entscheidet"
         },
-        "value": "I am in the middle of my divorce and waiting for the court to rule"
+        "value": "being_divorced"
       }
     ],
     "initialOptionsCount": 3,
-    "nextQuestionId": "question-2",
+    "nextQuestionId": "processAid",
     "progress": "9%"
   },
-  "question-2": {
-    "name": "process_aid",
+  "processAid": {
     "title": {
       "en": "Whom have you consulted so far?",
       "de": "Wer hat Dich bisher beraten?"
@@ -132,11 +130,10 @@
       }
     ],
     "initialOptionsCount": 3,
-    "nextQuestionId": "question-3",
+    "nextQuestionId": "personalNetIncome",
     "progress": "18%"
   },
-  "question-3": {
-    "name": "financial_net_income",
+  "personalNetIncome": {
     "title": {
       "en": "How high is your monthly net income?",
       "de": "Wie hoch ist Dein monatliches Nettoeinkommen?"
@@ -161,11 +158,10 @@
         }
       }
     ],
-    "nextQuestionId": "question-4",
+    "nextQuestionId": "spouseNetIncome",
     "progress": "27%"
   },
-  "question-4": {
-    "name": "financial_supouse_net_income",
+  "spouseNetIncome": {
     "title": {
       "en": "How high is your spouse's monthly net income?",
       "de": "Wie hoch ist das monatliche Einkommen Deines Partners?"
@@ -190,13 +186,12 @@
         }
       }
     ],
-    "nextQuestionId": "question-5",
+    "nextQuestionId": "joinedAssets",
     "progress": "36%"
   },
-  "question-5": {
-    "name": "financial_joined_assets",
+  "joinedAssets": {
     "title": {
-      "en": "How high are you joined assets?",
+      "en": "How high are you joint assets?",
       "de": "Wie hoch sind Eure geteilten Vermögenswerte (z.B. eine Immobilie, Auto)?"
     },
     "tooltip": {
@@ -219,17 +214,100 @@
         }
       }
     ],
-    "nextQuestionId": "question-6",
+    "nextQuestionId": "joinedAssetsDistribution",
     "progress": "45%"
   },
-  "question-6": {
+  "joinedAssetsDistribution": {
     "type": "composition",
-    "name": "financial_asset_distribution",
     "required": false,
     "showLabels": true,
     "title": {
       "en": "How are these assets roughly distributed?",
-      "de": "Wie ungefäht sind die gemeinsamen Vermögenswerte verteilt?"
+      "de": "Wie ungefähr sind die gemeinsamen Vermögenswerte verteilt?"
+    },
+    "tooltip": {
+      "title": {
+        "en": "Are you not sure?",
+        "de": "Du bist Dir nicht sicher?"
+      },
+      "description": {
+        "en": "If you don't know exact amount of money, it's fine for now.",
+        "de": "Es ist kein Problem, wenn Du den genauen Betrag nicht kennst."
+      }
+    },
+    "options": [
+      {
+        "id": "realEstate",
+        "type": "currency",
+        "title": {
+          "en": "Real Estate",
+          "de": "Immobilien"
+        }
+      },
+      {
+        "id": "cashAccounts",
+        "type": "currency",
+        "title": {
+          "en": "Cash Accounts",
+          "de": "Bargeld Konten"
+        }
+      },
+      {
+        "id": "stocks",
+        "type": "currency",
+        "title": {
+          "en": "Stocks",
+          "de": "Aktien"
+        }
+      },
+      {
+        "id": "car",
+        "type": "currency",
+        "title": {
+          "en": "Car",
+          "de": "Auto"
+        }
+      },
+      {
+        "id": "motorBike",
+        "type": "currency",
+        "title": {
+          "en": "Motor Bike",
+          "de": "Motorad"
+        }
+      },
+      {
+        "id": "lifeEnsurance",
+        "type": "currency",
+        "title": {
+          "en": "Life Insurance",
+          "de": "Lebensversicherung"
+        }
+      },
+      {
+        "id": "raisePension",
+        "type": "currency",
+        "title": {
+          "en": "Raise Pension",
+          "de": "Rentenzusatzversicherung"
+        }
+      },
+      {
+        "id": "companyPesions",
+        "type": "currency",
+        "title": {
+          "en": "Company Pensions",
+          "de": "Arbeitgeberentenversicherung"
+        }
+      }
+    ],
+    "nextQuestionId": "joinedLiabilities",
+    "progress": "54%"
+  },
+  "joinedLiabilities": {
+    "title": {
+      "en": "How high are your joint liabilities (i.e., mortgages, loans)?",
+      "de": "Wie hoch sind Eure gemeinsamen Verbindlichkeiten (z.B. Kredite und Hypotheken)?"
     },
     "tooltip": {
       "title": {
@@ -245,81 +323,16 @@
       {
         "id": "option-1",
         "type": "currency",
-        "name": "real_estate",
         "title": {
-          "en": "Real Estate",
-          "de": "Immobilien"
-        }
-      },
-      {
-        "id": "option-2",
-        "type": "currency",
-        "name": "cash_accounts",
-        "title": {
-          "en": "Cash Accounts",
-          "de": "Bargeld Konten"
-        }
-      },
-      {
-        "id": "option-3",
-        "type": "currency",
-        "name": "stocks",
-        "title": {
-          "en": "Stocks",
-          "de": "Aktien"
-        }
-      },
-      {
-        "id": "option-4",
-        "type": "currency",
-        "name": "car",
-        "title": {
-          "en": "Car",
-          "de": "Auto"
-        }
-      },
-      {
-        "id": "option-5",
-        "type": "currency",
-        "name": "motor_bike",
-        "title": {
-          "en": "Motor Bike",
-          "de": "Motorad"
-        }
-      },
-      {
-        "id": "option-6",
-        "type": "currency",
-        "name": "life_ensurance",
-        "title": {
-          "en": "Life Insurance",
-          "de": "Lebensversicherung"
-        }
-      },
-      {
-        "id": "option-7",
-        "type": "currency",
-        "name": "raise_pension",
-        "title": {
-          "en": "Raise Pension",
-          "de": "Rentenzusatzversicherung"
-        }
-      },
-      {
-        "id": "option-8",
-        "type": "currency",
-        "name": "company_pesions",
-        "title": {
-          "en": "Company Pensions",
-          "de": "Arbeitgeberentenversicherung"
+          "en": "Joint liabilities",
+          "de": "Gemeinsame Verbindlichkeiten"
         }
       }
     ],
-    "nextQuestionId": "question-7",
-    "progress": "54%"
+    "nextQuestionId": "haveChildren",
+    "progress": "45%"
   },
-  "question-7": {
-    "name": "have_children",
+  "haveChildren": {
     "title": {
       "en": "Do you have kid(s) with your spouse?",
       "de": "Haben Du und Dein Partner gemeinsame Kinder?"
@@ -343,13 +356,12 @@
       }
     ],
     "nextQuestionId": {
-      "option-1": "question-8",
+      "option-1": "childrenCount",
       "option-2": null
     },
     "progress": "56%"
   },
-  "question-8": {
-    "name": "children_count",
+  "childrenCount": {
     "title": {
       "en": "How many kid(s) do you have?",
       "de": "Wie viele gemeinsame Kinder habt Ihr?"
@@ -392,29 +404,27 @@
         }
       }
     ],
-    "nextQuestionId": "question-9",
+    "nextQuestionId": "childrenAges",
     "progress": "72%"
   },
-  "question-9": {
+  "childrenAges": {
     "type": "list",
-    "name": "children_ages",
     "title": {
       "en": "How old is he/she?",
       "de": "Wie alt ist das Kind?"
     },
     "dynamic": {
-      "dependency": "children_count",
+      "dependency": "childrenCount",
       "type": "age",
       "title": {
         "en": "Kid",
         "de": "Kind"
       }
     },
-    "nextQuestionId": "question-10",
+    "nextQuestionId": "childrenParentType",
     "progress": "81%"
   },
-  "question-10": {
-    "name": "children_parent_type",
+  "childrenParentType": {
     "title": {
       "en": "Are you their..",
       "de": "Bist du ihr... ?"
@@ -437,11 +447,10 @@
         "value": "mother"
       }
     ],
-    "nextQuestionId": "question-11",
+    "nextQuestionId": "childrenCustody",
     "progress": "90%"
   },
-  "question-11": {
-    "name": "children_custody",
+  "childrenCustody": {
     "title": {
       "en": "Do you already have an idea, where the kids should live?",
       "de": "Weißt Du schon, wo die Kinder wohnen sollen?"

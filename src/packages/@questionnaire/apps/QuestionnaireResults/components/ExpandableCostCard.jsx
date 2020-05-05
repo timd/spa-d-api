@@ -6,14 +6,14 @@ import { withTranslation } from 'react-i18next'
 import { themeGet } from '@kogaio/utils'
 
 import { DashedLine, DetailedCosts } from '.'
+import { localize } from '../../../services'
 
 const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...props }) => {
   const totalCost = Object.values(costs).reduce((counter, cost) => counter + cost, 0)
-  const monthlyRate = (totalCost / 12).toFixed(0)
 
   return (
     <Space px={{ xs: 4, md: 6 }} pb={{ xs: 3, md: 6 }} pt={{ xs: 2, md: 6 }}>
-      <Card display='flex' flexDirection='column' position='relative' variant='white' {...props}>
+      <CardContainer variant='white' {...props}>
         <Flex alignItems='center' justifyContent='space-between' position='relative'>
           <Box>
             <ChargeType variant='sh3'>{t(chargeType)}</ChargeType>
@@ -31,7 +31,7 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...pro
             top='auto'
             textAlign='center'>
             <Typography color='dark-grey' fontWeight='bold' variant='sh1'>
-              {chargeType === 'Monthly' ? monthlyRate : totalCost} &euro;
+              {localize(totalCost)} &euro;
             </Typography>
             {chargeType === 'Monthly' && (
               <Space mt={1}>
@@ -46,10 +46,18 @@ const ExpandableCostCard = ({ costs, chargeType, description, iconSrc, t, ...pro
           <DashedLine />
         </Space>
         <DetailedCosts costs={costs} />
-      </Card>
+      </CardContainer>
     </Space>
   )
 }
+
+const CardContainer = styled(Card)`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+`
 
 const ChargeType = styled(Typography)`
   color: ${themeGet('colors.brand')};
@@ -66,7 +74,7 @@ ExpandableCostCard.propTypes = {
     lawyer: PropTypes.number,
     notary: PropTypes.number,
   }),
-  chargeType: PropTypes.oneOf(['One time', 'Monthly']),
+  chargeType: PropTypes.oneOf(['One time', 'Ongoing Costs']),
   description: PropTypes.string,
   iconSrc: PropTypes.string,
   t: PropTypes.func,

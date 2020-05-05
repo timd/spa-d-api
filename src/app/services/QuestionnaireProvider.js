@@ -65,6 +65,14 @@ class QuestionnaireProgressStorage {
     return output
   }
 
+  buildAnswers = () =>
+    this.values().reduce((accumulator, answer) => {
+      if (answer.questionId) {
+        accumulator[answer.questionId] = answer.value
+      }
+      return accumulator
+    }, {})
+
   seekTo = node => (this._current = node)
   seekForward = () => this.seekTo(this.next())
   seekBackward = () => this.seekTo(this.previous())

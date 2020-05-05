@@ -8,8 +8,8 @@ import { TimelineContent } from '.'
 
 const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
   // eslint-disable-next-line no-unused-vars
-  const [collapsedContent, setCollapsedContent] = useState([])
-  const [containerMarginBottom, setContainerMarginBottom] = useState(0)
+  const [collapsedContent, setCollapsedContent] = useState([checkpoints[activeIndex].id])
+  const [containerMarginBottom, setContainerMarginBottom] = useState(checkpoints[activeIndex].collapseHeightMobile)
 
   const handleCollapseToggle = (contentId, collapseHeight) => () => {
     let collapsed = [...collapsedContent]
@@ -58,13 +58,13 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     isMobile
                     collapsedContent={collapsedContent}
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
-                    title={`${idx + 1}. ${checkpoint.title}`}
+                    title={checkpoint.title}
                     id={checkpoint.id}
-                    description={checkpoint.description}
                     isActive={isActive}
                     isDone={isDone}
                     isFirst={isFirst}
                     width={{ xs: 240, sm: 320 }}
+                    index={idx}
                   />
                 </Space>
               </Box>
@@ -77,13 +77,14 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     isMobile
                     collapsedContent={collapsedContent}
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
-                    title={`${idx + 1}. ${checkpoint.title}`}
+                    title={checkpoint.title}
                     id={checkpoint.id}
                     description={checkpoint.description}
                     isActive={isActive}
                     isDone={isDone}
                     isFirst={isFirst}
                     width={{ xs: 240, sm: 320 }}
+                    index={idx}
                   />
                 </Space>
               </ActiveCheckpoint>
@@ -99,13 +100,14 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     isMobile
                     collapsedContent={collapsedContent}
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
-                    title={`${idx + 1}. ${checkpoint.title}`}
+                    title={checkpoint.title}
                     id={checkpoint.id}
                     description={checkpoint.description}
                     isActive={isActive}
                     isDone={isDone}
                     isFirst={isFirst}
                     width={{ xs: 240, sm: 320 }}
+                    index={idx}
                   />
                 </Space>
               </UnreachedCheckpoint>

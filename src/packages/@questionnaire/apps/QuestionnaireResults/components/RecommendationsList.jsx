@@ -3,21 +3,22 @@ import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { withTranslation } from 'react-i18next'
 import { Box, Card, Flex, Icon, Image, Space, Typography } from '@kogaio'
-import { themeGet } from '@kogaio/utils'
+import { themed, themeGet } from '@kogaio/utils'
 
 import { recommendations } from '../constants'
 
-const RecommendationsList = ({ isMobile, t, ...props }) => (
+const RecommendationsList = ({ isMobile, processStage, t, i18n, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
-    {recommendations.map((recommendation, idx) => (
+    {recommendations[processStage].map((recommendation, idx) => (
       <Space key={recommendation.id} px={2} mt={4}>
         <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
           <RecommendationItem
-            description={recommendation.description}
+            anchor={recommendation.anchor}
+            description={recommendation.description[i18n.language]}
             imgSrc={recommendation.imgSrc}
             imgColor={recommendation.imgColor}
             isMobile={isMobile}
-            title={`${idx + 1}. ${recommendation.title}`}
+            title={`${idx + 1}. ${t(recommendation.title)}`}
             t={t}
           />
         </Box>
@@ -26,7 +27,7 @@ const RecommendationsList = ({ isMobile, t, ...props }) => (
   </Flex>
 )
 
-const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, onClick, t, ...props }) => (
+const RecommendationItem = ({ anchor, title, description, imgColor, imgSrc, isMobile, onClick, t, ...props }) => (
   <Space pl={2} pr={4} pb={{ xs: 4, md: 6 }} pt={{ xs: 2, md: 6 }}>
     <CardContainer isMobile={isMobile} onClick={onClick} variant='journey' {...props}>
       <Flex flexDirection='column' position='relative'>
@@ -36,7 +37,15 @@ const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, on
         </Space>
         <Space mt={{ md: 2 }}>
           <Typography color='dark-grey' variant='tooltip'>
-            {t(description)}
+            {description}
+            {anchor && (
+              <>
+                &nbsp;
+                <Anchor className='anchor-bold' href={anchor.URL} rel='noopener noreferrer' target='_blank'>
+                  {t(anchor.label)}
+                </Anchor>
+              </>
+            )}
           </Typography>
         </Space>
       </Flex>
@@ -46,6 +55,10 @@ const RecommendationItem = ({ title, description, imgColor, imgSrc, isMobile, on
     </CardContainer>
   </Space>
 )
+
+const Anchor = styled.a`
+  ${themed('Anchor')};
+`
 
 const mobileItemStyle = ({ isMobile }) =>
   isMobile &&
@@ -85,10 +98,16 @@ const Title = styled(Typography)`
 
 RecommendationsList.propTypes = {
   isMobile: PropTypes.string,
+  processStage: PropTypes.string,
   t: PropTypes.func,
+  i18n: PropTypes.object,
 }
 
 RecommendationItem.propTypes = {
+  anchor: PropTypes.shape({
+    label: PropTypes.string,
+    URL: PropTypes.string,
+  }),
   title: PropTypes.string,
   description: PropTypes.string,
   imgColor: PropTypes.string,
@@ -96,6 +115,7 @@ RecommendationItem.propTypes = {
   isMobile: PropTypes.bool,
   onClick: PropTypes.func,
   t: PropTypes.func,
+  i18n: PropTypes.object,
 }
 
 export default withTranslation()(RecommendationsList)
