@@ -11,7 +11,7 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
   const activeTimelineIdx = checkpoints.findIndex(checkpoint => checkpoint.id === processStage)
 
   return (
-    <Space maxWidth={{ md: 600, lg: 1080 }} mx='auto'>
+    <Space maxWidth={{ md: 'auto', lg: 1080 }} mx='auto'>
       <Flex flexDirection='column' width={1} {...props}>
         <Hide xs>
           <TitleWithTooltipInfo
@@ -54,7 +54,8 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
         </Space>
         <Space mt={{ xs: 3, md: 7 }} mx='auto'>
           <HorizontalTimeline
-            activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 0}
+            // activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 0}
+            activeIndex={1}
             checkpoints={checkpoints}
             display={{ xs: 'none', md: 'inherit' }}
           />
