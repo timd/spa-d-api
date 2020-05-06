@@ -33,6 +33,7 @@
   "dependencies": {
     "@ivoryio/kogaio": "^0.7.91",
     "@reach/router": "^1.3.3",
+    "apisauce": "^1.1.1",
     "dotenv": "^8.2.0",
     "formik": "^2.1.4",
     "i18next": "^19.4.3",
