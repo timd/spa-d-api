@@ -57,6 +57,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, isRow, ...props 
                   id={checkpoint.id}
                   isActive={isActive}
                   isDone={isDone}
+                  index={idx}
                 />
               </Box>
             </Space>
