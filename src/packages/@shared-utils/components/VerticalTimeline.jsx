@@ -58,8 +58,9 @@ const VerticalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
                     isMobile
                     collapsedContent={collapsedContent}
                     handleCollapseToggle={handleCollapseToggle(checkpoint.id, checkpoint.collapseHeightMobile)}
-                    title={`${idx + 1}. ${checkpoint.title}`}
+                    title={checkpoint.title}
                     id={checkpoint.id}
+                    index={idx}
                     isActive={isActive}
                     isDone={isDone}
                     isFirst={isFirst}

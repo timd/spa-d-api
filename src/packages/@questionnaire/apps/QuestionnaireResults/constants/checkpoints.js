@@ -8,11 +8,7 @@ export const checkpoints = [
       de:
         'Du hast Probleme in deiner Ehe? Hole Dir professionellen Rat. Am besten gemeinsam mit deinem Partner! Freunde & Familie haben die besten Absichten, schätzen Situationen aber oft falsch ein.',
     },
-    progress: 0,
-    collapseHeightDesktop: {
-      md: 96,
-      lg: 136,
-    },
+    progress: 0
   },
   {
     id: 'split_up',
@@ -23,11 +19,7 @@ export const checkpoints = [
       de:
         'Du befindest dich bereits in Trennung? Nun ist es wichtig, dass Du schnell mit einem Anwalt sprichst, um alle Auswirkungen genau zu verstehen. Es empfiehlt sich, bestimmte Daten und Dokumente frühzeitig zu sammeln. Dazu mehr unter unseren Empfehlungen. ',
     },
-    progress: 0.25,
-    collapseHeightDesktop: {
-      md: 96,
-      lg: 136,
-    },
+    progress: 0.25
   },
   {
     id: 'getting_divorced',
@@ -38,11 +30,7 @@ export const checkpoints = [
       de:
         'Während der Scheidung ist es wichtig, dass Du alle Daten & Dokumente bereit hast. So musst Du zum Beispiel in der Lage sein, deine erwerbstätigen Jahre nachweisen zu können um ggf Versorgungsansprüche ausgleichen zu können. Nur wenn die Anwälte alle Daten haben, kann die Scheidung nach dem Trennungsjahr schnell eingereicht werden.',
     },
-    progress: 0.5,
-    collapseHeightDesktop: {
-      md: 96,
-      lg: 136,
-    },
+    progress: 0.5
   },
   {
     id: 'being_divorced',
@@ -54,10 +42,6 @@ export const checkpoints = [
         'Auch nachdem die Scheidung rechtskräftig ist, empfiehlt es sich klare Regel & Grenzen mit dem Ex-Partner zu besprechen. Dabei geht es neben emotionalen Themen auch um das Aufteilen von bestehenden Versicherungen oder das Ummelden des Autos. ',
     },
     progress: 1,
-    collapseHeightDesktop: {
-      md: 96,
-      lg: 136,
-    },
-    collapseHeightMobile: 96,
+    collapseHeightMobile: 192,
   },
 ]

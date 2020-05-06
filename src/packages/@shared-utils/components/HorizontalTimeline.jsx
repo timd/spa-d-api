@@ -23,11 +23,12 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
   }
 
   const progressWidth = `${checkpoints[activeIndex].progress * 100}%`
+  const contentBoxWidth = 1 / checkpoints.length
 
   return (
-    <Container id='timeline' width={{ md: 'auto', lg: '100%' }} {...props}>
+    <Container id='timeline' width={3 / 4} {...props}>
       <Space pl={activeIndex === 0 ? 0 : 1}>
-        <Box bg='brand' borderRadius={4} height={8} width={progressWidth} />
+        <Box bg='brand' borderRadius={4} height={8} position='absolute' width={progressWidth} />
       </Space>
       {checkpoints.map((checkpoint, idx) => {
         const isActive = idx === activeIndex
@@ -36,8 +37,8 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
         const progress = `${checkpoint.progress * 100}%`
 
         return idx < activeIndex ? (
-          <Space ml='-25%'>
-            <Box>
+          <Space>
+            <Box width={contentBoxWidth}>
               <Space key={`checkpoint-${checkpoint.id}`} mt='1px' ml={idx === 0 ? 1 : 0}>
                 <Box bg='white' borderRadius='round' left={progress} top={0} size={6} position='absolute' zIndex={2} />
               </Space>
@@ -54,7 +55,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
             </Box>
           </Space>
         ) : idx === activeIndex ? (
-          <Box>
+          <Box width={contentBoxWidth}>
             <Space key={`checkpoint-${checkpoint.id}`} p={2} ml={idx === 0 ? 0 : -4} mt={-1}>
               <ActiveCheckpoint left={progress} top={0} size={8} />
             </Space>
@@ -73,7 +74,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
             </Space>
           </Box>
         ) : (
-          <Box mr={isLastOne ? '-25%' : 0}>
+          <Box width={contentBoxWidth}>
             <Space key={`checkpoint-${checkpoint.id}`} top={0} p='2px'>
               <UnreachedCheckpoint left={isLastOne ? 'unset' : progress} right={isLastOne ? 0 : 'unset'} size={8} />
             </Space>

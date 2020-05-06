@@ -29,7 +29,8 @@ const TimelineContent = ({
     isLastOne={isLastOne}
     isMobile={isMobile}
     flexDirection='column'
-    width={{ md: 140, lg: 280 }}
+    maxWidth={{ md: 240, lg: 280 }}
+    width={1}
     {...props}>
     <ConditionalWrap
       condition={!!description}
@@ -90,7 +91,7 @@ const containerStyle = ({ isActive, isFirst, isLastOne, isMobile }) => {
           transform: translateX(50%);
         `
       : css`
-          transform: translateX(-25%);
+          transform: translateX(-50%);
         `
   if (isActive) {
     return css`
