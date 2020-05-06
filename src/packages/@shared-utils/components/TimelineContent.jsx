@@ -30,7 +30,7 @@ const TimelineContent = ({
     isMobile={isMobile}
     flexDirection='column'
     maxWidth={{ md: 240, lg: 280 }}
-    textAlign='center'
+    textAlign={isMobile ? 'left' : 'center'}
     width={1}
     {...props}>
     <ConditionalWrap
