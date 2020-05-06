@@ -37,60 +37,54 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
         const progress = `${checkpoint.progress * 100}%`
 
         return idx < activeIndex ? (
-          <Space>
-            <Box width={contentBoxWidth}>
-              <Space key={`checkpoint-${checkpoint.id}`} mt='1px' ml={idx === 0 ? 1 : 0}>
-                <Box bg='white' borderRadius='round' left={progress} top={0} size={6} position='absolute' zIndex={2} />
-              </Space>
-              <TimelineContent
-                collapsedContent={collapsedContent}
-                handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
-                title={checkpoint.title}
-                id={checkpoint.id}
-                index={idx}
-                isActive={isActive}
-                isLastOne={isLastOne}
-                isDone={isDone}
-              />
-            </Box>
-          </Space>
+          <Box key={`checkpoint-${checkpoint.id}`} width={contentBoxWidth}>
+            <Space mt='1px' ml={idx === 0 ? 1 : 0}>
+              <Box bg='white' borderRadius='round' left={progress} top={0} size={6} position='absolute' zIndex={2} />
+            </Space>
+            <TimelineContent
+              collapsedContent={collapsedContent}
+              handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
+              title={checkpoint.title}
+              id={checkpoint.id}
+              index={idx}
+              isActive={isActive}
+              isLastOne={isLastOne}
+              isDone={isDone}
+            />
+          </Box>
         ) : idx === activeIndex ? (
-          <Box width={contentBoxWidth}>
-            <Space key={`checkpoint-${checkpoint.id}`} p={2} ml={idx === 0 ? 0 : -4} mt={-1}>
+          <Box key={`checkpoint-${checkpoint.id}`} width={contentBoxWidth}>
+            <Space p={2} ml={idx === 0 ? 0 : -4} mt={-1}>
               <ActiveCheckpoint left={progress} top={0} size={8} />
             </Space>
-            <Space key={checkpoint.id}>
-              <TimelineContent
-                collapsedContent={collapsedContent}
-                handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
-                title={checkpoint.title}
-                id={checkpoint.id}
-                description={checkpoint.description}
-                isActive={isActive}
-                isDone={isDone}
-                isLastOne={isLastOne}
-                index={idx}
-              />
-            </Space>
+            <TimelineContent
+              collapsedContent={collapsedContent}
+              handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
+              title={checkpoint.title}
+              id={checkpoint.id}
+              description={checkpoint.description}
+              isActive={isActive}
+              isDone={isDone}
+              isLastOne={isLastOne}
+              index={idx}
+            />
           </Box>
         ) : (
-          <Box width={contentBoxWidth}>
-            <Space key={`checkpoint-${checkpoint.id}`} top={0} p='2px'>
+          <Box key={`checkpoint-${checkpoint.id}`} width={contentBoxWidth}>
+            <Space top={0} p='2px'>
               <UnreachedCheckpoint left={isLastOne ? 'unset' : progress} right={isLastOne ? 0 : 'unset'} size={8} />
             </Space>
-            <Space key={checkpoint.id}>
-              <TimelineContent
-                collapsedContent={collapsedContent}
-                handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
-                title={checkpoint.title}
-                id={checkpoint.id}
-                description={checkpoint.description}
-                isActive={isActive}
-                isDone={isDone}
-                isLastOne={isLastOne}
-                index={idx}
-              />
-            </Space>
+            <TimelineContent
+              collapsedContent={collapsedContent}
+              handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
+              title={checkpoint.title}
+              id={checkpoint.id}
+              description={checkpoint.description}
+              isActive={isActive}
+              isDone={isDone}
+              isLastOne={isLastOne}
+              index={idx}
+            />
           </Box>
         )
       })}

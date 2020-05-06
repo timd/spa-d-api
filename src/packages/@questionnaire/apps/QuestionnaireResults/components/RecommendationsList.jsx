@@ -7,18 +7,18 @@ import { themed, themeGet } from '@kogaio/utils'
 
 import { recommendations } from '../constants'
 
-const RecommendationsList = ({ isMobile, processStage, t, ...props }) => (
+const RecommendationsList = ({ isMobile, processStage, t, i18n, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
     {recommendations[processStage].map((recommendation, idx) => (
       <Space key={recommendation.id} px={2} mt={4}>
         <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
           <RecommendationItem
             anchor={recommendation.anchor}
-            description={recommendation.description}
+            description={recommendation.description[i18n.language]}
             imgSrc={recommendation.imgSrc}
             imgColor={recommendation.imgColor}
             isMobile={isMobile}
-            title={`${idx + 1}. ${recommendation.title}`}
+            title={`${idx + 1}. ${t(recommendation.title)}`}
             t={t}
           />
         </Box>
@@ -37,7 +37,7 @@ const RecommendationItem = ({ anchor, title, description, imgColor, imgSrc, isMo
         </Space>
         <Space mt={{ md: 2 }}>
           <Typography color='dark-grey' variant='tooltip'>
-            {t(description)}
+            {description}
             {anchor && (
               <>
                 &nbsp;
@@ -100,6 +100,7 @@ RecommendationsList.propTypes = {
   isMobile: PropTypes.string,
   processStage: PropTypes.string,
   t: PropTypes.func,
+  i18n: PropTypes.object,
 }
 
 RecommendationItem.propTypes = {
@@ -114,6 +115,7 @@ RecommendationItem.propTypes = {
   isMobile: PropTypes.bool,
   onClick: PropTypes.func,
   t: PropTypes.func,
+  i18n: PropTypes.object,
 }
 
 export default withTranslation()(RecommendationsList)

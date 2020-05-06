@@ -118,7 +118,7 @@ const TimelineTitle = styled(Typography)`
 
 TimelineContent.propTypes = {
   collapsedContent: PropTypes.arrayOf(PropTypes.string),
-  description: PropTypes.string,
+  description: PropTypes.object,
   handleCollapseToggle: PropTypes.func,
   id: PropTypes.string,
   isActive: PropTypes.bool,
