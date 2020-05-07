@@ -7,7 +7,7 @@ import { logo } from '../assets'
 const QUESTIONNAIRE_CONTAINER_MAX_WIDTH = 950
 
 const Content = ({ title, description, children, ...props }) => (
-  <Space pb={{ md: 10 }} pt={{ xs: 6, md: 14 }} px={{ md: 24 }}>
+  <Space pt={{ xs: 6, md: 14 }} pb={10} px={{ xs: 6, md: 24 }}>
     <Flex
       bg='white'
       borderColor='headerShadow'
