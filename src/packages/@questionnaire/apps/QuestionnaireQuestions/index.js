@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Flex, Space } from '@kogaio'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
-import { GetStarted, Questionnaire } from './components'
+import { GetStarted, Footer, Questionnaire } from './components'
 
 const HEADER_HEIGHT_MD = 60
 
@@ -33,13 +33,18 @@ const QuestionnaireQuestions = () => {
             <GetStarted acceptedConditions={acceptedConditions} toggleCheck={handleAcceptedCondititionsChange} />
           )}
         </Space>
+        <Space px={2} py={6}>
+          <Footer />
+        </Space>
       </Wrapper>
     </Space>
   )
 }
 
 const Wrapper = styled(Flex)`
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 `
 
 export default QuestionnaireQuestions

@@ -20,10 +20,6 @@ const QuestionnaireResults = () => {
     0
   )
 
-  console.log('Answers:', answers)
-  console.log('One time costs:', oneTimeCosts)
-  console.log('Ongoing costs', ongoingCosts)
-
   questionnaireState.clear()
 
   return (
