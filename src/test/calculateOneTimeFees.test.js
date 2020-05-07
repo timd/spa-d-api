@@ -1,4 +1,4 @@
-import { calculateOneTimeFees } from '../app/services/FeesCalculator.js'
+import { calculateOneTimeFees } from '../packages/@questionnaire/services'
 
 describe('calculateOneTimeFees', () => {
   test('should return a total fee of €227,68 when the input is missing', () => {
