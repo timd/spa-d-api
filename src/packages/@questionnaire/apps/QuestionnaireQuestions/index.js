@@ -33,7 +33,7 @@ const QuestionnaireQuestions = () => {
             <GetStarted acceptedConditions={acceptedConditions} toggleCheck={handleAcceptedCondititionsChange} />
           )}
         </Space>
-        <Space px={2} py={6}>
+        <Space px={2} py={{ xs: 8, md: 6 }}>
           <Footer />
         </Space>
       </Wrapper>

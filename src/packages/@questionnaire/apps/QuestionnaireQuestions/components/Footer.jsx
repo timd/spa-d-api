@@ -10,28 +10,32 @@ import { withTranslation } from 'react-i18next'
 const QUESTIONNAIRE_CONTAINER_MAX_WIDTH = 950
 
 const Footer = ({ t, ...props }) => (
-  <Container {...props} maxWidth={{ md: `${QUESTIONNAIRE_CONTAINER_MAX_WIDTH}px` }}>
-    <Box width={2 / 3}>
-      <Copyright variant='caption'>{t('Copyright 2020 Divorcy')}</Copyright>
-    </Box>
-    <Box width={1 / 3}>
-      <Flex justifyContent='flex-end'>
-        <Space ml={8}>
-          <TextLink to='/imprint'>{t('Imprint')}</TextLink>
-        </Space>
-        <Space ml={8}>
+  <Container
+    {...props}
+    maxWidth={{ md: `${QUESTIONNAIRE_CONTAINER_MAX_WIDTH}px` }}
+    flexDirection={{ xs: 'column-reverse', md: 'row' }}
+    alignItems={{ xs: 'center' }}>
+    <Space mt={{ xs: 8, md: 0 }}>
+      <Box width={1}>
+        <Copyright textAlign={{ xs: 'center', md: 'left' }} variant='caption'>
+          {t('Copyright 2020 Divorcy')}
+        </Copyright>
+      </Box>
+    </Space>
+
+    <Box width={1}>
+      <Flex justifyContent={{ xs: 'center', md: 'flex-end' }}>
+        <TextLink to='/imprint'>{t('Imprint')}</TextLink>
+        <Space mx={8}>
           <TextLink to='/data-protection'>{t('Data Protection')}</TextLink>
         </Space>
-        <Space ml={8}>
-          <TextLink to='/conditions'>{t('Conditions')}</TextLink>
-        </Space>
+        <TextLink to='/conditions'>{t('Conditions')}</TextLink>
       </Flex>
     </Box>
   </Container>
 )
 
 const Container = styled(Flex)`
-  flex-direction: row;
   width: 100%;
 `
 
