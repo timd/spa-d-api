@@ -1,4 +1,4 @@
-import { calculateRecurrentFees } from '../app/services/FeesCalculator.js'
+import { calculateRecurrentFees } from '../packages/@questionnaire/services'
 
 describe('calculateRecurrentFees', () => {
   test('should return [] when there are no children ages', () => {

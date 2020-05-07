@@ -5,7 +5,7 @@ import { Footer } from 'app/components'
 import { DivorcyForecast, DivorceJourney, OurRecommendations, WhatsNext } from './components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
-import { calculateOneTimeFees, calculateRecurrentFees } from 'app/services/FeesCalculator'
+import { calculateOneTimeFees, calculateRecurrentFees, logQuestionnaireAnswers } from '../../services'
 
 const QuestionnaireResults = () => {
   const { questionnaireState } = useContext(QuestionnaireContext)
@@ -20,9 +20,7 @@ const QuestionnaireResults = () => {
     0
   )
 
-  console.log('Answers:', answers)
-  console.log('One time costs:', oneTimeCosts)
-  console.log('Ongoing costs', ongoingCosts)
+  logQuestionnaireAnswers(answers)
 
   questionnaireState.clear()
 
