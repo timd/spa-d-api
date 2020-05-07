@@ -19,9 +19,9 @@ const Footer = ({ t }) => (
           </Hide>
           <Space mt={11}>
             <Flex justifyContent='space-between'>
-              <MoreLink to='/imprint'>{t('Imprint')}</MoreLink>
-              <MoreLink to='/data-protection'>{t('Data Protection')}</MoreLink>
-              <MoreLink to='/conditions'>{t('Conditions')}</MoreLink>
+              <TextLink to='/imprint'>{t('Imprint')}</TextLink>
+              <TextLink to='/data-protection'>{t('Data Protection')}</TextLink>
+              <TextLink to='/conditions'>{t('Conditions')}</TextLink>
             </Flex>
           </Space>
         </Flex>
@@ -47,14 +47,18 @@ const Container = styled(Flex)`
   ${themed('LandingContainer')};
 `
 
-const MoreLink = styled(Link)`
+const TextLink = styled(Link)`
   color: ${themeGet('colors.dark-grey')};
   font-family: ${themeGet('fonts.complementary')};
   font-weight: ${themeGet('fontWeights.regular')};
   font-size: 12px;
   text-decoration: none;
   line-height: 16px;
+  &:hover {
+    text-decoration: underline;
+  }
 `
+
 Footer.propTypes = {
   t: PropTypes.func,
 }
