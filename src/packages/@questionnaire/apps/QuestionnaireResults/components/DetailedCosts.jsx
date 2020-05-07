@@ -45,7 +45,7 @@ const ExpectationCosts = ({ costs, t, ...props }) => (
             {t(normalizeCamelCase(keyName))}
           </Typography>
           <Typography color='dark-grey' variant='body'>
-            {localize(costs[keyName])}
+            {localize(costs[keyName])} &euro;
           </Typography>
         </Flex>
       </Space>
