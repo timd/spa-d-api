@@ -36,6 +36,19 @@ To install the project dependencies, run the following install command:
 $ yarn install
 ```
 
+### Configure the `.env` file
+
+Make sure to configure the environment variables, by creating an `.env` file, where you define the environment variables. Please note that the variables must have the `REACT_APP_` prefix:
+
+```bash
+# API
+REACT_APP_API_URL='https://9ygz3pyu45.execute-api.eu-central-1.amazonaws.com/prod'
+REACT_APP_API_KEY='9F4Eqr5ApE4HDlcIPaUvVMcqpH4flnONF5o6Eu40'
+
+#MAILCHIP
+REACT_APP_MAILCHIMP_URL='https://finleap.us19.list-manage.com/subscribe/post?u=979577850ed7008dcd7b31f0d&amp;id=c79131ac6d'
+```
+
 ## Development
 
 ### Build
