@@ -239,6 +239,7 @@
       {
         "id": "realEstate",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Real Estate",
           "de": "Immobilien"
@@ -247,6 +248,7 @@
       {
         "id": "cashAccounts",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Cash Accounts",
           "de": "Bargeld Konten"
@@ -255,6 +257,7 @@
       {
         "id": "stocks",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Stocks",
           "de": "Aktien"
@@ -263,6 +266,7 @@
       {
         "id": "car",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Car",
           "de": "Auto"
@@ -271,6 +275,7 @@
       {
         "id": "motorBike",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Motor Bike",
           "de": "Motorad"
@@ -279,6 +284,7 @@
       {
         "id": "lifeEnsurance",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Life Insurance",
           "de": "Lebensversicherung"
@@ -287,6 +293,7 @@
       {
         "id": "raisePension",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Raise Pension",
           "de": "Rentenzusatzversicherung"
@@ -295,6 +302,7 @@
       {
         "id": "companyPesions",
         "type": "currency",
+        "placeholder": "0",
         "title": {
           "en": "Company Pensions",
           "de": "Arbeitgeberentenversicherung"

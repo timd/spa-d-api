@@ -21,7 +21,6 @@ const QuestionnaireResults = () => {
   )
 
   logQuestionnaireAnswers(answers)
-
   questionnaireState.clear()
 
   return (
@@ -36,15 +35,11 @@ const QuestionnaireResults = () => {
         </Space>
       </Hide>
       <Hide xs sm>
-        <Space mt={14}>
+        <Space px={2} mt={14}>
           <OurRecommendations processStage={answers.processStage} />
         </Space>
       </Hide>
-      <Hide xs sm>
-        <Space mt={10}>
-          <Footer />
-        </Space>
-      </Hide>
+      <Footer />
     </Flex>
   )
 }
