@@ -1,7 +1,7 @@
 import { create } from 'apisauce'
 
-const API_URL = process.env.REACT_APP_API_URL ?? 'https://9ygz3pyu45.execute-api.eu-central-1.amazonaws.com'
-const API_KEY = process.env.REACT_APP_API_KEY ?? '9F4Eqr5ApE4HDlcIPaUvVMcqpH4flnONF5o6Eu40'
+const API_URL = process.env.REACT_APP_API_URL
+const API_KEY = process.env.REACT_APP_API_KEY
 
 const isEmpty = data => JSON.stringify(data) === '{}'
 
