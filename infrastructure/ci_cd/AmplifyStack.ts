@@ -38,6 +38,9 @@ export class AmplifyStack extends Stack {
       target: '/index.html',
       status: RedirectStatus.REWRITE,
     })
+    app.addEnvironment('REACT_APP_API_URL', process.env.REACT_APP_API_URL || '')
+    app.addEnvironment('REACT_APP_API_KEY', process.env.REACT_APP_API_KEY || '')
+    app.addEnvironment('REACT_APP_MAILCHIMP_URL', process.env.REACT_APP_MAILCHIMP_URL || '')
 
     return app
   }
