@@ -6,7 +6,7 @@ import { DivorcyForecast, DivorceJourney, OurRecommendations, WhatsNext } from '
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { calculateOneTimeFees, calculateRecurrentFees } from 'app/services/FeesCalculator'
-import { log } from '../../services'
+import { logQuestionnaireAnswers } from '../../services'
 
 const QuestionnaireResults = () => {
   const { questionnaireState } = useContext(QuestionnaireContext)
@@ -21,7 +21,7 @@ const QuestionnaireResults = () => {
     0
   )
 
-  log(answers)
+  logQuestionnaireAnswers(answers)
 
   questionnaireState.clear()
 

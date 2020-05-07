@@ -1,2 +1,2 @@
 export { localize, normalize } from './currencyFormatter'
-export { log } from './loggingService'
+export { logQuestionnaireAnswers } from './loggingService'
