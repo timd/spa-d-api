@@ -142,6 +142,8 @@ const Questionnaire = ({ i18n, t, ...props }) => {
 
   const getOptionLabel = option => (item.showLabels ? option.title[lang] : undefined)
 
+  const getOptionPlaceholder = option => option.placeholder ?? option.title[lang]
+
   const isOptionSelected = option => currentState.optionId === option.id
 
   const isRequired = () => item.required === false
@@ -250,7 +252,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
                     id={option.id}
                     value={getOptionValue(option, index)}
                     label={getOptionLabel(option, index)}
-                    placeholder={option.title[lang]}
+                    placeholder={getOptionPlaceholder(option, index)}
                     onValueChange={value => setOptionValue(option, index, value)}
                   />
                 </Space>
