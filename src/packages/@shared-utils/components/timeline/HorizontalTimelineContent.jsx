@@ -16,7 +16,7 @@ const TimelineContent = ({
   isActive,
   isDone,
   isFirst,
-  isMobile,
+  isLastOne,
   t,
   i18n,
   index,
@@ -25,10 +25,11 @@ const TimelineContent = ({
   <Container
     isActive={isActive}
     isFirst={isFirst}
-    isMobile={isMobile}
-    position='absolute'
+    isLastOne={isLastOne}
     flexDirection='column'
-    width={{ md: 160, lg: 280 }}
+    maxWidth={{ md: 240, lg: 280 }}
+    textAlign='center'
+    width={1}
     {...props}>
     <ConditionalWrap
       condition={!!description}
@@ -82,25 +83,14 @@ const timelineTitleStyle = ({ isActive, isDone }) => {
       `
 }
 
-const containerStyle = ({ isActive, isFirst, isMobile }) => {
-  if (!isMobile)
-    return css`
-      transform: translateX(-50%);
-      text-align: center;
-    `
-  if (isActive) {
-    return css`
-      margin-top: -12px;
-    `
-  }
-  return isFirst
+const containerStyle = ({ isActive, isFirst, isLastOne }) =>
+  isLastOne
     ? css`
-        margin-top: -9px;
+        transform: translateX(50%);
       `
     : css`
-        margin-top: -10px;
+        transform: translateX(-50%);
       `
-}
 
 const Container = styled(Box)`
   ${containerStyle};
@@ -112,13 +102,13 @@ const TimelineTitle = styled(Typography)`
 
 TimelineContent.propTypes = {
   collapsedContent: PropTypes.arrayOf(PropTypes.string),
-  description: PropTypes.string,
+  description: PropTypes.object,
   handleCollapseToggle: PropTypes.func,
   id: PropTypes.string,
   isActive: PropTypes.bool,
   isDone: PropTypes.bool,
   isFirst: PropTypes.bool,
-  isMobile: PropTypes.bool,
+  isLastOne: PropTypes.bool,
   title: PropTypes.string,
   t: PropTypes.func,
   i18n: PropTypes.object,

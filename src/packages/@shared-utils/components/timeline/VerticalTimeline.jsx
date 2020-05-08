@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Flex } from '@kogaio'
 
-import TimelineItem from './TimelineItem'
+import VerticalTimelineItem from './VerticalTimelineItem'
 
-const VerticalTimelineRelative = ({ activeIndex, checkpoints, ...props }) => {
+const VerticalTimeline = ({ activeIndex, checkpoints, noContentMinHeight, ...props }) => {
   const [collapsedContent, setCollapsedContent] = useState([checkpoints[activeIndex].id])
 
   const handleCollapseToggle = contentId => () => {
@@ -25,14 +25,16 @@ const VerticalTimelineRelative = ({ activeIndex, checkpoints, ...props }) => {
         return CustomRender ? (
           <CustomRender key={checkpoint.id} />
         ) : (
-          <TimelineItem
+          <VerticalTimelineItem
             key={checkpoint.id}
             isActive={idx === activeIndex}
+            isFirst={idx === 0}
             isDone={idx < activeIndex}
             isLastOne={idx === checkpoints.length - 1}
             isExpanded={collapsedContent.includes(checkpoint.id)}
             index={idx}
             hideIndex={checkpoint.hideIndex}
+            noContentMinHeight={noContentMinHeight}
             onClick={handleCollapseToggle(checkpoint.id)}
             title={checkpoint.title}
             description={checkpoint.description}
@@ -43,9 +45,10 @@ const VerticalTimelineRelative = ({ activeIndex, checkpoints, ...props }) => {
   )
 }
 
-VerticalTimelineRelative.propTypes = {
+VerticalTimeline.propTypes = {
   activeIndex: PropTypes.number,
   checkpoints: PropTypes.arrayOf(PropTypes.object),
+  noContentMinHeight: PropTypes.bool
 }
 
-export default VerticalTimelineRelative
+export default VerticalTimeline

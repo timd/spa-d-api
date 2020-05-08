@@ -11,20 +11,22 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
   const activeTimelineIdx = checkpoints.findIndex(checkpoint => checkpoint.id === processStage)
 
   return (
-    <Space maxWidth={{ md: 600, lg: 1080 }} mx='auto'>
-      <Flex flexDirection='column' width={1} {...props}>
+    <Space mx='auto'>
+      <Flex flexDirection='column' maxWidth={{ md: 'auto', lg: 1440 }} width={1} {...props}>
         <Hide xs>
-          <TitleWithTooltipInfo
-            title={t('Divorce journey')}
-            tooltipInfo={{
-              title: `${t('Divorce journey')}?`,
-              description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
-            }}
-            tooltipSpacing={{
-              ml: { xs: 0, sm: '99px' },
-              top: { xs: '-140px', sm: '-116px' },
-            }}
-          />
+          <Space ml={{sm: 0, md: '12.5%'}}>
+            <TitleWithTooltipInfo
+              title={t('Divorce journey')}
+              tooltipInfo={{
+                title: `${t('Divorce journey')}?`,
+                description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
+              }}
+              tooltipSpacing={{
+                ml: { xs: 0, sm: '99px' },
+                top: { xs: '-140px', sm: '-116px' },
+              }}
+            />
+          </Space>
         </Hide>
         <Hide sm md lg xlg>
           <TitleWithTooltipInfo
@@ -44,11 +46,10 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
           />
         </Hide>
         <Space mt={{ xs: 3, md: 7 }} p={6}>
-          <Card display={{ md: 'none' }} minHeight={324} variant='journey'>
+          <Card display={{ md: 'none' }} variant='journey'>
             <VerticalTimeline
-              activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 0}
+              activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 1}
               checkpoints={checkpoints}
-              height={500}
             />
           </Card>
         </Space>
