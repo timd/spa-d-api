@@ -1,34 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Flex, Space, Typography } from '@kogaio'
 import { withTranslation } from 'react-i18next'
 
 import { VerticalTimeline } from '@shared-utils/components'
 import { RecommendationsList, SectionDescription } from '@questionnaire/apps/QuestionnaireResults/components'
+import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
+
 
 const recommendationCheckpoints = [
   {
     id: 'checkpoint-1',
     title: 'Getting Divorced',
     progress: 0,
-    collapseHeightDesktop: {
-      md: 96,
-      lg: 136,
-    },
   },
   {
     id: 'checkpoint-2',
     title: 'Being Divorced',
     progress: 1,
-    collapseHeightDesktop: {
-      md: 96,
-      lg: 136,
-    },
     collapseHeightMobile: 96,
   },
 ]
 
-const RemcommendationsScreen = ({ t }) => (
+const RemcommendationsScreen = ({ t }) => {
+  const { questionnaireState } = useContext(QuestionnaireContext)
+  const answers = questionnaireState.buildAnswers()
+
+  return (
   <Flex flexDirection='column'>
     <Typography color='dark-grey' variant='h3' textAlign='center'>
       {t('Our recommendations')}
@@ -44,14 +42,15 @@ const RemcommendationsScreen = ({ t }) => (
     </Space>
     <Space ml={1} mt={8}>
       <Flex>
-        <VerticalTimeline activeIndex={0} checkpoints={recommendationCheckpoints} height={360} />
+        <VerticalTimeline activeIndex={0} checkpoints={recommendationCheckpoints} height={400} />
         <Space ml={3} mt={4}>
-          <RecommendationsList isMobile />
+          <RecommendationsList isMobile processStage={answers.processStage} />
         </Space>
       </Flex>
     </Space>
   </Flex>
 )
+  }
 
 RemcommendationsScreen.propTypes = {
   t: PropTypes.func,

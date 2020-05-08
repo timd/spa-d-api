@@ -5,7 +5,7 @@ import { withTranslation } from 'react-i18next'
 import { Box, Card, Flex, Icon, Image, Space, Typography } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
 
-import { recommendations } from '../constants'
+import { recommendations } from '@shared-utils/constants'
 
 const RecommendationsList = ({ isMobile, processStage, t, i18n, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
@@ -116,6 +116,10 @@ RecommendationItem.propTypes = {
   onClick: PropTypes.func,
   t: PropTypes.func,
   i18n: PropTypes.object,
+}
+
+RecommendationsList.defaultProps = {
+  processStage: 'marriage_crisis'
 }
 
 export default withTranslation()(RecommendationsList)
