@@ -13,7 +13,7 @@ const RecommendationsList = ({ isMobile, processStage, t, i18n, ...props }) => (
       const isLastOne = idx === recommendations[processStage].length - 1
       return (
         <Space key={recommendation.id} px={2} mb={isMobile && isLastOne ? 4 : 0} mt={4}>
-          <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
+          <Box minWidth={{ lg: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
             <RecommendationItem
               anchor={recommendation.anchor}
               description={recommendation.description[i18n.language]}
@@ -81,7 +81,7 @@ const mobileItemStyle = ({ isLastOne, isMobile }) =>
     position: relative;
     :before {
       margin: 0 auto;
-      left: -26px;
+      left: -26.5px;
       padding-top: ${({ isLastOne }) => (isLastOne ? '32px' : '16px')};
       top: -16px;
       content: '';
@@ -100,7 +100,7 @@ const mobileItemStyle = ({ isLastOne, isMobile }) =>
       border-radius: 50%;
       position: absolute;
       bottom: 0;
-      left: -28px;
+      left: -29px;
       top: 0;
       margin-top: auto;
       margin-bottom: auto;
