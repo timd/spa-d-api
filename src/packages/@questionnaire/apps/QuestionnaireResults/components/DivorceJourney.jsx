@@ -48,7 +48,7 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
         <Space mt={{ xs: 3, md: 7 }} p={6}>
           <Card display={{ md: 'none' }} variant='journey'>
             <VerticalTimelineRelative
-              activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 0}
+              activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 1}
               checkpoints={checkpoints}
             />
           </Card>

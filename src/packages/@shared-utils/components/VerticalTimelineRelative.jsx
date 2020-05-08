@@ -28,6 +28,7 @@ const VerticalTimelineRelative = ({ activeIndex, checkpoints, ...props }) => {
           <TimelineItem
             key={checkpoint.id}
             isActive={idx === activeIndex}
+            isFirst={idx === 0}
             isDone={idx < activeIndex}
             isLastOne={idx === checkpoints.length - 1}
             isExpanded={collapsedContent.includes(checkpoint.id)}
