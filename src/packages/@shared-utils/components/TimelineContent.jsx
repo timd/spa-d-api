@@ -58,7 +58,7 @@ const TimelineContent = ({
         </TimelineTitle>
       </Space>
     </ConditionalWrap>
-    {collapsedContent.includes(id) && (
+    {collapsedContent.includes(id) && !!description && (
       <Space mt={4}>
         <Typography color='dark-grey' maxWidth={{ xs: 220, sm: 240, md: 180, lg: 240 }} variant='tooltip'>
           {description[i18n.language]}

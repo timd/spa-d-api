@@ -5,7 +5,7 @@ import { Footer } from 'app/components'
 import { DivorcyForecast, DivorceJourney, OurRecommendations, WhatsNext } from './components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
-import { calculateOneTimeFees, calculateRecurrentFees } from 'app/services/FeesCalculator'
+import { calculateOneTimeFees, calculateRecurrentFees, logQuestionnaireAnswers } from '../../services'
 
 const QuestionnaireResults = () => {
   const { questionnaireState } = useContext(QuestionnaireContext)
@@ -20,11 +20,7 @@ const QuestionnaireResults = () => {
     0
   )
 
-  console.log('Answers:', answers)
-  console.log('One time costs:', oneTimeCosts)
-  console.log('Ongoing costs', ongoingCosts)
-
-  questionnaireState.clear()
+  logQuestionnaireAnswers(answers)
 
   return (
     <Flex flexDirection='column' alignItems='center' width={1}>
@@ -38,15 +34,11 @@ const QuestionnaireResults = () => {
         </Space>
       </Hide>
       <Hide xs sm>
-        <Space mt={14}>
+        <Space px={2} mt={14}>
           <OurRecommendations processStage={answers.processStage} />
         </Space>
       </Hide>
-      <Hide xs sm>
-        <Space mt={10}>
-          <Footer />
-        </Space>
-      </Hide>
+      <Footer />
     </Flex>
   )
 }

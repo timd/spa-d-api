@@ -8,6 +8,7 @@ import { localize, normalize } from '../../../services'
 
 const CurrencyInput = ({ id, value, label, placeholder, onValueChange, ...props }) => {
   const MIN = 0
+  const MAX = 10000000000
   const localisedValue = localize(value ?? '')
 
   const handleOnChange = event => {
@@ -20,7 +21,7 @@ const CurrencyInput = ({ id, value, label, placeholder, onValueChange, ...props 
 
     newValue = normalize(newValue)
     newValue = parseInt(newValue)
-    if (newValue >= MIN) {
+    if (newValue >= MIN && newValue < MAX) {
       onValueChange(newValue)
     }
   }
@@ -28,7 +29,7 @@ const CurrencyInput = ({ id, value, label, placeholder, onValueChange, ...props 
   return (
     <Container {...props}>
       <Space mr={4}>
-        <Label variant='body' display={label ? 'inherit' : 'none'} width={label ? 3 / 4 : 0}>
+        <Label variant='body' display={label ? 'inherit' : 'none'} width={label ? '150%' : 0}>
           {label}
         </Label>
       </Space>
@@ -38,6 +39,7 @@ const CurrencyInput = ({ id, value, label, placeholder, onValueChange, ...props 
         placeholder={placeholder}
         variant='questionnaire'
         noBottomSpace
+        width={label ? '150px' : '270px'}
         onChange={handleOnChange}
       />
     </Container>
@@ -51,6 +53,7 @@ const Label = styled(Typography)`
 const Container = styled(Flex)`
   position: relative;
   align-items: center;
+  justify-content: flex-end;
 
   input {
     padding-right: 28px;

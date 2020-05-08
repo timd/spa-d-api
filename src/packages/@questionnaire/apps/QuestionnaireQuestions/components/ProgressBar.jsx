@@ -5,7 +5,7 @@ import { Flex } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
 const ProgressBar = ({ progress, ...props }) => (
-  <Container left={{ xs: -24, md: 0 }} progress={progress} width={{ xs: '100vw', md: '100%' }} {...props} />
+  <Container left={0} progress={progress} width={{ xs: '100vw', md: '100%' }} {...props} />
 )
 
 const Container = styled(Flex)`
