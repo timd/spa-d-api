@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Card, Flex, Hide, Space } from '@kogaio'
 import { withTranslation } from 'react-i18next'
 
-import { HorizontalTimeline, VerticalTimelineRelative } from '@shared-utils/components'
+import { HorizontalTimeline, VerticalTimeline } from '@shared-utils/components'
 import { TitleWithTooltipInfo } from '.'
 import { checkpoints } from '../constants'
 
@@ -47,7 +47,7 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
         </Hide>
         <Space mt={{ xs: 3, md: 7 }} p={6}>
           <Card display={{ md: 'none' }} variant='journey'>
-            <VerticalTimelineRelative
+            <VerticalTimeline
               activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 1}
               checkpoints={checkpoints}
             />

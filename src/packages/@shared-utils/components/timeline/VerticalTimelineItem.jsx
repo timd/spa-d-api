@@ -6,7 +6,7 @@ import { withTranslation } from 'react-i18next'
 import { Box, Flex, Icon, Space, Touchable, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
-const TimelineItem = ({
+const VerticalTimelineItem = ({
   isActive,
   isDone,
   isFirst,
@@ -15,6 +15,7 @@ const TimelineItem = ({
   index,
   hideIndex,
   i18n,
+  noContentMinHeight,
   onClick,
   title,
   description,
@@ -28,7 +29,7 @@ const TimelineItem = ({
         {isActive ? <ActiveCheckpoint /> : isDone ? <DoneCheckpoint /> : <UnreachedCheckpoint />}
       </DashedContainer>
       <Space ml={{ xs: 3, md: 5 }} mt={isActive ? '-5px' : -2}>
-        <ContentWrapper isActive={isActive} isLastOne={isLastOne} minHeight={isLastOne ? 0 : 56}>
+        <ContentWrapper isActive={isActive} isLastOne={isLastOne} minHeight={noContentMinHeight || isLastOne ? 0 : 56}>
           <Touchable effect='no-feedback' onClick={hasDescription ? onClick : null}>
             <Flex alignItems='center'>
                 <Typography
@@ -158,7 +159,7 @@ const DashedContainer = styled(Box)`
   ${_progressBarStyle};
 `
 
-TimelineItem.propTypes = {
+VerticalTimelineItem.propTypes = {
   title: PropTypes.object,
   description: PropTypes.object,
   isActive: PropTypes.bool,
@@ -169,7 +170,8 @@ TimelineItem.propTypes = {
   index: PropTypes.number,
   hideIndex: PropTypes.bool,
   i18n: PropTypes.object,
+  noContentMinHeight: PropTypes.bool,
   onClick: PropTypes.func,
 }
 
-export default withTranslation()(TimelineItem)
+export default withTranslation()(VerticalTimelineItem)

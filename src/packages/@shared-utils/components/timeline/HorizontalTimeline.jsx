@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Box, Space } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
-import { TimelineContent } from '.'
+import HorizontalTimelineContent from './HorizontalTimelineContent'
 
 const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
   // eslint-disable-next-line no-unused-vars
@@ -41,7 +41,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
             <Space mt='1px' ml={idx === 0 ? 1 : 0}>
               <Box bg='white' borderRadius='round' left={progress} top={0} size={6} position='absolute' zIndex={2} />
             </Space>
-            <TimelineContent
+            <HorizontalTimelineContent
               collapsedContent={collapsedContent}
               handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
               title={checkpoint.title}
@@ -57,7 +57,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
             <Space p={2} ml={idx === 0 ? 0 : -4} mt={-1}>
               <ActiveCheckpoint left={progress} top={0} size={8} />
             </Space>
-            <TimelineContent
+            <HorizontalTimelineContent
               collapsedContent={collapsedContent}
               handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
               title={checkpoint.title}
@@ -74,7 +74,7 @@ const HorizontalTimeline = ({ activeIndex, checkpoints, height, ...props }) => {
             <Space top={0} p='2px'>
               <UnreachedCheckpoint left={isLastOne ? 'unset' : progress} right={isLastOne ? 0 : 'unset'} size={8} />
             </Space>
-            <TimelineContent
+            <HorizontalTimelineContent
               collapsedContent={collapsedContent}
               handleCollapseToggle={handleCollapseToggle(checkpoint.id)}
               title={checkpoint.title}

@@ -4,7 +4,7 @@ import { Flex, Space, Typography } from '@kogaio'
 import { withTranslation } from 'react-i18next'
 
 import { recommendations } from '@shared-utils/constants'
-import { VerticalTimelineRelative } from '@shared-utils/components'
+import { VerticalTimeline } from '@shared-utils/components'
 import { RecommendationsList, SectionDescription } from '@questionnaire/apps/QuestionnaireResults/components'
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 
@@ -54,7 +54,7 @@ const RemcommendationsScreen = ({ t }) => {
         />
       </Space>
       <Space ml={1} mt={8}>
-        <VerticalTimelineRelative activeIndex={0} checkpoints={recommendationCheckpoints} />
+        <VerticalTimeline activeIndex={0} checkpoints={recommendationCheckpoints} noContentMinHeight />
       </Space>
     </Flex>
   )
