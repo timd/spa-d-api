@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Card, Flex, Hide, Space } from '@kogaio'
 import { withTranslation } from 'react-i18next'
 
-import { HorizontalTimeline, VerticalTimeline } from '@shared-utils/components'
+import { HorizontalTimeline, VerticalTimelineRelative } from '@shared-utils/components'
 import { TitleWithTooltipInfo } from '.'
 import { checkpoints } from '../constants'
 
@@ -14,7 +14,7 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
     <Space mx='auto'>
       <Flex flexDirection='column' maxWidth={{ md: 'auto', lg: 1440 }} width={1} {...props}>
         <Hide xs>
-          <Space ml='12.5%'>
+          <Space ml={{sm: 0, md: '12.5%'}}>
             <TitleWithTooltipInfo
               title={t('Divorce journey')}
               tooltipInfo={{
@@ -46,12 +46,10 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
           />
         </Hide>
         <Space mt={{ xs: 3, md: 7 }} p={6}>
-          <Card display={{ md: 'none' }} minHeight={324} variant='journey'>
-            <VerticalTimeline
-              // activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 0}
-              activeIndex={2}
+          <Card display={{ md: 'none' }} variant='journey'>
+            <VerticalTimelineRelative
+              activeIndex={activeTimelineIdx !== -1 ? activeTimelineIdx : 0}
               checkpoints={checkpoints}
-              height={850}
             />
           </Card>
         </Space>

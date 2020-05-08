@@ -27,24 +27,26 @@ const TimelineItem = ({
         {isActive ? <ActiveCheckpoint /> : isDone ? <DoneCheckpoint /> : <UnreachedCheckpoint />}
       </DashedContainer>
       <Space ml={{ xs: 3, md: 5 }}>
-        <ContentWrapper isActive={isActive} isLastOne={isLastOne}>
+        <ContentWrapper isActive={isActive} isLastOne={isLastOne} minHeight={isLastOne ? 0 : 56}>
           <Touchable effect='no-feedback' onClick={hasDescription ? onClick : null}>
-            <Flex alignItems='center' justifyContent='space-between'>
+            <Flex alignItems='center'>
               <Space mt={isActive ? -1 : -2}>
-              <Typography
-                color={isActive ? 'brand' : 'dark-grey'}
-                fontWeight={isActive ? 'bold' : 'regular'}
-                variant='body'>
-                {!hideIndex && `${index + 1}.`} {title[i18n.language]}
-              </Typography>
+                <Typography
+                  color={isActive ? 'brand' : 'dark-grey'}
+                  fontWeight={isActive ? 'bold' : 'regular'}
+                  variant='body'>
+                  {!hideIndex && `${index + 1}.`} {title}
+                </Typography>
               </Space>
               {hasDescription && (
-                <Icon color='brand' fontSize={4} name={isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
+                <Space ml={2}>
+                  <Icon color='brand' fontSize={4} name={isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
+                </Space>
               )}
             </Flex>
           </Touchable>
           {isExpanded && hasDescription && (
-            <Space mt={4}>
+            <Space pb={isLastOne ? 0 : 10} pt={4}>
               <Typography color='dark-grey' variant='body'>
                 {description[i18n.language]}
               </Typography>
@@ -65,11 +67,11 @@ const _dashedContainerStyle = ({ isLastOne }) =>
       right: 0;
       top: 0;
       content: '';
-      height: 100%;
+      min-height: 100%;
       width: fit-content;
       border-left: 3px dashed ${themeGet('colors.headerShadow')};
       position: absolute;
-      z-index: -1;
+      z-index: 0;
     }
   `
 

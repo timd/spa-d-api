@@ -21,10 +21,7 @@ const RemcommendationsScreen = ({ t }) => {
   const recommendationCheckpoints = [
     {
       id: 'current-phase',
-      title: {
-        en: currentPhaseTitle,
-        de: t(currentPhaseTitle),
-      },
+      title: t(currentPhaseTitle),
       hideIndex: true,
     },
     {
@@ -37,10 +34,7 @@ const RemcommendationsScreen = ({ t }) => {
     },
     {
       id: 'next-phase',
-      title: {
-        en: nextPhaseTitle,
-        de: t(nextPhaseTitle),
-      },
+      title: t(nextPhaseTitle),
       hideIndex: true,
     },
   ]
