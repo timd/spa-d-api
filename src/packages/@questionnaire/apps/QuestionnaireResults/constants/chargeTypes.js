@@ -1,4 +1,4 @@
-import { circleIconSecondary, circleIconTertiary } from '../assets'
+import { circleIconSecondary, circleIconTertiary } from '@shared-utils/assets'
 
 export const chargeTypes = ({ oneTimeCosts, ongoingCosts }, t) => [
   {

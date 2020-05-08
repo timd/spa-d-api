@@ -21,7 +21,6 @@ const QuestionnaireResults = () => {
   )
 
   logQuestionnaireAnswers(answers)
-  questionnaireState.clear()
 
   return (
     <Flex flexDirection='column' alignItems='center' width={1}>
