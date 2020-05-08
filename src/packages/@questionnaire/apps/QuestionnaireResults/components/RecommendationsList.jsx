@@ -9,27 +9,42 @@ import { recommendations } from '@shared-utils/constants'
 
 const RecommendationsList = ({ isMobile, processStage, t, i18n, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
-    {recommendations[processStage].map((recommendation, idx) => (
-      <Space key={recommendation.id} px={2} mt={4}>
-        <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
-          <RecommendationItem
-            anchor={recommendation.anchor}
-            description={recommendation.description[i18n.language]}
-            imgSrc={recommendation.imgSrc}
-            imgColor={recommendation.imgColor}
-            isMobile={isMobile}
-            title={`${idx + 1}. ${t(recommendation.title)}`}
-            t={t}
-          />
-        </Box>
-      </Space>
-    ))}
+    {recommendations[processStage].map((recommendation, idx) => {
+      const isLastOne = idx === recommendations[processStage].length - 1
+      return (
+        <Space key={recommendation.id} px={2} mb={isMobile && isLastOne ? 4 : 0} mt={4}>
+          <Box minWidth={{ md: 308 }} maxWidth={{ md: 380 }} width={{ xs: 1, md: 1 / 3 }}>
+            <RecommendationItem
+              anchor={recommendation.anchor}
+              description={recommendation.description[i18n.language]}
+              imgSrc={recommendation.imgSrc}
+              imgColor={recommendation.imgColor}
+              isLastOne={isLastOne}
+              isMobile={isMobile}
+              title={`${idx + 1}. ${t(recommendation.title)}`}
+              t={t}
+            />
+          </Box>
+        </Space>
+      )
+    })}
   </Flex>
 )
 
-const RecommendationItem = ({ anchor, title, description, imgColor, imgSrc, isMobile, onClick, t, ...props }) => (
+const RecommendationItem = ({
+  anchor,
+  title,
+  description,
+  imgColor,
+  imgSrc,
+  isLastOne,
+  isMobile,
+  onClick,
+  t,
+  ...props
+}) => (
   <Space pl={2} pr={4} pb={{ xs: 4, md: 6 }} pt={{ xs: 2, md: 6 }}>
-    <CardContainer isMobile={isMobile} onClick={onClick} variant='journey' {...props}>
+    <CardContainer isLastOne={isLastOne} isMobile={isMobile} onClick={onClick} variant='journey' {...props}>
       <Flex flexDirection='column' position='relative'>
         <Image src={imgSrc} size={32} position='absolute' left={0} opacity={imgColor === 'brand' ? 1 : 0.5} />
         <Space ml={2} mt={1}>
@@ -60,10 +75,22 @@ const Anchor = styled.a`
   ${themed('Anchor')};
 `
 
-const mobileItemStyle = ({ isMobile }) =>
+const mobileItemStyle = ({ isLastOne, isMobile }) =>
   isMobile &&
   css`
     position: relative;
+    :before {
+      margin: 0 auto;
+      left: -26px;
+      padding-top: ${({ isLastOne }) => (isLastOne ? '32px' : '16px')};
+      top: -16px;
+      content: '';
+      height: 100%;
+      width: fit-content;
+      border-left: 3px dashed ${themeGet('colors.headerShadow')};
+      position: absolute;
+      z-index: -1;
+    }
     :after {
       background: ${themeGet('colors.headerShadow')};
       content: '';
@@ -97,7 +124,9 @@ const Title = styled(Typography)`
 `
 
 RecommendationsList.propTypes = {
-  isMobile: PropTypes.string,
+  isLastOne: PropTypes.bool,
+
+  isMobile: PropTypes.bool,
   processStage: PropTypes.string,
   t: PropTypes.func,
   i18n: PropTypes.object,
@@ -112,6 +141,7 @@ RecommendationItem.propTypes = {
   description: PropTypes.string,
   imgColor: PropTypes.string,
   imgSrc: PropTypes.string,
+  isLastOne: PropTypes.bool,
   isMobile: PropTypes.bool,
   onClick: PropTypes.func,
   t: PropTypes.func,
@@ -119,7 +149,7 @@ RecommendationItem.propTypes = {
 }
 
 RecommendationsList.defaultProps = {
-  processStage: 'marriage_crisis'
+  processStage: 'marriage_crisis',
 }
 
 export default withTranslation()(RecommendationsList)

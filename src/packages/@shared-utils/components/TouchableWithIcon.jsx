@@ -50,7 +50,7 @@ TouchableWithIcon.propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   showLabelOnMobile: PropTypes.bool,
-  labelStyle: PropTypes.bool,
+  labelStyle: PropTypes.object,
 }
 
 TouchableWithIcon.defaultProps = {
