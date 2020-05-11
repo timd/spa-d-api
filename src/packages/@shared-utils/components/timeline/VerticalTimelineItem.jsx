@@ -30,24 +30,25 @@ const VerticalTimelineItem = ({
       </DashedContainer>
       <Space ml={{ xs: 3, md: 5 }} mt={isActive ? '-5px' : -2}>
         <ContentWrapper isActive={isActive} isLastOne={isLastOne} minHeight={noContentMinHeight || isLastOne ? 0 : 56}>
-          <Touchable effect='no-feedback' onClick={hasDescription ? onClick : null}>
+          <TouchableItem isDone={isDone} effect='no-feedback' onClick={hasDescription && !isDone ? onClick : null}>
             <Flex alignItems='center'>
-                <Typography
-                  color={isActive ? 'brand' : 'dark-grey'}
-                  fontWeight={isActive ? 'bold' : 'regular'}
-                  variant='body'>
-                  {!hideIndex && `${index + 1}.`} {title}
-                </Typography>
-              {hasDescription && (
+              <Typography
+                color={isActive ? 'brand' : isDone ? 'timelineDone' : 'dark-grey'}
+                fontWeight={isActive ? 'bold' : 'regular'}
+                opacity={isDone ? 0.4 : 1}
+                variant='body'>
+                {!hideIndex && `${index + 1}.`} {title}
+              </Typography>
+              {hasDescription && !isDone && (
                 <Space ml={2}>
                   <Icon color='brand' fontSize={4} name={isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
                 </Space>
               )}
             </Flex>
-          </Touchable>
+          </TouchableItem>
           {isExpanded && hasDescription && (
-            <Space pb={isLastOne ? 0 : 10} pt={4}>
-              <Typography color='dark-grey' variant='body'>
+            <Space pb={isLastOne ? 0 : 10} pl={4} pt={4}>
+              <Typography color='dark-grey' variant='tooltip'>
                 {description[i18n.language]}
               </Typography>
             </Space>
@@ -157,6 +158,10 @@ const DashedContainer = styled(Box)`
   position: relative;
   ${_dashedContainerStyle};
   ${_progressBarStyle};
+`
+
+const TouchableItem = styled(Touchable)`
+  cursor: ${({ isDone }) => (isDone ? 'unset' : 'pointer')};
 `
 
 VerticalTimelineItem.propTypes = {

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Flex, Space } from '@kogaio'
 
@@ -14,6 +14,12 @@ const QuestionnaireQuestions = () => {
     termsAndConditions: false,
   })
 
+  useEffect(() => {
+    if (!acceptedConditions.policy && !acceptedConditions.termsAndConditions && questionId !== undefined) {
+      questionnaireState.clear()
+    }
+  }, [acceptedConditions, questionId, questionnaireState])
+
   const handleAcceptedCondititionsChange = key => () => {
     setAcceptedConditions(prevValue => ({
       ...prevValue,
@@ -25,7 +31,7 @@ const QuestionnaireQuestions = () => {
     <Space mx={{ xs: -4, md: -4 }} mt='1px' px={{ md: 4 }}>
       <Wrapper bg='questionnaireBg' minHeight='100vh'>
         <Space mt={{ md: 10 }}>
-          {questionId ? (
+          {(questionId && acceptedConditions.policy && acceptedConditions.termsAndConditions) ? (
             <Questionnaire />
           ) : (
             <GetStarted acceptedConditions={acceptedConditions} toggleCheck={handleAcceptedCondititionsChange} />
