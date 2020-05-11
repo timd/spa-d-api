@@ -6,6 +6,8 @@ import { TouchableWithIcon } from '@shared-utils/components'
 
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
 import { questionnaireItemsObj } from '../assets'
+import { logQuestionnaireAnswers } from '../../../services'
+
 import {
   AgeInput,
   AnswerTouchable,
@@ -221,12 +223,13 @@ const Questionnaire = ({ i18n, t, ...props }) => {
       return { ...state }
     })
   }
-  const showResults = () => {
+  const onSubmit = () => {
     setQuestionnaireState(state => {
       state.cut()
       return { ...state }
     })
 
+    logQuestionnaireAnswers(answers)
     navigate('/questionnaire/results')
   }
 
@@ -335,7 +338,7 @@ const Questionnaire = ({ i18n, t, ...props }) => {
           <Button
             title={isSubmitButtonVisible() ? t('Submit') : t('Next')}
             disabled={isNextButtonDisabled()}
-            onClick={isSubmitButtonVisible() ? showResults : showNextQuestion}
+            onClick={isSubmitButtonVisible() ? onSubmit : showNextQuestion}
           />
         </Flex>
       </Space>
