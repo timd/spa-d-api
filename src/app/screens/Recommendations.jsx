@@ -17,6 +17,15 @@ const RemcommendationsScreen = ({ t }) => {
   const currentPhaseIndex = allPhasesKeys.indexOf(currentPhase)
   const currentPhaseTitle = t(currentPhase)
   const nextPhaseTitle = t(allPhasesKeys[currentPhaseIndex + 1])
+  const nextPhaseItem = nextPhaseTitle
+    ? [
+        {
+          id: 'next-phase',
+          title: t(nextPhaseTitle),
+          hideIndex: true,
+        },
+      ]
+    : []
 
   const recommendationCheckpoints = [
     {
@@ -28,15 +37,11 @@ const RemcommendationsScreen = ({ t }) => {
       id: 'recommendations-list',
       CustomRender: () => (
         <Space ml={6}>
-          <RecommendationsList isMobile processStage={currentPhase} />
+          <RecommendationsList hideLastItemBottomDash={!nextPhaseTitle} isMobile processStage={currentPhase} />
         </Space>
       ),
     },
-    {
-      id: 'next-phase',
-      title: t(nextPhaseTitle),
-      hideIndex: true,
-    },
+    ...nextPhaseItem,
   ]
 
   return (
