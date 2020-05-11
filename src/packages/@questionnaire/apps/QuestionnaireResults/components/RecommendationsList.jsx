@@ -7,7 +7,7 @@ import { themed, themeGet } from '@kogaio/utils'
 
 import { recommendations } from '@shared-utils/constants'
 
-const RecommendationsList = ({ isMobile, processStage, t, i18n, ...props }) => (
+const RecommendationsList = ({ hideLastItemBottomDash, isMobile, processStage, t, i18n, ...props }) => (
   <Flex flexDirection={{ xs: 'column', md: 'row' }} flexWrap='wrap' {...props}>
     {recommendations[processStage].map((recommendation, idx) => {
       const isLastOne = idx === recommendations[processStage].length - 1
@@ -19,6 +19,7 @@ const RecommendationsList = ({ isMobile, processStage, t, i18n, ...props }) => (
               description={recommendation.description[i18n.language]}
               imgSrc={recommendation.imgSrc}
               imgColor={recommendation.imgColor}
+              hideLastItemBottomDash={hideLastItemBottomDash && isLastOne}
               isLastOne={isLastOne}
               isMobile={isMobile}
               title={`${idx + 1}. ${t(recommendation.title)}`}
@@ -35,6 +36,7 @@ const RecommendationItem = ({
   anchor,
   title,
   description,
+  hideLastItemBottomDash,
   imgColor,
   imgSrc,
   isLastOne,
@@ -44,7 +46,13 @@ const RecommendationItem = ({
   ...props
 }) => (
   <Space pl={2} pr={4} pb={{ xs: 4, md: 6 }} pt={{ xs: 2, md: 6 }}>
-    <CardContainer isLastOne={isLastOne} isMobile={isMobile} onClick={onClick} variant='journey' {...props}>
+    <CardContainer
+      hideLastItemBottomDash={hideLastItemBottomDash}
+      isLastOne={isLastOne}
+      isMobile={isMobile}
+      onClick={onClick}
+      variant='journey'
+      {...props}>
       <Flex flexDirection='column' position='relative'>
         <Image src={imgSrc} size={32} position='absolute' left={0} opacity={imgColor === 'brand' ? 1 : 0.5} />
         <Space ml={2} mt={1}>
@@ -75,7 +83,7 @@ const Anchor = styled.a`
   ${themed('Anchor')};
 `
 
-const mobileItemStyle = ({ isLastOne, isMobile }) =>
+const mobileItemStyle = ({ isMobile }) =>
   isMobile &&
   css`
     position: relative;
@@ -85,7 +93,7 @@ const mobileItemStyle = ({ isLastOne, isMobile }) =>
       padding-top: ${({ isLastOne }) => (isLastOne ? '32px' : '16px')};
       top: -16px;
       content: '';
-      height: 100%;
+      height: ${({ hideLastItemBottomDash }) => (hideLastItemBottomDash ? 'calc(50% - 22px)' : '100%')};
       width: fit-content;
       border-left: 3px dashed ${themeGet('colors.headerShadow')};
       position: absolute;
@@ -124,8 +132,8 @@ const Title = styled(Typography)`
 `
 
 RecommendationsList.propTypes = {
+  hideLastItemBottomDash: PropTypes.bool,
   isLastOne: PropTypes.bool,
-
   isMobile: PropTypes.bool,
   processStage: PropTypes.string,
   t: PropTypes.func,
@@ -139,6 +147,7 @@ RecommendationItem.propTypes = {
   }),
   title: PropTypes.string,
   description: PropTypes.string,
+  hideLastItemBottomDash: PropTypes.bool,
   imgColor: PropTypes.string,
   imgSrc: PropTypes.string,
   isLastOne: PropTypes.bool,
