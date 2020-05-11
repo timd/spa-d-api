@@ -22,5 +22,8 @@
   },
   "forecast": {
     "subtitle": "Here's expected cost & recommendations of next steps."
+  },
+  "result": {
+    "teaser": "After assessment we recommends the following steps that can help you to process further..."
   }
 }

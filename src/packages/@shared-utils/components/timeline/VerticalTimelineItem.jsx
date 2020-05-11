@@ -15,6 +15,7 @@ const VerticalTimelineItem = ({
   index,
   hideIndex,
   i18n,
+  t,
   noContentMinHeight,
   onClick,
   title,
@@ -37,7 +38,7 @@ const VerticalTimelineItem = ({
                 fontWeight={isActive ? 'bold' : 'regular'}
                 opacity={isDone ? 0.4 : 1}
                 variant='body'>
-                {!hideIndex && `${index + 1}.`} {title}
+                {!hideIndex && `${index + 1}.`} {t(title)}
               </Typography>
               {hasDescription && !isDone && (
                 <Space ml={2}>
@@ -174,6 +175,7 @@ VerticalTimelineItem.propTypes = {
   isLastOne: PropTypes.bool,
   index: PropTypes.number,
   hideIndex: PropTypes.bool,
+  t: PropTypes.func,
   i18n: PropTypes.object,
   noContentMinHeight: PropTypes.bool,
   onClick: PropTypes.func,
