@@ -12,7 +12,7 @@ const WhatsNext = ({ t, ...props }) => (
       <SectionTitle variant='sh3'>{t("What's next")}</SectionTitle>
       <Space mt={2}>
         <Typography color='dark-grey' variant='body'>
-          {t('After assessment we recommends some following steps that can help you to process further...')}
+          {t('result.teaser')}
         </Typography>
       </Space>
       <Space mt={8} mx='auto'>
