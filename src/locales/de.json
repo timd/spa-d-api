@@ -41,8 +41,8 @@
   "Speak with a lawyer": "Sprich mit einem Anwalt",
   "Collect the documents": "Sammel Deine Dokumente",
   "Collect the following information": "Stell die folgenen Informationen zusammen",
-  "following steps": "die folgenden Schritte",
-  "phase, we recommend those": "Phase empfehlen wir Dir",
+  "following steps": "interessant für Dich sein",
+  "phase, we recommend those": "Phase könnten die folgenden Schritte",
   "* It's average cost based on your condition": "*Durchschnittliche Kosten basierend auf Deinen Angaben",
   "Expectation Cost": "Kostenübersicht",
   "per month": "pro Monat",
@@ -61,14 +61,14 @@
   "Ongoing Costs": "Laufende Kosten",
   "Show less": "Mehr anzeigen",
   "Show details": "Details anziegen",
-  "we recommend those following steps": "Wir empfehlen die folgenden Schritte",
+  "we recommend those following steps": "könnten die folgenden Schritte interessant für Dich sein",
   "phase": "Phase",
   "Back": "Zurück",
   "Age": "Alter",
   "years": "Jahre",
   "Getting divorced": "Geschieden werden",
-  "At your": "Bei Deiner",
-  "Our recommendations": "Unsere Empfehlungen",
+  "At your": "In Deiner",
+  "Our recommendations": "Unsere Tipps",
   "Result": "Ergebnis",
   "Share": "Teilen",
   "Imprint": "Impressum",
@@ -106,12 +106,13 @@
     }
   },
   "forecast": {
-    "subtitle": "Hier kannst Du Deine zu erwartenden Kosten sowie Empfehlungen zu nächsten Schritten sehen."
+    "subtitle": "Hier kannst Du eine Indikation Deiner zu erwartenden Kosten sowie Tipps zu nächsten Schritten sehen."
   },
   "result": {
-    "teaser": "Schaue Dir Deine individuellen Empfehlungen an, die dich im Prozess weiterbringen.",
+    "teaser": "Schaue Dir Deine individuellen Empfehlungen an, die Dich im Prozess weiterbringen.",
     "tooltip": "Einmalige Kosten sind Kosten für Anwälte und das Gericht. Die laufenden Kosten beschreiben nur möglich Unterhaltskosten für Kinder.",
-    "disclaimer": "* Diese Kosten basieren auf Deinen Angaben und sind nur eine Indikation. Eine Scheidung kann viele Folgekosten mit sich bringen."
+    "disclaimer": "* Diese Kosten basieren auf Deinen Angaben und sind nur eine Indikation. Eine Scheidung kann viele Folgekosten mit sich bringen.",
+    "journeytooltip": "Basierend auf deinen Angaben haben wir Dich in eine Phase eingeordnet. Klick einfach auf die anderen Phasen um zu sehen, was dahinter steckt."
   },
   "conditions": {
     "preAnchorCopy": "Hermit stimme ich den",

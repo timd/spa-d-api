@@ -25,11 +25,17 @@ const Footer = ({ t, ...props }) => (
 
     <Box width={1}>
       <Flex justifyContent={{ xs: 'center', md: 'flex-end' }}>
-        <TextLink to='/imprint'>{t('Imprint')}</TextLink>
+        <TextLink to='/imprint' target='_blank'>
+          {t('Imprint')}
+        </TextLink>
         <Space mx={8}>
-          <TextLink to='/data-protection'>{t('Data Protection')}</TextLink>
+          <TextLink to='/data-protection' target='_blank'>
+            {t('Data Protection')}
+          </TextLink>
         </Space>
-        <TextLink to='/conditions'>{t('Conditions')}</TextLink>
+        <TextLink to='/conditions' target='_blank'>
+          {t('Conditions')}
+        </TextLink>
       </Flex>
     </Box>
   </Container>

@@ -14,16 +14,16 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
     <Space mx='auto'>
       <Flex flexDirection='column' maxWidth={{ md: 'auto', lg: 1440 }} width={1} {...props}>
         <Hide xs>
-          <Space ml={{sm: 0, md: '12.5%'}}>
+          <Space ml={{ sm: 0, md: '12.5%' }}>
             <TitleWithTooltipInfo
               title={t('Divorce journey')}
               tooltipInfo={{
-                title: `${t('Divorce journey')}?`,
-                description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
+                title: `${t('Divorce journey')}`,
+                description: t('result.journeytooltip'),
               }}
               tooltipSpacing={{
-                ml: { xs: 0, sm: '99px' },
-                top: { xs: '-140px', sm: '-116px' },
+                ml: { xs: 0, sm: '147px' },
+                top: { xs: '-140px', sm: '-160px' },
               }}
             />
           </Space>
@@ -37,11 +37,11 @@ const DivorceJourney = ({ processStage, t, ...props }) => {
             title={t('Divorce journey')}
             tooltipInfo={{
               title: `${t('Divorce journey')}?`,
-              description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
+              description: t('result.journeytooltip'),
             }}
             tooltipSpacing={{
-              ml: { xs: 0, sm: '-99px' },
-              top: { xs: '-140px', sm: '-116px' },
+              ml: { xs: 0, sm: '-147px' },
+              top: { xs: '-140px', sm: '-160px' },
             }}
           />
         </Hide>

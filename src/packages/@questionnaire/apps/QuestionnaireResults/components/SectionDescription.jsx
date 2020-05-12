@@ -13,7 +13,7 @@ const SectionDescription = ({ boldedText, color, firstRowPrefix, firstRowSuffix,
       width='fit-content'
       {...props}>
       {firstRowPrefix}
-      <Typography color={color} fontWeight='bold' height='fit-content' width='fit-content'>
+      <Typography color={color} variant='body' fontWeight='bold' height='fit-content' width='fit-content'>
         &nbsp;{boldedText}&nbsp;
       </Typography>
       {firstRowSuffix}

@@ -13,7 +13,10 @@ export const recommendations = {
       imgSrc: circleIconTertiary,
       anchor: {
         URL: 'http://paartherapie.de/',
-        label: '[EN] Hier kannst du nach einem Ansprechpartner suchen',
+        label: {
+          de: 'Hier kannst Du nach einem Ansprechpartner suchen',
+          en: '[EN] Hier kannst du nach einem Ansprechpartner suchen',
+        },
       },
     },
     {
@@ -36,7 +39,10 @@ export const recommendations = {
       imgColor: 'brand',
       anchor: {
         URL: 'https://www.anwalt24.de/',
-        label: '[EN] Hier kannnst du nach einem Anwalt suchen',
+        label: {
+          de: 'Hier kannnst Du nach einem Anwalt suchen',
+          en: '[EN] Hier kannnst du nach einem Anwalt suchen',
+        },
       },
     },
   ],
@@ -51,7 +57,10 @@ export const recommendations = {
       imgSrc: circleIconTertiary,
       anchor: {
         URL: 'https://www.anwalt24.de/',
-        label: '[EN] Hier kannnst du nach einem Anwalt suchen',
+        label: {
+          de: 'Hier kannnst Du nach einem Anwalt suchen',
+          en: '[EN] Hier kannnst du nach einem Anwalt suchen',
+        },
       },
     },
     {
@@ -91,7 +100,10 @@ export const recommendations = {
       imgSrc: circleIconTertiary,
       anchor: {
         URL: 'https://www.anwalt24.de/',
-        label: '[EN] Hier kannnst du nach einem Anwalt suchen',
+        label: {
+          de: 'Hier kannnst Du nach einem Anwalt suchen',
+          en: '[EN] Hier kannnst du nach einem Anwalt suchen',
+        },
       },
     },
     {
@@ -128,7 +140,10 @@ export const recommendations = {
       imgSrc: circleIconTertiary,
       anchor: {
         URL: 'https://www.finanztip.de/sinnvolle-versicherungen/',
-        label: '[EN] ​Schaue hier nach möglichen sinnvollen Versicherungen',
+        label: {
+          de: 'Schaue hier nach möglichen sinnvollen Versicherungen',
+          en: '[EN] ​Schaue hier nach möglichen sinnvollen Versicherungen',
+        },
       },
     },
     {

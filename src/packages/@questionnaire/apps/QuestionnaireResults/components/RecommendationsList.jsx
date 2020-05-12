@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { withTranslation } from 'react-i18next'
-import { Box, Card, Flex, Icon, Image, Space, Typography } from '@kogaio'
+import { Box, Card, Flex, Image, Space, Typography } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
 
 import { recommendations } from '@shared-utils/constants'
@@ -24,6 +24,7 @@ const RecommendationsList = ({ hideLastItemBottomDash, isMobile, processStage, t
               isMobile={isMobile}
               title={`${idx + 1}. ${t(recommendation.title)}`}
               t={t}
+              i18n={i18n}
             />
           </Box>
         </Space>
@@ -43,6 +44,7 @@ const RecommendationItem = ({
   isMobile,
   onClick,
   t,
+  i18n,
   ...props
 }) => (
   <Space pl={2} pr={4} pb={{ xs: 4, md: 6 }} pt={{ xs: 2, md: 6 }}>
@@ -65,16 +67,14 @@ const RecommendationItem = ({
               <>
                 &nbsp;
                 <Anchor className='anchor-bold' href={anchor.URL} rel='noopener noreferrer' target='_blank'>
-                  {t(anchor.label)}
+                  {anchor.label[i18n.language]}
                 </Anchor>
               </>
             )}
           </Typography>
         </Space>
       </Flex>
-      <Space my='auto' pl={2}>
-        <Icon color='brand' fontSize={3} name='keyboard_arrow_right' />
-      </Space>
+      <Space my='auto' pl={2}></Space>
     </CardContainer>
   </Space>
 )
@@ -117,7 +117,6 @@ const mobileItemStyle = ({ isMobile }) =>
 
 const CardContainer = styled(Card)`
   box-sizing: border-box;
-  cursor: pointer;
   display: flex;
   height: 100%;
   justify-content: space-between;

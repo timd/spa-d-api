@@ -53,7 +53,7 @@ const ExpectationCosts = ({ chargeTypes, t, ...props }) => (
         </Flex>
       </Space>
       <Space ml={{ md: 3 }} mt={1}>
-        <Typography color='white' variant='caption' fontWeight='bold'>
+        <Typography color='white' variant='body' fontWeight='bold'>
           {t('result.disclaimer')}
         </Typography>
       </Space>

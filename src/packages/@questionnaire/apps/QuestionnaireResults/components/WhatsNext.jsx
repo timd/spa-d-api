@@ -18,9 +18,6 @@ const WhatsNext = ({ t, ...props }) => (
       <Space mt={8} mx='auto'>
         <Button title={t('Check what to do next')} onClick={() => navigate('/recommendations')} width={1} />
       </Space>
-      <Space mt={4} mx='auto'>
-        <Button title={t('Send me the result')} onClick={() => {}} variant='outline' width={1} />
-      </Space>
     </Card>
   </Space>
 )
