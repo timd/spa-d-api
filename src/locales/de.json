@@ -110,5 +110,15 @@
   },
   "result": {
     "teaser": "Schaue Dir Deine individuellen Empfehlungen an, die dich im Prozess weiterbringen."
+  },
+  "conditions": {
+    "preAnchorCopy": "Hermit stimme ich den",
+    "postAnchorCopy": "zu",
+    "anchorLabel": "AGB"
+  },
+  "privacy": {
+    "preAnchorCopy": "Hermit bestätige ich, dass ich die",
+    "postAnchorCopy": "zur Kenntnis genommen habe.",
+    "anchorLabel": "Datenschutzerklärung"
   }
 }

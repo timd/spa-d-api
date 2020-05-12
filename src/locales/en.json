@@ -25,5 +25,15 @@
   },
   "result": {
     "teaser": "After assessment we recommends the following steps that can help you to process further..."
+  },
+  "conditions": {
+    "preAnchorCopy": "Hereby I agree to the",
+    "postAnchorCopy": "",
+    "anchorLabel": "Terms and Conditions"
+  },
+  "privacy": {
+    "preAnchorCopy": "Hereby I confirm that I took note of",
+    "postAnchorCopy": "",
+    "anchorLabel": "the Privacy Policy"
   }
 }

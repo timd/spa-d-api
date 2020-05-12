@@ -34,17 +34,31 @@ const GetStarted = ({
       <ProgressBar progress='8px' />
       <Space mt={6}>
         <Checkbox
-          checked={isPolicyAccepted}
+          checked={areTermsAccepted}
           id='agree-policy'
-          label={<TermsCheckboxLabel anchorLabel={t('Privacy policy')} anchorURL='/data-protection' />}
+          label={
+            <TermsCheckboxLabel
+              preAnchorCopy={t('conditions.preAnchorCopy')}
+              anchorLabel={t('conditions.anchorLabel')}
+              postAnchorCopy={t('conditions.postAnchorCopy')}
+              anchorURL='/conditions'
+            />
+          }
           onChange={toggleCheck('policy')}
         />
       </Space>
       <Space mt={2}>
         <Checkbox
-          checked={areTermsAccepted}
+          checked={isPolicyAccepted}
           id='agree-terms'
-          label={<TermsCheckboxLabel anchorLabel={t('Terms And Conditions')} anchorURL='/conditions' />}
+          label={
+            <TermsCheckboxLabel
+              preAnchorCopy={t('privacy.preAnchorCopy')}
+              anchorLabel={t('privacy.anchorLabel')}
+              postAnchorCopy={t('privacy.postAnchorCopy')}
+              anchorURL='/data-protection'
+            />
+          }
           onChange={toggleCheck('termsAndConditions')}
         />
       </Space>
