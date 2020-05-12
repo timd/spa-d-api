@@ -14,8 +14,8 @@ const ExpectationCosts = ({ chargeTypes, t, ...props }) => (
             title={t('Expectation Cost')}
             titleColor='white'
             tooltipInfo={{
-              title: `${t('Expectation Cost')}?`,
-              description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
+              title: `${t('Expectation Cost')}`,
+              description: t('result.tooltip'),
             }}
           />
         </Space>
@@ -30,8 +30,8 @@ const ExpectationCosts = ({ chargeTypes, t, ...props }) => (
             title={t('Expectation Cost')}
             titleColor='white'
             tooltipInfo={{
-              title: `${t('Expectation Cost')}?`,
-              description: t("If you don't know exact amount of money, it's fine for now. blah blah..."),
+              title: `${t('Expectation Cost')}`,
+              description: t('result.tooltip'),
             }}
           />
         </Space>
@@ -53,8 +53,8 @@ const ExpectationCosts = ({ chargeTypes, t, ...props }) => (
         </Flex>
       </Space>
       <Space ml={{ md: 3 }} mt={1}>
-        <Typography color='white' variant='caption'>
-          {t("* It's average cost based on your condition")}
+        <Typography color='white' variant='body' fontWeight='bold'>
+          {t('result.disclaimer')}
         </Typography>
       </Space>
     </Flex>
@@ -72,7 +72,7 @@ ExpectationCosts.propTypes = {
       icon: PropTypes.string,
     })
   ),
-  t: PropTypes.func
+  t: PropTypes.func,
 }
 
 export default withTranslation()(ExpectationCosts)

@@ -7,6 +7,7 @@ import { recommendations } from '@shared-utils/constants'
 import { VerticalTimeline } from '@shared-utils/components'
 import { RecommendationsList, SectionDescription } from '@questionnaire/apps/QuestionnaireResults/components'
 import { QuestionnaireContext } from 'app/services/QuestionnaireProvider'
+import { Footer } from 'app/components'
 
 const RemcommendationsScreen = ({ t }) => {
   const { questionnaireState } = useContext(QuestionnaireContext)
@@ -54,13 +55,14 @@ const RemcommendationsScreen = ({ t }) => {
           color='dark-grey'
           firstRowPrefix={t('At your')}
           boldedText={`'${t(currentPhase)}'`}
-          firstRowSuffix={`${t('phase')},`}
+          firstRowSuffix={`${t('phase')}`}
           bottomText={t('we recommend those following steps')}
         />
       </Space>
       <Space ml={1} mt={8}>
         <VerticalTimeline activeIndex={0} checkpoints={recommendationCheckpoints} noContentMinHeight />
       </Space>
+      <Footer />
     </Flex>
   )
 }

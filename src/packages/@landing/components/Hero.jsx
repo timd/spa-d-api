@@ -12,7 +12,7 @@ import { withTranslation } from 'react-i18next'
 const Hero = ({ t, ...props }) => (
   <Space mx={{ md: 'auto' }} pb={{ xs: 0, md: 30 }}>
     <Container {...props}>
-      <Typography color='dark-grey' maxWidth='640px' variant={{ xs: 'h2', md: 'h1' }} as='title'>
+      <Typography color='dark-grey' maxWidth='640px' variant={{ xs: 'h2', md: 'h1' }} as='h1'>
         {t('hero.title')}
       </Typography>
       <Space mt={6}>

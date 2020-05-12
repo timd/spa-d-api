@@ -64,7 +64,7 @@ TitleWithTooltipInfo.defaultProps = {
   titleColor: 'dark-grey',
   tooltipSpacing: {
     ml: { xs: '6px', sm: '106px' },
-    top: { xs: '-140px', sm: '-116px' },
+    top: { xs: '-140px', sm: '-163px' },
   },
 }
 

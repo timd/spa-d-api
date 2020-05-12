@@ -24,6 +24,19 @@
     "subtitle": "Here's expected cost & recommendations of next steps."
   },
   "result": {
-    "teaser": "After assessment we recommends the following steps that can help you to process further..."
+    "teaser": "After assessment we recommends the following steps that can help you to process further...",
+    "tooltip": "One time costs are for lawyers and court fees. The ongoing costs are only for possible alimoney payments for the children.",
+    "disclaimer": "* Diese Kosten basieren auf Deinen Angaben und sind nur eine Indikation. Eine Scheidung kann viele Folgekosten mit sich bringen.",
+    "journeytooltip": "Basierend auf deinen Angaben haben wir dich in eine Phase eingeordnet. Klick einfach auf die anderen Phasen um zu sehen, was dahinter steckt."
+  },
+  "conditions": {
+    "preAnchorCopy": "Hereby I agree to the",
+    "postAnchorCopy": "",
+    "anchorLabel": "Terms and Conditions"
+  },
+  "privacy": {
+    "preAnchorCopy": "Hereby I confirm that I took note of",
+    "postAnchorCopy": "",
+    "anchorLabel": "the Privacy Policy"
   }
 }

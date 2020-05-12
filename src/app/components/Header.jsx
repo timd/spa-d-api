@@ -28,9 +28,6 @@ const Header = ({ location: { pathname }, t }) => (
           />
         </Space>
       )}
-      {pathname.includes('results') && (
-        <TouchableWithIcon icon={{ name: 'arrow_upward', fontSize: '24px' }} label={t('Share')} onClick={() => {}} />
-      )}
     </Container>
   </Space>
 )

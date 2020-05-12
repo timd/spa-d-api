@@ -2,7 +2,7 @@
   "processStage": {
     "title": {
       "en": "Where are you on your personal journey?",
-      "de": "Wo stehst Du aktuell in deinem Trennungsprozess?"
+      "de": "Wo stehst Du aktuell in Deinem Trennungsprozess?"
     },
     "options": [
       {
@@ -32,13 +32,21 @@
       {
         "id": "option-4",
         "title": {
-          "en": "My partner wants a divorce/filed for divorce",
-          "de": "Mein Partner möchte eine Scheidung / Mein Partner hat eine Scheidung eingereicht"
+          "en": "My partner wants a divorce",
+          "de": "Mein Partner möchte eine Scheidung"
         },
         "value": "split_up"
       },
       {
         "id": "option-5",
+        "title": {
+          "en": "My partner filed for divorce",
+          "de": "Mein Partner hat eine Scheidung eingereicht"
+        },
+        "value": "split_up"
+      },
+      {
+        "id": "option-6",
         "title": {
           "en": "We have separated already",
           "de": "Wir haben uns schon getrennt"
@@ -46,7 +54,7 @@
         "value": "getting_divorced"
       },
       {
-        "id": "option-6",
+        "id": "option-7",
         "title": {
           "en": "We are already living separated for a year",
           "de": "Wir leben schon seit einem Jahr getrennt"
@@ -54,7 +62,7 @@
         "value": "getting_divorced"
       },
       {
-        "id": "option-7",
+        "id": "option-8",
         "title": {
           "en": "I am in the middle of my divorce and waiting for the court to rule",
           "de": "Ich bin mitten in meiner Scheidung und warte darauf, dass das Gericht entscheidet"
@@ -68,8 +76,8 @@
   },
   "processAid": {
     "title": {
-      "en": "Whom have you consulted so far?",
-      "de": "Wer hat Dich bisher beraten?"
+      "en": "With whom have you been talking about this so far?",
+      "de": "Von wem hast Du Dir bis jetzt Tipps geholt?"
     },
     "options": [
       {
@@ -222,8 +230,8 @@
     "required": false,
     "showLabels": true,
     "title": {
-      "en": "How are these assets roughly distributed?",
-      "de": "Wie ungefähr sind die gemeinsamen Vermögenswerte verteilt?"
+      "en": "How are these assets roughly distributed into the following categories (optional)?",
+      "de": "Wie verteilen sich diese Vermögenswerte ungefähr auf die folgenden Kategorien (optional)?"
     },
     "tooltip": {
       "title": {
@@ -418,8 +426,8 @@
   "childrenAges": {
     "type": "list",
     "title": {
-      "en": "How old is he/she?",
-      "de": "Wie alt ist das Kind?"
+      "en": "How old are they / how old is he / she?",
+      "de": "Wie alt ist das Kind / sind die Kinder?"
     },
     "dynamic": {
       "dependency": "childrenCount",
@@ -435,14 +443,14 @@
   "childrenParentType": {
     "title": {
       "en": "Are you their..",
-      "de": "Bist du ihr... ?"
+      "de": "Bist Du... ?"
     },
     "options": [
       {
         "id": "option-1",
         "title": {
           "en": "Father",
-          "de": "Vater"
+          "de": "der Vater"
         },
         "value": "father"
       },
@@ -450,7 +458,7 @@
         "id": "option-2",
         "title": {
           "en": "Mother",
-          "de": "Mutter"
+          "de": "die Mutter"
         },
         "value": "mother"
       }

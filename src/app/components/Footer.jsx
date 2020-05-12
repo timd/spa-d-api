@@ -19,9 +19,15 @@ const Footer = ({ t }) => (
           </Hide>
           <Space mt={11}>
             <Flex justifyContent='space-between'>
-              <TextLink to='/imprint'>{t('Imprint')}</TextLink>
-              <TextLink to='/data-protection'>{t('Data Protection')}</TextLink>
-              <TextLink to='/conditions'>{t('Conditions')}</TextLink>
+              <TextLink to='/imprint' target='_blank'>
+                {t('Imprint')}
+              </TextLink>
+              <TextLink to='/data-protection' target='_blank'>
+                {t('Data Protection')}
+              </TextLink>
+              <TextLink to='/conditions' target='_blank'>
+                {t('Conditions')}
+              </TextLink>
             </Flex>
           </Space>
         </Flex>
