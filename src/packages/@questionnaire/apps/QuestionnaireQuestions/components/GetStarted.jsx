@@ -36,7 +36,7 @@ const GetStarted = ({
         <Checkbox
           checked={isPolicyAccepted}
           id='agree-policy'
-          label={<TermsCheckboxLabel anchorLabel={t('Privacy policy')} anchorURL='/privacy' />}
+          label={<TermsCheckboxLabel anchorLabel={t('Privacy policy')} anchorURL='/data-protection' />}
           onChange={toggleCheck('policy')}
         />
       </Space>
@@ -44,7 +44,7 @@ const GetStarted = ({
         <Checkbox
           checked={areTermsAccepted}
           id='agree-terms'
-          label={<TermsCheckboxLabel anchorLabel={t('Terms And Conditions')} anchorURL='/terms' />}
+          label={<TermsCheckboxLabel anchorLabel={t('Terms And Conditions')} anchorURL='/conditions' />}
           onChange={toggleCheck('termsAndConditions')}
         />
       </Space>
