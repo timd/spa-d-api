@@ -109,7 +109,9 @@
     "subtitle": "Hier kannst Du Deine zu erwartenden Kosten sowie Empfehlungen zu nächsten Schritten sehen."
   },
   "result": {
-    "teaser": "Schaue Dir Deine individuellen Empfehlungen an, die dich im Prozess weiterbringen."
+    "teaser": "Schaue Dir Deine individuellen Empfehlungen an, die dich im Prozess weiterbringen.",
+    "tooltip": "Einmalige Kosten sind Kosten für Anwälte und das Gericht. Die laufenden Kosten beschreiben nur möglich Unterhaltskosten für Kinder.",
+    "disclaimer": "* Diese Kosten basieren auf Deinen Angaben und sind nur eine Indikation. Eine Scheidung kann viele Folgekosten mit sich bringen."
   },
   "conditions": {
     "preAnchorCopy": "Hermit stimme ich den",

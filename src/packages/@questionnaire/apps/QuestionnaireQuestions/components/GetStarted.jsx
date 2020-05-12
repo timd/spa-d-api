@@ -35,7 +35,7 @@ const GetStarted = ({
       <Space mt={6}>
         <Checkbox
           checked={areTermsAccepted}
-          id='agree-policy'
+          id='agree-terms'
           label={
             <TermsCheckboxLabel
               preAnchorCopy={t('conditions.preAnchorCopy')}
@@ -44,13 +44,13 @@ const GetStarted = ({
               anchorURL='/conditions'
             />
           }
-          onChange={toggleCheck('policy')}
+          onChange={toggleCheck('termsAndConditions')}
         />
       </Space>
       <Space mt={2}>
         <Checkbox
           checked={isPolicyAccepted}
-          id='agree-terms'
+          id='agree-policy'
           label={
             <TermsCheckboxLabel
               preAnchorCopy={t('privacy.preAnchorCopy')}
@@ -59,7 +59,7 @@ const GetStarted = ({
               anchorURL='/data-protection'
             />
           }
-          onChange={toggleCheck('termsAndConditions')}
+          onChange={toggleCheck('policy')}
         />
       </Space>
 
