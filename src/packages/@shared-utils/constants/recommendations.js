@@ -33,7 +33,7 @@ export const recommendations = {
       title: 'Honest conclusion & legal advice',
       description: {
         en: "If you don't see a future your marriage, get a lawyer to explain the consequences",
-        de: 'Solltest Du keine Zukunft in Deiner Ehe sehen, lasse Dich von einem Anwalt über die Folgen aufklären',
+        de: 'Solltest Du keine Zukunft in Deiner Ehe sehen, lass Dich von einem Anwalt über die Folgen aufklären',
       },
       imgSrc: circleIconBrand,
       imgColor: 'brand',
@@ -70,7 +70,7 @@ export const recommendations = {
         en:
           'Before a divorce can be filed, you have to live separately from your partner for 1 year. This is the so-called separation year.',
         de:
-          'Bevor eine Scheidung eingereicht werden kann, musst du 1 Jahr von Deinem Partner / Deiner Partner getrennt leben. Hier handelt es sich um das sogenannte Trennungsjahr.',
+          'Bevor eine Scheidung eingereicht werden kann, musst Du 1 Jahr von Deinem Partner / Deiner Partner getrennt leben. Hier handelt es sich um das sogenannte Trennungsjahr.',
       },
       imgSrc: circleIconSecondary,
     },
@@ -164,7 +164,7 @@ export const recommendations = {
         en:
           'Inform your tax office and employer about the divorce, as the divorce may have an impact on your tax assessment.',
         de:
-          'Informiere dein Finanzamt und Arbeitgeber über die Scheidung, da die Scheidung gegebenenfalls Auswirkungen auf Deine steuerliche Veranlagung haben kann.',
+          'Informiere Dein Finanzamt und Arbeitgeber über die Scheidung, da die Scheidung gegebenenfalls Auswirkungen auf Deine steuerliche Veranlagung haben kann.',
       },
       imgSrc: circleIconBrand,
       imgColor: 'brand',

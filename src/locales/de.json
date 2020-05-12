@@ -115,12 +115,12 @@
     "journeytooltip": "Basierend auf deinen Angaben haben wir Dich in eine Phase eingeordnet. Klick einfach auf die anderen Phasen um zu sehen, was dahinter steckt."
   },
   "conditions": {
-    "preAnchorCopy": "Hermit stimme ich den",
+    "preAnchorCopy": "Hiermit stimme ich den",
     "postAnchorCopy": "zu",
     "anchorLabel": "AGB"
   },
   "privacy": {
-    "preAnchorCopy": "Hermit bestätige ich, dass ich die",
+    "preAnchorCopy": "Hiermit bestätige ich, dass ich die",
     "postAnchorCopy": "zur Kenntnis genommen habe.",
     "anchorLabel": "Datenschutzerklärung"
   }

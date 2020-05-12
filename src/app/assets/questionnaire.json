@@ -2,7 +2,7 @@
   "processStage": {
     "title": {
       "en": "Where are you on your personal journey?",
-      "de": "Wo stehst Du aktuell in deinem Trennungsprozess?"
+      "de": "Wo stehst Du aktuell in Deinem Trennungsprozess?"
     },
     "options": [
       {
@@ -77,7 +77,7 @@
   "processAid": {
     "title": {
       "en": "With whom have you been talking about this so far?",
-      "de": "Von wem hast du Dir bis jetzt Tipps geholt?"
+      "de": "Von wem hast Du Dir bis jetzt Tipps geholt?"
     },
     "options": [
       {
