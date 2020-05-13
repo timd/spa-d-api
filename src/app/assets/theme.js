@@ -315,7 +315,7 @@ const LANDING_CONTAINER = {
 }
 
 const ANCHOR = {
-  color: COLORS['brand-secondary'],
+  color: COLORS['brand-primary'],
   'font-family': FONTS.complementary,
   '&.anchor-bold': {
     'font-weight': `${fontWeights.bold}`,
