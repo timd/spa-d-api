@@ -18,5 +18,5 @@ export const logQuestionnaireAnswers = async data => {
     },
   })
 
-  return api.post('/prod/log', data)
+  return api.post('/prod/log/divorcy', data)
 }
