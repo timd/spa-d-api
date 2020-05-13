@@ -14,7 +14,7 @@ import ContentDE from '../assets/pages/privacy/content_de.md'
 const DataProtection = ({ t, i18n }) => (
   <>
     <HeaderBox alignSelf='center' mx='auto' p={12} width={{ xs: 1, md: 1 / 1.5 }}>
-      <Typography variant='h3'>{t('Data Protection')}</Typography>
+      <Typography variant='h3'>{t('Data Protection - Finleap GmbH')}</Typography>
     </HeaderBox>
     <DataProtectionBox alignSelf='center' mx='auto' p={12} width={{ xs: 1, md: 1 / 1.5 }}>
       <StaticPage content={i18n.language === 'de' ? ContentDE : ContentEN} />

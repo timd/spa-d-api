@@ -1,149 +1,157 @@
 ---
-title: "Privacy German"
-language: "en"
+title: 'Privacy English'
+language: 'de'
 ---
 
-## Introduction and general information
+## 1. Allgemeines
 
-Thank you for your interest in our website. The protection of your personal data is very important to us. Below you will find information on how we handle your data that is collected through your use of our website. Your data will be processed in accordance with the GDPR.
+Beim Betrieb dieser Webseite („**Webseite**“) und der Nutzung der über diese Webseite angebotenen finleap-Services werden personenbezogene Daten verarbeitet. Diese Datenschutzerklärung soll Sie als Webseitenbesucher und Nutzer der finleap-Services über die Art, den Umfang und den Zweck der Verarbeitung personenbezogener Daten informieren.
+Die in dieser Datenschutzerklärung verwendeten Begriffe (z.B. „personenbezogene Daten”, “Datenverarbeitung”, „pseudonym“ oder „anonym“) entsprechen den Definitionen der Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten, zum freien Datenverkehr und zur Aufhebung der Richtlinie 95/46/EG (Datenschutz-Grundverordnung) („DSGVO“), insbesondere denen des Artikel 4.
+Sie können jederzeit diese Datenschutzerklärung auf unserer Webseite <https://www.divorcy.de/data-protection> zugreifen.
+Verantwortliche für die Datenverarbeitung ist die finleap GmbH („**wir**“) mit Sitz in der Hardenbergstr. 32 10623 Berlin, Deutschland.
+Unsere Datenschutzbeauftragte ist die Intelliant GmbH, Berlin, Deutschland. Sie ist über die E-Mail-Adresse <privacy@finleap.com> zu erreichen.
 
-## Controller in terms of GDPR
+## 2. Datenverarbeitungen
 
-Gesund Zusammen gGmbH i.G.<br />
-Urbanstr. 71<br />
-10967 Berlin, Germany<br />
-media@gesund-zusammen.de<br />
-+49 (0) 30 609865290
+Die Art, der Umfang und der Zweck der Verarbeitung der personenbezogenen Daten richtet sich danach, welche finleap-Services genutzt werden.
 
-## Contact details of the Data Protection Officer
+### 2.1. Bereitstellung der Webseite
 
-PROLIANCE GmbH / www.datenschutzexperte.de<br />
-Data Protection Officer<br />
-Leopoldstr. 21, 80802 München<br />
-[datenschutzbeauftragter@datenschutzexperte.de](mailto:datenschutzbeauftragter@datenschutzexperte.de)
+Betroffenengruppe im Bezug zur Bereitstellung der Webseite sind alle Webseitenbesucher.
+Um die Webseite überhaupt verfügbar zu machen, grundlegenden Funktionen und den einwandfreien Betrieb zu ermöglichen, ist es technisch erforderlich, personenbezogene Daten zu verarbeiten. Dabei handelt es sich zwar grundsätzlich um Gerätedaten, mit diesen Daten kann aber möglicherweise der Bezug zum Webseitenbesucher hergestellt werden. So müssen z.B. die IP-Adressen der genutzten Endgeräte, Kennungen der genutzten Endgeräte, der Betriebssysteme und der Browser verarbeitet werden, um überhaupt eine Verbindung zwischen Endgerät und dem Server, auf dem die Webseite gehostet wird, herzustellen und die Inhalte im vorgesehenen Layout darzustellen. Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
 
-## Definitions
+#### 2.1.1. Usercentrics
 
-In principle, our privacy policy should be simple and understandable for everyone. For this reason, our privacy policy generally uses the official terms of the General Data Protection Regulation (GDPR). The official definitions are explained in Art. 4 GDPR.
+Wir nutzen zur Verwaltung und Umsetzung Ihrer Einwilligungen auf unserer Webseite die Consent Management Platform Usercentrics, von Usercentrics GmbH (Rosental 4, 80331 München, **„Usercentrics“**).
+Usercentrics ermöglicht uns die Einwilligung (eng. Consent) unserer Nutzer zur Datenverarbeitung und der Anwendung einzelner Drittanbieter-Services und verschiedener Web-Technologien auf der Webseite datenschutzkonform einzuholen, zu verwalten und zu dokumentieren.
+Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. c) DSGVO (rechtliche Verpflichtung).
 
-## Server-Logfiles
+#### 2.1.2. Google Web Fonts
 
-When you visit our website, it is technically necessary that data is transmitted to our web server via your internet browser. The following data is recorded during a running connection for communication between your internet browser and our web server:
+Wir nutzen sogenannte Web Fonts zur einheitlichen Darstellung von Schriftarten und nutzen dafür Google Web Fonts. Dieser Dienst wird von der Google LLC (1600 Amphitheatre Parkway Mountain View, CA 94043, USA, **„Google“**), erbracht. Google hat seinen Sitz in dem sogenannten Drittland USA, womit grundsätzlich ein der EU entsprechendes Datenschutzniveau fehlt. Google ist aber unter dem EU-U.S. Privacy Shield zertifiziert und bietet hierdurch ein angemessenes Datenschutzniveau gemäß Art. 45 DSGVO.
+Beim Aufruf einer Seite lädt der Browser des Webseitenbesuchers die benötigten Web Fonts in den Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Webseitenbesucher verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über die IP-Adresse unsere Webseite aufgerufen wurde. Die Nutzung von Google Web Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote.
+Wenn Ihr Browser Web Fonts nicht unterstützt, wird eine Standardschrift von Ihrem Computer genutzt.
+Weitere Informationen zu Google Web Fonts finden sie auf der [Google Web Fonts Webseite](https://fonts.google.com/about) und in der [Datenschutzerklärung von Google](https://policies.google.com/privacy?hl=de).
+Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
 
-- Visited domain<br />
-- The date and time of the request<br />
-- Page from which the file was requested<br />
-- Access status (file transferred, file not found, etc.)<br />
-- The web browser, system language, operating system and device type used<br />
-- IP address of the requesting computer<br />
-- The amount of data transferred<br />
+### 2.2. Sicherheit der Webseite
 
-We collect the listed data to ensure a smooth connection to the website and to enable a comfortable use of our website. In addition, the log file serves the purpose of evaluating system security and stability, as well as providing administrative functions. The legal basis for the temporary storage of data or log files is Art. 6 para. 1 (f) GDPR.
+Betroffenengruppe im Bezug zur Sicherheit der Webseite sind alle Webseitenbesucher.
+Um die Sicherheit der Webseite zu gewährleisten, werden die Daten über Zugriffe auf die Webseite als Server-Logfiles verarbeitet. Dabei handelt es sich zwar grundsätzlich um Gerätedaten, mit diesen Daten kann aber möglicherweise der Bezug zum Webseitenbesucher hergestellt werden. Diese Daten werden mit vorhandenen Angriffsvektoren abgeglichen und bei aufgedeckten Angriffen ausgewertet.
+Daten der Server-Logfiles sind: die besuchte Webseite, die Uhrzeit zum Zeitpunkt des Zugriffes, die Menge der gesendeten Daten in Byte, der Verweis, von welchem auf die Webseite gelangt wird, der verwendete Browser und das verwendete Betriebssystem.
+Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Bei den Server-Logfiles beträgt die Speicherdauer maximal 14 Tage. Müssen Daten aus Beweisgründen aufbewahrt werden, sind sie solange von der Löschung ausgenommen, bis der Vorfall endgültig geklärt ist.
+Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
 
-## Cookies
+### 2.3. Reichweitenmessung und Optimierung des Angebotes
 
-Our website uses so-called “cookies”. Cookies are small text files that are either temporarily stored on your end device for the duration of a session (session cookies) or permanently (permanent cookies). Session cookies are automatically deleted at the end of your visit. Permanent cookies remain stored on your terminal device until you delete them yourself or an automatic solution is provided by your web browser.
-Cookies have various functions. Many cookies are technically necessary, as certain website functions would not work without them (e.g. the shopping basket function or language settings). Other cookies are used to evaluate user behavior or display advertising.
+Betroffenengruppe im Bezug zur Reichweitemessung und Optimierung des Angebotes sind alle Webseitenbesucher.
+Diese Webseite verwendet Cookies zur Reichweitenmessung und Optimierung unseres Angebotes. Die Cookies werden entweder von uns oder von uns damit beauftragten Dritten an den Browser des Webseitenbesuchers übertragen und dort gespeichert. Dadurch ist eine Wiedererkennung des genutzten Gerätes potentiell möglich. Die auf diese Weise erhobenen Daten sind pseudonym. Daher ist uns und den beauftragten Dritten die Zuordnung der Daten zum Webseitenbesucher nicht möglich. Die Daten werden auch nicht gemeinsam mit sonstigen personenbezogenen Daten der Webseitenbesucher gespeichert. Teilweise werden die Daten vor der Nutzung anonymisiert, so dass der Rückschluss auf den Webseitenbesucher insgesamt unmöglich wird.
+Diese Cookies werden erst gesetzt, sobald Sie uns dafür Ihre Einwilligung erteilt haben. Zur Erteilung der Einwilligung stellen wir Ihnen zu Beginn des Webseitenbesuches ein Kommunikationsfeld zur Verfügung.
+Erteilte Einwilligungen können jederzeit mit Wirkung für die Zukunft im Privacy Center auf unserer Webseite widerrufen werden. Der Link befindet sich [hier](https://www.divorcy.de/#uc-central-modal-show). Die gesetzten Cookies werden daraufhin gelöscht.
+Es gibt zwei verschiedene Cookie-Kategorien bei der Webseite: Essentiell (diese Technologien sind erforderlich, um die Kernfunktionalität der Webseite zu aktivieren) und Funktionell (diese Technologien ermöglichen es uns, die Nutzung der Webseite zu analysieren, um die Leistung zu messen und zu verbessern).
+Essentielle Cookies sind für den Betrieb der Website notwendig und bedürfen keiner Einwilligung. Rechtsgrundlage für die Verarbeitung ist daher Art. 6 Abs. 1 lit. b) DSGVO (Vertragserfüllung).
+Rechtsgrundlage für die Verarbeitung der funktionellen Cookies ist Art. 6 Abs. 1 lit. a) DSGVO (Einwilligung). Folgende Drittanbieter werden eingesetzt; diese Informationen sind für Sie nur relevant, sofern Sie die entsprechende Einwilligung erteilt haben:
 
-Technically necessary cookies are stored on the basis of Art. 6 para. 1 (f) GDPR. We have a legitimate interest in the storage of cookies for the technically error-free and optimised presentation of our services. Other cookies are only stored with your consent on the basis of Art. 6 para. 1 (a) GDPR. This consent can be withdrawn at any time for the future. The legal basis may also result from Art. 6 para. 1 (b) GDPR if the processing is necessary for the performance of a contract to which the data subject is a party or for the implementation of pre-contractual measures taken at the request of the data subject.
+#### 2.3.1. Google Analytics
 
-Insofar as cookies are used for analysis purposes, we will inform you of this separately within the framework of this privacy policy and obtain your consent.
+Wir nutzen den Dienst Google Analytics von Google (siehe oben). Google hat seinen Sitz in dem sogenannten Drittland USA, womit grundsätzlich ein der EU entsprechendes Datenschutzniveau fehlt. Google ist aber unter dem EU-U.S. Privacy Shield zertifiziert und bietet hierdurch ein angemessenes Datenschutzniveau gemäß Art. 45 DSGVO.
+Google Analytics verwendet Cookies. Die durch diese Cookies gesammelten Informationen werden im Regelfall an einen Google-Server in den USA gesandt und dort gespeichert. Auf dieser Webseite greift die IP-Anonymisierung. Die IP-Adresse der Webseitenbesucher wird gekürzt. Nur in Einzelfällen wird die IP-Adresse zunächst ungekürzt in die USA an einen Server von Google übertragen und dort gekürzt. Durch diese Kürzung entfällt der Personenbezug der IP-Adresse. Die vom Browser übermittelte IP- Adresse wird nicht mit anderen von Google gespeicherten Daten kombiniert.
+Im Rahmen der Vereinbarung zur Auftragsdatenvereinbarung, welche der Webseitenbetreiber mit dem Google geschlossen hat, erstellt diese mithilfe der gesammelten Informationen eine Auswertung der Webseitennutzung und der Webseitenaktivität und erbringt verbundene Dienstleistungen.
+Die von Google im Auftrag des Webseitenbetreibers erhobenen Daten werden genutzt, um die Nutzung des Online-Angebots durch die einzelnen Nutzer auswerten zu können, z. B. um Reports über die Aktivität auf der Webseite zu erstellen und um unser Online-Angebot zu verbessern.
+Mehr Informationen finden Sie in der [Datenschutzerklärung von Google](https://policies.google.com/privacy?hl=de).
+Das im Falle Ihrer Einwilligung in Ihrem Browser gespeicherte Cookie wird nach spätestens 90 Tagen vollständig gelöscht.
 
-Either do it directly via our [Cookie Settings](#uc-central-modal-show) option or you can set your browser to
+#### 2.3.2. Hotjar
 
-- be informed about the setting of cookies,
-- only allow cookies in individual cases,
-- exclude the acceptance of cookies for certain cases or generally,
-- activate the automatic deletion of cookies when the browser is closed.
+Wir nutzen das Webseite Heatmap Tool Hotjar von der Hotjar Limited (Level 2, St Julian’s Business Centre, 3, Elia Zammit Street, St Julian’s STJ 1000, Malta, **„Hotjar“**).
+Das nutzen wir, um die Bedürfnisse der Webseitenbesucher besser zu verstehen und das Angebot auf dieser Webseite zu optimieren. Mithilfe der Technologie von Hotjar bekommen wir ein besseres Verständnis von den Erfahrungen der Webseitenbesucher (z.B. wieviel Zeit sie auf welchen Seiten verbringen, welche Links sie anklicken, was sie mögen und was nicht etc.) und das hilft uns, das Angebot am Feedback der Webseitenbesucher auszurichten.
+Hotjar arbeitet mit Cookies und anderen Technologien, um Informationen über das Verhalten der Webseitenbesucher und über ihre Endgeräte zu sammeln (insbesondere IP Adresse des Geräts (wird nur in anonymisierter Form erfasst und gespeichert), Bildschirmgröße, Gerätetyp (Unique Device Identifiers), Informationen über den verwendeten Browser, Standort (nur Land), zum Anzeigen unserer Webseite bevorzugte Sprache). Hotjar speichert diese Informationen in einem pseudonymisierten Nutzerprofil. Die Informationen werden weder von Hotjar noch von uns zur Identifizierung einzelner Nutzer verwendet oder mit weiteren Daten über einzelne Nutzer zusammengeführt.
+Weitere Informationen finden Sie in der [Datenschutzerklärung von Hotjar](https://www.hotjar.com/legal/policies/privacy/).
+Als Webseitenbesucher können Sie der Speicherung eines Nutzerprofils und von Informationen über Ihren Besuch auf unserer Webseite durch Hotjar sowie dem Setzen von Hotjar Tracking Cookies auf anderen Webseitenn widersprechen, wenn Sie diesen [Opt-Out-Link](https://www.hotjar.com/legal/compliance/opt-out) anklicken.
+Das im Falle Ihrer Einwilligung in Ihrem Browser gespeicherte Cookie wird nach spätestens 365 Tagen vollständig gelöscht.
 
-The cookie settings can be managed under the following links for each browser:
+### 2.4. Newsletter
 
-- [Google Chrome](http://support.google.com/chrome/bin/answer.py?hl=de&hlrm=en&answer=95647)
-- [Mozilla Firefox](https://support.mozilla.org/de/kb/cookies-erlauben-und-ablehnen)
-- [Edge (Microsoft)](http://windows.microsoft.com/de-DE/windows-vista/Block-or-allow-cookies)<
-- [Safari](https://support.apple.com/de-de/guide/safari/sfri11471/mac)
-- [Opera](https://help.opera.com/en/latest/web-preferences/#cookies)
+Betroffenengruppe im Bezug zum Newsletterabonnement sind alle Abonnenten.
+Über unsere Webseite kann der Divorcy-Newsletter bestellt werden. Dabei handelt es sich um einen eigenen, kostenlosen Informationsservice, der unabhängig von einer bestehenden Kundenbeziehung zu finleap in Anspruch genommen werden kann.
+Dadurch erhalten die Abonnenten regelmäßig per E-Mail Informationen zu aktuellen Aktionen oder Veranstaltungen in Form des Newsletters von uns. Für den Newsletter-Service benötigen wir die E-Mail-Adresse, um den Newsletter zu versenden sowie den Vor- und Nachnamen, um den Besteller persönlich ansprechen zu können und Missbrauch zu vermeiden. Nach der Registrierung für den Newsletter erhält der Abonnent eine E-Mail. Diese enthält einen Link, mit dem die Anmeldung bestätigt werden muss. Wir versenden den Newsletter erst nach erfolgter Aktivierung des Bestätigungslinks (Doppel-Opt-In-Verfahren).
+Abonneten können den Newsletter jederzeit abbestellen. Jeder Newsletter enthält Informationen darüber, wie der Newsletter mit Wirkung für die Zukunft abbestellt werden kann. Alternativ kann die Abbestellung auch jederzeit per E-Mail erfolgen.
+Wir nutzen zur Bereitstellung, Verwaltung und zum Versand der Newsletter den Dienst Mailchimp von The Rocket Science Group LLC d/b/a MailChimp (675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA, 30308, USA, **„MailChimp“**). MailChimp hat seinen Sitz in dem sogenannten Drittland USA, womit grundsätzlich ein der EU entsprechendes Datenschutzniveau fehlt. MailChimp ist aber unter dem EU-U.S. Privacy Shield zertifiziert und bietet hierdurch ein angemessenes Datenschutzniveau gemäß Art. 45 DSGVO.
+Dieser Service ermöglicht es uns, intern eine Datenbank mit E-Mail-Kontakten zu verwalten, um mit Bestellern per E-Mail zu kommunizieren. Der Dienst verwaltet Informationen darüber, wann eine E-Mail vom Besteller gelesen wurde und dieser mit eingehenden E-Mail-Nachrichten interagiert hat, z.B. durch Anklicken der in der E-Mail enthaltenen Links. Dies geschieht durch sogenannte Web-Beacons, auch Tracking-Pixel genannt. Dies sind kleine Bilddateien, die es uns ermöglichen, das Nutzerverhalten zu bewerten.
+MailChimp wiederum übermittelt diese Daten an externe Dienstleister, um deren Dienste anbieten zu können. MailChimp verarbeitet alle Daten in Übereinstimmung mit den europäischen Datenschutzstandards.
+Sie können diesem Tracking jederzeit widersprechen, indem Sie sich wie oben beschrieben vom Newsletter abmelden. Die oben beschriebene Auswertung durch MailChimp ist auch dann nicht möglich, wenn Sie die Anzeige von Bildern in Ihrem E-Mail-Programm standardmäßig deaktiviert haben. In diesem Fall wird der Newsletter jedoch nicht vollständig angezeigt und Sie können nicht alle Funktionen nutzen.
+Weitere Informationen finden Sie in der [Datenschutzerklärung von MailChimp](https://mailchimp.com/legal/privacy/).
+Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. a) DSGVO (Einwilligung).
 
-You can also manage cookies of many companies and functions used for advertising individually. To do this, use the appropriate user tools, available at [https://www.aboutads.info/choices/](https://www.aboutads.info/choices/) or [http://www.youronlinechoices.com/uk/your-ad-choices](http://www.youronlinechoices.com/uk/your-ad-choices).
-Most browsers also offer a so-called "do-not-track function". When this feature is enabled, the browser tells ad networks, websites, and applications that you do not want to be "tracked" for behavioral advertising and the like.
+## 3. Divorcy Dienstleistungen
 
-For information and instructions on how to edit this feature, please refer to the links below, depending on your browser provider:
+Betroffenengruppe im Bezug zum Divorcy Dienstleistungen sind unsere Kunden.
+finleap bietet eine Plattform, die es Nutzern ermöglicht, die Kosten einer Scheidung zu berechnen. Um diese Dienstleistung zu erbringen, werden verschiedenen personenbezogenen Daten verarbeitet. Diese Verarbeitung ist notwendig, um die Kosten einer Scheidung zu berechnen. Deswegen können unsere Dienstleistungen ohne diese personenbezogenen Daten nicht anbietet werden. Wir nutzen diese personenbezogenen Daten ausschließlich zum Zwecke der Erbringung der vereinbarten Dienstleistungen. Wir speichern personenbezogenen Daten gemäß unseren rechtlichen Verpflichtungen als Verantwortliche. Für statistische Zwecken werden nur anonymisierten Daten verarbeitet.
+Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
 
-- [Google Chrome](https://support.google.com/chrome/answer/2790761?co=GENIE.Platform%3DDesktop&hl=de)
-- [Mozilla Firefox](https://www.mozilla.org/de/firefox/dnt/)
-- [Edge (Microsoft)](https://support.microsoft.com/de-de/help/17288/windows-internet-explorer-11-use-do-not-track)
-- [Safari](https://support.apple.com/de-de/guide/safari/sfri40732/13.0/mac/10.15)
-- [Opera](http://help.opera.com/Windows/12.10/de/notrack.html)
+## 4. Rechte des Nutzers gegenüber dem Verantwortlichen
 
-Additionally, you can prevent the loading of so-called scripts by default. "NoScript" allows the execution of JavaScripts, Java and other plug-ins only at trusted domains of your choice. Information and instructions on how to edit this function can be obtained from the provider of your browser (e.g. for Mozilla Firefox at: [https://addons.mozilla.org/de/firefox/addon/noscript/](https://addons.mozilla.org/de/firefox/addon/noscript/)).
+Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener i.S.d. DSGVO und es stehen Ihnen gemäß der Artikel 15 bis 21 DSGVO nachfolgend aufgeführte Rechte gegenüber dem Verantwortlichen zu. Um von Ihren Rechten Gebrauch zu machen oder um weitere Informationen zum Datenschutz bei finleap GmbH zu erhalten, wenden Sie sich bitte an unseren Datenschutzbeauftragten. Senden Sie dazu eine E-Mail an <privacy@finleap.com>.
 
-Please note that if you disable cookies, the functionality of our website may be limited.
+### 4.1. Auskunftsrecht
 
-## Contact form
+In Übereinstimmung mit Art. 15 DSGVO haben Sie das Recht, vom Verantwortlichen eine Bestätigung darüber zu verlangen, ob personenbezogene Daten von Ihnen verarbeitet werden. Ist dies der Fall, haben Sie das Recht auf eine kostenlose Auskunft über alle Ihrer personenbezogenen Daten, die finleap GmbH verarbeitet, sowie das Recht auf eine Kopie dieser Daten.
+Darüber hinaus haben Sie gemäß Art. 19 Abs. 2 DSGVO das Recht, den Verantwortlichen aufzufordern, Sie über alle Empfänger zu informieren, an die Ihre personenbezogenen Daten weitergegeben wurden.
 
-If you send us requests via contact form or email, your details from the enquiry form or email, including the contact data you have provided there, will be stored for the purpose of processing the request and in the event of follow-up questions. You are required to provide an email address to contact us. Your name and telephone number are optional. Under no circumstances will we pass on this data without your consent. The legal basis for processing the data is our legitimate interest in responding to your request pursuant to Art. 6 para. 1(f) GDPR and, if applicable, Art. 6 para. 1(b) GDPR, provided that your request is aimed at concluding a contract. Your data will be deleted after final processing of your request, provided that there are no legal storage obligations to the contrary. You can object to the processing of your personal data at any time in the case of Art. 6 para. 1(f) GDPR.
+### 4.2. Berichtigung Ihrer Daten
 
-## Google Analytics
+Gemäß Art. 16 DSGVO haben Sie das Recht, die Berichtigung und/oder Ergänzung Ihrer personenbezogenen Daten zu verlangen, sollten diese falsch oder unvollständig sein.
 
-Our website uses Google Analytics, an internet analysis service provided by Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland ("Google"). Google Analytics uses so-called "cookies" and web beacons. The information generated in relation to the use of this website is transferred by default to a Google server in the USA and stored there. We use Google Analytics only with IP anonymization enabled. This means that Google will reduce the IP address of users within Member States of the European Union or in other signatory states to the Agreement on the European Economic Area, which may exclude any personal relationship. Google Inc., based in the USA, is certified for the US-European data protection agreement "Privacy Shield", which guarantees compliance with the data protection level applicable in the EU. Processing is carried out in accordance with Art. 6 para. 1(a) GDPR on the basis of your given consent.
-You can prevent cookies from being saved by adjusting the settings of your browser software accordingly. However, we must point out that in this case you will not be able to use all functions of this website without restrictions. You can also prevent Google from collecting the data generated by the cookie and analysing your use of the website (including your IP address) and from processing this data by Google by downloading and installing the browser plug-in available at [https://tools.google.com/dlpage/gaoptout?hl=en](https://tools.google.com/dlpage/gaoptout?hl=en)
+### 4.3. Löschung von Daten
 
-You can opt out to Google Analytics by going in Cookiebanner settings (fingerprint).
-Information on the handling of user data at Google Analytics can be found in Google's privacy policy:
-[https://support.google.com/analytics/answer/6004245?hl=en](https://support.google.com/analytics/answer/6004245?hl=en)
+Sofern Ihr Wunsch nicht mit einer gesetzlichen Pflicht zur Aufbewahrung von Daten (z. B. Vorratsdatenspeicherung) kollidiert, haben Sie gemäß Art. 17 DSGVO ein Anrecht auf Löschung Ihrer personenbezogenen Daten. Vom Verantwortlichen gespeicherte Daten werden, sollten sie für ihre Zweckbestimmung nicht mehr vonnöten sein und nicht unter gesetzliche Aufbewahrungsfristen fallen, gelöscht. Falls eine Löschung nicht durchgeführt werden kann, da die Daten für zulässige gesetzliche Zwecke erforderlich sind, erfolgt eine Einschränkung der Datenverarbeitung. In diesem Fall werden die Daten gesperrt und nicht für andere Zwecke verarbeitet. Das Löschen Ihrer Daten hat zur Folge, dass die Dienste von finleap GmbH nicht mehr in vollem Umfang oder gar nicht mehr genutzt werden können.
+Der Verantwortliche ist verpflichtet, personenbezogene Daten unverzüglich zu löschen, wenn eine Verarbeitung nicht erforderlich ist und einer der folgenden Gründe vorliegt:
+Die personenbezogenen Daten sind für die Zwecke, für die sie erhoben oder anderweitig verarbeitet wurden, nicht mehr erforderlich;
+Sie haben Ihre der Verarbeitung zugrunde liegende Einwilligung widerrufen, und es gibt keine andere Rechtsgrundlage für die Verarbeitung;
+Sie haben gegen die Verarbeitung gemäß Art. 21 Abs. 1 DSGVO widersprochen und es gibt keine zwingenden berechtigten Verarbeitungsgründe oder Sie haben gegen die Verarbeitung gemäß Art. 21 Abs. 2 DSGVO widersprochen;
+Die personenbezogenen Daten wurden unrechtmäßig verarbeitet;
+Die Löschung Ihrer personenbezogenen Daten ist zur Erfüllung einer gesetzlichen Verpflichtung nach deutschem oder europäischem Recht erforderlich.
+Wenn wir Ihre personenbezogenen Daten veröffentlicht haben und zur Löschung verpflichtet sind, werden wir unter Berücksichtigung der verfügbaren Technologie- und Implementierungskosten geeignete Maßnahmen ergreifen, um unsere Datenverarbeiter, die Ihre personenbezogenen Daten verarbeiten, darüber zu informieren, dass Sie aufgefordert haben, alle Verknüpfungen zu Ihren personenbezogenen Daten oder Kopien oder Vervielfältigungen Ihrer personenbezogenen Daten zu löschen. Die Maßnahmen werden nur insoweit getroffen, als eine Verarbeitung nicht erforderlich ist.
 
-## Goolge Web Fonts
+### 4.4. Einschränkung der Verarbeitung
 
-This site uses web fonts provided by Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland ("Google") to uniformly display fonts. Google Web Fonts allows us to use external fonts, so-called Google Fonts. When you visit our website, the required Google Font is loaded from your web browser into your browser cache to display texts and fonts correctly. This is necessary so that your browser can also show an optically improved representation of our texts. If your browser does not support this feature, your computer will use a standard font for display. These web fonts are integrated by a server call, usually a Google server in the USA. This transfers to the server which page of our website you have visited. Google also stores the IP address of the browser of the visitor's terminal device.
-We use Google Web Fonts for optimization purposes, in particular to improve the use of our Internet presence for you and to make its design more user-friendly. This is also our legitimate interest pursuant to Art. 6 para. 1(f) GDPR.
-Google has signed and certified itself under the Privacy Shield Agreement between the European Union and the USA. By doing so, Google undertakes to comply with the standards and regulations of European data protection law. Further information can be found at: https://www.privacyshield.gov/participant?id=a2zt00000000001L5AAI&status=Active
-Further information on data protection can be found in Google's data protection declaration:
-[http://www.google.de/intl/de/policies/privacy](http://www.google.de/intl/de/policies/privacy)
-For more information about Google Web Fonts, visit
-[http://www.google.com/webfonts/](http://www.google.com/webfonts/),[https://developers.google.com/fonts/faq?hl=en-GB&csw=1](https://developers.google.com/fonts/faq?hl=en-GB&csw=1)
-and [https://www.google.com/fonts#AboutPlace:about](https://www.google.com/fonts#AboutPlace:about).
+In Übereinstimmung mit Art. 18 DSGVO haben Sie das Recht, den Verantwortlichen aufzufordern, die Verarbeitung einzuschränken, wenn eine der folgenden Bedingungen erfüllt ist:
+Sie haben die Richtigkeit Ihrer personenbezogenen Daten angefochten. Die Verarbeitung wird für einen Zeitraum eingeschränkt. der es dem Verantwortlichen ermöglicht, die Richtigkeit Ihrer personenbezogenen Daten zu überprüfen;
+Die Verarbeitung ist rechtswidrig und Sie haben sich geweigert, Ihre personenbezogenen Daten zu löschen und stattdessen eine Einschränkung der Verwendung Ihrer personenbezogenen Daten beantragt;
+Der Verantwortliche benötigt Ihre personenbezogenen Daten nicht mehr für die Verarbeitung, sondern zur Durchsetzung, Ausübung oder Verteidigung von Rechtsansprüchen;
+Sie haben der Verarbeitung gemäß Art. 21 Abs. 1 DSGVO widersprochen und es ist noch nicht klar, ob die berechtigten Interessen des Verantwortlichen die Ihren überwiegen.
+Wurde die Verarbeitung personenbezogener Daten gemäß den vorstehenden Bedingungen eingeschränkt, so darf die Verarbeitung dieser Daten – abgesehen von der Speicherung – nur mit Ihrer Zustimmung oder zum Zwecke der Geltendmachung, Ausübung oder Verteidigung von Rechten oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Union oder eines Mitgliedstaats erfolgen.
+Wenn die Verarbeitung eingeschränkt ist, wir informieren Sie, bevor die Einschränkung aufgehoben wird.
 
-## Data transfer and recipient
+### 4.5. Datenübertragbarkeit
 
-We do not sell your personal data to third parties. Your personal data will not be passed on to third parties unless
+Gemäß Art. 20 DSGVO haben Sie das Recht, Ihre personenbezogenen Daten, die Sie dem Verantwortlichen zur Verfügung gestellt haben, in einem strukturierten, gebräuchlichen und maschinenlesbaren Format zu erhalten.
+Darüber hinaus haben Sie das Recht, Ihre personenbezogenen Daten selbst oder durch uns direkt an einen anderen Verantwortlichen zu übermitteln, soweit dies technisch möglich ist und die Rechte und Freiheiten Dritter nicht beeinträchtigt werden.
 
-- we have explicitly indicated this in the description of the respective data processing,
-- you have given your explicit consent in accordance to Art. 6 para. 1(a) GDPR,
-- the disclosure pursuant to Art. 6 para. 1(f) GDPR is necessary to assert, exercise or defend legal claims and there is no reason to assume that you have an outright interest worthy of protection in not disclosing your data,
-- that a legal obligation exists for the transfer pursuant to Art. 6 para. 1(c) GDPR and
-- this is required under Art. 6 para. 1(b) GDPR for the processing of contractual relationships with you.
-  We also use external service providers, which we have carefully selected and commissioned in writing, to carry out our services. They are bound by our instructions and are regularly checked by us. With which we have concluded order processing contracts in accordance with Art. 28 GDPR, if necessary. These are service providers for web hosting, sending e-mails and maintaining our IT systems, etc. The service providers will not pass this data on to third parties.
+### 4.6. Widerspruchsrecht
 
-## Data security
+Sie haben gemäß Art. 21 DSGVO das Recht, aus Gründen, die sich aus ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung der Sie betreffenden personenbezogenen Daten, die aufgrund von Art. 6 Abs. 1 lit. e) oder f) DSGVO erfolgt, Widerspruch einzulegen.
+Wenn Sie eine Berichtigung, Sperrung, Löschung oder Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten wünschen oder Fragen bzgl. der Erhebung, Verarbeitung oder Verwendung Ihrer personenbezogenen Daten haben oder erteilte Einwilligungen widerrufen möchten, wenden Sie sich bitte an folgende E-Mail-Adresse: <privacy@finleap.com>.
 
-In accordance with Art. 32 GDPR and having regard to the latest state of the art, the costs of implementation, the type, scope, circumstances and purpose of the processing as well as various probabilities of occurrence and severity of risks for rights and freedoms for natural per-sons, we take suitable technical and organizational measures in order to guarantee an appropriate level of protection. This website uses SSL-encryption for safety reasons and in order to secure the transfer of confidential content.
+### 4.7. Widerruf Ihrer Einwilligung
 
-## Storage period of personal data
+Sie haben das Recht, Ihre Einwilligung in die Verarbeitung Ihrer personenbezogenen Daten jederzeit zu widerrufen.
+Dazu genügt eine E-Mail an <privacy@finleap.com>.
 
-The duration of the storage of personal data is determined by the relevant legal retention periods (e.g. from commercial law and tax law). After expiry of the respective period, the corresponding data is routinely deleted. If data is necessary for contract fulfilment or contract initiation, or if we have a legitimate interest in further storage, the data will be deleted if it is no longer necessary for these purposes or if you make use of your right of revocation or objection.
+## 5. Einreichung einer Beschwerde bei einer Aufsichtsbehörde
 
-## Your rights
+Schließlich, gemäß Art. 77 DSGVO, haben Sie das Recht, eine Beschwerde bei einer für den Verantwortlichen zuständigen Aufsichtsbehörde einzureichen.
 
-In the following section you will find information on the rights of data subjects which are granted to you by the current data protection laws with regard to the controller of the processing of your personal data:
-The right to request information about your personal data processed by us in accordance with Art. 15 GDPR. In particular, you may request information about the purposes of processing, the category of personal data, the categories of recipients to whom your data has been or will be disclosed, the planned storage period, the existence of a right to rectification, deletion, restriction of processing or objection, the existence of a right of complaint, the origin of your da-ta, if they have not been collected by us, and the existence of automated decision-making including profiling and, if applicable, meaningful information regarding their details.
-The right to immediately request the correction of incorrect or complete personal data stored by us in accordance with Art. 16 GDPR.
-The right to request the deletion of your personal data stored by us in accordance with Art. 17 GDPR, unless the processing is necessary to exercise the right to freedom of expression and information, to fulfil a legal obligation, for reasons of public interest or to assert, exercise or defend legal claims.
-The right, pursuant to Art. 18 GDPR, to demand the restriction of the processing of your personal data if the accuracy of the data is disputed by you, the processing is unlawful, but you refuse to have it deleted and we no longer need the data, but you need it to assert, exercise or defend legal claims or you have filed an objection against the processing pursuant to Art. 21 GDPR.
-The right to receive your personal data that you have provided to us in a structured, current and machine-readable format or to request its transfer to another person responsible in accordance with Art. 20 GDPR.
-The right to complain to a supervisory authority pursuant to Art. 77 GDPR. As a rule, you can contact the supervisory authority of the federal state in which we have our registered office or, if applicable, that of your usual place of work or usual residence.
-The right to withdraw consent granted pursuant to Art. 7 para. 3 GDPR: You have the right to withdraw consent to the processing of data once granted at any time with effect for the future. In the event of withdrawal, we will delete the data concerned without delay, unless further processing can be based on a legal basis for processing without consent. The withdrawal of consent shall not affect the legality of the processing carried out on the basis of the consent until withdrawal;
+Berliner Beauftragte für Datenschutz und Informationsfreiheit
+Friedrichstr. 219
+Besuchereingang: Puttkamerstr. 16 – 18
+10969 Berlin, Deutschland
+Telefon: 030 13889-0
+E-Mail: mailbox@datenschutz-berlin.de
+Internet: www.datenschutz-berlin.de
 
-## Right of objection
+## 6. Änderungen an unserer Datenschutzerklärung
 
-**If your personal data is processed by us on the basis of legitimate interests pursuant to Art. 6 para. 1(f) GDPR, you have the right to object to the processing of your personal data in accordance with Art. 21 GDPR, insofar as this is for reasons resulting from your particular situation. If the objection is directed against the processing of personal data for the purpose of direct marketing, you have a general right of objection without the requirement to indicate a special situation.**
-If you would like to make use of your right of withdrawal or objection, simply send an email to media@gesund-zussammen.de.
+Wir behalten uns das Recht vor, diese Datenschutzerklärung im Rahmen der gesetzlichen Möglichkeiten jederzeit zu ändern.
 
-## External links
-
-On our website Facebook, Twitter, YouTube und Invision is solely embedded as a link to the respective service. Furthermore, we refer from our website to further websites belonging to us. After clicking on the embedded text/image-link you will be directed to the website of the respective provider. User information will be only transferred after the redirection to the respective provider. Information regarding the use of your personal data through the use of the website can be found in the privacy policies of the visited websites.
-
-## Subject to alterations
-
-We reserve the right to change this privacy policy at any time in accordance with the law. In this way, we can adapt it to current legal requirements and take changes in our services into account, e.g. when introducing new services. The most current version applies to your visit.
-
-Status of this privacy policy: 01.04.2020
+Aktualisiert: Mai 2020.

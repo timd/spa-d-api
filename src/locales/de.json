@@ -74,6 +74,7 @@
   "Imprint": "Impressum",
   "Contact": "Kontakt",
   "Data Protection": "Datenschutzerklärung",
+  "Data Protection – finleap GmbH": "Datenschutzerklärung – finleap GmbH",
   "Conditions": "Geschäftsbedingungen",
   "About us": "Über uns",
   "Others": "Andere",
@@ -89,7 +90,7 @@
   "I'm here for helping you get overview further process!": "Ich helfe Dir einen guten Überblick über den Scheidungsprozess zu bekommen.",
   "* We use all information very discretly": "* Alle Informationen werden diskret behandelt",
   "hero": {
-    "title": "Divorcy hilft Dir bei Deiner Scheidung und gibt Dir einen Überblick aller Kosten",
+    "title": "Divorcy hilft Dir deine Scheidung zu planen und gibt Dir einen Überblick möglicher Kosten",
     "subtitle": "Geschieden zu werden macht keinen Spaß! Divorcy hilft Dir dabei kluge und schnelle Entscheidungen zu treffen. Damit Du dich auf Deine  Zukunft konzentrieren kannst - nicht auf die Vergangenheit!",
     "button": "Los geht’s!"
   },
