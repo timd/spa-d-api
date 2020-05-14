@@ -8,7 +8,7 @@ language: 'en'
 finleap GmbH<br />
 Hardenbergstraße 32<br />
 10623 Berlin, Germany<br />
-Email: …
+Email: kontakt@divorcy.de
 
 Handelsregister: Amtsgericht Charlottenburg HRB 159534 B<br />
 USt.-Ident-Nr.: DE296042460
