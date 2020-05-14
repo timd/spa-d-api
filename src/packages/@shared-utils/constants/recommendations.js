@@ -40,8 +40,8 @@ export const recommendations = {
       anchor: {
         URL: 'https://www.anwalt24.de/',
         label: {
-          de: 'Hier kannnst Du nach einem Anwalt suchen',
-          en: '[EN] Hier kannnst du nach einem Anwalt suchen',
+          de: 'Hier kannst Du nach einem Anwalt suchen',
+          en: '[EN] Hier kannst du nach einem Anwalt suchen',
         },
       },
     },
@@ -58,8 +58,8 @@ export const recommendations = {
       anchor: {
         URL: 'https://www.anwalt24.de/',
         label: {
-          de: 'Hier kannnst Du nach einem Anwalt suchen',
-          en: '[EN] Hier kannnst du nach einem Anwalt suchen',
+          de: 'Hier kannst Du nach einem Anwalt suchen',
+          en: '[EN] Hier kannst du nach einem Anwalt suchen',
         },
       },
     },
@@ -101,8 +101,8 @@ export const recommendations = {
       anchor: {
         URL: 'https://www.anwalt24.de/',
         label: {
-          de: 'Hier kannnst Du nach einem Anwalt suchen',
-          en: '[EN] Hier kannnst du nach einem Anwalt suchen',
+          de: 'Hier kannst Du nach einem Anwalt suchen',
+          en: '[EN] Hier kannst du nach einem Anwalt suchen',
         },
       },
     },

@@ -1,6 +1,6 @@
 {
   "[EN] Hier kannst Du nach einem Ansprechpartner suchen": "Hier kannst Du nach einem Ansprechpartner suchen",
-  "[EN] Hier kannnst Du nach einem Anwalt suchen": "Hier kannnst Du nach einem Anwalt suchen",
+  "[EN] Hier kannst Du nach einem Anwalt suchen": "Hier kannnst Du nach einem Anwalt suchen",
   "[EN] Schaue hier nach möglichen sinnvollen Versicherungen": "Schaue hier nach möglichen sinnvollen Versicherungen",
   "Professional Advice": "Professionelle Beratung",
   "Seek marriage counseling now. Ideally together with your partner.": "Suche jetzt eine Eheberatung auf. Am besten gemeinsam mit deinemPartner/deiner Partnerin.",
@@ -37,7 +37,7 @@
   "Check what to do next": "Nächste Schritte zeigen",
   "Send me the result": "Sende mir die Ergebnisse",
   "What's next": "Was kommt als Nächstes?",
-  "After assessment we recommends some following steps that can help you to process further...": "Schaue Dir Deine  individuellen Empfehlungen an, die dich im Prozess weiterbringen.",
+  "After assessment we recommends some following steps that can help you to process further...": "Schaue Dir Deine individuellen Empfehlungen an, die dich im Prozess weiterbringen.",
   "Speak with a lawyer": "Sprich mit einem Anwalt",
   "Collect the documents": "Sammel Deine Dokumente",
   "Collect the following information": "Stell die folgenen Informationen zusammen",
@@ -90,8 +90,8 @@
   "I'm here for helping you get overview further process!": "Ich helfe Dir einen guten Überblick über den Scheidungsprozess zu bekommen.",
   "* We use all information very discretly": "* Alle Informationen werden diskret behandelt",
   "hero": {
-    "title": "Divorcy hilft Dir deine Scheidung zu planen und gibt Dir einen Überblick möglicher Kosten",
-    "subtitle": "Geschieden zu werden macht keinen Spaß! Divorcy hilft Dir dabei kluge und schnelle Entscheidungen zu treffen. Damit Du dich auf Deine  Zukunft konzentrieren kannst - nicht auf die Vergangenheit!",
+    "title": "Divorcy hilft Dir Deine Scheidung zu planen und gibt Dir einen Überblick möglicher Kosten",
+    "subtitle": "Geschieden zu werden macht keinen Spaß! Divorcy hilft Dir dabei kluge und schnelle Entscheidungen zu treffen. Damit Du Dich auf Deine  Zukunft konzentrieren kannst - nicht auf die Vergangenheit!",
     "button": "Los geht’s!"
   },
   "subscribe": {
@@ -117,7 +117,7 @@
   },
   "conditions": {
     "preAnchorCopy": "Hiermit stimme ich den",
-    "postAnchorCopy": "zu",
+    "postAnchorCopy": "zu.",
     "anchorLabel": "AGB"
   },
   "privacy": {
