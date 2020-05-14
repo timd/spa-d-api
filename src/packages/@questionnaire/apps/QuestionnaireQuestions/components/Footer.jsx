@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from '@reach/router'
 import { Box, Space, Flex, Typography } from '@kogaio'
 import { themeGet } from '@kogaio/utils'
 
@@ -25,15 +24,15 @@ const Footer = ({ t, ...props }) => (
 
     <Box width={1}>
       <Flex justifyContent={{ xs: 'center', md: 'flex-end' }}>
-        <TextLink to='/imprint' target='_blank'>
+        <TextLink href='/imprint' target='_blank'>
           {t('Imprint')}
         </TextLink>
         <Space mx={8}>
-          <TextLink to='/data-protection' target='_blank'>
+          <TextLink href='/data-protection' target='_blank'>
             {t('Data Protection')}
           </TextLink>
         </Space>
-        <TextLink to='/conditions' target='_blank'>
+        <TextLink href='/conditions' target='_blank'>
           {t('Conditions')}
         </TextLink>
       </Flex>
@@ -50,7 +49,7 @@ const Copyright = styled(Typography)`
   opacity: 0.6;
 `
 
-const TextLink = styled(Link)`
+const TextLink = styled.a`
   color: ${themeGet('colors.dark-grey')};
   font-family: ${themeGet('fonts.complementary')};
   font-weight: ${themeGet('fontWeights.regular')};
