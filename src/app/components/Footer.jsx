@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Link } from '@reach/router'
 import { Box, Flex, Space, Hide, Typography } from '@kogaio'
 import { themed, themeGet } from '@kogaio/utils'
 
@@ -19,13 +18,13 @@ const Footer = ({ t }) => (
           </Hide>
           <Space mt={11}>
             <Flex justifyContent='space-between'>
-              <TextLink to='/imprint' target='_blank'>
+              <TextLink href='/imprint' target='_blank'>
                 {t('Imprint')}
               </TextLink>
-              <TextLink to='/data-protection' target='_blank'>
+              <TextLink href='/data-protection' target='_blank'>
                 {t('Data Protection')}
               </TextLink>
-              <TextLink to='/conditions' target='_blank'>
+              <TextLink href='/conditions' target='_blank'>
                 {t('Conditions')}
               </TextLink>
             </Flex>
@@ -36,7 +35,7 @@ const Footer = ({ t }) => (
         <Flex flexDirection='column' textAlign={{ xs: 'center', md: 'right' }}>
           <Typography variant='sh3'>{t('Contact')}</Typography>
           <Space pt={4}>
-            <Typography variant='caption'>support@divorcy.org</Typography>
+            <Typography variant='caption'>support@divorcy.de</Typography>
           </Space>
           <Space pt={4}>
             <Typography variant='caption'>Hardenbergstraße 32, 10623 Berlin</Typography>
@@ -53,7 +52,7 @@ const Container = styled(Flex)`
   ${themed('LandingContainer')};
 `
 
-const TextLink = styled(Link)`
+const TextLink = styled.a`
   color: ${themeGet('colors.dark-grey')};
   font-family: ${themeGet('fonts.complementary')};
   font-weight: ${themeGet('fontWeights.regular')};
