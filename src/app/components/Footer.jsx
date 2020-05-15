@@ -35,7 +35,7 @@ const Footer = ({ t }) => (
         <Flex flexDirection='column' textAlign={{ xs: 'center', md: 'right' }}>
           <Typography variant='sh3'>{t('Contact')}</Typography>
           <Space pt={4}>
-            <Typography variant='caption'>support@divorcy.de</Typography>
+            <Typography variant='caption'>support@divorcy.org</Typography>
           </Space>
           <Space pt={4}>
             <Typography variant='caption'>Hardenbergstraße 32, 10623 Berlin</Typography>

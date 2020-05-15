@@ -346,7 +346,7 @@
       }
     ],
     "nextQuestionId": "haveChildren",
-    "progress": "45%"
+    "progress": "65%"
   },
   "haveChildren": {
     "title": {
@@ -375,7 +375,7 @@
       "option-1": "childrenCount",
       "option-2": null
     },
-    "progress": "56%"
+    "progress": "76%"
   },
   "childrenCount": {
     "title": {
@@ -421,7 +421,7 @@
       }
     ],
     "nextQuestionId": "childrenAges",
-    "progress": "72%"
+    "progress": "81%"
   },
   "childrenAges": {
     "type": "list",
@@ -438,7 +438,7 @@
       }
     },
     "nextQuestionId": "childrenParentType",
-    "progress": "81%"
+    "progress": "88%"
   },
   "childrenParentType": {
     "title": {

@@ -33,7 +33,7 @@ const Features = ({ t }) => (
       </Space>
       <Hide md lg>
         <Space mt={6}>
-          <Button variant='outline' title='Get Started' onClick={() => navigate('/questionnaire')} width={1} />
+          <Button variant='outline' title={t('Get Started')} onClick={() => navigate('/questionnaire')} width={1} />
         </Space>
       </Hide>
     </Flex>

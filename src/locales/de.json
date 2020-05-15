@@ -43,7 +43,7 @@
   "Collect the following information": "Stell die folgenen Informationen zusammen",
   "following steps": "interessant für Dich sein",
   "phase, we recommend those": "Phase könnten die folgenden Schritte",
-  "* It's average cost based on your condition": "*Durchschnittliche Kosten basierend auf Deinen Angaben",
+  "It's average cost based on your condition": "Durchschnittliche Kosten basierend auf Deinen Angaben",
   "Expectation Cost": "Kostenübersicht",
   "per month": "pro Monat",
   "You are in": "Du bist in der",
@@ -82,13 +82,13 @@
   "Submit": "Senden",
   "Why Divorcy?": "Warum Divorcy?",
   "Hello": "Hallo",
-  "Get Started": "Los Gehts",
+  "Get Started": "Los geht's!",
   "I agree to the": "Ich stimme den",
   "of Divorcy": "von Divorcy zu",
   "Privacy policy": "Datenschutzbestimmungen",
   "Terms And Conditions": "Geschäftsbedingungen",
   "I'm here for helping you get overview further process!": "Ich helfe Dir einen guten Überblick über den Scheidungsprozess zu bekommen.",
-  "* We use all information very discretly": "* Alle Informationen werden diskret behandelt",
+  "We use all information very discretly": "Alle Informationen werden diskret behandelt",
   "hero": {
     "title": "Divorcy hilft Dir Deine Scheidung zu planen und gibt Dir einen Überblick möglicher Kosten",
     "subtitle": "Geschieden zu werden macht keinen Spaß! Divorcy hilft Dir dabei kluge und schnelle Entscheidungen zu treffen. Damit Du Dich auf Deine  Zukunft konzentrieren kannst - nicht auf die Vergangenheit!",
@@ -112,7 +112,7 @@
   "result": {
     "teaser": "Schaue Dir Deine individuellen Empfehlungen an, die Dich im Prozess weiterbringen.",
     "tooltip": "Einmalige Kosten sind Kosten für Anwälte und das Gericht. Die laufenden Kosten beschreiben nur möglich Unterhaltskosten für Kinder.",
-    "disclaimer": "* Diese Kosten basieren auf Deinen Angaben und sind nur eine Indikation. Eine Scheidung kann viele Folgekosten mit sich bringen.",
+    "disclaimer": "Diese Kosten basieren auf Deinen Angaben und sind nur eine Indikation. Eine Scheidung kann viele Folgekosten mit sich bringen.",
     "journeytooltip": "Basierend auf deinen Angaben haben wir Dich in eine Phase eingeordnet. Klick einfach auf die anderen Phasen um zu sehen, was dahinter steckt."
   },
   "conditions": {

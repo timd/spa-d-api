@@ -23,6 +23,7 @@ Um die Webseite überhaupt verfügbar zu machen, grundlegenden Funktionen und de
 #### 2.1.1. Usercentrics
 
 Wir nutzen zur Verwaltung und Umsetzung Ihrer Einwilligungen auf unserer Webseite die Consent Management Platform Usercentrics, von Usercentrics GmbH (Rosental 4, 80331 München, **„Usercentrics“**).
+
 Usercentrics ermöglicht uns die Einwilligung (eng. Consent) unserer Nutzer zur Datenverarbeitung und der Anwendung einzelner Drittanbieter-Services und verschiedener Web-Technologien auf der Webseite datenschutzkonform einzuholen, zu verwalten und zu dokumentieren.
 Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. c) DSGVO (rechtliche Verpflichtung).
 
@@ -32,12 +33,14 @@ Wir nutzen sogenannte Web Fonts zur einheitlichen Darstellung von Schriftarten u
 Beim Aufruf einer Seite lädt der Browser des Webseitenbesuchers die benötigten Web Fonts in den Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Webseitenbesucher verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über die IP-Adresse unsere Webseite aufgerufen wurde. Die Nutzung von Google Web Fonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Online-Angebote.
 Wenn Ihr Browser Web Fonts nicht unterstützt, wird eine Standardschrift von Ihrem Computer genutzt.
 Weitere Informationen zu Google Web Fonts finden sie auf der [Google Web Fonts Webseite](https://fonts.google.com/about) und in der [Datenschutzerklärung von Google](https://policies.google.com/privacy?hl=de).
+
 Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
 
 ### 2.2. Sicherheit der Webseite
 
 Betroffenengruppe im Bezug zur Sicherheit der Webseite sind alle Webseitenbesucher.
 Um die Sicherheit der Webseite zu gewährleisten, werden die Daten über Zugriffe auf die Webseite als Server-Logfiles verarbeitet. Dabei handelt es sich zwar grundsätzlich um Gerätedaten, mit diesen Daten kann aber möglicherweise der Bezug zum Webseitenbesucher hergestellt werden. Diese Daten werden mit vorhandenen Angriffsvektoren abgeglichen und bei aufgedeckten Angriffen ausgewertet.
+
 Daten der Server-Logfiles sind: die besuchte Webseite, die Uhrzeit zum Zeitpunkt des Zugriffes, die Menge der gesendeten Daten in Byte, der Verweis, von welchem auf die Webseite gelangt wird, der verwendete Browser und das verwendete Betriebssystem.
 Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Bei den Server-Logfiles beträgt die Speicherdauer maximal 14 Tage. Müssen Daten aus Beweisgründen aufbewahrt werden, sind sie solange von der Löschung ausgenommen, bis der Vorfall endgültig geklärt ist.
 Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
@@ -47,15 +50,17 @@ Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigt
 Betroffenengruppe im Bezug zur Reichweitemessung und Optimierung des Angebotes sind alle Webseitenbesucher.
 Diese Webseite verwendet Cookies zur Reichweitenmessung und Optimierung unseres Angebotes. Die Cookies werden entweder von uns oder von uns damit beauftragten Dritten an den Browser des Webseitenbesuchers übertragen und dort gespeichert. Dadurch ist eine Wiedererkennung des genutzten Gerätes potentiell möglich. Die auf diese Weise erhobenen Daten sind pseudonym. Daher ist uns und den beauftragten Dritten die Zuordnung der Daten zum Webseitenbesucher nicht möglich. Die Daten werden auch nicht gemeinsam mit sonstigen personenbezogenen Daten der Webseitenbesucher gespeichert. Teilweise werden die Daten vor der Nutzung anonymisiert, so dass der Rückschluss auf den Webseitenbesucher insgesamt unmöglich wird.
 Diese Cookies werden erst gesetzt, sobald Sie uns dafür Ihre Einwilligung erteilt haben. Zur Erteilung der Einwilligung stellen wir Ihnen zu Beginn des Webseitenbesuches ein Kommunikationsfeld zur Verfügung.
-Erteilte Einwilligungen können jederzeit mit Wirkung für die Zukunft im Privacy Center auf unserer Webseite widerrufen werden. Der Link befindet sich [hier](https://www.divorcy.de/#uc-central-modal-show). Die gesetzten Cookies werden daraufhin gelöscht.
-Es gibt zwei verschiedene Cookie-Kategorien bei der Webseite: Essentiell (diese Technologien sind erforderlich, um die Kernfunktionalität der Webseite zu aktivieren) und Funktionell (diese Technologien ermöglichen es uns, die Nutzung der Webseite zu analysieren, um die Leistung zu messen und zu verbessern).
-Essentielle Cookies sind für den Betrieb der Website notwendig und bedürfen keiner Einwilligung. Rechtsgrundlage für die Verarbeitung ist daher Art. 6 Abs. 1 lit. b) DSGVO (Vertragserfüllung).
+
+Erteilte Einwilligungen können jederzeit mit Wirkung für die Zukunft im Privacy Center auf unserer Webseite widerrufen werden. Der Link befindet sich [hier](#uc-central-modal-show). Die gesetzten Cookies werden daraufhin gelöscht.
+
+Es gibt drei verschiedene Cookie-Kategorien bei der Webseite: Essentiell (diese Technologien sind erforderlich, um die Kernfunktionalität der Webseite zu aktivieren), Funktionell (diese Technologien ermöglichen es uns, die Nutzung der Webseite zu analysieren, um die Leistung zu messen und zu verbessern) und Marketing (diese Technologien werden von Werbetreibenden verwendet, um Anzeigen zu schalten, die führ Ihre Interessen relevant sind).
 Rechtsgrundlage für die Verarbeitung der funktionellen Cookies ist Art. 6 Abs. 1 lit. a) DSGVO (Einwilligung). Folgende Drittanbieter werden eingesetzt; diese Informationen sind für Sie nur relevant, sofern Sie die entsprechende Einwilligung erteilt haben:
 
 #### 2.3.1. Google Analytics
 
 Wir nutzen den Dienst Google Analytics von Google (siehe oben). Google hat seinen Sitz in dem sogenannten Drittland USA, womit grundsätzlich ein der EU entsprechendes Datenschutzniveau fehlt. Google ist aber unter dem EU-U.S. Privacy Shield zertifiziert und bietet hierdurch ein angemessenes Datenschutzniveau gemäß Art. 45 DSGVO.
 Google Analytics verwendet Cookies. Die durch diese Cookies gesammelten Informationen werden im Regelfall an einen Google-Server in den USA gesandt und dort gespeichert. Auf dieser Webseite greift die IP-Anonymisierung. Die IP-Adresse der Webseitenbesucher wird gekürzt. Nur in Einzelfällen wird die IP-Adresse zunächst ungekürzt in die USA an einen Server von Google übertragen und dort gekürzt. Durch diese Kürzung entfällt der Personenbezug der IP-Adresse. Die vom Browser übermittelte IP- Adresse wird nicht mit anderen von Google gespeicherten Daten kombiniert.
+
 Im Rahmen der Vereinbarung zur Auftragsdatenvereinbarung, welche der Webseitenbetreiber mit dem Google geschlossen hat, erstellt diese mithilfe der gesammelten Informationen eine Auswertung der Webseitennutzung und der Webseitenaktivität und erbringt verbundene Dienstleistungen.
 Die von Google im Auftrag des Webseitenbetreibers erhobenen Daten werden genutzt, um die Nutzung des Online-Angebots durch die einzelnen Nutzer auswerten zu können, z. B. um Reports über die Aktivität auf der Webseite zu erstellen und um unser Online-Angebot zu verbessern.
 Mehr Informationen finden Sie in der [Datenschutzerklärung von Google](https://policies.google.com/privacy?hl=de).
@@ -65,7 +70,9 @@ Das im Falle Ihrer Einwilligung in Ihrem Browser gespeicherte Cookie wird nach s
 
 Wir nutzen das Webseite Heatmap Tool Hotjar von der Hotjar Limited (Level 2, St Julian’s Business Centre, 3, Elia Zammit Street, St Julian’s STJ 1000, Malta, **„Hotjar“**).
 Das nutzen wir, um die Bedürfnisse der Webseitenbesucher besser zu verstehen und das Angebot auf dieser Webseite zu optimieren. Mithilfe der Technologie von Hotjar bekommen wir ein besseres Verständnis von den Erfahrungen der Webseitenbesucher (z.B. wieviel Zeit sie auf welchen Seiten verbringen, welche Links sie anklicken, was sie mögen und was nicht etc.) und das hilft uns, das Angebot am Feedback der Webseitenbesucher auszurichten.
+
 Hotjar arbeitet mit Cookies und anderen Technologien, um Informationen über das Verhalten der Webseitenbesucher und über ihre Endgeräte zu sammeln (insbesondere IP Adresse des Geräts (wird nur in anonymisierter Form erfasst und gespeichert), Bildschirmgröße, Gerätetyp (Unique Device Identifiers), Informationen über den verwendeten Browser, Standort (nur Land), zum Anzeigen unserer Webseite bevorzugte Sprache). Hotjar speichert diese Informationen in einem pseudonymisierten Nutzerprofil. Die Informationen werden weder von Hotjar noch von uns zur Identifizierung einzelner Nutzer verwendet oder mit weiteren Daten über einzelne Nutzer zusammengeführt.
+
 Weitere Informationen finden Sie in der [Datenschutzerklärung von Hotjar](https://www.hotjar.com/legal/policies/privacy/).
 Als Webseitenbesucher können Sie der Speicherung eines Nutzerprofils und von Informationen über Ihren Besuch auf unserer Webseite durch Hotjar sowie dem Setzen von Hotjar Tracking Cookies auf anderen Webseitenn widersprechen, wenn Sie diesen [Opt-Out-Link](https://www.hotjar.com/legal/compliance/opt-out) anklicken.
 Das im Falle Ihrer Einwilligung in Ihrem Browser gespeicherte Cookie wird nach spätestens 365 Tagen vollständig gelöscht.
@@ -74,11 +81,15 @@ Das im Falle Ihrer Einwilligung in Ihrem Browser gespeicherte Cookie wird nach s
 
 Betroffenengruppe im Bezug zum Newsletterabonnement sind alle Abonnenten.
 Über unsere Webseite kann der Divorcy-Newsletter bestellt werden. Dabei handelt es sich um einen eigenen, kostenlosen Informationsservice, der unabhängig von einer bestehenden Kundenbeziehung zu finleap in Anspruch genommen werden kann.
+
 Dadurch erhalten die Abonnenten regelmäßig per E-Mail Informationen zu aktuellen Aktionen oder Veranstaltungen in Form des Newsletters von uns. Für den Newsletter-Service benötigen wir die E-Mail-Adresse, um den Newsletter zu versenden sowie den Vor- und Nachnamen, um den Besteller persönlich ansprechen zu können und Missbrauch zu vermeiden. Nach der Registrierung für den Newsletter erhält der Abonnent eine E-Mail. Diese enthält einen Link, mit dem die Anmeldung bestätigt werden muss. Wir versenden den Newsletter erst nach erfolgter Aktivierung des Bestätigungslinks (Doppel-Opt-In-Verfahren).
+
 Abonneten können den Newsletter jederzeit abbestellen. Jeder Newsletter enthält Informationen darüber, wie der Newsletter mit Wirkung für die Zukunft abbestellt werden kann. Alternativ kann die Abbestellung auch jederzeit per E-Mail erfolgen.
+
 Wir nutzen zur Bereitstellung, Verwaltung und zum Versand der Newsletter den Dienst Mailchimp von The Rocket Science Group LLC d/b/a MailChimp (675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA, 30308, USA, **„MailChimp“**). MailChimp hat seinen Sitz in dem sogenannten Drittland USA, womit grundsätzlich ein der EU entsprechendes Datenschutzniveau fehlt. MailChimp ist aber unter dem EU-U.S. Privacy Shield zertifiziert und bietet hierdurch ein angemessenes Datenschutzniveau gemäß Art. 45 DSGVO.
 Dieser Service ermöglicht es uns, intern eine Datenbank mit E-Mail-Kontakten zu verwalten, um mit Bestellern per E-Mail zu kommunizieren. Der Dienst verwaltet Informationen darüber, wann eine E-Mail vom Besteller gelesen wurde und dieser mit eingehenden E-Mail-Nachrichten interagiert hat, z.B. durch Anklicken der in der E-Mail enthaltenen Links. Dies geschieht durch sogenannte Web-Beacons, auch Tracking-Pixel genannt. Dies sind kleine Bilddateien, die es uns ermöglichen, das Nutzerverhalten zu bewerten.
 MailChimp wiederum übermittelt diese Daten an externe Dienstleister, um deren Dienste anbieten zu können. MailChimp verarbeitet alle Daten in Übereinstimmung mit den europäischen Datenschutzstandards.
+
 Sie können diesem Tracking jederzeit widersprechen, indem Sie sich wie oben beschrieben vom Newsletter abmelden. Die oben beschriebene Auswertung durch MailChimp ist auch dann nicht möglich, wenn Sie die Anzeige von Bildern in Ihrem E-Mail-Programm standardmäßig deaktiviert haben. In diesem Fall wird der Newsletter jedoch nicht vollständig angezeigt und Sie können nicht alle Funktionen nutzen.
 Weitere Informationen finden Sie in der [Datenschutzerklärung von MailChimp](https://mailchimp.com/legal/privacy/).
 Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. a) DSGVO (Einwilligung).
@@ -105,11 +116,14 @@ Gemäß Art. 16 DSGVO haben Sie das Recht, die Berichtigung und/oder Ergänzung 
 ### 4.3. Löschung von Daten
 
 Sofern Ihr Wunsch nicht mit einer gesetzlichen Pflicht zur Aufbewahrung von Daten (z. B. Vorratsdatenspeicherung) kollidiert, haben Sie gemäß Art. 17 DSGVO ein Anrecht auf Löschung Ihrer personenbezogenen Daten. Vom Verantwortlichen gespeicherte Daten werden, sollten sie für ihre Zweckbestimmung nicht mehr vonnöten sein und nicht unter gesetzliche Aufbewahrungsfristen fallen, gelöscht. Falls eine Löschung nicht durchgeführt werden kann, da die Daten für zulässige gesetzliche Zwecke erforderlich sind, erfolgt eine Einschränkung der Datenverarbeitung. In diesem Fall werden die Daten gesperrt und nicht für andere Zwecke verarbeitet. Das Löschen Ihrer Daten hat zur Folge, dass die Dienste von finleap GmbH nicht mehr in vollem Umfang oder gar nicht mehr genutzt werden können.
+
 Der Verantwortliche ist verpflichtet, personenbezogene Daten unverzüglich zu löschen, wenn eine Verarbeitung nicht erforderlich ist und einer der folgenden Gründe vorliegt:
 Die personenbezogenen Daten sind für die Zwecke, für die sie erhoben oder anderweitig verarbeitet wurden, nicht mehr erforderlich;
 Sie haben Ihre der Verarbeitung zugrunde liegende Einwilligung widerrufen, und es gibt keine andere Rechtsgrundlage für die Verarbeitung;
 Sie haben gegen die Verarbeitung gemäß Art. 21 Abs. 1 DSGVO widersprochen und es gibt keine zwingenden berechtigten Verarbeitungsgründe oder Sie haben gegen die Verarbeitung gemäß Art. 21 Abs. 2 DSGVO widersprochen;
+
 Die personenbezogenen Daten wurden unrechtmäßig verarbeitet;
+
 Die Löschung Ihrer personenbezogenen Daten ist zur Erfüllung einer gesetzlichen Verpflichtung nach deutschem oder europäischem Recht erforderlich.
 Wenn wir Ihre personenbezogenen Daten veröffentlicht haben und zur Löschung verpflichtet sind, werden wir unter Berücksichtigung der verfügbaren Technologie- und Implementierungskosten geeignete Maßnahmen ergreifen, um unsere Datenverarbeiter, die Ihre personenbezogenen Daten verarbeiten, darüber zu informieren, dass Sie aufgefordert haben, alle Verknüpfungen zu Ihren personenbezogenen Daten oder Kopien oder Vervielfältigungen Ihrer personenbezogenen Daten zu löschen. Die Maßnahmen werden nur insoweit getroffen, als eine Verarbeitung nicht erforderlich ist.
 
