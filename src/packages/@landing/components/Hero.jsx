@@ -27,7 +27,7 @@ const Hero = ({ t, ...props }) => (
       </Space>
       <Space mt={4}>
         <Typography color='dark-grey' maxWidth='640px' variant='caption'>
-          {t('* We use all information very discretly')}
+          {t('We use all information very discretly')}
         </Typography>
       </Space>
       <Image display={{ md: 'none' }} objectFit='contain' src={images.heroImageMobile} width='100%' />
